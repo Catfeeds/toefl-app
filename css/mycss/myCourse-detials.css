@@ -1,0 +1,69 @@
+.mui-bar-tab {
+	height: auto;
+}
+
+.mui-bar-tab button {
+	padding: 10px 0 15px 0!important;
+}
+
+.order-status {
+	padding: 10px 0 10px 5%;
+	background-color: white;
+	font-size: 0.8em;
+}
+
+.course-details {
+	padding: 10px 5% 0 5%;
+	background-color: white;
+	margin-top: 10px;
+}
+
+.course-details img {
+	width: 80%;
+}
+
+.center-font h4 {
+	font-weight: normal;
+	font-size: 1em;
+}
+
+.center-font p {
+	font-size: 0.7em;
+	margin: 0;
+}
+
+.right-num {
+	text-align: right;
+	font-size: 0.8em;
+	margin-top: 50px;
+}
+
+.l-img-cou {
+	margin-top: 8px;
+}
+
+.course-details .mui-row {
+	width: 100%;
+	border-bottom: 1px #E5E5E5 solid;
+	padding-bottom: 10px;
+}
+
+.payBox {
+	padding: 10px 0;
+	font-size: 0.8em;
+}
+
+.payBox .red {
+	float: right;
+	color: #F23030;
+}
+.order-address{
+	padding: 10px 5%;
+	background-color: white;
+	margin-top: 10px;
+	font-size: 0.8em;
+}
+.order-address ul li img{
+	height: 15px;
+	vertical-align: middle;
+}

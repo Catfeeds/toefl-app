@@ -1,0 +1,125 @@
+header{
+	border-bottom: none!important;
+}
+#header .mui-title{
+	color: white;
+}
+.mui-content{
+	width: 100%;
+	height: 100%;
+	background: url('../../images/myimages/ExerciseToday16@2x.png') no-repeat;
+	background-size:100% 100%;
+}
+.article{
+	width: 80%;
+	margin: 0 auto;
+	color: white;
+	font-size: 0.8em;
+	margin-top: 50px;
+	position: relative;
+}
+.article div.wc-btn{
+	width: 27px;
+	height: 28px;
+	background-color: none;
+	position: absolute;
+	top: 0;
+	right: -8%;
+}
+.article ul{
+	margin: 0;
+	padding: 0;   
+}
+.article ul li{
+	list-style: none;
+	margin-bottom: 20px;
+}
+.article ul li.on,.article ul li.on p{
+	color: #f0bc00;
+}
+.article ul li p{
+	color: white;
+}
+.article ul li span{
+	display: none;
+}
+nav.mui-bar{
+	height: 90px;
+	background-color:#181c27;
+}
+#jp_container_1{
+	width: 90%;
+	margin: 0 auto;
+	position: relative;
+}
+.center-progress{
+	width: 60%;
+	height: 3px;
+	position: absolute;
+	top: 62px;
+	left: 20%;
+}
+.progress_box{
+    width: 100%;
+    height: 3px;
+    background: #fffeff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 8px;
+}
+.progress_bgOut{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.progress_bg{
+    width: 100%;
+    height: 100%;
+    background: #e3b967;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.progress_move{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: white;
+    position: absolute;
+    right: -10px;
+    top: -4px;
+}
+.left-span{
+    position: absolute;
+	left: 0;
+	top: 60px;
+}
+.right-span{
+    position: absolute;
+	right: 0;
+	top: 60px;
+}
+.left-span,.right-span{
+	width: 20%;
+	text-align: center;
+	color: white;
+	font-size: 0.8em;
+}
+.play-icon{
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	background: url('../../images/myimages/ExerciseToday11@2x.png') no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	top: -30px;
+	left: 50%;
+	margin-left: -40px;
+}
+#jp_container_1.jp-state-playing .play-icon{
+    background: url('../../images/myimages/ExerciseToday10@2x.png') no-repeat;
+    background-size: 100% 100%;
+}

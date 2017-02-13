@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/mycss/public.css" rel="stylesheet" />
+		<style type="text/css">
+			html,
+			body,
+			.mui-content {
+				background-color: white;
+			}
+			
+			textarea {
+				height: 300px;
+				border: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left orangeColor"></a>
+			<h1 class="mui-title">发表文字</h1>
+			<button class="mui-btn mui-btn-blue mui-btn-link mui-pull-right orangeColor" id="sub">提交</button>
+		</header>
+		<div class="mui-content">
+			<textarea placeholder="从这里开始写..."></textarea>
+		</div>
+
+		<script src="js/mui.min.js"></script>
+		<script src="js/myjs/jquery-1.11.1.min.js"></script>
+		<script src="js/myjs/public.js"></script>
+		<script type="text/javascript">			
+			
+			jQuery("#sub")[0].addEventListener("tap", function() {
+				mui.openWindow({
+					url: "writing-result.html"
+				})
+			});
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,275 @@
+html,
+body {
+	background-color: white;
+}
+
+.mui-content {
+	background-color: white;
+}
+
+.top-audio {
+	width: 90%;
+	margin: 0 auto;
+	padding-bottom: 20px;
+}
+
+.top-audio h2 {
+	color: #FF6600;
+	font-weight: normal;
+	font-size: 0.9em;
+}
+
+.top-audio h2 a {
+	float: right;
+	font-size: 0.8em;
+	margin-top: 5px;
+	color: #FF6600;
+}
+
+.top-audio h4 {
+	font-weight: normal;
+	font-size: 0.9em;
+	margin-top: 20px;
+}
+
+.top-audio h4 a {
+	float: right;
+	font-size: 0.8em;
+	color: #FF6600;
+}
+
+.out-grey {
+	width: 100%;
+	height: 35px;
+	background-color: #EEEEEE;
+	border: 1px #FFFFFF solid;
+	border-radius: 8px;
+	margin-top: 20px;
+	position: relative;
+}
+
+.l-play {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	box-shadow: 0 0 10px #999999;
+	position: absolute;
+	left: 0;
+	top: -4px;
+	background: url('../../images/myimages/spoken7@2x.png') no-repeat;
+	background-size: 100% 100%
+}
+
+#jp_container_1.jp-state-playing .l-play {
+	background: url('../../images/myimages/spoken7@22x.png') no-repeat;
+	background-size: 100% 100%;
+}
+
+.center-progress {
+	width: 65%;
+	height: 6px;
+	position: absolute;
+	top: 5px;
+	left: 50px;
+	border-radius: 10px;
+}
+
+.progress_box {
+	width: 100%;
+	height: 6px;
+	background: #CCCCCC;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: 10px;
+	margin-top: 8px;
+}
+
+.progress_bgOut {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.progress_bg {
+	width: 50%;
+	height: 100%;
+	background: #33cc66;
+	position: absolute;
+	left: 0;
+	top: 0;
+	border-radius: 10px;
+}
+
+.progress_move {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: white;
+	position: absolute;
+	right: -10px;
+	top: -4px;
+}
+
+.right-span {
+	width: 16%;
+	text-align: center;
+	color: #33CC66;
+	font-size: 0.8em;
+	position: absolute;
+	right: 0;
+	top: 5px;
+}
+
+.line-x {
+	width: 100%;
+	border-bottom: 10px #E5E5E5 solid;
+}
+
+.option-answer {
+	width: 95%;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+.mui-card {
+	/*box-shadow: none;*/
+	margin-top: 20px;
+	border-top: 1px #E5E5E5 solid;
+}
+
+.mui-card-header {
+	font-size: 0.8em;
+}
+
+.mui-table-view-cell>a:not(.mui-btn) {
+	white-space: normal;
+}
+
+.mui-table-view .mui-media-body {
+	font-size: 0.8em;
+	overflow: auto;
+}
+
+.mui-table-view-cell:after {
+	background-color: white;
+}
+
+.mui-media-object {
+	width: 23px;
+	height: 23px!important;
+	line-height: 23px!important;
+	text-align: center;
+	background-color: #a4a4a4;
+	color: white;
+	border-radius: 50%;
+}
+
+.li-orange .mui-media-object {
+	background-color: #ff6000;
+}
+
+.li-grey .mui-media-body {
+	color: #aeaeae;
+}
+
+.li-green .mui-media-body {
+	color: #2acc5d;
+}
+
+.li-green .mui-media-object {
+	background-color: #2acc5d;
+}
+
+.li-red .mui-media-body {
+	color: #ea2c16;
+}
+
+.li-red .mui-media-object {
+	background-color: #ea2c16;
+}
+
+.jiexi {
+	color: black;
+	font-size: 0.8em;
+}
+
+.mui-control-item.mui-active span.bor {
+	width: 50%;
+	display: block;
+	text-align: center;
+	font-size: 1.2em;
+	position: relative;
+}
+.mui-control-item span.bor {
+	width: 50%;
+	display: block;
+	text-align: center;
+	font-size: 1.2em;
+}
+.mui-control-item.mui-active span.bor-red {
+	background: #F23030;
+	border-radius: 50%;
+	color: white;
+}
+
+.mui-control-item.mui-active span.bor-green {
+	background: #33CC66;
+	border-radius: 50%;
+	color: white;
+}
+.mui-control-item span.bor-red {
+	border:1px #F23030 solid;
+	border-radius: 50%;
+	color: #F23030;
+}
+
+.mui-control-item span.bor-green {
+	border: 1px #33CC66 solid;
+	border-radius: 50%;
+	color: #33CC66;
+}
+.mui-segmented-control {
+	overflow: inherit;
+}
+
+.mui-segmented-control .mui-control-item {
+	overflow: inherit;
+}
+
+.mui-segmented-control.mui-segmented-control-inverted .mui-control-item {
+	/*position: relative;*/
+}
+
+.mui-control-item.mui-active span.bor-red b {
+	width: 0;
+	height: 0;
+	display: block;
+	border-left: 6px transparent solid;
+	border-right: 6px transparent solid;
+	border-top: 6px #F23030 solid;
+	position: absolute;
+	bottom: -5px;
+	left: 50%;
+	margin-left: -6px;
+}
+
+.mui-control-item.mui-active span.bor-green b {
+	width: 0;
+	height: 0;
+	display: block;
+	border-left: 6px transparent solid;
+	border-right: 6px transparent solid;
+	border-top: 6px #33CC66 solid;
+	position: absolute;
+	bottom: -5px;
+	left: 50%;
+	margin-left: -6px;
+}
+
+.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+	border-bottom: none;
+}
+

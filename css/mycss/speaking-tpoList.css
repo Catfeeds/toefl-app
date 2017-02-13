@@ -1,0 +1,194 @@
+.mui-content ul li{
+	width: 100%;
+}
+.mui-content ul li h2{
+	color: #FF6600;
+	font-weight: normal;
+	margin-left: 5%;
+	font-size: 1.2em;
+}
+.font-box{
+	width: 100%;
+	padding: 40px 0 10px 0;
+	background-color: rgba(0,0,0,0.3);
+}
+.mui-content ul li span{
+	color: white;
+	margin-left: 5%;
+	font-size: 0.8em;
+}
+.mui-content ul li:first-child{
+	background: url("../../images/myimages/speakDisplay1.jpg") no-repeat;
+	background-size: 100% auto;
+}
+.mui-content ul li:nth-child(2){
+	background: url("../../images/myimages/speakDisplay2.jpg") no-repeat;
+	background-size: 100% auto;
+}
+.mui-content ul li:nth-child(3){
+	background: url("../../images/myimages/speakDisplay3.jpg") no-repeat;
+	background-size: 100% auto;
+}
+.mui-content ul li:nth-child(4){
+	background: url("../../images/myimages/speakDisplay4.jpg") no-repeat;
+	background-size: 100% auto;
+}
+.mui-content ul li:nth-child(5){
+	background: url("../../images/myimages/speakDisplay5.jpg") no-repeat;
+	background-size: 100% auto;
+}
+.mui-content ul li:nth-child(6){
+	background: url("../../images/myimages/speakDisplay6.jpg") no-repeat;
+	background-size: 100% auto;
+}
+.mui-content ul li:nth-child(7){
+	background: url("../../images/myimages/speakDisplay7.jpg") no-repeat;
+	background-size: 100% auto;
+}
+.mui-content ul li:nth-child(8){
+	background: url("../../images/myimages/speakDisplay8.jpg") no-repeat;
+	background-size: 100% auto;
+}
+.mui-content ul li:nth-child(9){
+	background: url("../../images/myimages/speakDisplay9.jpg") no-repeat;
+	background-size: 100% auto;
+}
+.mui-content ul li:nth-child(10){
+	background: url("../../images/myimages/speakDisplay10.jpg") no-repeat;
+	background-size: 100% auto;
+}
+.mui-content ul li:nth-child(11){
+	background: url("../../images/myimages/speakDisplay11.jpg") no-repeat;
+	background-size: 100% auto;
+}
+.mui-content ul li:nth-child(12){
+	background: url("../../images/myimages/speakDisplay12.jpg") no-repeat;
+	background-size: 100% auto;
+}
+.mui-content ul li:nth-child(13){
+	background: url("../../images/myimages/speakDisplay13.jpg") no-repeat;
+	background-size: 100% auto;
+}
+.mui-content ul li:nth-child(14){
+	background: url("../../images/myimages/speakDisplay14.jpg") no-repeat;
+	background-size: 100% auto;
+}
+.mui-content ul li:nth-child(15){
+	background: url("../../images/myimages/speakDisplay15.jpg") no-repeat;
+	background-size: 100% auto;
+}
+.mui-content ul li:nth-child(16){
+	background: url("../../images/myimages/speakDisplay16.jpg") no-repeat;
+	background-size: 100% auto;
+}
+.mui-content ul li:nth-child(17){
+	background: url("../../images/myimages/speakDisplay17.jpg") no-repeat;
+	background-size: 100% auto;
+}
+.mui-content ul li:nth-child(18){
+	background: url("../../images/myimages/speakDisplay18.jpg") no-repeat;
+	background-size: 100% auto;
+}
+.mui-content ul li:nth-child(19){
+	background: url("../../images/myimages/speakDisplay19.jpg") no-repeat;
+	background-size: 100% auto;
+}
+.mui-content ul li:nth-child(20){
+	background: url("../../images/myimages/speakDisplay20.jpg") no-repeat;
+	background-size: 100% auto;
+}
+
+
+.mui-content ul li:nth-child(21){
+	background: url("../../images/myimages/speakDisplay21.jpg") no-repeat;
+	background-size: 100% auto;
+}
+.mui-content ul li:nth-child(22){
+	background: url("../../images/myimages/speakDisplay22.jpg") no-repeat;
+	background-size: 100% auto;
+}
+.mui-content ul li:nth-child(23){
+	background: url("../../images/myimages/speakDisplay23.jpg") no-repeat;
+	background-size: 100% auto;
+}
+.mui-content ul li:nth-child(24){
+	background: url("../../images/myimages/speakDisplay24.jpg") no-repeat;
+	background-size: 100% auto;
+}
+.mui-content ul li:nth-child(25){
+	background: url("../../images/myimages/speakDisplay25.jpg") no-repeat;
+	background-size: 100% auto;
+}
+.mui-content ul li:nth-child(26){
+	background: url("../../images/myimages/speakDisplay26.jpg") no-repeat;
+	background-size: 100% auto;
+}
+.mui-content ul li:nth-child(27){
+	background: url("../../images/myimages/speakDisplay27.jpg") no-repeat;
+	background-size: 100% auto;
+}
+.mui-content ul li:nth-child(28){
+	background: url("../../images/myimages/speakDisplay28.jpg") no-repeat;
+	background-size: 100% auto;
+}
+.mui-content ul li:nth-child(29){
+	background: url("../../images/myimages/speakDisplay29.jpg") no-repeat;
+	background-size: 100% auto;
+}
+.mui-content ul li:nth-child(30){
+	background: url("../../images/myimages/speakDisplay30.jpg") no-repeat;
+	background-size: 100% auto;
+}
+.mui-content ul li:nth-child(31){
+	background: url("../../images/myimages/speakDisplay31.jpg") no-repeat;
+	background-size: 100% auto;
+}
+.mui-content ul li:nth-child(32){
+	background: url("../../images/myimages/speakDisplay32.jpg") no-repeat;
+	background-size: 100% auto;
+}
+.mui-content ul li:nth-child(33){
+	background: url("../../images/myimages/speakDisplay33.jpg") no-repeat;
+	background-size: 100% auto;
+}
+.mui-content ul li:nth-child(34){
+	background: url("../../images/myimages/speakDisplay34.jpg") no-repeat;
+	background-size: 100% auto;
+}
+.mui-content ul li:nth-child(35){
+	background: url("../../images/myimages/speakDisplay40.jpg") no-repeat;
+	background-size: 100% auto;
+}
+.mui-content ul li:nth-child(36){
+	background: url("../../images/myimages/speakDisplay41.jpg") no-repeat;
+	background-size: 100% auto;
+}
+.mui-content ul li:nth-child(37){
+	background: url("../../images/myimages/speakDisplay42.jpg") no-repeat;
+	background-size: 100% auto;
+}
+.mui-content ul li:nth-child(38){
+	background: url("../../images/myimages/speakDisplay43.jpg") no-repeat;
+	background-size: 100% auto;
+}
+.mui-content ul li:nth-child(39){
+	background: url("../../images/myimages/speakDisplay44.jpg") no-repeat;
+	background-size: 100% auto;
+}
+.mui-content ul li:nth-child(40){
+	background: url("../../images/myimages/speakDisplay45.jpg") no-repeat;
+	background-size: 100% auto;
+}
+.mui-content ul li:nth-child(41){
+	background: url("../../images/myimages/speakDisplay46.jpg") no-repeat;
+	background-size: 100% auto;
+}
+.mui-content ul li:nth-child(42){
+	background: url("../../images/myimages/speakDisplay47.jpg") no-repeat;
+	background-size: 100% auto;
+}
+.mui-content ul li:nth-child(43){
+	background: url("../../images/myimages/speakDisplay48.jpg") no-repeat;
+	background-size: 100% auto;
+}
+

@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/mycss/public.css" rel="stylesheet" />
+		<link href="css/mycss/reading-practice.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left orangeColor"></a>
+			<h1 class="mui-title">TPO 01-Passage1</h1>
+		</header>
+
+		<div class="mui-content">
+			<div class="pop-slide" id="slidePop">
+				<div class="slideBd bd">
+					<ul>
+						<li class="red">
+							<a href="#">1</a>
+						</li>
+						<li class="green">
+							<a href="#">2</a>
+						</li>
+						<li class="redOn">
+							<a href="#">3</a>
+						</li>
+						<li class="greenOn">
+							<a href="#">4</a>
+						</li>
+						<li class="red">
+							<a href="#">5</a>
+						</li>
+						<li class="red">
+							<a href="#">6</a>
+						</li>
+						<li class="red">
+							<a href="#">7</a>
+						</li>
+					</ul>
+					<ul>
+						<li class="red">
+							<a href="#">8</a>
+						</li>
+						<li class="red">
+							<a href="#">9</a>
+						</li>
+						<li class="red">
+							<a href="#">10</a>
+						</li>
+						<li class="red">
+							<a href="#">11</a>
+						</li>
+						<li class="red">
+							<a href="#">12</a>
+						</li>
+						<li class="red">
+							<a href="#">13</a>
+						</li>
+						<li class="red">
+							<a href="#">14</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+			
+			<div class="mui-card first-card">
+				<!--页眉，放置标题-->
+				<div class="mui-card-header">
+					<span><1/14></span>
+					<a href="javascript:void(0);" id="seeArticle">查看全文</a>
+				</div>
+				<!--内容区-->
+				<div class="mui-card-content">
+					<div class="article-tpo">
+						<div class="in-box">
+							Groundwater is the word used to describe water that saturates the ground, filling all the available spaces. By far the most abundant type of groundwater is meteoric water; this is the groundwater that circulates as part of the water cycle. Ordinary meteoric water is water that has soaked into the ground from the surface, from precipitation (rain and snow) and from lakes and streams. There it remains, sometimes for long periods, before emerging at the surface again. At first thought it seems incredible that there can be enough space in the "solid" ground underfoot to hold all this water. The necessary space is there, however, in many forms. The commonest spaces are those among the particles—sand grains and tiny pebbles—of loose, unconsolidated sand and gravel. Beds of this material, out of sight beneath the soil, are common. They are found wherever fast rivers carrying loads of coarse sediment once flowed. For example, as the great ice sheets that covered North America during the last ice age steadily melted away, huge volumes of water flowed from them. The water was always laden with pebbles, gravel, and sand, known as glacial outwash, that was deposited as the flow slowed down.
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="mui-card option">
+				<!--页眉，放置标题-->
+				<div class="mui-card-header">What can be inferred about why the woman decides to use the computer in the library?</div>
+				<!--内容区-->
+				<div class="mui-card-content">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell mui-media li-red">
+							<a href="javascript:;">
+								<div class="mui-media-object mui-pull-left">A</div>
+								<div class="mui-media-body">
+									She thinks she might need additional help from the man
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media li-grey">
+							<a href="javascript:;">
+								<div class="mui-media-object mui-pull-left">B</div>
+								<div class="mui-media-body">
+									She does not have a computer at home
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media li-green">
+							<a href="javascript:;">
+								<div class="mui-media-object mui-pull-left">C</div>
+								<div class="mui-media-body">
+									She has to hand in her assignment by the end of the day
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media li-grey">
+							<a href="javascript:;">
+								<div class="mui-media-object mui-pull-left">D</div>
+								<div class="mui-media-body">
+									She will be meeting a friend in the library later on
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+			<div class="jiexi">
+				<p>解析：water that saturates the ground, filling all the available spaces. By far the most</p>
+			</div>
+
+		</div>
+
+		<script src="js/mui.min.js"></script>
+		<script src="js/myjs/jquery-1.11.1.min.js"></script>
+			<script src="js/myjs/TouchSlide.1.1.js"></script>
+		<script src="js/myjs/public.js"></script>
+		<script type="text/javascript">
+		jQuery(function(){
+			
+				//    标题tpo01
+	TouchSlide({slideCell: "#slidePop",effect: "leftLoop"});
+	      
+	        jQuery(".slideBd ul li").each(function(){
+	        	jQuery(this).find("a").css({
+	        		"height":jQuery(this).find('a').width(),
+	        		"lineHeight":jQuery(this).find('a').width()+"px"
+	        	});
+	        });
+			jQuery("#seeArticle")[0].addEventListener("tap", function() {
+			
+				mui.openWindow({
+				url:"reading-article.html"
+			})
+			});
+		});
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,64 @@
+html,body,.mui-content{
+	background-color: white;
+}
+.bg-nowhite{
+	background-color:white;
+}
+.live-d-top{
+	width: 100%;
+	background:url('../../images/myimages/Course35@2x.png') no-repeat;
+	background-size: 100% 100%;
+	padding: 10% 0 10px 5%;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+.live-d-top .title-p{
+	font-weight: bold;
+	font-size: 1.2em;
+	color: black;
+	margin-bottom: 10px;
+}
+.price-li{
+	margin-bottom: 5px;
+}
+.choose-li{
+	margin-bottom: 5px;
+}
+.live-d-top .redPrice{
+	color: #F23030;
+	font-size: 1.2em;
+}
+.live-d-top .oldPrice{
+	color: #999999;
+	font-size: 0.8em;
+	text-decoration: line-through;
+}
+.live-d-top p{
+	margin-bottom: 0;
+}
+.live-d-top .choose-p{
+	float: left;
+}
+.live-d-top .choose-all{
+	float: left;
+}
+.live-d-top .choose-all span{
+	font-size: 0.8em;
+	border: 1px #999999 solid;
+	color: #666666;
+	padding: 0 10px;
+}
+.live-d-top .choose-all span.on{
+	border: 1px #FF6600 solid;
+	color: #FF6600;
+}
+.live-d-bot{
+	width: 90%;
+	height: 300px;
+	overflow: auto;
+	margin: 0 auto;
+	margin-top: 20px;
+	font-size: 0.8em;
+	color: #666666;
+}

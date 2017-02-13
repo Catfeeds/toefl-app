@@ -1,0 +1,57 @@
+html,
+body {
+	width: 100%;
+	height: 100%;
+	background: url('../../images/myimages/Exercisebeijing@2x.png');
+	background-size: 100% 100%;
+}
+
+.mui-content {
+	height: 100%;
+	background-color: transparent;
+}
+
+.mui-content ul {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.mui-content ul li {
+	width: 100%;
+	padding: 4% 0 0 0;
+	text-align: center;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	display: table;
+}
+
+.mui-content ul li a {
+	width: 100%;
+	height: 100%;
+	display: block;
+	color: white;
+	font-size: 1em;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.mui-content ul li:nth-child(1) a {
+	background: url('../../images/myimages/Course5@2x.png') no-repeat;
+	background-size: 100% 100%;
+}
+.mui-content ul li:nth-child(2) a {
+	background: url('../../images/myimages/Course6@2x.png') no-repeat;
+	background-size: 100% 100%;
+}
+.mui-content ul li:nth-child(3) a {
+	background: url('../../images/myimages/Course7@2x.png') no-repeat;
+	background-size: 100% 100%;
+}
+.mui-content ul li:nth-child(4){
+	padding-bottom: 5%;
+}
+.mui-content ul li:nth-child(4) a {
+	background: url('../../images/myimages/Course8@2x.png') no-repeat;
+	background-size: 100% 100%;
+}

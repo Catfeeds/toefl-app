@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/mycss/public.css" rel="stylesheet" />
+		<link href="css/mycss/course-listen.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left orangeColor"></a>
+			<h1 class="mui-title">试听课</h1>
+		</header>
+
+		<div class="mui-content">
+			<ul>
+				<li>
+					<a href="javascript:void(0);" data-class="listen">托福听力试听课程</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);" data-class="speak">托福口语试听课程</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);" data-class="read">托福阅读试听课程</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);" data-class="write">托福写作试听课程</a>
+				</li>
+			</ul>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/myjs/jquery-1.11.1.min.js"></script>
+		<script src="js/myjs/public.js"></script>
+		<script type="text/javascript">
+		   jQuery(function(){
+           jQuery(".mui-content ul li").each(function(){
+               jQuery(this).css("height",jQuery(".mui-content").height()/4);
+           });
+          
+        });
+        //初始化预加载详情页面  
+			mui.init({  
+			  preloadPages:[{   
+			    id:"course-lis-detail.html",
+			    url:'course-lis-detail.html'             
+			  }  
+			  ]  
+			});  
+			var detailPage = null;  
+			//添加列表项的点击事件  
+			mui('.mui-content ul li').on('tap', 'a', function(e) {  
+			  var id = this.getAttribute('data-class');  
+			  //获得详情页面  
+			  if(!detailPage){  
+			    detailPage = plus.webview.getWebviewById('course-lis-detail.html');  
+			  }  
+			  //触发详情页面的newsId事件  
+			  mui.fire(detailPage,'newsId',{  
+			    id:id  
+			  });  
+			//打开详情页面            
+			  mui.openWindow({  
+			    id:'course-lis-detail.html'  
+			  });  
+			});  
+		</script>
+	</body>
+
+</html>

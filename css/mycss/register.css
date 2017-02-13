@@ -1,0 +1,35 @@
+.mui-bar{
+	background-color: black;
+
+}
+.mui-title{
+		color: white;
+}
+.reg-group{
+	width: 90%;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+.reg-group ul li input{
+	width: 100%;
+	font-family: "微软雅黑";
+	font-size: 0.9em;
+}
+#sub_reg{
+	width: 100%;
+	height: 40px;
+	background-color: #FF6600;
+}
+.reg-group ul li.font{
+	text-align: center;
+	font-size: 0.8em;
+	margin-top: 10px;
+}
+.reg-group ul li.font a{
+	color: #FF6600;
+}
+input[type=color], input[type=date], input[type=datetime-local], input[type=datetime], input[type=email], input[type=month], input[type=number], input[type=password], 
+input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], select, textarea{
+	margin-bottom: 0;
+}
+

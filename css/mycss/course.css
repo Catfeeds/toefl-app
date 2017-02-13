@@ -1,0 +1,40 @@
+
+html,body,.mui-content {
+  height: 100%;
+}
+.mui-content ul li{
+   width: 100%;
+   text-align: center;
+   display: table;
+}
+.mui-content ul li a{
+  width: 100%;
+  height: 100%;
+  display: block;
+  display: table-cell;
+  vertical-align: middle;
+}
+.mui-content ul li img{
+  height: 40px;
+}
+.mui-content ul li p{
+  color: white;
+  font-size: 1em;
+  margin-top: 10px;
+}
+.mui-content ul li:first-child{
+  background: url("../../images/myimages/Course1@2x.jpg") no-repeat;
+  background-size: 100% 100%;
+}
+.mui-content ul li:nth-child(2){
+  background: url("../../images/myimages/Course2@2x.jpg") no-repeat;
+  background-size: 100% 100%;
+}
+.mui-content ul li:nth-child(3){
+  background: url("../../images/myimages/Course3@2x.jpg") no-repeat;
+  background-size: 100% 100%;
+}
+.mui-content ul li:nth-child(4){
+  background: url("../../images/myimages/Course4@2x.jpg") no-repeat;
+  background-size: 100% 100%;
+}

@@ -1,0 +1,50 @@
+/*底部固定栏样式 */
+.mui-bar{
+		font-family: "微软雅黑";
+		padding: 5px 0;
+}
+.mui-bar-tab .mui-tab-item.mui-active{
+	color: #db8c53;
+}
+.mui-bar-tab .mui-tab-item span{
+	font-size: 0.6em;
+}
+.mui-bar-tab .mui-tab-item .bgCom{
+	width: 20px;
+	height: 20px;
+	margin: 0 auto;
+	display: block;
+}
+.mui-bar-tab .mui-tab-item .bg01{
+	background: url(../../images/myimages/icon1-1@2x.png) no-repeat;
+	background-size: 100% 100%;
+}
+.mui-bar-tab .mui-tab-item.mui-active .bg01{
+	background: url(../../images/myimages/icon1@2x.png) no-repeat;
+	background-size: 100% 100%;
+}
+.mui-bar-tab .mui-tab-item .bg02{
+	background: url(../../images/myimages/icon2-1@2x.png) no-repeat;
+	background-size: 100% 100%;
+}
+.mui-bar-tab .mui-tab-item.mui-active .bg02{
+	background: url(../../images/myimages/icon2@2x.png) no-repeat;
+	background-size: 100% 100%;
+}
+.mui-bar-tab .mui-tab-item .bg03{
+	background: url(../../images/myimages/icon3-1@2x.png) no-repeat;
+	background-size: 100% 100%;
+}
+.mui-bar-tab .mui-tab-item.mui-active .bg03{
+	background: url(../../images/myimages/icon3@2x.png) no-repeat;
+	background-size: 100% 100%;
+}
+.mui-bar-tab .mui-tab-item .bg04{
+	background: url(../../images/myimages/icon4-1@2x.png) no-repeat;
+	background-size: 100% 100%;
+}
+.mui-bar-tab .mui-tab-item.mui-active .bg04{
+	background: url(../../images/myimages/icon4@2x.png) no-repeat;
+	background-size: 100% 100%;
+}
+/*底部固定栏样式 end*/

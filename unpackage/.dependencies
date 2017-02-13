@@ -1,0 +1,213 @@
+{
+  "encyclopedia-bbs-details.html": {
+    "href": "encyclopedia-bbs-details.html",
+    "resources": [],
+    "priority": 1
+  },
+  "encyclopedia-details.html": {
+    "href": "encyclopedia-details.html",
+    "resources": [],
+    "priority": 3
+  },
+  "writeRecord.html": {
+    "href": "writeRecord.html",
+    "resources": [],
+    "priority": 8
+  },
+  "notebook-details.html": {
+    "href": "notebook-details.html",
+    "resources": [],
+    "priority": 9
+  },
+  "notebook.html": {
+    "href": "notebook.html",
+    "resources": [],
+    "refer": [],
+    "priority": 9
+  },
+  "myCourse-details.html": {
+    "href": "myCourse-details.html",
+    "resources": [],
+    "priority": 10
+  },
+  "myCourse.html": {
+    "href": "myCourse.html",
+    "resources": [],
+    "refer": [],
+    "priority": 10
+  },
+  "readRecord.html": {
+    "href": "readRecord.html",
+    "resources": [],
+    "priority": 11
+  },
+  "update-nickname.html": {
+    "href": "update-nickname.html",
+    "resources": [],
+    "refer": [],
+    "priority": 12
+  },
+  "update-phone.html": {
+    "href": "update-phone.html",
+    "resources": [],
+    "priority": 13
+  },
+  "update-email.html": {
+    "href": "update-email.html",
+    "resources": [],
+    "priority": 14
+  },
+  "update-password.html": {
+    "href": "update-password.html",
+    "resources": [],
+    "priority": 15
+  },
+  "feedback.html": {
+    "href": "feedback.html",
+    "resources": [],
+    "priority": 16
+  },
+  "moreSettings.html": {
+    "href": "moreSettings.html",
+    "resources": [],
+    "refer": [],
+    "priority": 12
+  },
+  "speakRecord.html": {
+    "href": "speakRecord.html",
+    "resources": [],
+    "priority": 13
+  },
+  "listenRecord.html": {
+    "href": "listenRecord.html",
+    "resources": [],
+    "priority": 14
+  },
+  "personalCenter.html": {
+    "href": "personalCenter.html",
+    "resources": [],
+    "refer": [],
+    "priority": 7
+  },
+  "course-lis-detail.html": {
+    "href": "course-lis-detail.html",
+    "resources": [],
+    "priority": 8
+  },
+  "course-listen.html": {
+    "href": "course-listen.html",
+    "resources": [],
+    "refer": [],
+    "priority": 8
+  },
+  "course-live-detail.html": {
+    "href": "course-live-detail.html",
+    "resources": [],
+    "priority": 9
+  },
+  "course-live.html": {
+    "href": "course-live.html",
+    "resources": [],
+    "refer": [],
+    "priority": 9
+  },
+  "course-class-detail.html": {
+    "href": "course-class-detail.html",
+    "resources": [],
+    "priority": 10
+  },
+  "course-class.html": {
+    "href": "course-class.html",
+    "resources": [],
+    "refer": [],
+    "priority": 10
+  },
+  "course.html": {
+    "href": "course.html",
+    "resources": [],
+    "refer": [],
+    "priority": 5
+  },
+  "encyclopedia.html": {
+    "href": "encyclopedia.html",
+    "resources": [],
+    "refer": [],
+    "priority": 2
+  },
+  "encyclopedia-bbs.html": {
+    "href": "encyclopedia-bbs.html",
+    "resources": [],
+    "refer": [],
+    "priority": 0
+  },
+  "speaking-practice.html": {
+    "href": "speaking-practice.html",
+    "resources": [],
+    "priority": 12
+  },
+  "speaking-tpoList.html": {
+    "href": "speaking-tpoList.html",
+    "resources": [],
+    "refer": [],
+    "priority": 12
+  },
+  "speaking-goldList.html": {
+    "href": "speaking-goldList.html",
+    "resources": [],
+    "refer": [],
+    "priority": 13
+  },
+  "speaking.html": {
+    "href": "speaking.html",
+    "resources": [],
+    "refer": [],
+    "priority": 11
+  },
+  "writing-result-details.html": {
+    "href": "writing-result-details.html",
+    "resources": [],
+    "priority": 13
+  },
+  "writing-test.html": {
+    "href": "writing-test.html",
+    "resources": [],
+    "refer": [],
+    "priority": 13
+  },
+  "writing-article.html": {
+    "href": "writing-article.html",
+    "resources": [],
+    "refer": [],
+    "priority": 14
+  },
+  "writing-practice.html": {
+    "href": "writing-practice.html",
+    "resources": [],
+    "refer": [],
+    "priority": 13
+  },
+  "writing-tpoList.html": {
+    "href": "writing-tpoList.html",
+    "resources": [],
+    "refer": [],
+    "priority": 13
+  },
+  "writing-independent.html": {
+    "href": "writing-independent.html",
+    "resources": [],
+    "refer": [],
+    "priority": 14
+  },
+  "writing.html": {
+    "href": "writing.html",
+    "resources": [],
+    "refer": [],
+    "priority": 12
+  },
+  "index.html": {
+    "href": "index.html",
+    "resources": [],
+    "refer": [],
+    "priority": 0
+  }
+}

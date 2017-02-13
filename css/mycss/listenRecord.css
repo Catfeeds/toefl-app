@@ -1,0 +1,81 @@
+.l-or-time{
+	text-align: center;
+	line-height: 15px;
+	border: 1px #FF6600 solid;
+	border-radius: 5px;
+	margin-right: 10px;
+}
+.l-or-time p{
+	font-size: 0.6em;
+}
+.r-or-btn{
+	margin-left: 10px;
+	margin-top: 20px;
+}
+.r-or-btn button{
+	font-size: 0.7em;
+	padding: 0;
+}
+.c-or-font{
+	margin-top: 8px;
+}
+.mui-table-view{
+	background-color: transparent;
+}
+.mui-table-view-cell{
+	margin-top: 8px;
+	background-color: white;
+}
+.mui-table-view-cell:after{
+	height: 0;
+}
+
+.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active{
+	color: #FF6600;
+	border-bottom: 2px #FF6600 solid;
+}
+
+/*口语界面样式*/
+.progress_box{
+    width: 100%;
+    height: 3px;
+    background: #CCCCCC;
+    position: relative;
+    margin-top: 8px;
+}
+.progress_bgOut{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.progress_bg{
+    width: 50%;
+    height: 100%;
+    background: #33CC66;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.progress_move{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: white;
+    position: absolute;
+    right: -10px;
+    top: -4px;
+}
+
+.play-icon{
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	background: url('../../images/myimages/userCenter3@2x.png') no-repeat;
+	background-size: 100% 100%;
+}
+.jp-audio.jp-state-playing .play-icon{
+    background: url('../../images/myimages/userCenter31@2x.png') no-repeat;
+    background-size: 100% 100%;
+}

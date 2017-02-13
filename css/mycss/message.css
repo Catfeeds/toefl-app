@@ -1,0 +1,51 @@
+.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active{
+	color: #FF6600;
+	border-bottom: 2px #FF6600 solid;
+}
+.left_time{
+    width: 100%;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 0 0 15px 0;
+}
+.left_time p{
+    color: #f67514;
+    margin: 0;
+}
+.left_time span{
+    color: #acacac;
+}
+
+.essay_title{
+    /*margin-left: 10px;*/
+    font-size: 0.8em;
+    padding: 0 10px 15px 10px;
+    position: relative;
+    border-left: 1px #c4c4c4 solid;  
+}
+.essay_title p{
+    width: 90%;
+    margin: 0 auto;
+    color: black;
+}
+.essay_title p span.red{
+    color: #F23030;
+}
+.essay_title p span.green{
+    color: #33CC66;
+}
+.essay_title b{
+    width: 6px;
+    height: 6px;
+    display: block;
+    border-radius: 50%;
+    background: #fa5d02;
+    position: absolute;
+    left: -3px;
+    top: 0;
+}
+.white-bg{
+	background-color: white;
+	border-radius: 5px;
+}
+

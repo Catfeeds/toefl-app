@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/mycss/validform.css" rel="stylesheet" />
+		<link href="css/mycss/public.css" rel="stylesheet" />
+		<link href="css/mycss/login.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<div class="group-input">
+				<img src="images/myimages/Exercise30@2x.png" alt="关闭图标" id="close-icon" height="15px" />
+				<p class="title">雷哥托福账号登陆</p>
+				<ul>
+					<li>
+						<img src="images/myimages/Mineaccount@2x.png" alt="图标" />
+						<input type="text" placeholder="请输入手机号/用户名/邮箱" datatype="m|/([a-z][0-9]|[A-Z])+/|e" errormsg="手机号/用户名/邮箱格式不正确！" id="username" />
+					</li>
+					<li>
+						<img src="images/myimages/Minepassword@2x.png" alt="图标" />
+						<input type="password" placeholder="请输入密码" datatype="*6-16" errormsg="密码范围在6~16位之间！" id="password" />
+					</li>
+					<li>
+						<button type="button" class="mui-btn mui-btn-warning" id="sub_b">登陆</button>
+					</li>
+					<li>
+						<a href="register.html">立即注册</a>
+						<a href="foundPassword.html">忘记密码?</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<script src="js/mui.min.js"></script>
+		<script src="js/myjs/jquery-1.11.1.min.js"></script>
+		<script src="js/myjs/Validform_v5.3.2_min.js"></script>
+		<script src="js/myjs/public.js"></script>
+		<script src="js/myjs/login.js"></script>
+	</body>
+
+</html>

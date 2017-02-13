@@ -1,0 +1,35 @@
+html,body{
+	width: 100%;
+	height: 100%;
+	background: url("../../images/myimages/Exercise29@2x.png");
+	background-size: 100% 100%;
+}
+.mui-content{
+	width: 100%;
+	height: 100%;
+	background: url("../../images/myimages/Exercise29@2x.png");
+	background-size: 100% 100%;
+}
+.white-box{
+	width: 90%;
+	margin: 0 auto;
+	background-color: rgba(250,250,250,0.2);
+	padding: 40px 0;
+	border-radius: 10px;
+	margin-bottom: 15%;
+	text-align: center;
+}
+.white-box.mt{
+	margin-top: 20%;
+}
+.white-box h3{
+	color: white;
+	font-weight: normal;
+}
+.white-box  p{
+	color: white;
+}
+.white-box button{
+	width: 80px;
+	background-color: #ffcc00;
+}

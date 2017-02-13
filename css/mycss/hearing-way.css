@@ -1,0 +1,27 @@
+.way-con{
+	width: 60%;
+	margin: 0 auto;
+	text-align: center;
+}
+.way-con h2{
+	font-weight: normal;
+	font-size: 1.2em;
+	margin-top: 50px;
+	margin-bottom: 40px;
+}
+.way-con img{
+	width: 20%;
+}
+
+.way-con button{
+	width: 100%;
+	display: block;
+	font-size: 1em;
+	background-color: white;
+}
+.way-con button.first{
+	margin-top: 40px;
+}
+.way-con button.last{
+    margin-top: 20px;
+}

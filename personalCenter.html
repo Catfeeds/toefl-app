@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+			<link href="css/mycss/bottomNav.css" rel="stylesheet" />
+		<link href="css/mycss/public.css" rel="stylesheet" />
+		<link href="css/mycss/personalCenter.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<nav class="mui-bar mui-bar-tab">
+	    <a href="index.html" class="mui-tab-item">
+	        <span class="bgCom bg01"></span>
+	        <span class="mui-tab-label">做题练习</span>
+	    </a>
+	    <!--<a class="mui-tab-item">
+	        <span class="bgCom bg03"></span>
+	        <span class="mui-tab-label">模考</span>
+	    </a>-->
+	    <a href="course.html" class="mui-tab-item">
+	        <span class="bgCom bg02"></span>
+	        <span class="mui-tab-label">在线课程</span>
+	    </a>
+	    <a href="encyclopedia.html" class="mui-tab-item">
+	       <span class="bgCom bg03"></span>
+	        <span class="mui-tab-label">托福圈</span>
+	    </a>
+	    <a href="personalCenter.html" class="mui-tab-item mui-active">
+	        <span class="bgCom bg04"></span>
+	        <span class="mui-tab-label">个人中心</span>
+	    </a>
+	</nav>
+		<div class="mui-content">
+             <div class="userShow">
+             	<div class="userImg">
+        			<div class="user-out-white">
+        				<div class="user-in-white">
+        					<img src="images/myimages/touxiang@2x.png" alt="默认头像"/>   
+        				</div>
+        			</div>         		
+             	</div>
+             	<div class="userName">Emily</div>
+             </div>
+             <div class="all-sort mui-row">
+             	<div class="mui-col-sm-6 mui-col-xs-6" id="listen">
+             		<img src="images/myimages/Mineting@2x.png" alt="图标"/>
+             		<span>听力记录</span>
+             	</div>
+             	<div class="mui-col-sm-6 mui-col-xs-6" id="speak">
+             		<img src="images/myimages/Mineyu@2x.png" alt="图标"/>
+             		<span>口语记录</span>
+             	</div>
+             	<!--<div class="mui-clearfix"></div>-->
+             	<div class="mui-col-sm-6 mui-col-xs-6" id="read">
+             		<img src="images/myimages/Mineyuedu@2x.png" alt="图标"/>
+             		<span>阅读记录</span>
+             	</div>
+             	<div class="mui-col-sm-6 mui-col-xs-6" id="write">
+             		<img src="images/myimages/Minexiezuo@2x.png" alt="图标"/>
+             		<span>写作记录</span>
+             	</div>
+             	<div class="mui-col-sm-6 mui-col-xs-6" id="mycourse">
+             		<img src="images/myimages/Minekecheng@2x.png" alt="图标"/>
+             		<span>我的课程</span>
+             	</div>
+             	<div class="mui-col-sm-6 mui-col-xs-6" id="word">
+             		<img src="images/myimages/Mineshengciben@2x.png" alt="图标"/>
+             		<span>生词本</span>
+             	</div>
+             	<div class="mui-col-sm-6 mui-col-xs-6" id="message">
+             		<img src="images/myimages/Minexiaoxi@2x.png" alt="图标"/>
+             		<span>消息中心</span>
+             	</div>
+             	<div class="mui-col-sm-6 mui-col-xs-6" id="moreSet">
+             		<img src="images/myimages/Minegengduo@2x.png" alt="图标"/>
+             		<span>更多设置</span>
+             	</div>
+             	<div class="mui-clearfix"></div>
+             </div>
+             
+		</div>
+
+		<script src="js/mui.min.js"></script>
+		<script src="js/myjs/jquery-1.11.1.min.js"></script>
+		<script src="js/myjs/public.js"></script>
+		<script type="text/javascript">
+			jQuery(function(){
+				jQuery(".userImg").css("height",jQuery(".userImg").width()+10);
+				jQuery("#listen")[0].addEventListener("tap",function(){
+					mui.openWindow({
+						url:"listenRecord.html"
+					});
+				});
+				jQuery("#speak")[0].addEventListener("tap",function(){
+					mui.openWindow({
+						url:"speakRecord.html"
+					});
+				});
+				jQuery("#read")[0].addEventListener("tap",function(){
+					mui.openWindow({
+						url:"readRecord.html"
+					});
+				});
+				jQuery("#write")[0].addEventListener("tap",function(){
+					mui.openWindow({
+						url:"writeRecord.html"
+					});
+				});
+				jQuery("#mycourse")[0].addEventListener("tap",function(){
+					mui.openWindow({
+						url:"myCourse.html"
+					});
+				});
+				jQuery("#word")[0].addEventListener("tap",function(){
+					mui.openWindow({
+						url:"notebook.html"
+					});
+				});
+				jQuery("#message")[0].addEventListener("tap",function(){
+					mui.openWindow({
+						url:"message.html"
+					});
+				});
+				jQuery("#moreSet")[0].addEventListener("tap",function(){
+					mui.openWindow({
+						url:"moreSettings.html"
+					});
+				});
+			});
+		</script>
+	</body>
+
+</html>

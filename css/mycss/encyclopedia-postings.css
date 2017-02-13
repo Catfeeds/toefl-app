@@ -1,0 +1,76 @@
+html,body,.mui-content{
+	background-color: white;
+}
+.mui-content{
+	padding-bottom: 80px!important;
+}
+.title-input{
+	width: 100%;
+	border-bottom: 1px #E5E5E5 solid;
+}
+.title-input input{
+	width: 100%;
+	border: none;
+	font-family: "微软雅黑";
+	margin: 0;
+	font-size: 0.8em;
+}
+.content-text{
+	width: 100%;
+}
+.content-text textarea{
+	width: 100%;
+	height: 300px;
+	margin: 0;
+	border: none;
+	font-family: "微软雅黑";
+	font-size: 0.8em;
+}
+.img-group{
+	width: 100%;
+}
+.img-group ul{
+	float: left;
+}
+.img-group ul li{
+	width: 80px;
+	height: 80px;
+	float: left;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	position: relative;
+}
+.img-group ul li img{
+	width: 100%;
+	height: 100%;
+}
+.add-icon{
+	width: 80px;
+	height: 80px;
+	background: url('../../images/myimages/bbs-add.png') no-repeat;
+	background-size: 100% 100%;
+	float: left;
+}
+.add-icon input{
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+}
+.bg-nowhite{
+	background-color: white;
+}
+.push-btn{
+	background-color: #999999;border-radius: 20px;border: none;
+}
+.push-btn.on{
+	background-color: #FF6600;
+}
+.closeBlack{
+	background-color: black;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.closeBlack span{
+	color: white;
+}

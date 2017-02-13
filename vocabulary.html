@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/mycss/public.css" rel="stylesheet" />
+		<link href="css/mycss/vocabulary.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<!-- 主界面菜单同时移动 -->
+		<!-- 侧滑导航根容器 -->
+		<div class="mui-off-canvas-wrap mui-draggable">
+			<!-- 主页面容器 -->
+			<div class="mui-inner-wrap">
+				<!-- 菜单容器 -->
+				<!--<aside class="mui-off-canvas-left" id="offCanvasSide">
+                <div class="mui-scroll-wrapper">
+                    <div class="mui-scroll">
+                        <!-- 菜单具体展示内容 
+                        
+                    </div>
+                </div>
+            </aside>-->
+				<!-- 主页面标题 -->
+				<header class="mui-bar mui-bar-nav">
+					<a href="index.html" class="mui-icon mui-icon-arrowleft orangeColor"></a>
+					<h1 class="mui-title">核心词汇</h1>
+				</header>
+
+				<!-- 主页面内容容器 -->
+				<div class="mui-content mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<!-- 主界面具体展示内容 -->
+						<div class="core-con">
+							<h2>听单词，选择正确的翻译</h2>
+							<div class="w-m-word">
+								<div class="word-box">
+									<h4>Money</h4>
+									<div class="out-box">
+										<span style="float: left;">['m^ni]</span>
+										<div id="jquery_jplayer_1" class="jp-jplayer"></div>
+										<div id="jp_container_1" class="jp-audio" style="float: left;">
+											<button class="jp-play" style="border: none;position: relative;top: -5px;left: -10px;background-color: transparent;">
+                   	    	  	<img src="images/myimages/ExerciseToday14@2x.png" alt="图标" height="18px"/></button>
+										</div>
+										<div class="mui-clearfix"></div>
+									</div>
+								</div>
+								<!--选择正确跳转到下一题，选择错误跳转到单词意译-->
+								<div class="choose-ul">
+									<ul>
+										<li class="green">
+											A.面粉可作为早期钱币
+										</li>
+										<li class="red">
+											B.面粉可作为早期钱币
+										</li>
+										<li>
+											C.面粉可作为早期钱币
+										</li>
+										<li>
+											D.面粉可作为早期钱币
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--<div class="mui-off-canvas-backdrop"></div>-->
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/myjs/jquery-1.11.1.min.js"></script>
+		<script src="js/myjs/jquery.jplayer.min.js"></script>
+		<script src="js/myjs/public.js"></script>
+		<script type="text/javascript">
+			jQuery(function() {
+				jQuery("#jquery_jplayer_1").jPlayer({
+					ready: function(event) {
+						$(this).jPlayer("setMedia", {
+							m4a: "",
+							mp3: "audio.mp3"
+						});
+					},
+					swfPath: "../../js",
+					supplied: "m4a, oga,mp3",
+					wmode: "window",
+					useStateClassSkin: true,
+					toggleDuration: true
+				});
+				jQuery(".choose-ul ul li")[0].addEventListener("tap", function() {
+					location.href = "vocab-word.html";
+				});
+
+			});
+		</script>
+	</body>
+
+</html>

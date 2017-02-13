@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/mycss/circle.player.css">
+		<link href="css/mycss/public.css" rel="stylesheet" />
+		<link href="css/mycss/hearing-practice.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a href="hearing-way.html" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left orangeColor"></a>
+			<h1 class="mui-title">TPO 01-C1做题</h1>
+		</header>
+		<nav class="mui-bar mui-bar-tab bg-nowhite">
+			<a href="hearing-pra-test.html"><button type="button" class="mui-btn mui-btn-warning orangeBg">开始做题</button></a>
+		</nav>
+		<div class="mui-content">
+			<div class="white-con">
+				<h2>请认真听完录音后开始答题</h2>
+				<p>Find articles in the library</p>
+				<div class="audio-box">
+					<!-- The jPlayer div must not be hidden. Keep it at the root of the body element to avoid any such problems. -->
+					<div id="jquery_jplayer_1" class="cp-jplayer"></div>
+
+					<!-- The container for the interface can go where you want to display it. Show and hide it as you need. -->
+
+					<div id="cp_container_1" class="cp-container">
+						<div class="cp-buffer-holder">
+							<!-- .cp-gt50 only needed when buffer is > than 50% -->
+							<div class="cp-buffer-1"></div>
+							<div class="cpsimpleSentence-buffer-2"></div>
+						</div>
+						<div class="cp-progress-holder">
+							<!-- .cp-gt50 only needed when progress is > than 50% -->
+							<div class="cp-progress-1"></div>
+							<div class="cp-progress-2"></div>
+						</div>
+						<div class="cp-circle-control"></div>
+						<ul class="cp-controls">
+							<li><button class="cp-play" tabindex="1" style="border: none;width: 50px;height: 50px;"></button></li>
+							<li><button class="cp-pause" style="display:none;border: none;width: 50px;height: 50px;" tabindex="1"></button></li>
+							<!-- Needs the inline style here, or jQuery.show() uses display:inline instead of display:block -->
+						</ul>
+					</div>
+					<p style="margin-top: 10px;">
+						<span class="jp-current-time" role="timer" aria-label="time">00:00</span>/<span class="jp-duration" role="timer" aria-label="duration">00:00</span>
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<script src="js/mui.min.js"></script>
+		<script src="js/myjs/jquery-1.11.1.min.js"></script>
+		<script src="js/myjs/public.js"></script>
+		<script type="text/javascript" src="js/myjs/jquery.jplayer.min.js"></script>
+		<script type="text/javascript" src="js/myjs/jquery.transform2d.js"></script>
+		<script type="text/javascript" src="js/myjs/jquery.grab.js"></script>
+		<script type="text/javascript" src="js/myjs/mod.csstransforms.min.js"></script>
+		<script type="text/javascript" src="js/myjs/circle.player.js"></script>
+		<script type="text/javascript">
+			//<![CDATA[
+
+			$(document).ready(function() {
+
+				var myCirclePlayer = new CirclePlayer("#jquery_jplayer_1", {
+					mp3:"audio.mp3",
+					m4a: "",
+					oga: ""
+				}, {
+					cssSelectorAncestor: "#cp_container_1",
+					swfPath: "js/myjs",
+					wmode: "window",
+					keyEnabled: true,
+					supplied: "m4a, oga,mp3",
+					timeupdate: function(event) {
+						$(".jp-current-time").html($.jPlayer.convertTime(event.jPlayer.status.currentTime)) //获得当前时间
+						$(".jp-duration").html($.jPlayer.convertTime(event.jPlayer.status.duration)) //获得当前时间
+					}
+				});
+				//	为了小时能正常显示
+				$.jPlayer.timeFormatshowHour = true;
+			});
+			//]]>
+		</script>
+	</body>
+
+</html>

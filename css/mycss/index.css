@@ -1,0 +1,125 @@
+
+.mui-content{
+	width: 100%;
+	height: 100%;
+	background: url(../../images/myimages/index_bg.jpg) no-repeat;
+	background-size: 100% 100%;
+	font-family: "微软雅黑";
+}
+.three-bu{
+	width: 80%;
+	margin: 0 auto;
+}
+.l-three{
+	width: 30%;
+	float: left;
+	text-align: center;
+	margin-top: 15%;
+}
+.l-three h2{
+	font-size: 1.5em;
+	color: white;
+	font-weight: normal;
+}
+.l-three h2 b{
+	color: #d8d3d7;
+	font-size: 0.5em;
+}
+.l-three p{
+	font-size: 0.8em;
+}
+.c-three{
+	width: 40%;
+	float: left;
+}
+.c-t-head{
+	width: 70%;
+	margin: 0 auto;
+	border-radius: 50%;
+	overflow: hidden;
+	margin-top: 30%;
+}
+.c-t-head img{
+	width: 100%;
+}
+
+
+.mui-table-view{
+	width: 95%;
+	margin: 0 auto;
+	margin-top: 7%;
+	border-radius: 5px;
+	background-color:rgba(255,255,255,0.4);
+}
+
+/*点击变蓝色高亮*/
+.mui-table-view-cell>a:not(.mui-btn).mui-active{
+	background-color:rgba(255,255,255,0.4);
+}
+.mui-table-view-cell.mui-active{
+	background-color:rgba(255,255,255,0.4);
+}
+.mui-table-view li:first-child img{
+	height: 40px;
+	vertical-align: middle;
+}
+.mui-table-view b{
+	font-size: 1.2em;
+	color: #f4efec;
+	font-weight: normal;
+}
+.mui-table-view h4{
+	font-weight: normal;
+	color: white;
+	font-size: 1em;
+}
+.mui-table-view p{
+	color: #c0bebf;
+	font-size: 0.8em;
+}
+.mui-badge-primary{
+	background: none;
+	font-size: 1em;
+}
+.mui-badge-primary b{
+	color: #ffb93f;
+	font-size: 1em;
+}
+.mui-badge-success{
+	background: none;
+	font-size: 1em;
+}
+
+.succes-m{
+	background: none;
+}
+.succes-m img{
+	height: 25px;
+}
+.bot-bar{
+	width: 100%;
+	margin-top: 5%;
+}
+.bot-bar ul{
+	margin: 0;
+	padding: 0;
+}
+.bot-bar ul li{
+	width: 25%;
+	float: left;
+	list-style: none;
+}
+.bot-bar ul li a{
+	display: block;
+	width: 100%;
+	text-align: center;
+	color: white;
+}
+.bot-bar ul li a img{
+	height: 45px;
+}
+.bot-bar ul li a p{
+	margin-top: 5px;
+	color: white;
+	font-size: 1em;
+}

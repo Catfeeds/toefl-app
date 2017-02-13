@@ -1,0 +1,55 @@
+html,body,.mui-content{
+	background-color:white;
+}
+header{
+	border-bottom: none!important;
+}
+.mui-content>.mui-table-view:first-child{
+	margin-top: 5px;
+}
+.mui-media-body{
+	width: 75%;
+}
+.mui-table-view-cell{
+	position: relative;
+}
+.mui-table-view-cell a.rj{
+	display: block;
+	position: absolute;
+	top: 25px;;
+	right: 10px;
+}
+.mui-table-view-cell a.rj img{
+	height: 18px;
+}
+.mui-media-object{
+	width: 100%;
+	color: #FF6600;
+	text-align: center;
+	text-align: center;
+	border-radius: 50%;
+	border: 1px #FF6600 solid;
+}
+
+/*独立话题 多 样式*/
+header{
+	border-bottom: none!important;
+}
+.slideBd{
+	background-color: white;
+}
+.slideBd ul li{
+	width: 25%;
+	float: left;
+	text-align: center;
+	padding: 10px 0 5px 0;
+}
+.slideBd ul li a{
+	color: #333333;
+}
+.slideBd ul li.on{
+	border-bottom: 2px #FF6600 solid;
+}
+.slideBd ul li.on a{
+	color: #FF6600;
+}

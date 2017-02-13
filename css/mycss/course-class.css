@@ -1,0 +1,14 @@
+.subscribe{
+	height: 23px;
+	padding: 0 15px;
+	float: right;
+}
+.custom-line{
+	width: 100%;
+	border-bottom: 1px #E5E5E5 solid;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.mui-table-view{
+	margin-bottom: 10px;
+}

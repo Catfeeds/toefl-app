@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/mycss/public.css" rel="stylesheet" />
+		<link href="css/mycss/writing-practice.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left orangeColor"></a>
+			<h1 class="mui-title">TPO 01</h1>
+		</header>
+		<nav class="mui-bar mui-bar-tab bg-nowhite">
+			<button type="button" class="mui-btn mui-btn-warning orangeBg" id="start-write">开始写作</button>
+		</nav>
+		<div class="mui-content">
+			<div class="practice_box">
+
+				<!--阅读材料-->
+				<div class="readingMaterial">
+					<h4>阅读全文</h4>
+					<a href="javascript:void(0);" id="seeAll">查看全文</a>
+					<div>
+						In many organizations, perhaps the best way to approach certain new projects is to assemble a group of people into a team. Having a team of people attack a project offers several advantages. First of all, a group of people has a wider range of knowledge， expertise, and skills than any single individual is likely to possess. Also, because of the
+
+					</div>
+				</div>
+				<!--听力材料-->
+				<div class="listenMaterial">
+					<h4>听力原文</h4>
+					<a href="javascript:void(0);" id="seeArt">查看原文</a>
+					<div id="jquery_jplayer_1" class="jp-jplayer"></div>
+					<div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
+						<div class="out-grey">
+							<div class="l-play jp-play"></div>
+							<div class="center-progress">
+								<div class="progress_box jp-progress">
+									<div class="progress_bgOut jp-seek-bar">
+										<div class="progress_bg jp-play-bar">
+											<div class="progress_move"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="right-span">
+								<span class="jp-duration" role="timer" aria-label="duration">00:00</span>
+							</div>
+						</div>
+					</div>
+					<div class="original_art">
+						In many organizations, perhaps the best way to approach certain new projects is to assemble a group of people into a team. Having a team of people attack a project offers several advantages. First of all, a group of people has a wider range of knowledge，expertise, and skills than any single individual is likely to possess. Also, because of the numbers of people involved and the greater resources they possess, a group can work more quickly in response to the
+					</div>
+
+				</div>
+				<!--问题材料-->
+				<div class="quesMaterial">
+					<h4>问题</h4>
+					<p>Summarise the points made in the lecture,being sure to explain how they cast doubt on specific points made in the reading passage.</p>
+				</div>
+
+			</div>
+
+		</div>
+
+		<script src="js/mui.min.js"></script>
+		<script src="js/myjs/jquery-1.11.1.min.js"></script>
+		<script src="js/myjs/jquery.jplayer.min.js"></script>
+		<script src="js/myjs/public.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				jQuery("#jquery_jplayer_1").jPlayer({
+					ready: function(event) {
+						$(this).jPlayer("setMedia", {
+							m4a: "",
+							mp3: "audio.mp3"
+						});
+					},
+					swfPath: "../../js",
+					supplied: "m4a, oga,mp3",
+					wmode: "window",
+					useStateClassSkin: true,
+					toggleDuration: true,
+					timeupdate: function(event) {
+						//          playCurrent=event.jPlayer.status.currentTime;//获得当前时间
+						//          playDuration=event.jPlayer.status.duration;//获得当前时间
+					}
+				});
+
+				//		$(id).data("jPlayer").status.currentTime;
+				$(".mui-control-item").each(function() {
+					$(this).find("span").css("width", $(this).height());
+				});
+
+			});
+			jQuery("#seeAll")[0].addEventListener("tap", function() {
+				mui.openWindow({
+					url: "writing-article.html"
+				})
+			});
+			jQuery("#seeArt")[0].addEventListener("tap", function() {
+				mui.openWindow({
+					url: "writing-article.html"
+				})
+			});
+
+			jQuery("#start-write")[0].addEventListener("tap", function() {
+				mui.openWindow({
+					url: "writing-test.html"
+				})
+			});
+		</script>
+	</body>
+
+</html>

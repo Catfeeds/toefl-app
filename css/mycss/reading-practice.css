@@ -1,0 +1,140 @@
+.first-card {
+	box-shadow: none;
+}
+
+.first-card .mui-card-header {
+	color: #FF6600;
+}
+
+.first-card a {
+	color: #FF6600;
+	font-size: 0.9em;
+}
+
+.article-tpo {
+	width: 90%;
+	margin: 0 auto;
+	font-size: 0.8em;
+	height: 150px;
+	overflow: auto;
+}
+
+.mui-card.option {
+	box-shadow: none;
+}
+
+.mui-card.option .mui-card-header {
+	font-size: 0.8em;
+}
+
+.mui-card.option .mui-table-view-cell>a:not(.mui-btn) {
+	white-space: normal;
+}
+
+.mui-card.option .mui-table-view .mui-media-body {
+	font-size: 0.8em;
+	overflow: auto;
+}
+
+.mui-media-object {
+	width: 23px;
+	height: 23px!important;
+	line-height: 23px!important;
+	text-align: center;
+	background-color: #a4a4a4;
+	color: white;
+	border-radius: 50%;
+}
+
+.li-orange .mui-media-object {
+	background-color: #ff6000;
+}
+
+.li-grey .mui-media-body {
+	color: #aeaeae;
+}
+
+.li-green .mui-media-body {
+	color: #2acc5d;
+}
+
+.li-green .mui-media-object {
+	background-color: #2acc5d;
+}
+
+.li-red .mui-media-body {
+	color: #ea2c16;
+}
+
+.li-red .mui-media-object {
+	background-color: #ea2c16;
+}
+
+.bg-nowhite {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.bg-nowhite button:first-child {
+	width: 48%;
+	float: left;
+	background-color: #33CC66;
+}
+
+.bg-nowhite button:last-child {
+	width: 48%;
+	float: right;
+	background-color: #FF6600;
+}
+
+.jiexi {
+	width: 90%;
+	margin: 0 auto;
+}
+
+
+/*阅读结果详情页*/
+
+.slideBd {
+	padding: 5px 0!important;
+	background-color: white;
+}
+
+.slideBd ul:after {
+	display: block;
+	clear: both;
+	content: "";
+	visibility: hidden;
+	height: 0;
+}
+
+.slideBd ul li {
+	width: 14.2%;
+	text-align: center;
+	float: left;
+}
+
+.slideBd ul li a {
+	width: 60%;
+	margin: 0 auto;
+	display: block;
+	border-radius: 50%;
+}
+
+.slideBd ul li.red a {
+	color: #F23030;
+}
+
+.slideBd ul li.green a {
+	color: #33CC66;
+}
+
+.slideBd ul li.redOn a {
+	color: white;
+	background-color: #F23030;
+}
+
+.slideBd ul li.greenOn a {
+	color: white;
+	background-color: #33CC66;
+}

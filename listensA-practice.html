@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/mycss/public.css" rel="stylesheet" />
+		<link href="css/mycss/listensA-practice.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<!-- 主界面菜单同时移动 -->
+		<!-- 侧滑导航根容器 -->
+		<div class="mui-off-canvas-wrap mui-draggable">
+			<!-- 主页面容器 -->
+			<div class="mui-inner-wrap">
+				<!-- 菜单容器 -->
+				<!--<aside class="mui-off-canvas-left" id="offCanvasSide">
+                <div class="mui-scroll-wrapper">
+                    <div class="mui-scroll">
+                        <!-- 菜单具体展示内容
+                        
+                    </div>
+                </div>
+            </aside>-->
+				<!-- 主页面标题 -->
+				<header class="mui-bar mui-bar-nav">
+					<a href="listensArticles.html" class="mui-icon mui-icon-arrowleft orangeColor"></a>
+					<h1 class="mui-title">精听文章(1/5)</h1>
+				</header>
+				<nav class="mui-bar mui-bar-tab bg-nowhite">
+					<button type="button" class="mui-btn mui-btn-warning orangeBg">提交答案</button>
+					<!--<a href="#"><button type="button" class="mui-btn mui-btn-warning orangeBg">下一题</button></a>-->
+				</nav>
+				<!-- 主页面内容容器 -->
+				<div class="mui-content mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<!-- 主界面具体展示内容 -->
+
+						<div class="top-font">听句子，选择正确的翻译</div>
+						<div class="two-w-word">
+							<div class="t-h-o orangeColor">
+								<span style="float: left;">点击播放句子</span>
+								<div id="jquery_jplayer_1" class="jp-jplayer"></div>
+								<div id="jp_container_1" class="jp-audio" style="float: left;">
+									<button class="jp-play" style="border: none;position: relative;top: -5px;left: -5px;background-color: transparent;">
+                   	    	  	<img src="images/myimages/ExerciseToday14@2x.png" alt="图标" height="18px"/></button>
+								</div>
+							</div>
+							<div class="mui-clearfix"></div>
+							<!--点击提交答案之后就去掉下面文字模糊的class-->
+							<h4 class="tranp">Early Money Is Like Yeast</h4>
+						</div>
+						<div class="three-w-con">
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell">这句话的意思是</li>
+								<li class="mui-table-view-cell green">A.面粉可作为早期钱币</li>
+								<li class="mui-table-view-cell red">A.面粉可作为早期钱币</li>
+								<li class="mui-table-view-cell orange">A.面粉可作为早期钱币</li>
+								<li class="mui-table-view-cell">A.面粉可作为早期钱币</li>
+							</ul>
+						</div>
+
+					</div>
+				</div>
+				<!--任务通过，题目做完之后显示下面弹窗-->
+				<div class="mui-backdrop">
+					<div class="in-div">
+						<img src="images/myimages/ExerciseToday15@2x.png" alt="img" />
+						<a href="index.html"><button type="button" class="mui-btn mui-btn-success">确定</button></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/myjs/jquery-1.11.1.min.js"></script>
+		<script src="js/myjs/jquery.jplayer.min.js"></script>
+		<script src="js/myjs/public.js"></script>
+		<script type="text/javascript">
+			jQuery(function() {
+				jQuery("#jquery_jplayer_1").jPlayer({
+					ready: function(event) {
+						$(this).jPlayer("setMedia", {
+							m4a: "",
+							mp3: "audio.mp3"
+						});
+					},
+					swfPath: "../../js",
+					supplied: "m4a, oga,mp3",
+					wmode: "window",
+					useStateClassSkin: true,
+					toggleDuration: true
+				});
+			});
+		</script>
+	</body>
+
+</html>

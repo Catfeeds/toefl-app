@@ -1,0 +1,12 @@
+.white-con{
+	width: 90%;
+	margin: 0 auto;
+	margin-top: 15px;
+	padding: 40px 0 50px 0;
+	text-align: center;
+	background-color: white;
+}
+.white-con h2{
+	font-weight: normal;
+	font-size: 1em;
+}

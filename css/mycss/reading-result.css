@@ -1,0 +1,104 @@
+html,body,.mui-content{
+	background-color: white;
+}
+.resultCon{
+    width: 100%;
+    margin-top: 30px;
+}
+.resultCon .col-xs-3{
+    text-align: center;
+    margin-top: 15%;
+    word-wrap: break-word;
+}
+
+.resultCon .col-xs-3 h4{
+    color: #4d4d4d;
+    font-size: 1.5em;
+    font-weight: normal;
+}
+.resultCon .col-xs-3 p{
+    color: #4d4d4d;
+    font-size: 0.8em;
+}
+.centerData{
+    width: 100%;
+    text-align: center;
+    background: url("../../images/myimages/result_greenbg.png") no-repeat;
+    background-size: 100% 100%;
+    padding-top: 8%;
+}
+.centerData h2{
+    font-size: 2.5em;
+    color: #0abd60;
+    margin-top: 5%;
+}
+.centerData span{
+    color: #0abd60;
+    font-size: 0.8em;
+}
+.centerData p{
+    color: white;
+    margin-top: 18%;
+}
+.greyBtn{
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+}
+.greyBtn button#seeDetail{
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.greyBtn button{
+    width: 50%;
+    background: #e6e6e6;
+    color: #666666;
+    border-radius: 5px;
+    font-size: 0.9em;
+    padding: 10px 0;
+    border: none;
+}
+
+.mui-popover-arrow.mui-bottom{
+	display: none;
+}
+.mui-card-header{
+	text-align: center;
+	color: white;
+	background: #F23030;
+}
+
+.mui-card{
+	margin: 0;
+	border-radius: 8px;
+}
+.mui-card-header div{
+	width: 100%;
+	text-align: center;
+}
+.mui-card-header div img{
+	height: 22px;
+	vertical-align: middle;
+	margin-right: 3px;
+}
+.mui-card-content{
+	text-align: center;
+	padding: 20px 0 5px 0;
+}
+.mui-card-footer:before, .mui-card-header:after{
+	background-color: white;
+}
+.mui-card-footer div{
+	width: 90%;
+	margin: 0 auto;
+	text-align: center;
+}
+.mui-card-footer div button{
+	width: 47%;
+}
+.mui-card-footer div button:first-child{
+	float: left;
+}
+.mui-card-footer div button:last-child{
+	float: right;
+}

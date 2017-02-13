@@ -1,0 +1,148 @@
+html,body,.mui-content{
+	background-color: white;
+}
+.cou-c-t{
+	width: 100%;
+	background: url('../../images/myimages/Course36@2x.png');
+	background-size: 100% 100%;
+	padding: 15px 0;
+}
+.tea-img{
+	width: 80%;
+	margin: 0 auto;
+	border-radius: 50%;
+	overflow: hidden;
+	border: 5px #83b0da solid;
+}
+.tea-img img{
+	width: 100%;
+}
+.cou-c-t h2{
+	color: white;
+	font-weight: normal;
+	font-size: 1em;
+	border-bottom: 1px white solid;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+}
+
+.cou-c-t ul li{
+	width: 49%;
+	float: left;
+	color: white;
+	font-size: 0.7em;
+	margin-right:2%;
+}
+.cou-c-t ul li:nth-child(even){
+	margin-right: 0;
+}
+.grey-title{
+	width: 100%;
+	padding: 10px 0;
+	background-color: #E5E5E5;
+	padding-left: 5%;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+.jian-con{
+	width: 90%;
+	margin: 0 auto;
+	padding: 10px 0;
+}
+.zhujiang-con{
+	width: 100%;
+/*	margin: 0 auto;*/
+}
+.orange-piece{
+	width: 90%;
+	margin: 0 auto;
+	background-color: #ffefe5;
+	border-radius: 5px;
+	padding: 10px 0;
+	font-size: 0.8em;
+	color: #ff6600;
+	text-align: center;
+	margin-top: 10px;
+}
+.bg-nowhite{
+	background-color: white;
+}
+.bg-nowhite button{
+	width: 100%;
+	border-radius: 0;
+	padding: 10px 0 15px 0!important;
+}
+.mui-bar-tab{
+	height: auto;
+}
+.mui-popover-arrow.mui-bottom{
+	display: none;
+}
+#popover{
+	top: 0!important;
+}
+.mui-popover{
+	width: 100%;
+}
+.white-line{
+	width: 2px;
+	height: 150px;
+	background-color: white;
+	position: absolute;
+	top: 0;
+	left: 51%;
+	margin-left: -1px;
+	z-index: 2;
+}
+.white-con{
+	width: 86%;
+	background-color: white;
+	position: absolute;
+	top: 130px;
+	left: 50%;
+	margin-left: -42%;
+	z-index: 1;
+	border-radius: 10px;
+	padding: 5px 10px 20px 10px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+.center-black-d{
+	width: 20px;
+	height: 20px;
+	margin: 0 auto;
+	border-radius: 50%;
+	background-color: #646464;
+}
+#close-img{
+	height: 15px;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
+.white-con ul{
+	margin-top: 20px;
+}
+.white-con ul li:first-child{
+	margin-bottom: 15px;
+}
+.white-con ul li b{
+	color: red;
+	vertical-align: middle;
+}
+.white-con ul li input{
+	width: 100%;
+	display: block;
+	background-color: #E5E5E5;
+	font-family: "微软雅黑"
+	border: 1px #EEEEEE solid;
+}
+.white-con p{
+	color: red;
+}
+.white-con button{
+	width: 100%;
+	background-color: #0abd61;
+}

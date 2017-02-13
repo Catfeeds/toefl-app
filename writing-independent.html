@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/mycss/public.css" rel="stylesheet" />
+		<link href="css/mycss/reading-ogList.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left orangeColor"></a>
+			<h1 class="mui-title">独立话题练习</h1>
+		</header>
+		<div class="mui-content">
+			<div class="pop-slide" id="slidePop">
+				<div class="slideBd bd">
+					<ul>
+						<li>
+							<a href="#">01-20</a>
+						</li>
+						<li class="on">
+							<a href="#">21-40</a>
+						</li>
+						<li>
+							<a href="#">41-60</a>
+						</li>
+						<li>
+							<a href="#">61-80</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href="#">81-100</a>
+						</li>
+						<li>
+							<a href="#">101-120</a>
+						</li>
+						<li class="on">
+							<a href="#">121-140</a>
+						</li>
+						<li>
+							<a href="#">141-160</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href="#">161-180</a>
+						</li>
+						<li>
+							<a href="#">181-200</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<div class="mui-media-object mui-pull-left">01</div>
+						<div class="mui-media-body">
+							Feeding Habits of East African
+							<p class='mui-ellipsis'>116人练习</p>
+						</div>
+						<a href="#" class="rj"><img src="images/myimages/Exercise7@2x.png" alt="箭头" /></a>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<div class="mui-media-object mui-pull-left">02</div>
+						<div class="mui-media-body">
+							Feeding Habits of East African
+							<p class='mui-ellipsis'>116人练习</p>
+						</div>
+						<a href="#" class="rj"><img src="images/myimages/Exercise7@2x.png" alt="箭头" /></a>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<div class="mui-media-object mui-pull-left">01</div>
+						<div class="mui-media-body">
+							Feeding Habits of East African
+							<p class='mui-ellipsis'>116人练习</p>
+						</div>
+						<a href="#" class="rj"><img src="images/myimages/Exercise7@2x.png" alt="箭头" /></a>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<div class="mui-media-object mui-pull-left">01</div>
+						<div class="mui-media-body">
+							Feeding Habits of East African
+							<p class='mui-ellipsis'>116人练习</p>
+						</div>
+						<a href="#" class="rj"><img src="images/myimages/Exercise7@2x.png" alt="箭头" /></a>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<div class="mui-media-object mui-pull-left">01</div>
+						<div class="mui-media-body">
+							Feeding Habits of East African
+							<p class='mui-ellipsis'>116人练习</p>
+						</div>
+						<a href="#" class="rj"><img src="images/myimages/Exercise7@2x.png" alt="箭头" /></a>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<div class="mui-media-object mui-pull-left">01</div>
+						<div class="mui-media-body">
+							Feeding Habits of East African
+							<p class='mui-ellipsis'>116人练习</p>
+						</div>
+						<a href="#" class="rj"><img src="images/myimages/Exercise7@2x.png" alt="箭头" /></a>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<div class="mui-media-object mui-pull-left">01</div>
+						<div class="mui-media-body">
+							Feeding Habits of East African
+							<p class='mui-ellipsis'>116人练习</p>
+						</div>
+						<a href="#" class="rj"><img src="images/myimages/Exercise7@2x.png" alt="箭头" /></a>
+					</a>
+				</li>
+			</ul>
+
+		</div>
+
+		<script src="js/mui.min.js"></script>
+		<script src="js/myjs/jquery-1.11.1.min.js"></script>
+		<script src="js/myjs/TouchSlide.1.1.js"></script>
+		<script src="js/myjs/public.js"></script>
+		<script type="text/javascript">
+			jQuery(function() {
+				TouchSlide({
+					slideCell: "#slidePop",
+					effect: "leftLoop"
+				});
+				mui(".mui-table-view").on("tap",".mui-table-view-cell",function(){
+					mui.openWindow({
+						url:"writing-practice.html"
+					})
+				});
+			});
+		</script>
+	</body>
+
+</html>

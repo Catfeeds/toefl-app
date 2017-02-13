@@ -1,0 +1,62 @@
+.mui-content{
+	width: 100%;
+	/*height: 100%;*/
+	background: url(../../images/myimages/Exercisebeijing@2x.png) no-repeat;
+	background-size: 100% 100%;
+}
+.mui-control-item.mui-active{
+	color: orange!important;
+	border-bottom: 2px orange solid!important;
+}
+#segmentedControl{
+	background-color: white;
+}
+.mui-card{
+	box-shadow: none;
+	background-color: rgba(255,255,255,0.6);
+}
+.mui-card-header{
+	color: white;
+	background-color: #ff9934;
+}
+.mui-card-content ul:after{
+	display:block;clear:both;content:"";visibility:hidden;height:0;
+}
+.mui-card-content ul li{
+	width: 20%;
+	float: left;
+	border-left: 1px #dfd7d4 solid;
+	border-bottom: 1px #dfd7d4 solid;
+	text-align: center;
+}
+.mui-card-content ul li:nth-child(5n){
+	border-right:1px #dfd7d4 solid;
+}
+.mui-card-content ul li a{
+	width: 100%;
+	height: 100%;
+	display: block;
+	color: #545253;
+	font-size: 1.2em;
+}
+.mui-card-content ul li:hover a{
+	background-color: #66d765;
+	color: white;
+}
+.mui-table-view{
+	width: 90%;
+	margin: 0 auto;
+	margin-top: 15px;
+	background-color: rgba(255,255,255,0.6);
+}
+
+.mui-table-view-cell{
+	position: relative;
+	padding: 18px 15px;
+}
+.right-j{
+	height: 20px;
+	position: absolute;
+	right: 15px;
+	top: 25px;
+}

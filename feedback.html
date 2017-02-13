@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/mycss/public.css" rel="stylesheet" />
+		<link href="css/mycss/update.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left orangeColor"></a>
+			<h1 class="mui-title">意见反馈</h1>
+		</header>
+		<div class="mui-content">
+			<div class="nickname">
+				<textarea placeholder="请输入你的宝贵意见" style="height: 200px;" id="idea"></textarea>
+				<span class="orangeColor">*</span>
+				<input type="text" placeholder="请输入你的联系方式(邮箱或QQ)" style="width: 94%;" id="way" />
+				<button type="button" class="mui-btn mui-btn-warning orangeBg" id="sure">点击提交</button>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/myjs/jquery-1.11.1.min.js"></script>
+		<script src="js/myjs/public.js"></script>
+		<script type="text/javascript">
+			jQuery(function() {
+
+				jQuery("#sure")[0].addEventListener("tap", function() {
+					var textareaH = jQuery("#idea").val();
+					var inputt = jQuery("#way").val();
+					if(!textareaH || !inputt) {
+						alert("再写点儿吧");
+					}
+				});
+			});
+		</script>
+	</body>
+
+</html>

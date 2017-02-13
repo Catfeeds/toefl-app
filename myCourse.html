@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/mycss/public.css" rel="stylesheet" />
+		<link href="css/mycss/myCourse.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left orangeColor"></a>
+			<h1 class="mui-title">我的课程</h1>
+		</header>
+		<div class="mui-content">
+			<div style="background-color: white;">
+				<div id="segmentedControl" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-primary">
+					<a class="mui-control-item mui-active" href="#item1">
+						全部
+					</a>
+					<a class="mui-control-item" href="#item2">
+						已付款
+					</a>
+					<a class="mui-control-item" href="#item3">
+						未付款
+					</a>
+				</div>
+			</div>
+			<div>
+				<div id="item1" class="mui-control-content mui-active">
+					<div class="mui-row">
+						<div class="mui-col-sm-4 mui-col-xs-4">
+							<img src="images/cbd.jpg" />
+						</div>
+						<div class="mui-col-sm-8 mui-col-xs-8">
+							<h4>GMAT在线机经冲刺班</h4>
+							<p>购买数量：1 实付 <span class="orangeColor">￥2340</span></p>
+							<button type="button" class="mui-btn mui-btn-warning mui-btn-outlined orangeBorder">取消订单</button>
+						</div>
+						<div class="mui-clearfix"></div>
+					</div>
+					<div class="mui-row">
+						<div class="mui-col-sm-4 mui-col-xs-4">
+							<img src="images/cbd.jpg" />
+						</div>
+						<div class="mui-col-sm-8 mui-col-xs-8">
+							<h4>GMAT在线机经冲刺班</h4>
+							<p>购买数量：1 实付 <span class="orangeColor">￥2340</span></p>
+							<button type="button" class="mui-btn mui-btn-warning orangeBg">立即支付</button>
+						</div>
+						<div class="mui-clearfix"></div>
+					</div>
+					<div class="mui-row">
+						<div class="mui-col-sm-4 mui-col-xs-4">
+							<img src="images/cbd.jpg" />
+						</div>
+						<div class="mui-col-sm-8 mui-col-xs-8">
+							<h4>GMAT在线机经冲刺班</h4>
+							<p>购买数量：1 实付 <span class="orangeColor">￥2340</span></p>
+							<button type="button" class="mui-btn mui-btn-warning mui-btn-outlined orangeBorder">取消订单</button>
+						</div>
+						<div class="mui-clearfix"></div>
+					</div>
+					<div class="mui-row">
+						<div class="mui-col-sm-4 mui-col-xs-4">
+							<img src="images/cbd.jpg" />
+						</div>
+						<div class="mui-col-sm-8 mui-col-xs-8">
+							<h4>GMAT在线机经冲刺班</h4>
+							<p>购买数量：1 实付 <span class="orangeColor">￥2340</span></p>
+							<button type="button" class="mui-btn mui-btn-warning mui-btn-outlined orangeBorder">取消订单</button>
+						</div>
+						<div class="mui-clearfix"></div>
+					</div>
+				</div>
+				<div id="item2" class="mui-control-content">
+					<div class="mui-row">
+						<div class="mui-col-sm-4 mui-col-xs-4">
+							<img src="images/cbd.jpg" />
+						</div>
+						<div class="mui-col-sm-8 mui-col-xs-8">
+							<h4>GMAT在线机经冲刺班</h4>
+							<p>购买数量：1 实付 <span class="orangeColor">￥2340</span></p>
+							<button type="button" class="mui-btn mui-btn-warning mui-btn-outlined orangeBorder">取消订单</button>
+						</div>
+						<div class="mui-clearfix"></div>
+					</div>
+				</div>
+				<div id="item3" class="mui-control-content">
+
+				</div>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/myjs/jquery-1.11.1.min.js"></script>
+		<script src="js/myjs/public.js"></script>
+		<script type="text/javascript">
+			jQuery(function() {
+				mui(".mui-control-content").on("tap", ".mui-row", function() {
+					mui.openWindow({
+						url: "myCourse-details.html"
+					})
+				})
+			})
+		</script>
+	</body>
+
+</html>

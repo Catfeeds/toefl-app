@@ -1,0 +1,82 @@
+<!doctype html>
+<html ng-app="myApp">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/mycss/public.css" rel="stylesheet" />
+		<link href="css/mycss/grammar.css" rel="stylesheet" />
+	</head>
+	
+	<body>   
+		<!-- 主界面菜单同时移动 -->
+	    <!-- 侧滑导航根容器 -->
+	    <div class="mui-off-canvas-wrap mui-draggable"  ng-controller="PriceCtrl">
+	        <!-- 主页面容器 -->
+	        <div class="mui-inner-wrap">
+	            <!-- 菜单容器 -->
+	            <!--<aside class="mui-off-canvas-left" id="offCanvasSide">
+	                <div class="mui-scroll-wrapper">
+	                    <div class="mui-scroll">
+	                        <!-- 菜单具体展示内容 
+	                        
+	                    </div>
+	                </div>
+	            </aside>-->
+	            <!-- 主页面标题 -->
+	         <header class="mui-bar mui-bar-nav">
+		      <a href="index.html" class="mui-icon mui-icon-arrowleft orangeColor"></a>
+		      <h1 class="mui-title">语法学习</h1>
+		    </header>		
+		      <nav class="mui-bar mui-bar-tab bg-nowhite">
+				<a href="grammar-practice.html"><button type="button" class="mui-btn mui-btn-warning orangeBg">开始练习</button></a>
+	          </nav>
+	          <div class="mui-backdrop">
+	          	   <div class="know-jj">
+	          	   	    <div class="know-head">
+	          	   	    	<p>知识讲解</p>
+	          	   	    	<a class="mui-icon mui-icon-closeempty" onclick="closeMaskM()"></a>
+	          	   	    </div>
+	          	   	    <div class="know-body">
+	          	   	    	<p>中文解释中文解释中文解释中文解释中文解释中文解释中文解释中文解释
+	          	   	    		中文解释中文解释中文解释中文解释中文解释中文解释中文解释中文解释
+	          	   	    	中文解释</p>
+	          	   	    </div>
+	          	   </div>
+	          </div>
+	            <!-- 主页面内容容器 -->
+	            <div class="mui-content mui-scroll-wrapper">
+	                <div class="mui-scroll">
+	                    <!-- 主界面具体展示内容 -->
+	                    <p class="top-p">语法：主谓宾结构</p>
+						<div class="mui-card">
+							<!--页眉，放置标题-->
+						    <!--<div class="mui-card-header">页眉</div>-->
+							<!--内容区-->
+							<div class="mui-card-content">
+								<img src="images/myimages/yufa_img.png" alt="图片" />
+							</div>
+							<!--页脚，放置补充信息或支持的操作-->
+							<div class="mui-card-footer">
+								<button type="button" class="mui-btn" onclick="showMask()">知识讲解</button>
+							</div>
+					   </div>
+					    
+					    
+	                </div><!--mui-scroll-->
+	            </div>
+	       	 <!--<div class="mui-off-canvas-backdrop"></div>-->
+	        </div>
+	    </div>
+	    
+		
+	<script src="js/mui.min.js"></script>
+	<script src="js/myjs/jquery-1.11.1.min.js"></script>
+	<script src="js/myjs/public.js"></script>
+	<script src="js/myjs/grammar.js"></script>
+	<script src="js/myjs/angular1.3.1.js"></script>
+	</body>
+
+</html>

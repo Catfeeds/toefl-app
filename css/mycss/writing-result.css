@@ -1,0 +1,132 @@
+html,body,.mui-content{
+	background-color: white;
+}
+
+.resultCon{
+    width: 100%;
+    margin-top: 30px;
+}
+.resultCon .col-xs-3{
+    text-align: center;
+    margin-top: 15%;
+    word-wrap: break-word;
+}
+
+.resultCon .col-xs-3 h4{
+    color: #4d4d4d;
+    font-size: 2em;
+}
+.resultCon .col-xs-3 p{
+    color: #4d4d4d;
+    font-size: 1em;
+}
+.border_center{
+    width: 100%;
+    border: 3px #e3e3e3 solid;
+    border-radius: 50%;
+    padding-top: 5%;
+}
+.centerData{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    background: #669aff;
+    background-size: 100% 100%;
+    color: white;
+    border: 3px #e3e3e3 solid;
+    border-radius: 50%;
+    display: table;
+}
+.inCenter{
+    display: table-cell;
+    vertical-align: middle;
+}
+.centerData h2{
+    font-size: 2.5em;
+    margin-top: 6%;
+    margin-bottom: 5px;
+}
+.centerData span{
+    font-size: 1em;
+}
+.centerData p{
+    color: white;
+    margin-top: 25%;
+}
+.greyBtn{
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+}
+.greyBtn button#seeDetail-w{
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+.greyBtn button{
+    width: 50%;
+    background: #e6e6e6;
+    color: #666666;
+    border-radius: 5px;
+    font-size: 1em;
+    padding: 10px 0;
+    border: none;
+}
+
+.blueFont{
+    width: 100%;
+    text-align: center;
+}
+.blueFont h4{
+    color: #444444;
+    font-size: 1.2em;
+    margin-top: 20px;
+    font-weight: normal;
+}
+.blueFont div.fontDiv{
+    color: #8f8f8f;
+    font-size: 1em;
+    margin-top: 15px;
+}
+.mui-popover-arrow.mui-bottom{
+	display: none;
+}
+.mui-card-header{
+	text-align: center;
+	color: white;
+	background: #F23030;
+}
+
+.mui-card{
+	margin: 0;
+	border-radius: 8px;
+}
+.mui-card-header div{
+	width: 100%;
+	text-align: center;
+}
+.mui-card-header div img{
+	height: 22px;
+	vertical-align: middle;
+	margin-right: 3px;
+}
+.mui-card-content{
+	text-align: center;
+	padding: 20px 0 5px 0;
+}
+.mui-card-footer:before, .mui-card-header:after{
+	background-color: white;
+}
+.mui-card-footer div{
+	width: 90%;
+	margin: 0 auto;
+	text-align: center;
+}
+.mui-card-footer div button{
+	width: 47%;
+}
+.mui-card-footer div button:first-child{
+	float: left;
+}
+.mui-card-footer div button:last-child{
+	float: right;
+}

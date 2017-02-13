@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/mycss/validform.css" rel="stylesheet" />
+		<link href="css/mycss/public.css" rel="stylesheet" />
+		<link href="css/mycss/register.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: white;"></a>
+			<h1 class="mui-title">注册</h1>
+		</header>
+
+		<div class="mui-content">
+			<div class="reg-group">
+				<ul>
+					<li>
+						<input type="text" id="reg-phem" placeholder="请输入手机号/邮箱" datatype="m|e" errormsg="手机号/邮箱格式不正确！" />
+					</li>
+
+					<li>
+						<input type="text" id="reg-yzm" placeholder="请输入验证码" style="width: 70%;" datatype="*" errormsg="验证码不能为空！" />
+						<button type="button" class="mui-btn mui-btn-success" style="width: 28%;height: 40px;" id="yzm-btn">验证码</button>
+					</li>
+					<li>
+						<input type="password" id="reg-username" placeholder="请输入用户名" datatype="/([a-z][0-9]|[A-Z])+/" errormsg="必须包含英文字母和数字,字母开头！" />
+					</li>
+					<li>
+						<input type="password" id="reg-password" name="userpassword" placeholder="请输入密码" datatype="*6-16" errormsg="密码范围在6~16位之间（数字+字母）！" />
+					</li>
+					<li>
+						<input type="password" id="reg-repassword" name="userpassword2" placeholder="请确认你的密码" datatype="*" recheck="userpassword" errormsg="您两次输入的密码不一致！" />
+					</li>
+					<li>
+						<button type="button" class="mui-btn mui-btn-warning" id="sub_reg">注册</button>
+
+					</li>
+					<li class="font">
+						<span>已经注册雷哥网在线账号？</span>
+						<a href="login.html">登录</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/myjs/jquery-1.11.1.min.js"></script>
+		<script src="js/myjs/Validform_v5.3.2_min.js"></script>
+		<script src="js/myjs/public.js"></script>
+		<script src="js/myjs/register.js"></script>
+	</body>
+
+</html>

@@ -1,0 +1,21 @@
+.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active{
+	color: #FF6600;
+	border-bottom: 2px #FF6600 solid;
+}
+.mui-row{
+	background-color: white;
+	padding: 15px 0;
+	margin-top: 10px;
+}
+.mui-row .mui-col-sm-4{
+	text-align: center;
+}
+.mui-row .mui-col-sm-4 img{
+	width: 80%;
+}
+.mui-row .mui-col-sm-8 h4{
+	font-weight: normal;
+	font-size: 0.8em;
+	/*margin: 0;*/
+}
+

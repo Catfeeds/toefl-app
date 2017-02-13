@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/mycss/public.css" rel="stylesheet" />
+		<link href="css/mycss/extensive.css" rel="stylesheet" />
+	</head>
+	<body>
+		<!-- 主界面菜单同时移动 -->
+    <!-- 侧滑导航根容器 -->
+    <div class="mui-off-canvas-wrap mui-draggable">
+        <!-- 主页面容器 -->
+        <div class="mui-inner-wrap">
+            <!-- 菜单容器 -->
+            <!--<aside class="mui-off-canvas-left" id="offCanvasSide">
+                <div class="mui-scroll-wrapper">
+                    <div class="mui-scroll">
+                        <!-- 菜单具体展示内容 
+                        
+                    </div>
+                </div>
+            </aside>-->
+            <!-- 主页面标题 -->
+         <header id="header" class="mui-bar mui-bar-transparent" style="background-color: rgba(247, 247, 247, 0);">
+			<a href="index.html" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: white;"></a>
+			<h1 class="mui-title">泛听文章(1/3)</h1>
+		</header>
+            <nav class="mui-bar mui-bar-tab" style="border-top: none;">
+    		     <div id="jquery_jplayer_1" class="jp-jplayer"></div>
+    		     <div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
+    		     	<div class="jp-controls">
+						<button class="jp-play play-icon" role="button" tabindex="0"></button>
+					</div>
+    		     	<!--<div class="play-icon jp-play" onclick="playS()"></div>-->
+		     	     <div class="left-span">
+                         <span class="jp-current-time" role="timer" aria-label="time">00:00</span>
+                     </div>
+                     <div class="center-progress">
+                         <div class="progress_box jp-progress">
+                             <div class="progress_bgOut jp-seek-bar">
+                                 <div class="progress_bg jp-play-bar">
+                                     <div class="progress_move"></div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="right-span">
+                         <span class="jp-duration" role="timer" aria-label="duration">00:00</span>
+                     </div>
+                     <div class="mui-clearfix"></div>
+    		     </div>
+    		       
+    		</nav>
+            <!-- 主页面内容容器 -->
+            <div class="mui-content mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <!-- 主界面具体展示内容 -->
+                    <div class="article">
+                    	<div class="wc-btn"><img src="images/myimages/chinese_icon.png" alt="切换中文图标"/></div>
+                    	<ul>
+	                	  <li data-num="1" data-starttime="0" data-endtime="3" class="on">
+                                 <p>
+                                     Hmmm... well, there're a few things... oh wait... have you checked to
+                                     see if your professor put any material for you to look at on reserve?
+                                 </p>
+                                 <span>中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文
+                                     中文中文中文中文中文中文中文中文中文中文中文中文中文中文中</span>
+                             </li>
+                             <li data-num="2" data-starttime="3" data-endtime="5">
+                                 <p>
+                                     Hmmm... well, there're a few things... oh wait... have you checked to
+                                     see if your professor put any material for you to look at on reserve?
+                                 </p>
+                                 <span>中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文
+                                     中文中文中文中文中文中文中文中文中文中文中文中文中文中文中</span>
+                             </li>
+                             <li data-num="3" data-starttime="5" data-endtime="8">
+                                 <p>
+                                     Hmmm... well, there're a few things... oh wait... have you checked to
+                                     see if your professor put any material for you to look at on reserve?
+                                 </p>
+                                 <span>中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文
+                                     中文中文中文中文中文中文中文中文中文中文中文中文中文中文中</span>
+                             </li>
+                             <li data-num="4" data-starttime="30" data-endtime="40">
+                                 <p>
+                                     Hmmm... well, there're a few things... oh wait... have you checked to
+                                     see if your professor put any material for you to look at on reserve?
+                                 </p>
+                                 <span>中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文
+                                     中文中文中文中文中文中文中文中文中文中文中文中文中文中文中</span>
+                             </li>
+                             <li data-num="5" data-starttime="40" data-endtime="50">
+                                 <p>
+                                     Hmmm... well, there're a few things... oh wait... have you checked to
+                                     see if your professor put any material for you to look at on reserve?
+                                 </p>
+                                 <span>中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文
+                                     中文中文中文中文中文中文中文中文中文中文中文中文中文中文中</span>
+                             </li>
+                                <li data-num="5" data-starttime="50" data-endtime="60">
+                                 <p>
+                                     Hmmm... well, there're a few things... oh wait... have you checked to
+                                     see if your professor put any material for you to look at on reserve?
+                                 </p>
+                                 <span>中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文
+                                     中文中文中文中文中文中文中文中文中文中文中文中文中文中文中</span>
+                             </li>
+                             <li data-num="5" data-starttime="60" data-endtime="70">
+                                 <p>
+                                     Hmmm... well, there're a few things... oh wait... have you checked to
+                                     see if your professor put any material for you to look at on reserve?
+                                 </p>
+                                 <span>中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文
+                                     中文中文中文中文中文中文中文中文中文中文中文中文中文中文中</span>
+                             </li>
+                    	</ul>
+                    </div>
+                </div>
+            </div>
+       	 <!--<div class="mui-off-canvas-backdrop"></div>-->
+        </div>
+    </div>
+    
+	<script src="js/mui.min.js"></script>
+	<script src="js/myjs/jquery-1.11.1.min.js"></script>
+	<script src="js/myjs/jquery.jplayer.min.js"></script>
+	<script src="js/myjs/public.js"></script>
+	<script src="js/myjs/extensive.js"></script>
+	</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/mycss/public.css" rel="stylesheet" />
+		<link href="css/mycss/update.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left orangeColor"></a>
+			<h1 class="mui-title">昵称</h1>
+		</header>
+		<div class="mui-content">
+			<div class="nickname">
+				<input type="text" placeholder="请输入昵称" />
+				<button type="button" class="mui-btn mui-btn-warning orangeBg" id="sure">确定</button>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/myjs/jquery-1.11.1.min.js"></script>
+		<script src="js/myjs/public.js"></script>
+		<script type="text/javascript">
+			jQuery(function() {
+				jQuery("#sure")[0].addEventListener("tap", function() {
+					var nick = jQuery(".nickname input").val();
+					var reg = /^[\u4E00-\u9FA5A-Za-z0-9_]+$/;
+					if(nick) {
+						if(nick.length <= 20 && nick.length >= 6) {
+							if(!reg.test(nick)) {
+								alert("6-20个字符，支持中英文、下划线");
+								return false;
+							} else {
+								location.href="moreSettings.html";
+							}
+						} else {
+							alert("昵称长度为6-20个字符！");
+							return false;
+						}
+					} else {
+						alert("昵称不能为空哦！");
+						return false;
+					}
+				});
+
+			});
+		</script>
+	</body>
+
+</html>

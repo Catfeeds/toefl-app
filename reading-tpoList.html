@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/mycss/public.css" rel="stylesheet" />
+		<link href="css/mycss/reading-tpoList.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left orangeColor"></a>
+			<h1 class="mui-title">TPO阅读练习</h1>
+		</header>
+		<div class="mui-content">
+			<div class="pop-slide" id="slidePop">
+				<div class="slideBd bd">
+					<ul>
+						<li>
+							<a href="#">TPO 01</a>
+						</li>
+						<li class="on">
+							<a href="#">TPO 02</a>
+						</li>
+						<li>
+							<a href="#">TPO 03</a>
+						</li>
+						<li>
+							<a href="#">TPO 04</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href="#">TPO 05</a>
+						</li>
+						<li class="on">
+							<a href="#">TPO 06</a>
+						</li>
+						<li>
+							<a href="#">TPO 07</a>
+						</li>
+						<li>
+							<a href="#">TPO 08</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="tpo-content" id="tpo-content">
+				<ul>
+					<li id="1">
+						<div class="left-img">
+							<a href="#">
+								<img src="images/myimages/reading-tpo.png" alt="tpo" />
+							</a>
+						</div>
+						<div class="right-info">
+							<h2 id="test">Passage1</h2>
+							<p>144人在练习</p>
+							<button type="button" class="mui-btn mui-btn-warning orangeBg">GO</button>
+						</div>
+						<div class="mui-clearfix"></div>
+					</li>
+					<li id="2">
+						<div class="left-img">
+							<a href="#">
+								<img src="images/myimages/reading-tpo.png" alt="tpo" />
+							</a>
+						</div>
+						<div class="right-info">
+							<h2>Passage1</h2>
+							<p>144人在练习</p>
+							<button type="button" class="mui-btn mui-btn-warning orangeBg">GO</button>
+						</div>
+						<div class="mui-clearfix"></div>
+					</li>
+					<li id="3">
+						<div class="left-img">
+							<a href="#">
+								<img src="images/myimages/reading-tpo.png" alt="tpo" />
+							</a>
+						</div>
+						<div class="right-info">
+							<h2>Passage1</h2>
+							<p>144人在练习</p>
+							<button type="button" class="mui-btn mui-btn-warning orangeBg">GO</button>
+						</div>
+						<div class="mui-clearfix"></div>
+					</li>
+					<li>
+						<div class="left-img">
+							<a href="#">
+								<img src="images/myimages/reading-tpo.png" alt="tpo" />
+							</a>
+						</div>
+						<div class="right-info">
+							<h2>Passage1</h2>
+							<p>144人在练习</p>
+							<button type="button" class="mui-btn mui-btn-warning orangeBg">GO</button>
+						</div>
+						<div class="mui-clearfix"></div>
+					</li>
+					<li>
+						<div class="left-img">
+							<a href="#">
+								<img src="images/myimages/reading-tpo.png" alt="tpo" />
+							</a>
+						</div>
+						<div class="right-info">
+							<h2>Passage1</h2>
+							<p>144人在练习</p>
+							<button type="button" class="mui-btn mui-btn-warning orangeBg">GO</button>
+						</div>
+						<div class="mui-clearfix"></div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/myjs/jquery-1.11.1.min.js"></script>
+		<script src="js/myjs/TouchSlide.1.1.js"></script>
+		<script src="js/myjs/public.js"></script>
+		<script src="js/myjs/reading-tpoList.js"></script>
+		<script type="text/javascript">
+			//初始化预加载详情页面
+			mui.init({
+				preloadPages: [{
+					id: 'reading-practice.html',
+					url: 'reading-practice.html'
+				}]
+			});
+
+			var detailPage = null;
+			//添加列表项的点击事件
+			mui('#tpo-content').on('tap', 'li', function(e) {
+				//		  var id = this.getAttribute('id');
+				//获得详情页面
+				//		  if(!detailPage){
+				//		    detailPage = plus.webview.getWebviewById('reading-practice.html');
+				//		  }
+				//		  //触发详情页面的newsId事件
+				//		  mui.fire(detailPage,'newsId',{
+				//		    id:id
+				//		  });
+				//打开详情页面          
+				mui.openWindow({
+					//		    id:'reading-practice.html',注意：传值时只需要这一行，删除下面一行
+					url: 'reading-practice.html'
+				});
+
+			});
+		</script>
+	</body>
+
+</html>

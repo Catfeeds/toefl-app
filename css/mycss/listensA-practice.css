@@ -1,0 +1,64 @@
+.top-font{
+	width: 90%;
+	margin: 0 auto;
+	padding-top: 20px;
+}
+.two-w-word{
+	width: 90%;
+	margin: 0 auto;
+	background-color: white;
+	border-radius: 8px;
+	padding: 15px 20px 30px 20px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	margin-top: 10px;
+}
+.t-h-o img{
+	/*vertical-align: middle;*/
+}
+.two-w-word h4{
+	font-size: 0.8em;
+	font-weight: normal;
+}
+/*文字模糊*/
+.two-w-word h4.tranp{
+	color: transparent;
+	text-shadow: 0px 0px 8px black;
+}
+.three-w-con{
+	width: 90%;
+	margin: 0 auto;
+	background-color: white;
+	border-radius: 8px;
+	margin-top: 15px;
+}
+.three-w-con ul li:not(:first-child){
+	font-size: 0.8em;
+}
+.three-w-con ul li.orange{
+	color: #ff6600;
+}
+.three-w-con ul li.red{
+	color: red;
+	text-decoration: line-through;
+}
+.three-w-con ul li.green{
+	color: green;
+}
+.mui-backdrop{
+	display: none;
+	text-align: center;
+}
+.mui-backdrop img{
+	width: 60%;
+}
+.mui-backdrop button{
+	width: 80%;
+	margin-top: 10%;
+}
+.in-div{
+	position: absolute;
+	top: 50%;
+	margin-top: -50%;
+}

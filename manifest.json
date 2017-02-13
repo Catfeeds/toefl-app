@@ -1,0 +1,2442 @@
+{
+	"@platforms": [
+		"android",
+		"iPhone",
+		"iPad"
+	],
+	"id": "H58E83894",/*必选，应用的标识*/
+	"name": "雷哥托福",/*必选，应用名称*/
+	"version": {
+		"name": "1.0",/*必选，版本名称*/
+		"code": ""
+	},
+	"description": "",/*可选，应用描述信息*/
+	"icons": {
+		"72": "icon.png"
+	},
+	"fullscreen": true,
+	"launch_path": "index.html",/*必选，应用的入口页面，默认为根目录下的index.html；也可以是网络地址，网络地址必须以http://或https://开头*/
+	"developer": {
+		"email": "",/*可选，开发者名称*/
+		"name": "",/*可选，开发者邮箱地址*/
+		"url": ""
+	},
+	"permissions": {
+		"Audio": {},
+		"Camera": {},
+
+		"Events": {
+			"description": "应用扩展事件"
+		},
+
+		"Gallery": {},
+		"Storage": {},
+		"Runtime": {},
+		"XMLHttpRequest": {},
+		"Speech": {},
+		"Zip": {},
+		"Webview": {},
+		"NativeUI": {},
+		"Navigator": {},
+
+		"Uploader": {},
+
+
+
+
+		"Barcode": {},
+		"Contacts": {},
+		"NativeObj": {},
+
+		"Proximity": {},
+
+		"Downloader": {},
+
+		"Orientation": {},
+		"Device": {},
+		"Push": {},
+		"Maps": {},
+		"File": {},
+		"Share": {},
+		"OAuth": {},
+		"Payment": {},
+		"Statistic": {},
+		"Messaging": {},
+		"Invocation": {},
+		"Geolocation": {},
+		"Accelerometer": {}
+	},
+	"plus": {
+		"popGesture": "close",/*设置应用默认侧滑返回关闭Webview窗口，none为无侧滑返回功能，hide为侧滑隐藏Webview窗口。参考ask.dcloud.net.cn/article/102*/
+		"splashscreen": {
+			"autoclose": true,/*如果为true，程序启动的图片可以自动关闭，如果为false，开发者需要手动关闭*/
+			"waiting": false,
+			"delay": "0"
+		},
+		"runmode": "normal",/*两个值，liberate或normal，前者在应用安装时释放资源，后者不需要释放资源*/
+		"signature": "Sk9JTiBVUyBtYWlsdG86aHIyMDEzQGRjbG91ZC5pbw==",/*可选，保留给应用签名，暂不使用*/
+		"distribute": {
+			"debug": "",/*可选，是否为debug模式，可取值：true表示debug模式运行，false表示release模式运行，默认值为false*/
+			"apple": {
+				"appid": "",/*iOS必选，苹果开发网站申请的appid，如com.dheaven.hbuilder*/
+				"mobileprovision": "",/*iOS必选，打包配置文件*/
+				"password": "",/*iOS必选，导入配置文件密码*/
+				"p12": "",/*iOS必选，打包配置文件关联的个人证书*/
+				"devices": "universal",/*iphone，可取值iphone/ipad/universal*/
+				"frameworks": []
+			},
+			"google": {
+				"packagename": "",/*Android必选，程序包名，如com.dheaven.hbuilder*/
+				"keystore": "",/*Android必选，打包证书文件*/
+				"password": "",/*Android必选，打包证书密码*/
+				"aliasname": "",/*Android必选，打包证书别名*/
+				"permissions": [
+					"<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>",
+					"<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>",
+					"<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>",
+					"<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>",
+					"<uses-permission android:name=\"android.permission.SEND_SMS\"/>",
+					"<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>",
+					"<uses-permission android:name=\"android.permission.READ_CONTACTS\"/>",
+					"<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>",
+					"<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
+					"<uses-permission android:name=\"android.permission.VIBRATE\"/>",
+					"<uses-permission android:name=\"android.permission.READ_LOGS\"/>",
+					"<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
+					"<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>",
+					"<uses-permission android:name=\"android.permission.CALL_PHONE\"/>",
+					"<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
+					"<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>",
+					"<uses-feature android:name=\"android.hardware.camera.autofocus\"/>",
+					"<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>",
+					"<uses-feature android:name=\"android.hardware.camera\"/>",
+					"<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>",
+					"<uses-permission android:name=\"android.permission.RECEIVE_USER_PRESENT\"/>",
+					"<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
+					"<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>",
+					"<uses-permission android:name=\"android.permission.RECEIVE_BOOT_COMPLETED\"/>",
+					"<uses-permission android:name=\"android.permission.WRITE_SMS\"/>",
+					"<uses-permission android:name=\"android.permission.READ_SMS\"/>",
+					"<uses-permission android:name=\"android.permission.CAMERA\"/>"
+				]
+			},
+			"orientation": [
+				"portrait-primary",
+				"landscape-primary",
+				"portrait-secondary",
+				"landscape-secondary"
+			],/*必选*/
+			"icons": {
+				"ios": {
+					"prerendered": "", /*必选，是否高亮显示*/
+					"auto": "", /*可选，512x512，用于自动生成各种尺寸图标的大分辨率程序图标*/
+					"iphone": {
+						"normal": "unpackage/res/icons/57x57.png",/*可选，57x57，iPhone普通屏幕程序图标*/
+						"retina": "unpackage/res/icons/114x114.png",/*可选，114x114，iPhone高分屏程序图标*/
+						"retina7": "unpackage/res/icons/120x120.png",/*可选，120x120，iPhone iOS7高分屏程序图标*/
+						"spotlight-normal": "unpackage/res/icons/29x29.png", /*可选，29x29，iPhone Spotlight搜索程序图标*/
+						"spotlight-retina": "unpackage/res/icons/58x58.png", /*可选，58x58，iPhone高分屏Spotlight搜索程序图标*/
+						"spotlight-retina7": "unpackage/res/icons/80x80.png",/*可选，80x80，iPhone iOS7高分屏Spotlight搜索程序图标*/
+						"settings-normal": "unpackage/res/icons/29x29.png", /*可选，29x29，iPhone设置页面程序图标*/
+						"settings-retina": "unpackage/res/icons/58x58.png",
+						"retina8": "unpackage/res/icons/180x180.png",
+						"settings-retina8": "unpackage/res/icons/87x87.png"
+					},
+					"ipad": {
+						"normal": "unpackage/res/icons/72x72.png", /*可选，72x72，iPad普通屏幕程序图标*/
+						"retina": "unpackage/res/icons/144x144.png", /*可选，144x144，iPad高分屏程序图标*/
+						"normal7": "unpackage/res/icons/76x76.png", /*可选，76x76，iPad iOS7程序图标*/
+						"retina7": "unpackage/res/icons/152x152.png", /*可选，152x152，iPad iOS7高分屏程序图标*/
+						"spotlight-normal": "unpackage/res/icons/50x50.png", /*可选，50x50，iPad Spotlight搜索程序图标*/
+						"spotlight-retina": "unpackage/res/icons/100x100.png", /*可选，100x100，iPad高分屏Spotlight搜索程序图标*/
+						"spotlight-normal7": "unpackage/res/icons/40x40.png",/*可选，40x40，iPad iOS7 Spotlight搜索程序图标*/
+						"spotlight-retina7": "unpackage/res/icons/80x80.png",/*可选，80x80，iPad iOS7高分屏Spotlight搜索程序图标*/
+						"settings-normal": "unpackage/res/icons/29x29.png",/*可选，29x29，iPad设置页面程序图标*/
+						"settings-retina": "unpackage/res/icons/58x58.png"
+					}
+				},
+				"android": {
+					"mdpi": "unpackage/res/icons/48x48.png", /*必选，48x48，普通屏程序图标*/
+					"ldpi": "unpackage/res/icons/48x48.png", /*必选，48x48，大屏程序图标*/
+					"hdpi": "unpackage/res/icons/72x72.png", /*必选，72x72，高分屏程序图标*/
+					"xhdpi": "unpackage/res/icons/96x96.png",/*必选，96x96，720P高分屏程序图标*/
+					"xxhdpi": "unpackage/res/icons/144x144.png"
+				}
+			},
+			"splashscreen": {
+				"ios": {
+					"iphone": {
+						"default": "", /*必选，320x480，iPhone3启动图片*/
+						"retina35": "",/*必选，640x960，3.5英寸设备(iPhone4)启动图片*/
+						"retina40": ""
+					},
+					"ipad": {
+						"portrait": "", /*可选，768x1004，需支持iPad时必选，iPad竖屏启动图片*/
+						"portrait-retina": "",/*可选，1536x2008，需支持iPad时必选，iPad高分屏竖屏图片*/
+						"landscape": "", /*可选，1024x748，需支持iPad时必选，iPad横屏启动图片*/
+						"landscape-retina": "", /*可选 ，2048x1496，需支持iPad时必选，iPad高分屏横屏启动图片*/
+						"portrait7": "", /*可选，768x1024，需支持iPad iOS7时必选，iPad竖屏启动图片*/
+						"portrait-retina7": "",/*可选，1536x2048，需支持iPad iOS7时必选，iPad高分屏竖屏图片*/
+						"landscape7": "", /*可选，1024x768，需支持iPad iOS7时必选，iPad横屏启动图片*/
+						"landscape-retina7": ""
+					}
+				},
+				"android": {
+					"mdpi": "C:/Users/Administrator/Desktop/3.0/3.0/今日练习--首页/ExerciseToday2@2x.png", /*必选，240x282，普通屏启动图片*/
+					"ldpi": "C:/Users/Administrator/Desktop/3.0/3.0/今日练习--首页/ExerciseToday2@2x.png", /*必选，320x442，大屏启动图片*/
+					"hdpi": "C:/Users/Administrator/Desktop/3.0/3.0/今日练习--首页/ExerciseToday2@2x.png", /*必选，480x762，高分屏启动图片*/
+					"xhdpi": "C:/Users/Administrator/Desktop/3.0/3.0/今日练习--首页/ExerciseToday1@2x.png", /*必选，720x1242，720P高分屏启动图片*/
+					"xxhdpi": "C:/Users/Administrator/Desktop/3.0/3.0/今日练习--首页/ExerciseToday1@2x.png"
+				}
+			}
+		}
+	},
+	"dependencies": {
+		"pages": {
+			"index.html": {
+				"resources": [
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"js/update.js",
+					"list.html",
+					"images/myimages/index_bg.jpg",
+					"js/myjs/index.js",
+					"images/myimages/touxiang@2x.png",
+					"images/myimages/icon3-1@2x.png",
+					"images/myimages/ExerciseToday7@2x.png",
+					"css/mycss/public.css",
+					"js/myjs/jquery-1.11.1.min.js",
+					"images/myimages/ExerciseToday9@2x.png",
+					"js/myjs/public.js",
+					"images/myimages/icon4-1@2x.png",
+					"images/myimages/ExerciseToday8@2x.png",
+					"images/myimages/icon1@2x.png",
+					"images/myimages/ExerciseToday4@2x.png",
+					"images/myimages/icon2-1@2x.png",
+					"css/mycss/index.css",
+					"images/myimages/ExerciseToday5@2x.png",
+					"images/myimages/ExerciseToday6@2x.png",
+					"extensive.html",
+					"grammar.html",
+					"test.html",
+					"images/myimages/icon2@2x.png",
+					"images/myimages/icon1-1@2x.png",
+					"vocabulary.html",
+					"images/myimages/icon3@2x.png",
+					"images/myimages/icon4@2x.png",
+					"listensArticles.html",
+					"jPlayer-2.9.2/examples/other/demo-05.html",
+					"jPlayer-2.9.2/examples/blue.monday/demo-01-android.html",
+					"jPlayer-2.9.2/examples/blue.monday/demo-01-solution-flash-html.html",
+					"jPlayer-2.9.2/examples/blue.monday/demo-03.html",
+					"jPlayer-2.9.2/examples/blue.monday/test.html",
+					"hearing.html",
+					"reading.html",
+					"speaking.html",
+					"writing.html",
+					"css/mycss/bottomNav.css",
+					"encyclopedia.html",
+					"course.html",
+					"personalCenter.html"
+				],
+				"refer": [
+					"index-menu.html",
+					"encyclopedia-bbs.html",
+					"index.html"
+				],
+				"priority": 0
+			},
+			"examples/tab-webview-subpage-contact.html": {
+				"resources": [
+					"images/60x60.gif",
+					"js/mui.min.js",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/tab-webview-main.html": {
+				"resources": [
+					"examples/tab-webview-subpage-setting.html",
+					"examples/tab-webview-subpage-chat.html",
+					"examples/tab-webview-subpage-contact.html",
+					"examples/tab-webview-subpage-about.html",
+					"fonts/mui.ttf",
+					"js/mui.min.js",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"list.html": {
+				"resources": [
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [
+					"examples/template.html",
+					"examples/tab-webview-main.html",
+					"examples/pullrefresh_main.html",
+					"examples/ajax.html",
+					"examples/accordion.html",
+					"examples/buttons.html",
+					"examples/guide.html",
+					"examples/badges.html",
+					"examples/actionsheet.html",
+					"examples/actionsheet-plus.html",
+					"examples/ad.html",
+					"examples/buttons-with-icons.html",
+					"examples/buttons-with-badges.html",
+					"examples/buttons-with-block.html",
+					"examples/checkbox.html",
+					"examples/clouddb_wilddog.html",
+					"examples/dtpicker.html",
+					"examples/date.html",
+					"examples/dialog.html",
+					"examples/slider-default.html",
+					"examples/slider-with-title.html",
+					"examples/slider-table-default.html",
+					"examples/slider-table-pagination.html",
+					"examples/grid-default.html",
+					"examples/grid-pagination.html",
+					"examples/icons.html",
+					"examples/input.html",
+					"examples/echarts.html",
+					"examples/imageviewer.html",
+					"examples/indexed-list.html",
+					"examples/indexed-list-select.html",
+					"examples/lazyload-image.html",
+					"examples/locker-dom.html",
+					"examples/login.html",
+					"examples/setting.html",
+					"examples/offcanvas-drag-right-plus-main.html",
+					"examples/offcanvas-drag-left-plus-main.html",
+					"examples/offcanvas-drag-right.html",
+					"examples/offcanvas-drag-left.html",
+					"examples/offcanvas-drag-down.html",
+					"examples/picker.html",
+					"examples/pagination.html",
+					"examples/popovers.html",
+					"examples/pullrefresh_with_tab.html",
+					"examples/radio.html",
+					"examples/range.html",
+					"examples/switches.html",
+					"examples/tabbar.html",
+					"examples/tabbar-with-submenus.html",
+					"examples/tab-with-viewpagerindicator.html",
+					"examples/tab-with-segmented-control.html",
+					"examples/tab-with-segmented-control-vertical.html",
+					"examples/typography.html",
+					"examples/im-chat.html",
+					"examples/info.html",
+					"examples/tableviews.html",
+					"examples/tableviews-with-badges.html",
+					"examples/list-with-input.html",
+					"examples/list-triplex-row.html",
+					"examples/tableviews-with-collapses.html",
+					"examples/tableviews-with-swipe.html",
+					"examples/media-list.html",
+					"examples/nav.html",
+					"examples/numbox.html"
+				],
+				"priority": 0
+			},
+			"examples/pullrefresh_main.html": {
+				"resources": [
+					"examples/pullrefresh_sub.html",
+					"fonts/mui.ttf",
+					"js/mui.min.js",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/ajax.html": {
+				"resources": [
+					"css/app.css",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/accordion.html": {
+				"resources": [
+					"images/cbd.jpg",
+					"images/muwu.jpg",
+					"images/yuantiao.jpg",
+					"images/shuijiao.jpg",
+					"js/mui.min.js",
+					"css/app.css",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/tab-webview-subpage-setting.html": {
+				"resources": [
+					"fonts/mui.ttf",
+					"js/mui.min.js",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"index-menu.html": {
+				"resources": [
+					"fonts/mui.ttf",
+					"js/mui.min.js",
+					"css/mui.min.css"
+				],
+				"refer": [
+					"examples/offcanvas-drag-left.html"
+				],
+				"priority": 0
+			},
+			"examples/template.html": {
+				"resources": [
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/tab-webview-subpage-about.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/guide.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/badges.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/app.css",
+					"css/mui.min.css",
+					"fonts/mui.ttf"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/actionsheet.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/app.css",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/actionsheet-plus.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/app.css",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/ad.html": {
+				"resources": [
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"js/ad.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/buttons.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/app.css",
+					"css/mui.min.css",
+					"fonts/mui.ttf"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/buttons-with-icons.html": {
+				"resources": [
+					"css/app.css",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/buttons-with-badges.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/app.css",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/buttons-with-block.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/app.css",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/checkbox.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/app.css",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/tab-webview-subpage-chat.html": {
+				"resources": [
+					"fonts/mui.ttf",
+					"js/mui.min.js",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/clouddb_wilddog.html": {
+				"resources": [
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/dtpicker.html": {
+				"resources": [
+					"js/mui.picker.min.js",
+					"js/mui.min.js",
+					"css/app.css",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"css/mui.picker.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/date.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/app.css",
+					"css/mui.min.css",
+					"fonts/mui.ttf"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/dialog.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/app.css",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/slider-default.html": {
+				"resources": [
+					"images/cbd.jpg",
+					"images/muwu.jpg",
+					"images/yuantiao.jpg",
+					"js/mui.min.js",
+					"css/app.css",
+					"css/mui.min.css",
+					"images/shuijiao.jpg"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/slider-with-title.html": {
+				"resources": [
+					"images/cbd.jpg",
+					"images/yuantiao.jpg",
+					"images/muwu.jpg",
+					"js/mui.min.js",
+					"css/app.css",
+					"css/mui.min.css",
+					"images/shuijiao.jpg"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/slider-table-default.html": {
+				"resources": [
+					"images/cbd.jpg",
+					"images/yuantiao.jpg",
+					"images/muwu.jpg",
+					"js/mui.min.js",
+					"css/app.css",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"images/shuijiao.jpg"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/slider-table-pagination.html": {
+				"resources": [
+					"images/cbd.jpg",
+					"images/muwu.jpg",
+					"images/yuantiao.jpg",
+					"js/mui.min.js",
+					"css/app.css",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"images/shuijiao.jpg"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/grid-default.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/app.css",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/grid-pagination.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/app.css",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/icons.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/app.css",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/input.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/app.css",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/pullrefresh_sub.html": {
+				"resources": [
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/echarts.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/app.css",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"libs/echarts-all.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/imageviewer.html": {
+				"resources": [
+					"js/mui.zoom.js",
+					"images/muwu.jpg",
+					"images/yuantiao.jpg",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"js/mui.previewimage.js",
+					"images/shuijiao.jpg"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/indexed-list.html": {
+				"resources": [
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"css/mui.indexedlist.css",
+					"js/mui.indexedlist.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/indexed-list-select.html": {
+				"resources": [
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"css/mui.indexedlist.css",
+					"js/mui.indexedlist.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/lazyload-image.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/app.css",
+					"images/60x60.gif",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"js/mui.lazyload.js",
+					"js/mui.lazyload.img.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/locker-dom.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/app.css",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"js/mui.locker.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/login.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/app.css",
+					"css/mui.min.css",
+					"images/login-1.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/setting.html": {
+				"resources": [
+					"images/logo.png",
+					"libs/easymob-webim-sdk/easemob.im-1.0.5.js",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"libs/easymob-webim-sdk/json2.js",
+					"libs/easymob-webim-sdk/jquery-1.11.1.js",
+					"js/feedback.js",
+					"css/feedback-page.css",
+					"js/feedback-page.js",
+					"libs/easymob-webim-sdk/strophe-custom-2.0.0.js",
+					"js/mui.view.js",
+					"images/iconfont-tianjia.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/offcanvas-drag-right-plus-main.html": {
+				"resources": [
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [
+					"examples/offcanvas-drag-right-plus-menu.html"
+				],
+				"priority": 0
+			},
+			"examples/offcanvas-drag-right-plus-menu.html": {
+				"resources": [
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/offcanvas-drag-left-plus-menu.html": {
+				"resources": [
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/offcanvas-drag-left-plus-main.html": {
+				"resources": [
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [
+					"examples/offcanvas-drag-left-plus-menu.html"
+				],
+				"priority": 0
+			},
+			"examples/offcanvas-drag-right.html": {
+				"resources": [
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/offcanvas-drag-left.html": {
+				"resources": [
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/offcanvas-drag-down.html": {
+				"resources": [
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/picker.html": {
+				"resources": [
+					"js/mui.picker.js",
+					"js/mui.min.js",
+					"css/app.css",
+					"js/mui.poppicker.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"js/city.data.js",
+					"css/mui.poppicker.css",
+					"css/mui.picker.css",
+					"js/city.data-3.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/pagination.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/app.css",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/popovers.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/app.css",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/pullrefresh_with_tab.html": {
+				"resources": [
+					"js/mui.pullToRefresh.js",
+					"js/mui.min.js",
+					"js/mui.pullToRefresh.material.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/radio.html": {
+				"resources": [
+					"css/app.css",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/range.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/app.css",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/switches.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/app.css",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/tabbar.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/app.css",
+					"fonts/mui.ttf",
+					"images/60x60.gif",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/tabbar-with-submenus.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/app.css",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/tab-with-viewpagerindicator.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/app.css",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/tab-with-segmented-control.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/app.css",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/tab-with-segmented-control-vertical.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/app.css",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/typography.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/app.css",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/im-chat.html": {
+				"resources": [
+					"js/mui.imageViewer.js",
+					"images/logo.png",
+					"js/mui.min.js",
+					"css/app.css",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"css/mui.imageviewer.css",
+					"js/arttmpl.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/info.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/app.css",
+					"css/mui.min.css",
+					"images/qrcode.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/beecloud.html": {
+				"resources": [
+					"js/mui.min.js",
+					"js/beecloud.js",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/tableviews.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/app.css",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/tableviews-with-badges.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/app.css",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/list-with-input.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/app.css",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/list-triplex-row.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/app.css",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/tableviews-with-collapses.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/app.css",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/tableviews-with-swipe.html": {
+				"resources": [
+					"css/app.css",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/media-list.html": {
+				"resources": [
+					"images/cbd.jpg",
+					"images/yuantiao.jpg",
+					"images/muwu.jpg",
+					"js/mui.min.js",
+					"css/app.css",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"images/shuijiao.jpg"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/nav.html": {
+				"resources": [
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"examples/numbox.html": {
+				"resources": [
+					"css/app.css",
+					"css/mui.min.css",
+					"js/mui.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"extensive.html": {
+				"resources": [
+					"index.html",
+					"images/myimages/ExerciseToday16@2x.png",
+					"js/myjs/extensive.js",
+					"css/mycss/extensive.css",
+					"fonts/mui.ttf",
+					"js/myjs/jquery.jplayer.min.js",
+					"audio.mp3",
+					"images/myimages/ExerciseToday11@2x.png",
+					"images/myimages/chinese_icon.png",
+					"jPlayer-2.9.2/dist/skin/blue.monday/image/jplayer.blue.monday.jpg",
+					"jPlayer-2.9.2/dist/skin/blue.monday/css/jplayer.blue.monday.css",
+					"images/myimages/ExerciseToday10@2x.png",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js",
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"css/mycss/public.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"grammar-practice.html": {
+				"resources": [
+					"css/mycss/grammar-practice.css",
+					"js/myjs/grammar-practice.js",
+					"grammar.html",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"css/mycss/public.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"grammar.html": {
+				"resources": [
+					"grammar-practice.html",
+					"images/myimages/yufa_img.png",
+					"js/myjs/grammar.js",
+					"css/mycss/grammar.css",
+					"index.html",
+					"fonts/mui.ttf",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js",
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"css/mycss/public.css",
+					"extensive.html"
+				],
+				"refer": [
+					"listensArticles.html",
+					"encyclopedia-bbs.html",
+					"encyclopedia.html"
+				],
+				"priority": 0
+			},
+			"vocabulary.html": {
+				"resources": [
+					"css/mycss/vocabulary.css",
+					"images/myimages/ExerciseToday14@2x.png",
+					"index.html",
+					"vocab-word.html",
+					"fonts/mui.ttf",
+					"js/myjs/jquery.jplayer.min.js",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js",
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"css/mycss/public.css"
+				],
+				"refer": [
+					"vocab-word.html",
+					"index.html"
+				],
+				"priority": 0
+			},
+			"listensArticles.html": {
+				"resources": [
+					"css/mycss/progress.png",
+					"js/myjs/jquery.transform2d.js",
+					"css/mycss/controls.jpg",
+					"js/myjs/circle.player.js",
+					"js/myjs/jquery.grab.js",
+					"js/myjs/mod.csstransforms.min.js",
+					"css/mycss/circle.player.css",
+					"css/mycss/buffer.png",
+					"css/listensArticles.css",
+					"css/mycss/bgr.jpg",
+					"index.html",
+					"fonts/mui.ttf",
+					"js/myjs/jquery.jplayer.min.js",
+					"listensA-practice.html",
+					"images/myimages/bgr.png",
+					"images/myimages/controls_02.png",
+					"images/myimages/progress.png",
+					"images/myimages/buffer.png",
+					"images/myimages/controls_01.png",
+					"css/mycss/public.css",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js",
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"images/myimages/progress_sprite.png",
+					"css/mycss/listensArticles.css",
+					"audio.mp3"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"jPlayer-2.9.2/examples/other/demo-05.html": {
+				"resources": [
+					"jPlayer-2.9.2/lib/circle-player/skin/progress.png",
+					"jPlayer-2.9.2/lib/circle-player/js/mod.csstransforms.min.js",
+					"jPlayer-2.9.2/lib/circle-player/js/jquery.grab.js",
+					"jPlayer-2.9.2/lib/jquery.min.js",
+					"jPlayer-2.9.2/lib/circle-player/js/jquery.transform2d.js",
+					"jPlayer-2.9.2/lib/circle-player/skin/buffer.png",
+					"jPlayer-2.9.2/lib/circle-player/js/circle.player.js",
+					"jPlayer-2.9.2/lib/circle-player/skin/circle.player.css",
+					"jPlayer-2.9.2/lib/circle-player/skin/bgr.jpg",
+					"jPlayer-2.9.2/lib/circle-player/skin/controls.jpg",
+					"jPlayer-2.9.2/dist/jplayer/jquery.jplayer.min.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"jPlayer-2.9.2/examples/blue.monday/demo-01-android.html": {
+				"resources": [
+					"jPlayer-2.9.2/dist/skin/blue.monday/image/jplayer.blue.monday.jpg",
+					"jPlayer-2.9.2/lib/jquery.min.js",
+					"jPlayer-2.9.2/dist/skin/blue.monday/css/jplayer.blue.monday.min.css",
+					"jPlayer-2.9.2/dist/jplayer/jquery.jplayer.min.js",
+					"jPlayer-2.9.2/dist/skin/blue.monday/image/jplayer.blue.monday.seeking.gif"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"jPlayer-2.9.2/examples/blue.monday/demo-01-solution-flash-html.html": {
+				"resources": [
+					"jPlayer-2.9.2/dist/skin/blue.monday/image/jplayer.blue.monday.jpg",
+					"jPlayer-2.9.2/lib/jquery.min.js",
+					"jPlayer-2.9.2/dist/skin/blue.monday/css/jplayer.blue.monday.min.css",
+					"jPlayer-2.9.2/dist/jplayer/jquery.jplayer.min.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"jPlayer-2.9.2/examples/blue.monday/demo-03.html": {
+				"resources": [
+					"jPlayer-2.9.2/dist/skin/blue.monday/image/jplayer.blue.monday.jpg",
+					"jPlayer-2.9.2/lib/jquery.min.js",
+					"jPlayer-2.9.2/dist/skin/blue.monday/css/jplayer.blue.monday.min.css",
+					"jPlayer-2.9.2/dist/jplayer/jquery.jplayer.min.js",
+					"jPlayer-2.9.2/dist/skin/blue.monday/image/jplayer.blue.monday.seeking.gif"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"jPlayer-2.9.2/examples/blue.monday/test.html": {
+				"resources": [
+					"jPlayer-2.9.2/dist/skin/blue.monday/image/jplayer.blue.monday.jpg",
+					"jPlayer-2.9.2/lib/jquery.min.js",
+					"fonts/mui.ttf",
+					"jPlayer-2.9.2/dist/skin/blue.monday/css/jplayer.blue.monday.min.css",
+					"jPlayer-2.9.2/dist/jplayer/jquery.jplayer.min.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"listensA-practice.html": {
+				"resources": [
+					"images/myimages/ExerciseToday15@2x.png",
+					"css/mycss/listensA-practice.css",
+					"images/myimages/ExerciseToday14@2x.png",
+					"listensArticles.html",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"js/myjs/jquery.jplayer.min.js",
+					"css/mycss/public.css"
+				],
+				"refer": [
+					"listensArticles.html",
+					"index.html"
+				],
+				"priority": 0
+			},
+			"vocab-word.html": {
+				"resources": [
+					"css/mycss/vocab-word.css",
+					"vocabulary.html",
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"images/myimages/ExerciseToday14@2x.png",
+					"css/mycss/public.css",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js",
+					"fonts/mui.ttf",
+					"js/myjs/jquery.jplayer.min.js"
+				],
+				"refer": [
+					"vocabulary.html"
+				],
+				"priority": 0
+			},
+			"hearing-way.html": {
+				"resources": [
+					"images/myimages/Exercise8@2x.png",
+					"js/myjs/hearing-way.js",
+					"css/mycss/hearing-way.css",
+					"hearing-list.html",
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/mycss/public.css",
+					"js/mui.min.js",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js"
+				],
+				"refer": [
+					"hearing-practice.html",
+					"hearing-quietly.html",
+					"hearing-list.html"
+				],
+				"priority": 0
+			},
+			"hearing-list.html": {
+				"resources": [
+					"hearing-way.html",
+					"css/mycss/hearing-list.css",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"css/mycss/public.css",
+					"images/myimages/Exercise7@2x.png",
+					"hearing.html"
+				],
+				"refer": [
+					"hearing.html",
+					"hearing-way.html"
+				],
+				"priority": 0
+			},
+			"hearing.html": {
+				"resources": [
+					"images/myimages/Exercise2@2x.png",
+					"css/mycss/hearing.css",
+					"images/myimages/Exercisebeijing@2x.png",
+					"images/myimages/Exercise3@2x.png",
+					"images/myimages/Exercise4@2x.png",
+					"js/myjs/hearing.js",
+					"fonts/mui.ttf",
+					"images/myimages/Exercise6@2x.png",
+					"images/myimages/Exercise1@2x.png",
+					"hearing-list.html",
+					"images/myimages/Exercise5@2x.png",
+					"images/myimages/Exercise7@2x.png",
+					"index.html",
+					"css/mui.min.css",
+					"css/mycss/public.css",
+					"js/mui.min.js",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js"
+				],
+				"refer": [
+					"index.html",
+					"hearing-list.html"
+				],
+				"priority": 0
+			},
+			"hearing-practice.html": {
+				"resources": [
+					"css/mycss/hearing-practice.css",
+					"hearing-way.html",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"css/mycss/public.css",
+					"images/myimages/bgr.png",
+					"images/myimages/controls_02.png",
+					"js/myjs/jquery.transform2d.js",
+					"images/myimages/progress.png",
+					"js/myjs/circle.player.js",
+					"js/myjs/jquery.grab.js",
+					"js/myjs/mod.csstransforms.min.js",
+					"css/mycss/circle.player.css",
+					"images/myimages/buffer.png",
+					"images/myimages/controls_01.png",
+					"images/myimages/progress_sprite.png",
+					"js/myjs/jquery.jplayer.min.js"
+				],
+				"refer": [
+					"hearing-way.html",
+					"hearing-pra-test.html"
+				],
+				"priority": 0
+			},
+			"hearing-quietly.html": {
+				"resources": [
+					"fonts/mui.ttf",
+					"js/myjs/angular1.3.1.js",
+					"css/mycss/public.css",
+					"css/mycss/hearing-quietly.css",
+					"js/myjs/jquery-1.11.1.min.js",
+					"images/myimages/listenQ_next.png",
+					"js/myjs/public.js",
+					"images/myimages/listenQ_play.png",
+					"js/myjs/hearing-quietly.js",
+					"js/mui.min.js",
+					"images/myimages/listenQ_clickIcon.png",
+					"css/mui.min.css",
+					"images/myimages/listenQ_prev.png",
+					"js/myjs/jquery.jplayer.min.js",
+					"images/myimages/listenQ_chinese.png",
+					"hearing-way.html",
+					"images/myimages/listenQ_reloadP.png",
+					"images/myimages/listenQ_seeAnswer01.png",
+					"images/myimages/listenQ_seeAnswer02.png",
+					"images/myimages/listenQ_pause.png"
+				],
+				"refer": [
+					"hearing-way.html"
+				],
+				"priority": 0
+			},
+			"reading.html": {
+				"resources": [
+					"css/mycss/reading.css",
+					"images/myimages/Exercise29@2x.png",
+					"reading-tpoList.html",
+					"fonts/mui.ttf",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js",
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"css/mycss/public.css",
+					"reading-ogList.html",
+					"index.html"
+				],
+				"refer": [
+					"index.html",
+					"reading-tpoList.html",
+					"reading-ogList.html"
+				],
+				"priority": 0
+			},
+			"reading-tpoList.html": {
+				"resources": [
+					"js/myjs/reading-tpoList.js",
+					"css/mycss/reading-tpoList.css",
+					"js/myjs/TouchSlide.1.1.js",
+					"images/myimages/reading-tpo.png",
+					"reading.html",
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/mycss/public.css",
+					"js/mui.min.js",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js"
+				],
+				"refer": [
+					"test.html",
+					"reading-practice.html"
+				],
+				"priority": 0
+			},
+			"reading-practice.html": {
+				"resources": [
+					"css/mycss/reading-practice.css",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"css/mycss/public.css",
+					"reading.html"
+				],
+				"refer": [
+					"reading-answerJX.html",
+					"reading-article.html",
+					"reading-result.html",
+					"reading.html"
+				],
+				"priority": 0
+			},
+			"reading-answerJX.html": {
+				"resources": [
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js",
+					"css/mycss/reading-practice.css",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"css/mycss/public.css",
+					"reading.html"
+				],
+				"refer": [
+					"reading-article.html",
+					"reading.html"
+				],
+				"priority": 0
+			},
+			"reading-article.html": {
+				"resources": [
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"css/mycss/public.css"
+				],
+				"refer": [
+					"reading-answerJX.html",
+					"reading-practice.html"
+				],
+				"priority": 0
+			},
+			"reading-result.html": {
+				"resources": [
+					"css/mycss/reading-result.css",
+					"images/myimages/result_greenbg.png",
+					"images/myimages/result_warnIcon.png",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"css/mycss/public.css"
+				],
+				"refer": [
+					"reading-result-details.html"
+				],
+				"priority": 0
+			},
+			"reading-result-details.html": {
+				"resources": [
+					"css/mycss/reading-practice.css",
+					"js/myjs/TouchSlide.1.1.js",
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/mycss/public.css",
+					"js/mui.min.js",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js"
+				],
+				"refer": [
+					"reading-article.html"
+				],
+				"priority": 0
+			},
+			"reading-ogList.html": {
+				"resources": [
+					"css/mycss/reading-ogList.css",
+					"images/myimages/Exercise7@2x.png",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js",
+					"js/mui.min.js",
+					"reading.html",
+					"css/mui.min.css",
+					"css/mycss/public.css",
+					"fonts/mui.ttf"
+				],
+				"refer": [
+					"reading-practice.html"
+				],
+				"priority": 0
+			},
+			"hearing-answerKeys.html": {
+				"href": "hearing-answerKeys.html",
+				"resources": [
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/mycss/public.css",
+					"css/mycss/hearing-answerKeys.css",
+					"images/myimages/spoken7@2x.png",
+					"images/myimages/spoken7@22x.png",
+					"js/mui.min.js",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/jquery.jplayer.min.js",
+					"js/myjs/public.js",
+					"js/myjs/hearing-answerKeys.js"
+				],
+				"refer": [
+					"hearing.html"
+				],
+				"priority": 7
+			},
+			"hearing-pra-test.html": {
+				"href": "hearing-pra-test.html",
+				"resources": [
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/mycss/public.css",
+					"css/mycss/hearing-pra-test.css",
+					"js/mui.min.js",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js",
+					"js/myjs/hearing-pra-test.js"
+				],
+				"refer": [
+					"hearing-answerKeys.html"
+				],
+				"priority": 7
+			},
+			"speaking.html": {
+				"resources": [
+					"css/mycss/reading.css",
+					"fonts/mui.ttf",
+					"images/myimages/Exercise27@2x.png",
+					"speaking-tpoList.html",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js",
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"css/mycss/public.css",
+					"speaking-goldList.html",
+					"index.html",
+					"images/myimages/Exercise29@2x.png"
+				],
+				"refer": [
+					"index.html",
+					"speaking-tpoList.html",
+					"speaking-goldList.html"
+				],
+				"priority": 0
+			},
+			"speaking-tpoList.html": {
+				"resources": [
+					"images/myimages/speakDisplay42.jpg",
+					"images/myimages/speakDisplay1.jpg",
+					"images/myimages/speakDisplay17.jpg",
+					"images/myimages/speakDisplay28.jpg",
+					"images/myimages/speakDisplay10.jpg",
+					"images/myimages/speakDisplay4.jpg",
+					"images/myimages/speakDisplay40.jpg",
+					"images/myimages/speakDisplay24.jpg",
+					"images/myimages/speakDisplay23.jpg",
+					"images/myimages/speakDisplay29.jpg",
+					"images/myimages/speakDisplay3.jpg",
+					"images/myimages/speakDisplay2.jpg",
+					"js/myjs/speaking-tpoList.js",
+					"images/myimages/speakDisplay7.jpg",
+					"images/myimages/speakDisplay14.jpg",
+					"images/myimages/speakDisplay27.jpg",
+					"images/myimages/speakDisplay16.jpg",
+					"images/myimages/speakDisplay31.jpg",
+					"images/myimages/speakDisplay21.jpg",
+					"images/myimages/speakDisplay22.jpg",
+					"images/myimages/speakDisplay34.jpg",
+					"images/myimages/speakDisplay25.jpg",
+					"images/myimages/speakDisplay9.jpg",
+					"images/myimages/speakDisplay43.jpg",
+					"images/myimages/speakDisplay32.jpg",
+					"css/mycss/speaking-tpoList.css",
+					"images/myimages/speakDisplay11.jpg",
+					"images/myimages/speakDisplay20.jpg",
+					"images/myimages/speakDisplay45.jpg",
+					"images/myimages/speakDisplay33.jpg",
+					"images/myimages/speakDisplay30.jpg",
+					"images/myimages/speakDisplay26.jpg",
+					"images/myimages/speakDisplay48.jpg",
+					"images/myimages/speakDisplay13.jpg",
+					"images/myimages/speakDisplay46.jpg",
+					"images/myimages/speakDisplay19.jpg",
+					"images/myimages/speakDisplay8.jpg",
+					"images/myimages/speakDisplay15.jpg",
+					"images/myimages/speakDisplay6.jpg",
+					"images/myimages/speakDisplay41.jpg",
+					"images/myimages/speakDisplay47.jpg",
+					"images/myimages/speakDisplay44.jpg",
+					"images/myimages/speakDisplay18.jpg",
+					"images/myimages/speakDisplay5.jpg",
+					"images/myimages/speakDisplay12.jpg",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js",
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"css/mycss/public.css",
+					"speaking.html",
+					"fonts/mui.ttf"
+				],
+				"refer": [
+					"speaking-practice.html"
+				],
+				"priority": 0
+			},
+			"speaking-practice.html": {
+				"resources": [
+					"images/myimages/user_default.png",
+					"images/myimages/speaking_close.png",
+					"images/myimages/speaking_logo.png",
+					"css/mycss/speaking-practice.css",
+					"images/myimages/speaking_bg.png",
+					"js/myjs/jquery.jplayer.min.js",
+					"images/myimages/listenP_volum01.png",
+					"js/myjs/speaking-practice.js",
+					"images/myimages/speaking_btn.png",
+					"js/myjs/TouchSlide.1.1.js",
+					"fonts/mui.ttf",
+					"css/mycss/public.css",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js",
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"images/myimages/listenP_volum02.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"speaking-goldList.html": {
+				"resources": [
+					"css/mycss/reading-ogList.css",
+					"images/myimages/Exercise7@2x.png",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js",
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"css/mycss/public.css",
+					"speaking.html",
+					"fonts/mui.ttf"
+				],
+				"refer": [
+					"speaking-practice.html"
+				],
+				"priority": 0
+			},
+			"writing.html": {
+				"resources": [
+					"writing-independent.html",
+					"images/myimages/Exercise28@2x.png",
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/mycss/public.css",
+					"css/mycss/reading.css",
+					"images/myimages/Exercise29@2x.png",
+					"js/mui.min.js",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js"
+				],
+				"refer": [
+					"index.html",
+					"writing-tpoList.html",
+					"writing-independent.html"
+				],
+				"priority": 0
+			},
+			"writing-independent.html": {
+				"resources": [
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/mycss/public.css",
+					"css/mycss/reading-ogList.css",
+					"js/mui.min.js",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/TouchSlide.1.1.js",
+					"js/myjs/public.js",
+					"images/myimages/Exercise7@2x.png"
+				],
+				"refer": [
+					"writing-practice.html"
+				],
+				"priority": 0
+			},
+			"writing-test.html": {
+				"resources": [
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/mycss/public.css",
+					"js/mui.min.js",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js"
+				],
+				"refer": [
+					"writing-result.html"
+				],
+				"priority": 0
+			},
+			"writing-practice.html": {
+				"resources": [
+					"css/mycss/writing-practice.css",
+					"images/myimages/spoken7@2x.png",
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/mycss/public.css",
+					"images/myimages/spoken7@22x.png",
+					"js/mui.min.js",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/jquery.jplayer.min.js",
+					"js/myjs/public.js"
+				],
+				"refer": [
+					"writing-test.html",
+					"writing-article.html"
+				],
+				"priority": 0
+			},
+			"writing-result.html": {
+				"resources": [
+					"css/mycss/writing-result.css",
+					"images/myimages/result_warnIcon.png",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"css/mycss/public.css"
+				],
+				"refer": [
+					"writing-result-details.html"
+				],
+				"priority": 0
+			},
+			"encyclopedia-bbs.html": {
+				"resources": [
+					"images/myimages/Community3@22x.png",
+					"css/mycss/encyclopedia-bbs.css",
+					"images/myimages/Community4@2x.png",
+					"images/60x60.gif",
+					"js/myjs/encyclopedia-bbs.js",
+					"images/myimages/Community3@2x.png",
+					"images/myimages/Toeflbi@2x.png",
+					"images/myimages/icon2@2x.png",
+					"course.html",
+					"images/myimages/icon4-1@2x.png",
+					"images/muwu.jpg",
+					"css/mycss/bottomNav.css",
+					"images/myimages/icon1-1@2x.png",
+					"images/myimages/icon3@2x.png",
+					"images/myimages/icon2-1@2x.png",
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"images/myimages/icon1@2x.png",
+					"images/myimages/icon3-1@2x.png",
+					"images/myimages/icon4@2x.png",
+					"css/mycss/public.css",
+					"js/mui.min.js",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js"
+				],
+				"refer": [
+					"encyclopedia-postings.html",
+					"encyclopedia-bbs-details.html",
+					"encyclopedia.html",
+					"index.html"
+				],
+				"priority": 0
+			},
+			"encyclopedia.html": {
+				"resources": [
+					"images/cbd.jpg",
+					"css/mycss/encyclopedia.css",
+					"images/muwu.jpg",
+					"images/myimages/icon1-1@2x.png",
+					"images/myimages/icon3@2x.png",
+					"images/myimages/Toeflxiaoxi@2x.png",
+					"encyclopedia-bbs.html",
+					"personalCenter.html",
+					"images/myimages/icon4@2x.png",
+					"course.html",
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/mycss/bottomNav.css",
+					"images/myimages/icon1@2x.png",
+					"images/myimages/icon2-1@2x.png",
+					"images/myimages/icon2@2x.png",
+					"images/myimages/icon3-1@2x.png",
+					"images/myimages/icon4-1@2x.png",
+					"css/mycss/public.css",
+					"js/mui.min.js",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js"
+				],
+				"refer": [
+					"encyclopedia-details.html",
+					"index.html",
+					"encyclopedia.html"
+				],
+				"priority": 0
+			},
+			"encyclopedia-postings.html": {
+				"resources": [
+					"images/myimages/bbs-add.png",
+					"css/mycss/encyclopedia-postings.css",
+					"js/myjs/encyclopedia-postings.js",
+					"js/myjs/jquery-1.11.1.min.js",
+					"images/cbd.jpg",
+					"js/myjs/public.js",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"css/mycss/public.css"
+				],
+				"refer": [
+					"encyclopedia-bbs.html"
+				],
+				"priority": 0
+			},
+			"course.html": {
+				"resources": [
+					"css/mycss/bottomNav.css",
+					"images/myimages/Course10@2x.png",
+					"images/myimages/Course33@2x.png",
+					"images/myimages/Course3@2x.jpg",
+					"images/myimages/icon1-1@2x.png",
+					"images/myimages/icon3-1@2x.png",
+					"css/mycss/public.css",
+					"images/myimages/Course34@2x.png",
+					"course-listen.html",
+					"js/myjs/jquery-1.11.1.min.js",
+					"images/myimages/Course2@2x.jpg",
+					"js/myjs/public.js",
+					"images/myimages/icon4-1@2x.png",
+					"js/mui.min.js",
+					"images/myimages/Course1@2x.jpg",
+					"css/mui.min.css",
+					"images/myimages/Course4@2x.jpg",
+					"css/mycss/course.css",
+					"images/myimages/Course32@2x.png",
+					"course-live.html",
+					"images/myimages/icon2@2x.png",
+					"course-class.html",
+					"index.html",
+					"images/myimages/icon1@2x.png",
+					"images/myimages/icon2-1@2x.png",
+					"encyclopedia.html",
+					"fonts/mui.ttf",
+					"images/myimages/icon3@2x.png",
+					"images/myimages/icon4@2x.png"
+				],
+				"refer": [
+					"index.html",
+					"encyclopedia.html",
+					"personalCenter.html",
+					"course-listen.html",
+					"course-live.html",
+					"course-class.html"
+				],
+				"priority": 0
+			},
+			"course-listen.html": {
+				"resources": [
+					"images/myimages/Course8@2x.png",
+					"images/myimages/Course7@2x.png",
+					"images/myimages/Exercisebeijing@2x.png",
+					"fonts/mui.ttf",
+					"css/mycss/course-listen.css",
+					"images/myimages/Course6@2x.png",
+					"images/myimages/Course5@2x.png",
+					"course.html",
+					"css/mui.min.css",
+					"css/mycss/public.css",
+					"js/mui.min.js",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js"
+				],
+				"refer": [
+					"course-lis-detail.html"
+				],
+				"priority": 0
+			},
+			"course-live.html": {
+				"resources": [
+					"images/cbd.jpg",
+					"images/muwu.jpg",
+					"images/myimages/Course22@2x.png",
+					"fonts/mui.ttf",
+					"course.html",
+					"css/mycss/course-live.css",
+					"css/mui.min.css",
+					"css/mycss/public.css",
+					"js/mui.min.js",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js"
+				],
+				"refer": [
+					"course-live-detail.html"
+				],
+				"priority": 0
+			},
+			"course-live-detail.html": {
+				"resources": [
+					"images/myimages/Course35@2x.png",
+					"css/mycss/course-live-detail.css",
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/mycss/public.css",
+					"js/mui.min.js",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"course-class-detail.html": {
+				"resources": [
+					"images/myimages/Course36@2x.png",
+					"images/myimages/Course37@2x.png",
+					"css/mycss/course-class-detail.css",
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/mycss/public.css",
+					"js/mui.min.js",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js",
+					"images/60x60.gif"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"course-class.html": {
+				"resources": [
+					"images/60x60.gif",
+					"css/mycss/course-class.css",
+					"course.html",
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/mycss/public.css",
+					"js/mui.min.js",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js"
+				],
+				"refer": [
+					"course-class-detail.html"
+				],
+				"priority": 0
+			},
+			"encyclopedia-bbs-details.html": {
+				"resources": [
+					"js/myjs/encyclopedia-bbs-details.js",
+					"images/myimages/Community3@22x.png",
+					"css/mycss/bottomNav.css",
+					"images/muwu.jpg",
+					"fonts/mui.ttf",
+					"css/mycss/public.css",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js",
+					"css/mycss/encyclopedia-bbs.css",
+					"images/myimages/Community4@2x.png",
+					"js/mui.min.js",
+					"images/60x60.gif",
+					"css/mui.min.css",
+					"images/myimages/icon1-1@2x.png",
+					"images/myimages/icon1@2x.png",
+					"images/myimages/icon2-1@2x.png",
+					"images/myimages/icon2@2x.png",
+					"images/myimages/icon3-1@2x.png",
+					"images/myimages/icon3@2x.png",
+					"images/myimages/icon4-1@2x.png",
+					"images/myimages/icon4@2x.png",
+					"images/myimages/Community3@2x.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"personalCenter.html": {
+				"resources": [
+					"images/myimages/Mineshengciben@2x.png",
+					"images/myimages/Minexiezuo@2x.png",
+					"images/myimages/Minegengduo@2x.png",
+					"images/myimages/Minexiaoxi@2x.png",
+					"images/myimages/Mineyu@2x.png",
+					"images/myimages/Minekecheng@2x.png",
+					"images/myimages/Mineyuedu@2x.png",
+					"images/myimages/Mineting@2x.png",
+					"css/mycss/personalCenter.css",
+					"index.html",
+					"images/myimages/touxiang@2x.png",
+					"encyclopedia.html",
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/mycss/bottomNav.css",
+					"images/myimages/icon1-1@2x.png",
+					"images/myimages/icon1@2x.png",
+					"images/myimages/icon2-1@2x.png",
+					"images/myimages/icon2@2x.png",
+					"images/myimages/icon3-1@2x.png",
+					"images/myimages/icon3@2x.png",
+					"images/myimages/icon4-1@2x.png",
+					"images/myimages/icon4@2x.png",
+					"css/mycss/public.css",
+					"js/mui.min.js",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js"
+				],
+				"refer": [
+					"listenRecord.html",
+					"moreSettings.html",
+					"writeRecord.html",
+					"message.html",
+					"readRecord.html",
+					"notebook.html",
+					"myCourse.html",
+					"speakRecord.html",
+					"index.html",
+					"course.html",
+					"encyclopedia.html",
+					"personalCenter.html"
+				],
+				"priority": 0
+			},
+			"listenRecord.html": {
+				"resources": [
+					"css/mycss/listenRecord.css",
+					"images/myimages/userCenter15@2x.png",
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/mycss/public.css",
+					"images/myimages/userCenter3@2x.png",
+					"images/myimages/ExerciseToday10@2x.png",
+					"js/mui.min.js",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"moreSettings.html": {
+				"resources": [
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"images/myimages/touxiang@2x.png",
+					"css/mui.min.css",
+					"css/mycss/moreSettings.css",
+					"css/mycss/public.css",
+					"feedback.html",
+					"update-password.html"
+				],
+				"refer": [
+					"update-nickname.html",
+					"update-phone.html",
+					"update-email.html",
+					"update-password.html",
+					"feedback.html"
+				],
+				"priority": 0
+			},
+			"feedback.html": {
+				"resources": [
+					"moreSettings.html",
+					"css/mycss/update.css",
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/mycss/public.css",
+					"js/mui.min.js",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"writeRecord.html": {
+				"resources": [
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js",
+					"js/mui.min.js",
+					"css/mycss/listenRecord.css",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"css/mycss/public.css",
+					"images/myimages/userCenter15@2x.png",
+					"images/myimages/userCenter3@2x.png",
+					"images/myimages/ExerciseToday10@2x.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"message.html": {
+				"resources": [
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"css/mycss/message.css",
+					"css/mycss/public.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"readRecord.html": {
+				"resources": [
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js",
+					"js/mui.min.js",
+					"css/mycss/listenRecord.css",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"css/mycss/public.css",
+					"images/myimages/userCenter15@2x.png",
+					"images/myimages/userCenter3@2x.png",
+					"images/myimages/ExerciseToday10@2x.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"update-password.html": {
+				"resources": [
+					"moreSettings.html",
+					"css/mycss/update.css",
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/mycss/public.css",
+					"js/mui.min.js",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"encyclopedia-details.html": {
+				"href": "encyclopedia-details.html",
+				"resources": [
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/mycss/public.css",
+					"css/mycss/encyclopedia-details.css",
+					"js/mui.min.js",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js",
+					"images/myimages/Toeflxiaoxi@2x.png"
+				],
+				"priority": 3
+			},
+			"notebook-details.html": {
+				"href": "notebook-details.html",
+				"resources": [
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/mycss/public.css",
+					"css/mycss/notebook.css",
+					"images/myimages/userCenter23小@2x.png",
+					"js/mui.min.js",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js"
+				],
+				"priority": 9
+			},
+			"notebook.html": {
+				"href": "notebook.html",
+				"resources": [
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/mycss/public.css",
+					"css/mycss/notebook.css",
+					"images/myimages/userCenter23小@2x.png",
+					"js/mui.min.js",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js",
+					"images/myimages/userCenter23@2x.png",
+					"images/myimages/3@2x.png"
+				],
+				"refer": [
+					"notebook-details.html"
+				],
+				"priority": 9
+			},
+			"myCourse-details.html": {
+				"href": "myCourse-details.html",
+				"resources": [
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/mycss/public.css",
+					"css/mycss/myCourse-detials.css",
+					"js/mui.min.js",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js",
+					"images/cbd.jpg",
+					"images/myimages/19@2x.png",
+					"images/myimages/20@2x.png",
+					"images/myimages/21@2x.png"
+				],
+				"priority": 10
+			},
+			"myCourse.html": {
+				"href": "myCourse.html",
+				"resources": [
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/mycss/public.css",
+					"css/mycss/myCourse.css",
+					"js/mui.min.js",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js",
+					"images/cbd.jpg"
+				],
+				"refer": [
+					"myCourse-details.html"
+				],
+				"priority": 10
+			},
+			"update-nickname.html": {
+				"href": "update-nickname.html",
+				"resources": [
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/mycss/public.css",
+					"css/mycss/update.css",
+					"js/mui.min.js",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js"
+				],
+				"refer": [
+					"moreSettings.html"
+				],
+				"priority": 12
+			},
+			"update-phone.html": {
+				"href": "update-phone.html",
+				"resources": [
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/mycss/public.css",
+					"css/mycss/update.css",
+					"js/mui.min.js",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js"
+				],
+				"priority": 13
+			},
+			"update-email.html": {
+				"href": "update-email.html",
+				"resources": [
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/mycss/public.css",
+					"css/mycss/update.css",
+					"js/mui.min.js",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js"
+				],
+				"priority": 14
+			},
+			"speakRecord.html": {
+				"href": "speakRecord.html",
+				"resources": [
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/mycss/public.css",
+					"css/mycss/listenRecord.css",
+					"images/myimages/userCenter3@2x.png",
+					"images/myimages/ExerciseToday10@2x.png",
+					"js/mui.min.js",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/jquery.jplayer.min.js",
+					"js/myjs/public.js"
+				],
+				"priority": 13
+			},
+			"course-lis-detail.html": {
+				"href": "course-lis-detail.html",
+				"resources": [
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/mycss/public.css",
+					"js/mui.min.js",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js"
+				],
+				"priority": 8
+			},
+			"writing-result-details.html": {
+				"href": "writing-result-details.html",
+				"resources": [
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/mycss/public.css",
+					"js/mui.min.js",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js"
+				],
+				"priority": 13
+			},
+			"writing-article.html": {
+				"href": "writing-article.html",
+				"resources": [
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/mycss/public.css",
+					"js/mui.min.js",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/public.js"
+				],
+				"refer": [
+					"writing-practice.html"
+				],
+				"priority": 14
+			},
+			"writing-tpoList.html": {
+				"href": "writing-tpoList.html",
+				"resources": [
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"css/mycss/public.css",
+					"css/mycss/writing-tpoList.css",
+					"js/mui.min.js",
+					"js/myjs/jquery-1.11.1.min.js",
+					"js/myjs/TouchSlide.1.1.js",
+					"js/myjs/public.js",
+					"images/myimages/Exercise7@2x.png"
+				],
+				"refer": [
+					"writing-practice.html"
+				],
+				"priority": 13
+			}
+		},
+		"idle": {
+			"resources": [
+				"images/myimages/onLoad.gif",
+				"images/myimages/Mineaccount@2x.png",
+				"images/myimages/Minepassword@2x.png",
+				"images/myimages/error.png",
+				"js/myjs/jquery.jplayer.swf",
+				"login.html",
+				"images/myimages/Exercise20@2x.png",
+				"images/myimages/right.png",
+				"images/myimages/userCenter2@2x.png",
+				"images/myimages/Exercise30@2x.png",
+				"css/mycss/register.css",
+				"register.html",
+				"images/myimages/Exercise25@3x.png",
+				"css/mycss/validform.css",
+				"foundPassword.html",
+				"images/myimages/MineLoginInBack.jpg",
+				"css/mycss/login.css",
+				"js/myjs/login.js",
+				"js/myjs/Validform_v5.3.2_min.js"
+			]
+		}
+	},
+	"unpackage": [
+		"css/mui.dtpicker.css",
+		"css/mui.listpicker.css",
+		"css/mui.picker.all.css",
+		"examples/modals.html",
+		"examples/tabbar-labels-only.html",
+		"js/mui.dtpicker.js",
+		"js/mui.listpicker.js",
+		"js/mui.picker.all.js"
+	]
+}

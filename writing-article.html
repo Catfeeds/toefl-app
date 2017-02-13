@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/mycss/public.css" rel="stylesheet" />
+
+		<style type="text/css">
+			html,
+			body,
+			.mui-content {
+				background-color: white;
+			}
+			
+			.article-box,
+			.chinese {
+				width: 90%;
+				margin: 0 auto;
+				font-size: 0.8em;
+				margin-top: 10px;
+			}
+			
+			.chinese {
+				display: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a href="javascript:void(0);" class="mui-icon mui-icon-closeempty mui-pull-left orangeColor" style="font-size: 30px;font-weight: bold;" id="close"></a>
+			<h1 class="mui-title">阅读全文</h1>
+	
+		</header>
+		<div class="mui-content">
+			<div class="article-box">
+				Timberline Vegetation on Mountains The transition from forest to treeless tundra on a mountain slope is often a dramatic one. Within a vertical distance of just a few tens of meters, trees disappear as a life-form and are replaced by low shrubs, herbs, and grasses. This rapid zone of transition is called the upper timberline or tree line. In many semiarid areas there is also a lower timberline where the forest passes into steppe or desert at its lower edge, usually because of a lack of moisture. The upper timberline, like the snow line, is highest in the tropics and lowest in the Polar Regions. It ranges from sea level in the Polar Regions to 4,500 meters in the dry subtropics and 3,500-4,500 meters in the moist tropics. Timberline trees are normally evergreens, suggesting that these have some advantage over deciduous trees (those that lose their leaves) in the extreme environments of the upper timberline. There are some areas, however, where broadleaf deciduous trees form the timberline. Species of birch, for example, may occur at the timberline in parts of the Himalayas.
+			</div>
+
+		</div>
+
+		<script src="js/mui.min.js"></script>
+		<script src="js/myjs/jquery-1.11.1.min.js"></script>
+		<script src="js/myjs/public.js"></script>
+		<script type="text/javascript">
+	
+			jQuery("#close")[0].addEventListener("tap", function() {
+				mui.openWindow({
+					url: "writing-practice.html"
+				})
+			});
+		</script>
+	</body>
+
+</html>

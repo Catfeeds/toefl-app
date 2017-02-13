@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/mycss/public.css" rel="stylesheet" />
+
+		<style type="text/css">
+			html,
+			body,
+			.mui-content {
+				background-color: white;
+			}
+			
+			.article-box,
+			.chinese {
+				width: 90%;
+				margin: 0 auto;
+				font-size: 0.8em;
+				margin-top: 10px;
+			}
+			
+			.chinese {
+				display: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a href="javascript:void(0);" class="mui-icon mui-icon-closeempty mui-pull-left orangeColor" style="font-size: 30px;font-weight: bold;" id="close"></a>
+			<h1 class="mui-title">Passage1</h1>
+			<button class="mui-btn mui-btn-blue mui-btn-link mui-pull-right orangeColor" id="china">中文翻译</button>
+		</header>
+		<div class="mui-content">
+			<div class="article-box">
+				Timberline Vegetation on Mountains The transition from forest to treeless tundra on a mountain slope is often a dramatic one. Within a vertical distance of just a few tens of meters, trees disappear as a life-form and are replaced by low shrubs, herbs, and grasses. This rapid zone of transition is called the upper timberline or tree line. In many semiarid areas there is also a lower timberline where the forest passes into steppe or desert at its lower edge, usually because of a lack of moisture. The upper timberline, like the snow line, is highest in the tropics and lowest in the Polar Regions. It ranges from sea level in the Polar Regions to 4,500 meters in the dry subtropics and 3,500-4,500 meters in the moist tropics. Timberline trees are normally evergreens, suggesting that these have some advantage over deciduous trees (those that lose their leaves) in the extreme environments of the upper timberline. There are some areas, however, where broadleaf deciduous trees form the timberline. Species of birch, for example, may occur at the timberline in parts of the Himalayas.
+			</div>
+			<div class="chinese">
+				今天《剃刀》算是有个模样出来见人了，想想自己在开拍前和家人及身边人吹下的各种牛逼，真是汗颜。我依旧失言了，依旧在现场各种发飙，各种拍不了。记得三土和思维跑来横店看我，临走时我问三土什么时候再来，他说你不发脾气的时候。想起他说这句话时的表情，那叫一个轻松，虽说当时他脸上闪过一丝担忧 ​​​​...
+			</div>
+		</div>
+
+		<script src="js/mui.min.js"></script>
+		<script src="js/myjs/jquery-1.11.1.min.js"></script>
+		<script src="js/myjs/public.js"></script>
+		<script type="text/javascript">
+			jQuery("#china")[0].addEventListener("tap", function() {
+				if(jQuery(this).html() == "阅读原文") {
+					jQuery(this).html("中文翻译");
+					jQuery(".chinese").hide().siblings("div.article-box").show();
+				} else {
+					jQuery(this).html("阅读原文");
+					jQuery(".chinese").show().siblings("div.article-box").hide();
+				}
+
+			});
+			jQuery("#close")[0].addEventListener("tap", function() {
+				mui.openWindow({
+					url: "reading-practice.html"
+				})
+			});
+		</script>
+	</body>
+
+</html>

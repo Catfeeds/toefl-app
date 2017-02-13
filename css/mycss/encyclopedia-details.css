@@ -1,0 +1,21 @@
+html,body,.mui-content{
+	background-color: white;
+}
+.top-title{
+	width: 90%;
+	margin: 0 auto;
+	border-bottom: 1px #E5E5E5 solid;
+	margin-top: 10px;
+}
+.top-title h4{
+	font-weight: normal;
+}
+.top-title p span{
+	margin-left: 20px;
+}
+.bot-content{
+	width: 90%;
+	margin: 0 auto;
+	margin-top: 20px;
+	font-size: 0.8em;
+}

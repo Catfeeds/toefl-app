@@ -1,0 +1,61 @@
+
+#analysis{
+	display: none;
+}
+#analysis header{
+	background-color:white;
+	border-bottom: 1px #dadada solid;
+}
+#analysis header a{
+	position: relative;
+	top: -10px;
+}
+#analysis .an-con{
+	width: 90%;
+	margin: 0 auto;
+	margin-top:20px;
+	font-size: 0.7em;
+}
+.mui-card{
+	box-shadow: none;
+}
+.mui-card-header{
+	font-size: 0.8em;
+}
+.mui-table-view-cell>a:not(.mui-btn){
+	white-space: normal;
+}
+.mui-table-view .mui-media-body{
+	font-size: 0.8em;
+	overflow: auto;
+}
+.mui-table-view-cell:after{
+	background-color: white;
+}
+.mui-media-object{
+	width: 23px;
+	height: 23px!important;
+	line-height: 23px!important;
+	text-align: center;
+	background-color: #a4a4a4;
+	color: white;
+	border-radius: 50%;
+}
+.li-orange .mui-media-object{
+	background-color: #ff6000;
+}
+.li-grey .mui-media-body{
+	color: #aeaeae;
+}
+.li-green .mui-media-body{
+	color: #2acc5d;
+}
+.li-green .mui-media-object{
+	background-color: #2acc5d;
+}
+.li-red .mui-media-body{
+	color: #ea2c16;
+}
+.li-red .mui-media-object{
+	background-color: #ea2c16;
+}

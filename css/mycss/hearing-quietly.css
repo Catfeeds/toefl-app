@@ -1,0 +1,246 @@
+html,body{
+   background-color: white;
+}
+nav.mui-bar{
+	height: 94px;
+}
+.mui-content{
+	background-color: white;
+	padding-bottom: 94px!important;
+}
+.title_common{
+    border-bottom: 1px #bebebe solid;
+}
+.simpleSentence{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 30px;
+    position: relative;
+    /*display: none;*/
+}
+.simpleSentence ul li{
+    display: none;
+}
+.simpleSentence h4{
+    font-size: 1em;
+    color: #fe6b02;
+    text-align: center;
+}
+.simpleSentence p{
+    font-size: 0.8em;
+    margin-top: 10px;
+    color: #535353;
+}
+.chinese{
+    display: none;
+}
+.china_icon{
+    width: 8%;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.playControls{
+    width: 100%;
+    background: #ff6702;
+    padding: 20px 0 10px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+.top_controls{
+    font-size: 0.8em;
+    text-align: center;
+}
+.in_player{
+    width: 90%;
+    margin: 0 auto;
+}
+.btn_common{
+    border: 1px #fae7d5 solid;
+    color: white;
+    padding: 2px 10px;
+    border-radius: 3px;
+}
+.return_dica{
+    display: none;
+}
+.single{
+    display: none;
+}
+.img_w{
+    text-align: center;
+    margin-top: -4px;
+}
+.img_w img{
+    width: 30%;
+}
+.img_play{
+    width: 80%;
+    margin: 0 auto;
+   background: url("../../images/myimages/listenQ_play.png") no-repeat center;
+    background-size: 100% auto;
+    margin-top: -13px;
+}
+#jp_container_1.jp-state-playing .img_play{
+    background: url("../../images/myimages/listenQ_pause.png") no-repeat center;
+    background-size: 100% auto;
+}
+.bottom_controls{
+    margin-top: 10px;
+}
+.bottom_controls .col-xs-1{
+    color: white;
+    font-size: 0.8em;
+}
+.progress_box{
+    width: 90%;
+    height: 3px;
+    margin: 0 auto;
+    background: #fffeff;
+    position: relative;
+    margin-top: 8px;
+}
+.progress_bgOut{
+    width: 20%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.progress_bg{
+    width: 20%;
+    height: 100%;
+    background: #fff418;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.progress_move{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: white;
+    position: absolute;
+    right: -10px;
+    top: -4px;
+}
+.fullText{
+    width: 100%;
+    display: none;
+}
+.full_start{
+    width: 100%;
+    text-align: center;
+    padding: 130px 0;
+    color: #b1b1b1;
+    font-size: 1.2em;
+    /*border: 1px red solid;*/
+}
+.full_start img{
+    width: 25%;
+}
+.full_start p{
+    margin-top: 20px;
+}
+.full_article{
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    display: none;
+}
+.china_icon02{
+    width: 8%;
+    position: absolute;
+    right: -8%;
+    top: 0;
+}
+.full_article ul li{
+    margin-top: 30px;
+    font-size: 0.8em;
+}
+.full_article ul li p{
+    margin-bottom: 8px;
+}
+.full_article ul li span{
+    color: #a3a3a3;
+    display: none;
+}
+.full_article ul li.on p{
+    color: #f67a29;
+}
+.full_article ul li.on span{
+    color: #eead7d;
+}
+.dictation{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 30px;
+    display: none;
+}
+.dictation h4{
+    color: #ff8a28;
+    text-align: center;
+    font-size: 1em;
+}
+.dictation p{
+    color: #adadad;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 0.8em;
+}
+.dictation ul{
+    margin-top: 30px;
+}
+.dictation ul li .have_bg{
+    width: 80%;
+    height: 40px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+.dictation ul li .have_bg.green{
+    color: #029f46;
+}
+.dictation ul li .have_bg.red{
+    color: #fb2e4b;
+}
+.dictation ul li .have_bg input{
+    width: 100%;
+    height: 100%;
+    background: #f5f5f5;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px #b6b6b6 solid;
+    padding-left: 5%;
+    font-size: 0.8em;
+}
+.dicta_answer{
+    width: 90%;
+    margin: 0 auto;
+    /*margin-top: 30px;*/
+    color: #ff6702;
+    font-size: 0.8em;
+    display: none;
+}
+.dictation_icon{
+    width: 90%;
+    height: 26px;
+    background: url("../../images/myimages/listenQ_reloadP.png") no-repeat;
+    background-size: 100% auto;
+    margin-top: -3px;
+}
+.dictation_eyes{
+    width: 90%;
+    height: 26px;
+    margin:0 auto ;
+    background: url("../../images/myimages/listenQ_seeAnswer01.png") no-repeat 0 5px;
+    background-size: 100% auto;
+}
+.dictation_eyes.on{
+    background: url("../../images/myimages/listenQ_seeAnswer02.png") no-repeat;
+    background-size: 100% auto;
+}
+.listen_btn{
+    display: none;
+}

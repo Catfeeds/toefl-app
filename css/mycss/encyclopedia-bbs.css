@@ -1,0 +1,141 @@
+.mui-title span{
+	width: 100%;
+	height: 38px;
+	display: block;
+	font-weight: normal;
+}
+.mui-title span.on{
+	border-bottom: 1px #FF6600 solid;
+	color: #FF6600;
+}
+.mui-bar-nav.mui-bar .mui-pull-right{
+	padding-right: 20px;
+}
+.mui-bar-nav.mui-bar .mui-pull-right img{
+	position: relative;
+	top: 10px;
+	height: 20px;
+}
+.bbs-li{
+	background-color: white;
+	margin-bottom: 10px;
+}
+
+.bbs-content{
+	width: 90%;
+	margin: 0 auto;
+}
+.bbs-content h4{
+	font-weight: normal;
+	font-size: 1em;
+}
+.bbs-content ul li{
+	width: 30%;
+	float: left;
+	margin-right: 4%;
+}
+.bbs-content ul li:nth-child(3n){
+	margin-right: 0;
+}
+.bbs-content ul li img{
+	width: 100%;
+}
+.zan-pl{
+	float: right;
+	margin-right: 7%;
+	margin-top: 10px;
+}
+.zan-pl p{
+	float: left;
+}
+.zan-pl p.praise-p{
+	width: 24px;
+	height: 18px;
+	background: url('../../images/myimages/Community3@2x.png') no-repeat;
+	background-size: auto 100%;
+	padding-left: 25px;
+	margin-right: 20px;
+}
+.zan-pl p.praise-p.on{
+	background: url('../../images/myimages/Community3@22x.png') no-repeat;
+		background-size: auto 100%;
+		color: #FF6600;
+}
+.zan-pl p.review-p{
+	width: 25px;
+	height: 22px;
+	background: url('../../images/myimages/Community4@2x.png') no-repeat;
+	background-size: auto 100%;
+	padding-left: 25px;
+}
+.reviewShow{
+	width: 90%;
+	margin: 0 auto;
+	border-top: 1px #E5E5E5 solid;
+	font-size: 0.8em;
+}
+.reviewShow ul li{
+	margin-bottom: 10px;
+}
+.reviewShow ul li span.blue{
+	color: dodgerblue;
+}
+.reviewShow ul li span.grey{
+	color: #666666;
+}
+
+.replyInput{
+	width: 100%;
+	padding: 10px 0;
+	background-color: #EEEEEE;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 9999;
+	display: none;
+}
+.replyInput input{
+	width: 90%;
+	height: 30px;
+	border-radius: 20px;
+	display: block;
+	margin: 0 auto;
+}
+/*详情页*/
+.l-i-user{
+	/*text-align: center;*/
+}
+.l-i-user img{
+	width: 80%;
+	border-radius: 50%;
+}
+.line-grey{
+	width: 100%;
+	height: 10px;
+	background-color: #E5E5E5;
+}
+.rev-detail{
+	margin-top: 10px;border-top: none;
+}
+.rev-detail ul li{
+	border-bottom: 1px #E5E5E5 solid;
+}
+.replyIShow{
+	width: 100%;
+	padding: 10px 0 0 0;
+	background-color: #E5E5E5;
+}
+.replyIShow input{
+	width: 95%;
+	height: 30px;
+	border-radius: 20px;
+	display: block;
+	border: none;
+}
+.replyIShow .mui-col-sm-2{
+	text-align: center;
+}
+.replyIShow img{
+	width: 60%;
+	border-radius: 50%;
+}

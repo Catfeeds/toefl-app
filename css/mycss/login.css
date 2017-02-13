@@ -1,0 +1,69 @@
+html,
+body {
+	width: 100%;
+	height: 100%;
+	background: url("../../images/myimages/MineLoginInBack.jpg");
+	background-size: 100% 100%;
+}
+
+.mui-content {
+	background-color: transparent;
+}
+
+.group-input {
+	width: 90%;
+	margin: 0 auto;
+	padding-top: 30%;
+	position: relative;
+}
+#close-icon{
+	position: absolute;
+	left: 5%;
+	top: 5%;
+}
+
+.group-input p.title {
+	font-weight: normal;
+	font-size: 1.2em;
+	color: white;
+	text-align: center;
+	margin-bottom: 15%;
+}
+.group-input ul li{
+	position: relative;
+}
+.group-input ul li img{
+	height: 40px;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.group-input ul li input {
+	background-color: transparent;
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	border-bottom: 1px rgba(250, 250, 250, 0.4) solid;
+	padding-left: 40px;
+	color: white;
+	
+}
+.group-input ul li button{
+	width: 100%;
+	background-color: #FF6600;
+	border: none;
+	margin-bottom: 10px;
+	margin-top: 20px;
+}
+.group-input ul li a{
+	color: white;
+	font-size: 0.7em;
+}
+.group-input ul li a:last-child{
+	float: right;
+}
+
+input[type=color], input[type=date], input[type=datetime-local], input[type=datetime], input[type=email], input[type=month], input[type=number], input[type=password], 
+input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], select, textarea{
+	margin-bottom: 0;
+}

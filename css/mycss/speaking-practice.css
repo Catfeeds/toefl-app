@@ -1,0 +1,319 @@
+html,body,.mui-content{
+	background-color: white;
+}
+.article{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 30px;
+    color: #484647;
+    font-size: 0.8em;
+}
+.audioBox_container{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 10px;
+    font-size: 0.8em;
+}
+
+.audio_icon{
+    width: 80%;
+    height: 31px;
+    display: block;
+    background: url("../../images/myimages/listenP_volum01.png") no-repeat;
+    background-size: 100% auto;
+}
+.audioBox_container.jp-state-playing .audio_icon{
+    background: url("../../images/myimages/listenP_volum02.png") no-repeat;
+    background-size: 100% auto;
+}
+#audioBox_container_1 .audio_icon{
+    width: 100%;
+}
+.progress_box{
+    width: 90%;
+    height: 3px;
+    margin: 0 auto;
+    background: #b3b3b3;
+    position: relative;
+    margin-top: 7px;
+}
+.progress_bgOut{
+    width: 20%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.progress_bg{
+    width: 20%;
+    height: 100%;
+    background: #f46706;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.progress_move{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #d97733;
+    position: absolute;
+    right: -10px;
+    top: -4px;
+}
+
+.questionMaterial{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.questionMaterial h4{
+    color: #969494;
+    font-weight: normal;
+    font-size: 1em;
+    float: left;
+}
+.questionMaterial p{
+    margin-top: 10px;
+    color: #4e4e4e;
+    font-family: 'Tahoma';
+    font-size: 0.8em;
+}
+.question-audio{
+    float: left;
+    border-radius: 5px;
+    background: #e7e7e7;
+    border: 1px #c2c1c1 solid;
+    margin-left: 5px;
+    font-size: 0.8em;
+}
+.question-audio>span{
+    float: right;
+    margin-right: 3px;
+}
+.question-audio:hover{
+    cursor: pointer;
+}
+.question-audio a{
+    width: 16px;
+    height: 14px;
+    display: inline-block;
+    background: url("../../images/myimages/listenP_volum01.png") no-repeat;
+    background-size: 100% auto;
+    margin-top: 3px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.question-audio.on{
+    color: #026734;
+    background: #3fbb2d;
+}
+.question-audio.on a{
+    background: url("../../images/myimages/listenP_volum02.png") no-repeat;
+    background-size: 100% auto;
+}
+.jp-state-playing .question-audio.jp-play{
+
+}
+.jp-state-playing .question-audio.jp-play a{
+    background: url("../../images/myimages/listenP_volum02.png") no-repeat;
+    background-size: 100% auto;
+}
+
+.answerBox{
+    width: 100%;
+    margin-top: 30px;
+}
+.answerHd ul li .col-xs-6 .have_bg{
+    width: 100%;
+    padding: 8px 0;
+    color: #8f8f8f;
+    font-size: 1em;
+    text-align: center;
+    box-shadow: 0 5px 5px #eaeaea inset;
+    border-bottom: 1px #bdbdbd solid;
+}
+.answerHd ul li.on .col-xs-6 .have_bg{
+    box-shadow: 0 5px 5px #ff6702 inset;
+    background: #ff6702;
+    border-bottom: 1px #dd7032 solid;
+    color: white;
+}
+.answerBd ul li{
+    padding: 10px 0 18px 0;
+
+}
+.all_answer{
+    width: 100%;
+}
+.all_answer h4{
+    font-size: 0.9em;
+    font-weight: normal;
+}
+.all_answer ul li{
+    border-bottom: 1px #bcbcbc solid;
+}
+.user_head{
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #dcdcdc;
+}
+.user_head img{
+    width: 100%;
+}
+.answer_idea{
+    width: 90%;
+    margin: 0 auto;
+    font-size: 0.8em;
+}
+.bottom-control{
+    width: 100%;
+    background: #e6e6e6;
+    padding: 8px 0;
+}
+#record_c{
+    margin-top: 30px;
+}
+.fixed_bot{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+.dis{
+    display: none;
+}
+.in-control{
+    width: 90%;
+    margin: 0 auto;
+    border: 1px #bbbbbb solid;
+    border-radius: 8px;
+    background: #ffffff;
+}
+.in-control .col-xs-12{
+    text-align: center;
+}
+.in-control .col-xs-12 span{
+    width: 100%;
+    padding: 10px 0;
+    display: block;
+    color: #ff6302;
+    border-right: 1px #dbdbdb solid;
+}
+.in-control .col-xs-12 a{
+    width: 100%;
+    padding: 10px 0;
+    display: block;
+    color: #18a752;
+}
+.startAnswer{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 11;
+    background: white;
+    padding-top: 30px;
+    display: none;
+}
+.record-group{
+    width: 100%;
+    /*height: 50px;*/
+}
+.play_BG{
+    width: 20%;
+    margin: 0 auto;
+    border-radius: 50%;
+    background: url("../../images/myimages/spokenD_play.png") no-repeat;
+    background-size: 100% auto;
+}
+.play_recordBG{
+    width: 20%;
+    margin: 0 auto;
+    border-radius: 50%;
+    background: url("../../images/myimages/spokenD_play02.png") no-repeat;
+    background-size: 100% auto;
+    display: none;
+}
+.pause_BG{
+    width: 20%;
+    margin: 0 auto;
+    border-radius: 50%;
+    background: url("../../images/myimages/spokenD_pause.png") no-repeat;
+    background-size: 100% auto;
+    display: none;
+}
+.record-btn{
+    width: 100%;
+    padding: 8px 0;
+    background: #e6e6e6;
+    margin-top: 30px;
+}
+.record-btn div{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    color: #ff6502;
+    border: 1px #bbbbbb solid;
+    border-radius: 8px;
+    background: #ffffff;
+    padding: 10px 0;
+}
+
+/*录音弹窗css*/
+.speak_record{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    padding: 30px 0;
+    background: url("../../images/myimages/speaking_bg.png") no-repeat;
+    background-size: 100% 100%;
+}
+.speak_in{
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    color: #ffffff;
+}
+.closeIcon{
+    width: 34px;
+    height: 32px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: url("../../images/myimages/speaking_close.png") no-repeat;
+    background-size: 100% 100%;
+}
+.speak_in h2{
+    font-size: 1.2em;
+    font-weight: normal;
+}
+.speak_in p{
+    font-size: 0.8em;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.speak_in a{
+    width: 136px;
+    padding: 5px 0 7px 0;
+    color: #ffffff;
+    background: url("../../images/myimages/speaking_btn.png") no-repeat;
+    background-size: 100% 100%;
+    display: block;
+    margin-top: 10%;
+    margin-left: 5%;
+    text-align: center;
+}
+.speak_in .col-xs-4{
+    text-align: right;
+}
+.speak_in .col-xs-8{
+    text-align: left;
+}
+.speak_in .col-xs-4 img{
+    width:68px;
+}

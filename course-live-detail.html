@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/mycss/public.css" rel="stylesheet" />
+		<link href="css/mycss/course-live-detail.css" rel="stylesheet" />
+	</head>
+
+	<body>
+
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left orangeColor"></a>
+			<h1 class="mui-title">直播课详情</h1>
+		</header>
+		<nav class="mui-bar mui-bar-tab bg-nowhite">
+			<button type="button" class="mui-btn mui-btn-warning orangeBg">立即购买</button>
+		</nav>
+		<div class="mui-content">
+			<div class="live-d-top">
+				<p class="title-p">托福阅读班</p>
+				<ul>
+					<li class="price-li">
+						<span class="redPrice">￥9800</span>
+						<span class="oldPrice">原价:45000</span>
+					</li>
+					<li class="choose-li">
+						<p class="choose-p">请选择老师：</p>
+						<div class="choose-all">
+							<span class="on">培训老师</span>
+							<span>总监老师</span>
+						</div>
+						<div class="mui-clearfix"></div>
+					</li>
+					<li>
+						<p>课程时长：20课时</p>
+					</li>
+					<li>
+						<p>开课日期：2017-01-12 11:13:02</p>
+					</li>
+				</ul>
+			</div>
+
+			<div class="live-d-bot">
+				授课内容 <br /> 听力：对话和讲座出题点，笔记方法 口语：命题规律、答题策略和标准答题结果 阅读：题型、解题步骤和技巧、干扰选项特征/不同题材文字的结构 写作：命题规律、常考题型和解题思路
+			</div>
+
+		</div>
+
+		<script src="js/mui.min.js"></script>
+		<script src="js/myjs/jquery-1.11.1.min.js"></script>
+		<script src="js/myjs/public.js"></script>
+		<script type="text/javascript">
+			jQuery(function() {
+				//				选择老师切换样式
+				mui(".choose-all").on("tap", "span", function() {
+					if(jQuery(this).hasClass("on")) {
+						jQuery(this).removeClass("on").siblings("span").addClass("on");
+					} else {
+						jQuery(this).addClass("on").siblings("span").removeClass("on");
+					}
+				});
+			});
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/mycss/public.css" rel="stylesheet" />
+		<link href="css/mycss/moreSettings.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left orangeColor"></a>
+			<h1 class="mui-title">更多设置</h1>
+		</header>
+		<nav class="mui-bar mui-bar-tab bg-nowhite" id="loginOut">
+			<button type="button" class="mui-btn mui-btn-warning orangeBg" style="width: 100%;border-radius: 0;">退出当前账户</button>
+		</nav>
+		<div class="mui-content">
+			<div class="grey-title">
+				<span>个人信息</span>
+			</div>
+			<div class="personInfo">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<input type="file" id="fileInput" />
+						<a href="javascript:void(0);" class="mui-navigate-right">头像</a>
+						<div class="userImg">
+							<img src="images/myimages/touxiang@2x.png" />
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="update-nickname.html" class="mui-navigate-right">昵称</a>
+						<p>Emily</p>
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="update-phone.html" class="mui-navigate-right">电话</a>
+						<p>15281075954</p>
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="update-email.html" class="mui-navigate-right">邮箱</a>
+						<p>45566655@qq.com</p>
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="update-password.html" class="mui-navigate-right">密码</a>
+						<p>********</p>
+					</li>
+				</ul>
+			</div>
+			<div class="grey-title">
+				<span>关于我们</span>
+			</div>
+			<div class="aboutUs">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">官方网站
+						<span class="mui-badge">www.toeflonline.cn</span>
+					</li>
+					<li class="mui-table-view-cell">微信公众号
+						<span class="mui-badge">toeflgo</span>
+					</li>
+					<li class="mui-table-view-cell">雷哥托福备考群
+						<span class="mui-badge">25727105340</span>
+					</li>
+				</ul>
+			</div>
+			<div class="grey-title">
+				<!--<span>关于我们</span>-->
+			</div>
+			<div>
+				<ul class="mui-table-view">
+
+					<li class="mui-table-view-cell">
+						<a href="feedback.html" class="mui-navigate-right">意见反馈</a>
+						<p>3.1.1_99</p>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">激励雷哥托福</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id="scriptBox"></div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/myjs/jquery-1.11.1.min.js"></script>
+		<script src="js/myjs/public.js"></script>
+		<script type="text/javascript">
+			jQuery(function() {
+				//             头像更换
+				jQuery("#fileInput").change(function() {
+					var fileVal = $(this).val();
+					filepath = fileVal;
+					var extStart = filepath.lastIndexOf(".");
+					var ext = filepath.substring(extStart, filepath.length).toUpperCase();
+					//        判断文件是不是图片
+					if(ext != ".BMP" && ext != ".PNG" && ext != ".GIF" && ext != ".JPG" && ext != ".JPEG") {
+						alert("图片限于png,gif,jpeg,jpg格式");
+					} else {
+						var objUrl = getObjectURL(this.files[0]); //本地路径转换为本地Url;
+						if(objUrl) {
+							//                本地预览
+							var str = '<img src="' + objUrl + '"/>';
+							jQuery(str).prependTo(jQuery(".userImg"));
+						}
+					}
+				});
+
+				jQuery("#loginOut")[0].addEventListener("tap", function() {
+					loginOut();
+				});
+
+			});
+
+			function loginOut() {
+				$.ajax({
+					type: "post",
+					url: "http://www.toeflonline.cn/cn/wap-api/login-out",
+					dataType: "jsonp",
+					jsonp: "callback", //传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(默认为:callback)
+					jsonpCallback: "success_jsonpCallback", //自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名
+					success: function(data) {
+						if(data.code == 1) {
+							alert("退出成功!");
+							var str = data.loginOut;
+							delCookie('userCode');
+							delCookie('userId');
+							delCookie('s_userId');
+							delCookie('userName');
+							$("#scriptBox").html(str);
+							setTimeout(function() {
+								location.href = "index.html";
+							}, 2000);
+						}
+					},
+					error: function() {
+						alert('fail');
+					}
+				});
+			}
+		</script>
+	</body>
+
+</html>

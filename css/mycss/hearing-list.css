@@ -1,0 +1,20 @@
+html,body{
+	background-color: white;
+}
+.mui-content{
+	background-color: white;
+}
+.mui-table-view{
+	width: 90%;
+	margin: 0 auto;	
+}
+.mui-table-view-cell{
+	background-color: #ededed;
+	margin-bottom: 10px;
+}
+.mui-table-view-cell:after{
+	background-color: #ededed;
+}
+.mui-table-view:after{
+	background-color: #ededed;
+}
