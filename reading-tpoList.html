@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="myApp">
 
 	<head>
 		<meta charset="UTF-8">
@@ -10,7 +10,7 @@
 		<link href="css/mycss/reading-tpoList.css" rel="stylesheet" />
 	</head>
 
-	<body>
+	<body ng-controller="PriceCtrl">
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left orangeColor"></a>
 			<h1 class="mui-title">TPO阅读练习</h1>
@@ -19,31 +19,80 @@
 			<div class="pop-slide" id="slidePop">
 				<div class="slideBd bd">
 					<ul>
-						<li>
-							<a href="#">TPO 01</a>
-						</li>
-						<li class="on">
-							<a href="#">TPO 02</a>
-						</li>
-						<li>
-							<a href="#">TPO 03</a>
-						</li>
-						<li>
-							<a href="#">TPO 04</a>
+						<li ng-repeat="tpoT in tpo" ng-show="'{{$index}}'<4" data-sid="{{tpoT.id}}" is-over="toggle.now">
+
+							<a href="readIndex.html?id={{tpoT.id}}">{{tpoT.name}}</a>
+
 						</li>
 					</ul>
 					<ul>
-						<li>
-							<a href="#">TPO 05</a>
+						<li ng-repeat="tpoT in tpo" ng-show="'{{$index}}'>=4 &&'{{$index}}'<8 " data-sid="{{tpoT.id}}">
+
+							<a href="readIndex.html?id={{tpoT.id}}">{{tpoT.name}}</a>
+
 						</li>
-						<li class="on">
-							<a href="#">TPO 06</a>
+					</ul>
+					<ul>
+						<li ng-repeat="tpoT in tpo" ng-show="'{{$index}}'>=8 &&'{{$index}}'<12 " data-sid="{{tpoT.id}}">
+
+							<a href="readIndex.html?id={{tpoT.id}}">{{tpoT.name}}</a>
+
 						</li>
-						<li>
-							<a href="#">TPO 07</a>
+					</ul>
+					<ul>
+						<li ng-repeat="tpoT in tpo" ng-show="'{{$index}}'>=12 &&'{{$index}}'<16 " data-sid="{{tpoT.id}}">
+
+							<a href="readIndex.html?id={{tpoT.id}}">{{tpoT.name}}</a>
+
 						</li>
-						<li>
-							<a href="#">TPO 08</a>
+					</ul>
+					<ul>
+						<li ng-repeat="tpoT in tpo" ng-show="'{{$index}}'>=16 &&'{{$index}}'<20 " data-sid="{{tpoT.id}}">
+
+							<a href="readIndex.html?id={{tpoT.id}}">{{tpoT.name}}</a>
+
+						</li>
+					</ul>
+					<ul>
+						<li ng-repeat="tpoT in tpo" ng-show="'{{$index}}'>=20 &&'{{$index}}'<24 " data-sid="{{tpoT.id}}">
+
+							<a href="readIndex.html?id={{tpoT.id}}">{{tpoT.name}}</a>
+
+						</li>
+					</ul>
+					<ul>
+						<li ng-repeat="tpoT in tpo" ng-show="'{{$index}}'>=24 &&'{{$index}}'<28 " data-sid="{{tpoT.id}}">
+
+							<a href="readIndex.html?id={{tpoT.id}}">{{tpoT.name}}</a>
+
+						</li>
+					</ul>
+					<ul>
+						<li ng-repeat="tpoT in tpo" ng-show="'{{$index}}'>=28 &&'{{$index}}'<32 " data-sid="{{tpoT.id}}">
+
+							<a href="readIndex.html?id={{tpoT.id}}">{{tpoT.name}}</a>
+
+						</li>
+					</ul>
+					<ul>
+						<li ng-repeat="tpoT in tpo" ng-show="'{{$index}}'>=32 &&'{{$index}}'<36 " data-sid="{{tpoT.id}}">
+
+							<a href="readIndex.html?id={{tpoT.id}}">{{tpoT.name}}</a>
+
+						</li>
+					</ul>
+					<ul>
+						<li ng-repeat="tpoT in tpo" ng-show="'{{$index}}'>=36 &&'{{$index}}'<40 " data-sid="{{tpoT.id}}">
+
+							<a href="readIndex.html?id={{tpoT.id}}">{{tpoT.name}}</a>
+
+						</li>
+					</ul>
+					<ul>
+						<li ng-repeat="tpoT in tpo" ng-show="'{{$index}}'>=40 &&'{{$index}}'<44 " data-sid="{{tpoT.id}}">
+
+							<a href="readIndex.html?id={{tpoT.id}}">{{tpoT.name}}</a>
+
 						</li>
 					</ul>
 				</div>
@@ -115,7 +164,7 @@
 							<button type="button" class="mui-btn mui-btn-warning orangeBg">GO</button>
 						</div>
 						<div class="mui-clearfix"></div>
-					</li>
+					</li>           
 				</ul>
 			</div>
 		</div>
@@ -124,35 +173,7 @@
 		<script src="js/myjs/TouchSlide.1.1.js"></script>
 		<script src="js/myjs/public.js"></script>
 		<script src="js/myjs/reading-tpoList.js"></script>
-		<script type="text/javascript">
-			//初始化预加载详情页面
-			mui.init({
-				preloadPages: [{
-					id: 'reading-practice.html',
-					url: 'reading-practice.html'
-				}]
-			});
-
-			var detailPage = null;
-			//添加列表项的点击事件
-			mui('#tpo-content').on('tap', 'li', function(e) {
-				//		  var id = this.getAttribute('id');
-				//获得详情页面
-				//		  if(!detailPage){
-				//		    detailPage = plus.webview.getWebviewById('reading-practice.html');
-				//		  }
-				//		  //触发详情页面的newsId事件
-				//		  mui.fire(detailPage,'newsId',{
-				//		    id:id
-				//		  });
-				//打开详情页面          
-				mui.openWindow({
-					//		    id:'reading-practice.html',注意：传值时只需要这一行，删除下面一行
-					url: 'reading-practice.html'
-				});
-
-			});
-		</script>
+        <script src="js/myjs/angular1.3.1.js"></script>
 	</body>
 
 </html>

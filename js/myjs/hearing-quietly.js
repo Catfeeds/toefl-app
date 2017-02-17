@@ -14,8 +14,7 @@ jQuery(function() {
     currentNum();
        //当句属性
      jQuery(".simpleSentence ul li").first().addClass("on");
-    //插件控制播放
-     play();
+    
     //声明模块
     var myApp = angular.module("myApp",[]);
     myApp.directive('isOver',function(){
@@ -31,48 +30,49 @@ jQuery(function() {
             }
         }
     });
+
 //通过模块生成调用控制器
     myApp.controller("PriceCtrl",["$scope","$http",function($scope,$http){
-//        获取到一个句子的单个单词
-        $scope.datas = [
-            {
-                word:"I'm"
+        $http({
+            method: 'post',
+            url: 'http://www.toeflonline.cn/cn/wap-api/careful-listening',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
             },
-            {
-                word:"supposed"
-            },
-            {
-                word:"to"
-            },
-            {
-                word:"do"
-            },
-            {
-                word:"a"
+            data:{
+                type:1,
+                id:4447,//文章id
+                num:1,
+                userId:localStorage.getItem("userId")
             }
-            ,
-            {
-                word:"literature"
+        }).success(function(data) {
+            $scope.sentence=data.sentence;
+            $scope.filePath=data.audio.filePath;
+            $scope.catname=catname;
+            $scope.title=title;
+            for(var i=0;i< $scope.sentence.length;i++){
+                $scope.sentence[i].endTime=parseFloat($scope.sentence[i].start_time)+parseFloat($scope.sentence[i].audio_time);
             }
-            ,
-            {
-                word:"review"
-            }
-            ,
-            {
-                word:"for"
-            }
-        ];
-
-//        $http.post('').success(function(data) {
-//
-//        });
-       $scope.toggle = {
+        });
+        $scope.toggle = {
             now:false
         };
         $scope.$watch('toggle.now',function(){
             if($scope.toggle.now){//界面的angularjs循环的元素加载完毕
-
+                //     句子精听模块的总句子数
+                $("#total-sentence").html($(".simpleSentence ul li").length);
+                //    当前句子数量
+                currentNum();
+                //全文首句样式
+                $(".full_article ul li").first().addClass("on");
+                //插件控制播放
+                loadAudio($scope.filePath);
+                //当句属性
+                $(".simpleSentence ul li").first().addClass("on");
+                //听力记录跳转过来
+                if(listenWrite){
+                    $("#listen_w")[0].onclick();
+                }
             }
         });
 
@@ -84,12 +84,12 @@ jQuery(function() {
 	    });  
 });
 
-function play(){
+function loadAudio(src){
 	  jQuery("#jquery_jplayer_1").jPlayer({
 		ready: function(event) {
 			$(this).jPlayer("setMedia", {
 				m4a: "",
-				mp3: "audio.mp3"
+				mp3: "http://www.toeflonline.cn"+src
 			});
 		},
 		swfPath: "../../js",
@@ -98,7 +98,7 @@ function play(){
 		useStateClassSkin: true,
 		toggleDuration: true,
 		timeupdate: function(event) {
-            playCurrent=event.jPlayer.status.currentTime;//获得当前时间
+//          playCurrent=event.jPlayer.status.currentTime;//获得当前时间
   //          playDuration=event.jPlayer.status.duration;//获得当前时间
         }
 	});
@@ -298,9 +298,15 @@ function playIcon(o){
 
             }else{
                 allSentence();
+                  scrollPos();
             }
         },1000/60);
     }
+}
+//控制文章滚动条
+function scrollPos(){
+    var topT=$(".full_article ul li.on")[0].offsetTop;
+    $(".full_article").animate({scrollTop:topT+"px"},1000/30);
 }
 //播放上一句
 function playPrev(){

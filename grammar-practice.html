@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html  ng-app="myApp">
 
 	<head>
 		<meta charset="UTF-8">
@@ -10,7 +10,15 @@
 		<link href="css/mycss/grammar-practice.css" rel="stylesheet" />
 	</head>
 
-	<body>
+	<body ng-controller="PriceCtrl">
+
+		<!--任务通过，题目做完之后显示下面弹窗-->
+				<div class="mui-backdrop">
+					<div class="in-div">
+						<img src="images/myimages/ExerciseToday15@2x.png" alt="img" />
+						<a href="index.html"><button type="button" class="mui-btn mui-btn-success">确定</button></a>
+					</div>
+				</div>
 		<!-- 主界面菜单同时移动 -->
     <!-- 侧滑导航根容器 -->
     <div class="mui-off-canvas-wrap mui-draggable" id="practice">
@@ -28,13 +36,13 @@
             <!-- 主页面标题 -->
 		    <header id="header" class="mui-bar mui-bar-nav">
 				<a href="grammar.html" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left orangeColor"></a>
-				<h1 class="mui-title">语法学习(1/5)</h1>
+				<h1 class="mui-title">语法学习(<span id="curSpan">{{num}}</span>/5)</h1>
 		    	<button class="mui-btn mui-btn-blue mui-btn-link mui-pull-right orangeColor" onclick="showAnalysis()">解析</button>
 		    </header>
 		  
             <nav class="mui-bar mui-bar-tab bg-nowhite">
-				<button type="button" class="mui-btn mui-btn-warning orangeBg">提交答案</button>
-				<!--<button type="button" class="mui-btn mui-btn-warning orangeBg">下一题</button>-->
+				<button type="button" class="mui-btn mui-btn-warning orangeBg" id="subAnswer">提交答案</button>
+				<button type="button" class="mui-btn mui-btn-warning orangeBg" style="display: none;" id="next">下一题</button>
 	        </nav>
 	      
             <!-- 主页面内容容器 -->
@@ -43,42 +51,19 @@
                     <!-- 主界面具体展示内容 -->
              <div class="mui-card">
 				<!--页眉，放置标题-->
-				<div class="mui-card-header">What can be inferred about why the woman decides to use the computer in the library?</div>
+				<div class="mui-card-header">{{listeningFile}}</div>
 				<!--内容区-->
 				<div class="mui-card-content">
 					<ul class="mui-table-view">
-					    <li class="mui-table-view-cell mui-media li-orange">
-					        <a href="javascript:;">
-					            <div class="mui-media-object mui-pull-left">A</div>
+					    <li class="mui-table-view-cell mui-media" ng-repeat="alternativesT in alternatives">
+					        <a href="javascript:void(0);">
+					            <div class="mui-media-object mui-pull-left">{{$index | optionsAll}}</div>
 					            <div class="mui-media-body">					             
-					               She thinks she might need additional help from the man
+					               {{alternativesT}}
 					            </div>
 					        </a>
 					    </li>
-					    <li class="mui-table-view-cell mui-media li-grey">
-					        <a href="javascript:;">
-					              <div class="mui-media-object mui-pull-left">B</div>
-					            <div class="mui-media-body">
-					               She does not have a computer at home
-					            </div>
-					        </a>
-					    </li>
-					    <li class="mui-table-view-cell mui-media li-red">
-					        <a href="javascript:;">
-					            <div class="mui-media-object mui-pull-left">C</div>
-					            <div class="mui-media-body">
-					               She has to hand in her assignment by the end of the day
-					            </div>
-					        </a>
-					    </li>
-					      <li class="mui-table-view-cell mui-media li-green">
-					        <a href="javascript:;">
-					            <div class="mui-media-object mui-pull-left">D</div>
-					            <div class="mui-media-body">
-					               She will be meeting a friend in the library later on
-					            </div>
-					        </a>
-					    </li>
+					  
 					</ul>
 				</div>
 		
@@ -107,7 +92,7 @@
             <!-- 主页面标题 -->
              <header id="header" class="mui-bar mui-bar-nav">			
 				<h1 class="mui-title">解析</h1>
-			    <a class="mui-icon mui-icon-closeempty mui-pull-right orangeColor" style="font-size: 2.5em;" onclick="hideAnalysis()"></a>
+			    <a href="javascript:void(0);" class="mui-icon mui-icon-closeempty mui-pull-right orangeColor" style="font-size: 2.5em;" id="jiexi"></a>
 		    </header>
         
             <!-- 主页面内容容器 -->
@@ -116,18 +101,7 @@
                     <!-- 主界面具体展示内容 -->
                    <div class="analysis">	        	
 		        	<div class="an-con">
-		        		Listen to part of a conversation between a student and a librarian.
-						Hi, um... I really hope you can help me.
-						That's why I'm here. What can I do for you?
-						I'm supposed to do a literature review for my psychology course, but I'm having a hard time finding articles. I don't even know where to start looking.
-						You said this is for your psychology course, right?So your focus is on...
-						Dream Interpretation.
-						Well, you have a focus, so that's already a good start.Hmmm... well, there're a few things... oh wait... have you checked to see if your professor put any material for you to look at on reserve?
-						Aha, that's one thing I did know to do.I just copied an article, but I still need three more on my topic from three different journals.
-						Let's get you going on looking for those then.We have printed versions of twenty or so psychology journals in the Reference Section. These are ones published within the last year. Now that I think about it... there's a journal named Sleep and Dreams.
-						Oh, yeah, the article I just copied is from that journal, so I've got to look in other sources.
-						Ok, actually, most of our materials are available electronically now.You can access psychology databases or electronic journals and articles through the library's computers, and if you want to search by title with the word 'dream' for example, just type it in and all the articles with 'dream' in the title will come up on the screen. 
-						Cool, that's great!Too bad I cannot do this from home.
+		        		{{jiexi}}
 		        	</div>
 	             </div>
                 </div>
@@ -141,6 +115,7 @@
 		<script src="js/myjs/jquery-1.11.1.min.js"></script>
 		<script src="js/myjs/public.js"></script>
 		<script src="js/myjs/grammar-practice.js"></script>
+		<script src="js/myjs/angular1.3.1.js"></script>
 	</body>
 
 </html>

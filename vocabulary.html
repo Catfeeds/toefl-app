@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="myApp">
 
 	<head>
 		<meta charset="UTF-8">
@@ -13,7 +13,7 @@
 	<body>
 		<!-- 主界面菜单同时移动 -->
 		<!-- 侧滑导航根容器 -->
-		<div class="mui-off-canvas-wrap mui-draggable">
+		<div class="mui-off-canvas-wrap mui-draggable"  ng-controller="PriceCtrl">
 			<!-- 主页面容器 -->
 			<div class="mui-inner-wrap">
 				<!-- 菜单容器 -->
@@ -39,32 +39,27 @@
 							<h2>听单词，选择正确的翻译</h2>
 							<div class="w-m-word">
 								<div class="word-box">
-									<h4>Money</h4>
+									<h4>{{name}}</h4>
 									<div class="out-box">
-										<span style="float: left;">['m^ni]</span>
+										<div style="position: relative;">
+											[{{answer}}]
 										<div id="jquery_jplayer_1" class="jp-jplayer"></div>
-										<div id="jp_container_1" class="jp-audio" style="float: left;">
-											<button class="jp-play" style="border: none;position: relative;top: -5px;left: -10px;background-color: transparent;">
-                   	    	  	<img src="images/myimages/ExerciseToday14@2x.png" alt="图标" height="18px"/></button>
+										<div id="jp_container_1" class="jp-audio" style="position: absolute;top: 0;right: -20px;">
+											<button class="jp-play" style="border: none;background-color: transparent;
+												background: url(images/myimages/ExerciseToday14@2x.png) no-repeat;background-size: 100% 100%;
+												width: 18px;height: 20px;padding: 0;">                  	
+											</button>
 										</div>
-										<div class="mui-clearfix"></div>
+										</div>
+										
 									</div>
 								</div>
-								<!--选择正确跳转到下一题，选择错误跳转到单词意译-->
+							<!--	选择正确跳转到下一题，选择错误跳转到单词意译-->
 								<div class="choose-ul">
 									<ul>
-										<li class="green">
-											A.面粉可作为早期钱币
-										</li>
-										<li class="red">
-											B.面粉可作为早期钱币
-										</li>
-										<li>
-											C.面粉可作为早期钱币
-										</li>
-										<li>
-											D.面粉可作为早期钱币
-										</li>
+										<li ng-repeat="cloptionT in cloption" data-options="{{$index | optionsAll}}">
+											{{cloptionT}}
+										</li>									
 									</ul>
 								</div>
 							</div>
@@ -74,31 +69,19 @@
 				<!--<div class="mui-off-canvas-backdrop"></div>-->
 			</div>
 		</div>
+		<!--任务通过，题目做完之后显示下面弹窗-->
+				<div class="mui-backdrop">
+					<div class="in-div">
+						<img src="images/myimages/ExerciseToday15@2x.png" alt="img" />
+						<a href="index.html"><button type="button" class="mui-btn mui-btn-success">确定</button></a>
+					</div>
+				</div>
 		<script src="js/mui.min.js"></script>
 		<script src="js/myjs/jquery-1.11.1.min.js"></script>
 		<script src="js/myjs/jquery.jplayer.min.js"></script>
-		<script src="js/myjs/public.js"></script>
-		<script type="text/javascript">
-			jQuery(function() {
-				jQuery("#jquery_jplayer_1").jPlayer({
-					ready: function(event) {
-						$(this).jPlayer("setMedia", {
-							m4a: "",
-							mp3: "audio.mp3"
-						});
-					},
-					swfPath: "../../js",
-					supplied: "m4a, oga,mp3",
-					wmode: "window",
-					useStateClassSkin: true,
-					toggleDuration: true
-				});
-				jQuery(".choose-ul ul li")[0].addEventListener("tap", function() {
-					location.href = "vocab-word.html";
-				});
-
-			});
-		</script>
+		<script src="js/myjs/public.js"></script>	
+		<script src="js/myjs/vocabulary.js"></script>
+		<script src="js/myjs/angular1.3.1.js"></script>
 	</body>
 
 </html>

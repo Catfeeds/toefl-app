@@ -21,17 +21,17 @@ function subLogin(name,pass){
     if(!username){
     	alert("请输入用户名！");
     	return false;
-    }
-     if(!password){
+    }else if(!password){
     	alert("请输入密码！");
     	return false;
-    }
+    }else{
+    	
     $.ajax({
         type : "post",
         url : "http://login.gmatonline.cn/cn/wap-api/check-login?userName="+username+"&userPass="+password,
         dataType : "jsonp",
         jsonp: "callback",//传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(默认为:callback)
-        jsonpCallback:"success_jsonpCallback",//自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名
+        jsonpCallback:"success_jsonpCallback",//自定义的jsonp回调函啊啊数名称，默认为jQuery自动生成的随机函数名
         success : function(data){
             if(data.code==1){
                 setCookie('userCode',data.code);
@@ -45,7 +45,8 @@ function subLogin(name,pass){
                     jsonp: "callback",//传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(默认为:callback)
                     jsonpCallback:"success_jsonpCallback",//自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名
                     success:function(data01){
-                        setCookie('userId',data01.userId);
+//                      setCookie('userId',data01.userId);
+                        localStorage.setItem('userId',data01.userId);
                         //留学
                         $.ajax({
                             type : "post",
@@ -94,7 +95,10 @@ function subLogin(name,pass){
                 });
 
                 setTimeout(function(){
-                    location.href="index.html";
+                	mui.openWindow({
+                		url:"index.html"
+                	})
+                 
                 },1500);
             }else{
                 alert(data.message);
@@ -104,4 +108,7 @@ function subLogin(name,pass){
             alert('fail');
         }
     });
+
+    }
+
 }

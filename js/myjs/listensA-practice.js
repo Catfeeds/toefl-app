@@ -1,6 +1,7 @@
 jQuery(function() {
-	//	关闭解析
-	jQuery("#jiexi")[0].addEventListener("tap", hideAnalysis);
+
+	var taskSession = localStorage.getItem("taskSession");
+	var userId = localStorage.getItem('userId');
 	//声明模块
 	var myApp = angular.module("myApp", []);
 	myApp.directive('isOver', function() {
@@ -16,8 +17,7 @@ jQuery(function() {
 			}
 		}
 	});
-	var taskSession = localStorage.getItem("taskSession");
-	var userId = localStorage.getItem('userId');
+
 	//通过模块生成调用控制器
 	myApp.controller("PriceCtrl", ["$scope", "$http", "$sce", function($scope, $http, $sce) {
 		$scope.toggle = {
@@ -28,10 +28,10 @@ jQuery(function() {
 
 			}
 		});
-	
+
 		$http({
 			method: 'post',
-			url: 'http://www.toeflonline.cn/cn/app-api/grammar-learning',
+			url: 'http://www.toeflonline.cn/cn/app-api/intensive-listening',
 			headers: {
 				'Content-Type': 'application/x-www-form-urlencoded'
 			},
@@ -39,12 +39,11 @@ jQuery(function() {
 				userId: userId,
 				taskSession: taskSession
 			}
-		}).success(function(data){
-				
-			$scope.jiexi = data.grammarLearning.answer;
-			$scope.listeningFile = data.question.listeningFile;
+		}).success(function(data) {
+			$scope.cnName = data.question.cnName;
 			$scope.alternatives = data.question.alternatives.split("\r");
-//			获取动态改变的当前题目数量(做到了第几道题) 只能再次请求
+			$scope.listeningFile=data.question.listeningFile;
+				//			获取动态改变的当前题目数量(做到了第几道题) 只能再次请求
 			$http({
 				method: 'post',
 				url: 'http://www.toeflonline.cn/cn/app-api/today-task',
@@ -55,30 +54,44 @@ jQuery(function() {
 					userId: userId
 				}
 			}).success(function(data) {
-				$scope.num=data.todayTask.grammarLearning.num;
+				$scope.num=data.todayTask.intensiveListening.num;
 			});
-//			选项点击事件
-			mui(".mui-table-view").on("tap", ".mui-table-view-cell", function() {
-				jQuery(this).addClass("li-orange").siblings("li").removeClass("li-orange");
+			//			音频播放
+			jQuery("#jquery_jplayer_1").jPlayer({
+				ready: function(event) {
+					$(this).jPlayer("setMedia", {
+						m4a: "",
+						mp3: "http://www.toeflonline.cn" + $scope.cnName
+					});
+				},
+				swfPath: "../../js",
+				supplied: "m4a, oga,mp3",
+				wmode: "window",
+				useStateClassSkin: true,
+				toggleDuration: true
+			});
+				mui(".mui-table-view").on("tap", ".mui-table-view-cell", function() {
+				jQuery(this).addClass("orange").siblings("li").removeClass("orange");
 			});
 			//          提交答案点击
 			jQuery("#subAnswer")[0].addEventListener("tap", function() {
+				
 				jQuery(this).hide().siblings("button").show();
 				jQuery(".mui-table-view-cell").each(function() {
-					var userAnswer = jQuery(this).find(".mui-media-object").html();
+					var userAnswer = jQuery(this).attr("data-options");
 					//             	正确答案
 					$scope.trueAnswer = data.question.answer;
 					if(userAnswer == $scope.trueAnswer) {
-						jQuery(this).addClass("li-green");
+						jQuery(this).addClass("green");
 					}
 					//             	  	用户选择答案比较样式
-					if(jQuery(this).hasClass("li-orange")) {
-						var userAnswer = jQuery(this).find(".mui-media-object").html();
+					if(jQuery(this).hasClass("orange")) {
+						var userAnswer = jQuery(this).attr("data-options");
 						$scope.trueAnswer = data.question.answer;
 						if(userAnswer == $scope.trueAnswer) {
-							jQuery(this).addClass("li-green");
+							jQuery(this).addClass("green");
 						} else {
-							jQuery(this).addClass("li-red");
+							jQuery(this).addClass("red");
 						}
 
 					}
@@ -86,14 +99,13 @@ jQuery(function() {
 					//             	  	alert("还没选择答案哦!");
 					//             	  }
 				});
-				
-				
+			jQuery("#title").removeClass("tranp");
 
 			});
-			//          下一题
+				//          下一题
 			jQuery("#next")[0].addEventListener("tap", function() {
 				var userId = localStorage.getItem('userId');
-				var type = "grammarLearning";			
+				var type = "intensiveListening";			
 				$http({
 					method: 'post',
 					url: 'http://www.toeflonline.cn/cn/app-api/task-next',
@@ -105,22 +117,22 @@ jQuery(function() {
 						type: type
 					}
 				}).success(function(data) {
-			
 					if(data.code == 2) {
 						jQuery(".mui-backdrop").show();
 					} else {
 
 						mui.openWindow({
-							url: "grammar-practice.html"
+							url: "listensA-practice.html"
 						});
 						
 					}
 				});
 			});
-
+			
+			
 		});
 	}]);
-//	将数字0123转化为字母ABCD
+	//	将数字0123转化为字母ABCD
 	myApp.filter('optionsAll', function() {
 		return function(r) {
 			return String.fromCharCode(65 + r);
@@ -128,13 +140,3 @@ jQuery(function() {
 	});
 
 });
-//显示解析
-function showAnalysis() {
-	jQuery("#practice").hide();
-	jQuery("#analysis").slideDown();
-}
-//关闭解析
-function hideAnalysis() {
-	jQuery("#practice").show();
-	jQuery("#analysis").slideUp();
-}

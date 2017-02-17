@@ -22,7 +22,6 @@ function setCookie(objName, objValue, objHours) { //添加cookie
 //读取cookies
 function getCookie(name) {
 	var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
-
 	if(arr = document.cookie.match(reg))
 
 		return unescape(arr[2]);

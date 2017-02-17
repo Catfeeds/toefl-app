@@ -54,13 +54,13 @@
 
 		"Orientation": {},
 		"Device": {},
-		"Push": {},
+		
 		"Maps": {},
 		"File": {},
-		"Share": {},
-		"OAuth": {},
-		"Payment": {},
-		"Statistic": {},
+		
+		
+		
+		
 		"Messaging": {},
 		"Invocation": {},
 		"Geolocation": {},
@@ -182,11 +182,11 @@
 					}
 				},
 				"android": {
-					"mdpi": "C:/Users/Administrator/Desktop/3.0/3.0/今日练习--首页/ExerciseToday2@2x.png", /*必选，240x282，普通屏启动图片*/
-					"ldpi": "C:/Users/Administrator/Desktop/3.0/3.0/今日练习--首页/ExerciseToday2@2x.png", /*必选，320x442，大屏启动图片*/
-					"hdpi": "C:/Users/Administrator/Desktop/3.0/3.0/今日练习--首页/ExerciseToday2@2x.png", /*必选，480x762，高分屏启动图片*/
-					"xhdpi": "C:/Users/Administrator/Desktop/3.0/3.0/今日练习--首页/ExerciseToday1@2x.png", /*必选，720x1242，720P高分屏启动图片*/
-					"xxhdpi": "C:/Users/Administrator/Desktop/3.0/3.0/今日练习--首页/ExerciseToday1@2x.png"
+					"mdpi": "C:/Users/Administrator/Desktop/托福安卓APP图标/3.0/3.0/今日练习--首页/ExerciseToday1@2x.png", /*必选，240x282，普通屏启动图片*/
+					"ldpi": "C:/Users/Administrator/Desktop/托福安卓APP图标/3.0/3.0/今日练习--首页/ExerciseToday1@2x.png", /*必选，320x442，大屏启动图片*/
+					"hdpi": "C:/Users/Administrator/Desktop/托福安卓APP图标/3.0/3.0/今日练习--首页/ExerciseToday1@2x.png", /*必选，480x762，高分屏启动图片*/
+					"xhdpi": "C:/Users/Administrator/Desktop/托福安卓APP图标/3.0/3.0/今日练习--首页/ExerciseToday1@2x.png", /*必选，720x1242，720P高分屏启动图片*/
+					"xxhdpi": "C:/Users/Administrator/Desktop/托福安卓APP图标/3.0/3.0/今日练习--首页/ExerciseToday1@2x.png"
 				}
 			}
 		}
@@ -238,12 +238,15 @@
 					"css/mycss/bottomNav.css",
 					"encyclopedia.html",
 					"course.html",
-					"personalCenter.html"
+					"personalCenter.html",
+					"js/myjs/angular1.3.1.js"
 				],
 				"refer": [
 					"index-menu.html",
 					"encyclopedia-bbs.html",
-					"index.html"
+					"index.html",
+					"login.html",
+					"moreSettings.html"
 				],
 				"priority": 0
 			},
@@ -1106,7 +1109,8 @@
 					"js/myjs/public.js",
 					"js/mui.min.js",
 					"css/mui.min.css",
-					"css/mycss/public.css"
+					"css/mycss/public.css",
+					"js/myjs/angular1.3.1.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -1121,7 +1125,10 @@
 					"js/mui.min.js",
 					"fonts/mui.ttf",
 					"css/mui.min.css",
-					"css/mycss/public.css"
+					"css/mycss/public.css",
+					"images/myimages/ExerciseToday15@2x.png",
+					"js/myjs/angular1.3.1.js",
+					"index.html"
 				],
 				"refer": [],
 				"priority": 0
@@ -1139,7 +1146,8 @@
 					"js/mui.min.js",
 					"css/mui.min.css",
 					"css/mycss/public.css",
-					"extensive.html"
+					"extensive.html",
+					"js/myjs/angular1.3.1.js"
 				],
 				"refer": [
 					"listensArticles.html",
@@ -1160,12 +1168,10 @@
 					"js/myjs/public.js",
 					"js/mui.min.js",
 					"css/mui.min.css",
-					"css/mycss/public.css"
+					"css/mycss/public.css",
+					"js/myjs/vocabulary.js"
 				],
-				"refer": [
-					"vocab-word.html",
-					"index.html"
-				],
+				"refer": [],
 				"priority": 0
 			},
 			"listensArticles.html": {
@@ -1196,7 +1202,9 @@
 					"css/mui.min.css",
 					"images/myimages/progress_sprite.png",
 					"css/mycss/listensArticles.css",
-					"audio.mp3"
+					"audio.mp3",
+					"js/myjs/listensArticles.js",
+					"js/myjs/angular1.3.1.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -1273,12 +1281,11 @@
 					"fonts/mui.ttf",
 					"css/mui.min.css",
 					"js/myjs/jquery.jplayer.min.js",
-					"css/mycss/public.css"
-				],
-				"refer": [
-					"listensArticles.html",
+					"css/mycss/public.css",
+					"js/myjs/listensA-practice.js",
 					"index.html"
 				],
+				"refer": [],
 				"priority": 0
 			},
 			"vocab-word.html": {
@@ -1292,11 +1299,10 @@
 					"js/myjs/jquery-1.11.1.min.js",
 					"js/myjs/public.js",
 					"fonts/mui.ttf",
-					"js/myjs/jquery.jplayer.min.js"
+					"js/myjs/jquery.jplayer.min.js",
+					"js/myjs/vocab-word.js"
 				],
-				"refer": [
-					"vocabulary.html"
-				],
+				"refer": [],
 				"priority": 0
 			},
 			"hearing-way.html": {
@@ -1330,12 +1336,11 @@
 					"css/mui.min.css",
 					"css/mycss/public.css",
 					"images/myimages/Exercise7@2x.png",
-					"hearing.html"
-				],
-				"refer": [
 					"hearing.html",
-					"hearing-way.html"
+					"js/myjs/hearing-list.js",
+					"js/myjs/angular1.3.1.js"
 				],
+				"refer": [],
 				"priority": 0
 			},
 			"hearing.html": {
@@ -1357,12 +1362,10 @@
 					"css/mycss/public.css",
 					"js/mui.min.js",
 					"js/myjs/jquery-1.11.1.min.js",
-					"js/myjs/public.js"
+					"js/myjs/public.js",
+					"js/myjs/angular1.3.1.js"
 				],
-				"refer": [
-					"index.html",
-					"hearing-list.html"
-				],
+				"refer": [],
 				"priority": 0
 			},
 			"hearing-practice.html": {
@@ -1436,11 +1439,7 @@
 					"reading-ogList.html",
 					"index.html"
 				],
-				"refer": [
-					"index.html",
-					"reading-tpoList.html",
-					"reading-ogList.html"
-				],
+				"refer": [],
 				"priority": 0
 			},
 			"reading-tpoList.html": {
@@ -1616,11 +1615,7 @@
 					"index.html",
 					"images/myimages/Exercise29@2x.png"
 				],
-				"refer": [
-					"index.html",
-					"speaking-tpoList.html",
-					"speaking-goldList.html"
-				],
+				"refer": [],
 				"priority": 0
 			},
 			"speaking-tpoList.html": {
@@ -1927,12 +1922,7 @@
 					"images/myimages/icon4@2x.png"
 				],
 				"refer": [
-					"index.html",
-					"encyclopedia.html",
-					"personalCenter.html",
-					"course-listen.html",
-					"course-live.html",
-					"course-class.html"
+					"personalCenter.html"
 				],
 				"priority": 0
 			},
@@ -2090,9 +2080,7 @@
 					"notebook.html",
 					"myCourse.html",
 					"speakRecord.html",
-					"index.html",
 					"course.html",
-					"encyclopedia.html",
 					"personalCenter.html"
 				],
 				"priority": 0
@@ -2124,14 +2112,13 @@
 					"css/mycss/moreSettings.css",
 					"css/mycss/public.css",
 					"feedback.html",
-					"update-password.html"
+					"update-password.html",
+					"index.html"
 				],
 				"refer": [
 					"update-nickname.html",
 					"update-phone.html",
-					"update-email.html",
-					"update-password.html",
-					"feedback.html"
+					"update-email.html"
 				],
 				"priority": 0
 			},
@@ -2403,29 +2390,44 @@
 					"writing-practice.html"
 				],
 				"priority": 13
+			},
+			"login.html": {
+				"resources": [
+					"css/mycss/validform.css",
+					"images/myimages/Minepassword@2x.png",
+					"images/myimages/Mineaccount@2x.png",
+					"images/myimages/MineLoginInBack.jpg",
+					"images/myimages/Exercise30@2x.png",
+					"css/mycss/login.css",
+					"js/myjs/login.js",
+					"js/myjs/Validform_v5.3.2_min.js",
+					"images/myimages/right.png",
+					"register.html"
+				],
+				"refer": [
+					"index.html"
+				],
+				"priority": 0
+			},
+			"register.html": {
+				"resources": [
+					"js/myjs/register.js",
+					"css/mycss/register.css",
+					"login.html"
+				],
+				"refer": [],
+				"priority": 0
 			}
 		},
 		"idle": {
 			"resources": [
 				"images/myimages/onLoad.gif",
-				"images/myimages/Mineaccount@2x.png",
-				"images/myimages/Minepassword@2x.png",
 				"images/myimages/error.png",
 				"js/myjs/jquery.jplayer.swf",
-				"login.html",
 				"images/myimages/Exercise20@2x.png",
-				"images/myimages/right.png",
 				"images/myimages/userCenter2@2x.png",
-				"images/myimages/Exercise30@2x.png",
-				"css/mycss/register.css",
-				"register.html",
 				"images/myimages/Exercise25@3x.png",
-				"css/mycss/validform.css",
-				"foundPassword.html",
-				"images/myimages/MineLoginInBack.jpg",
-				"css/mycss/login.css",
-				"js/myjs/login.js",
-				"js/myjs/Validform_v5.3.2_min.js"
+				"foundPassword.html"
 			]
 		}
 	},

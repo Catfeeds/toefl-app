@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="myApp">
 
 	<head>
 		<meta charset="UTF-8">
@@ -13,7 +13,7 @@
 	<body>
 		<!-- 主界面菜单同时移动 -->
 		<!-- 侧滑导航根容器 -->
-		<div class="mui-off-canvas-wrap mui-draggable">
+		<div class="mui-off-canvas-wrap mui-draggable" ng-controller="PriceCtrl">
 			<!-- 主页面容器 -->
 			<div class="mui-inner-wrap">
 				<!-- 菜单容器 -->
@@ -28,11 +28,11 @@
 				<!-- 主页面标题 -->
 				<header class="mui-bar mui-bar-nav">
 					<a href="listensArticles.html" class="mui-icon mui-icon-arrowleft orangeColor"></a>
-					<h1 class="mui-title">精听文章(1/5)</h1>
+					<h1 class="mui-title">精听文章({{num}}/5)</h1>
 				</header>
 				<nav class="mui-bar mui-bar-tab bg-nowhite">
-					<button type="button" class="mui-btn mui-btn-warning orangeBg">提交答案</button>
-					<!--<a href="#"><button type="button" class="mui-btn mui-btn-warning orangeBg">下一题</button></a>-->
+					<button type="button" class="mui-btn mui-btn-warning orangeBg" id="subAnswer">提交答案</button>
+					<button type="button" class="mui-btn mui-btn-warning orangeBg" style="display: none;" id="next">下一题</button>
 				</nav>
 				<!-- 主页面内容容器 -->
 				<div class="mui-content mui-scroll-wrapper">
@@ -45,21 +45,20 @@
 								<span style="float: left;">点击播放句子</span>
 								<div id="jquery_jplayer_1" class="jp-jplayer"></div>
 								<div id="jp_container_1" class="jp-audio" style="float: left;">
-									<button class="jp-play" style="border: none;position: relative;top: -5px;left: -5px;background-color: transparent;">
-                   	    	  	<img src="images/myimages/ExerciseToday14@2x.png" alt="图标" height="18px"/></button>
+									<button class="jp-play" style="border: none;position: relative;top: -5px;background-color: transparent;
+										background:url(images/myimages/ExerciseToday14@2x.png) no-repeat;background-size: 100% 100%;width: 21px;height: 28px;">
+                   	    	
+									</button>
 								</div>
 							</div>
 							<div class="mui-clearfix"></div>
 							<!--点击提交答案之后就去掉下面文字模糊的class-->
-							<h4 class="tranp">Early Money Is Like Yeast</h4>
+							<h4 class="tranp" id="title">{{listeningFile}}</h4>
 						</div>
 						<div class="three-w-con">
 							<ul class="mui-table-view">
 								<li class="mui-table-view-cell">这句话的意思是</li>
-								<li class="mui-table-view-cell green">A.面粉可作为早期钱币</li>
-								<li class="mui-table-view-cell red">A.面粉可作为早期钱币</li>
-								<li class="mui-table-view-cell orange">A.面粉可作为早期钱币</li>
-								<li class="mui-table-view-cell">A.面粉可作为早期钱币</li>
+								<li class="mui-table-view-cell" ng-repeat="alternativesT in alternatives" data-options="{{$index | optionsAll}}">{{alternativesT}}</li>								
 							</ul>
 						</div>
 
@@ -78,23 +77,8 @@
 		<script src="js/myjs/jquery-1.11.1.min.js"></script>
 		<script src="js/myjs/jquery.jplayer.min.js"></script>
 		<script src="js/myjs/public.js"></script>
-		<script type="text/javascript">
-			jQuery(function() {
-				jQuery("#jquery_jplayer_1").jPlayer({
-					ready: function(event) {
-						$(this).jPlayer("setMedia", {
-							m4a: "",
-							mp3: "audio.mp3"
-						});
-					},
-					swfPath: "../../js",
-					supplied: "m4a, oga,mp3",
-					wmode: "window",
-					useStateClassSkin: true,
-					toggleDuration: true
-				});
-			});
-		</script>
+		<script src="js/myjs/listensA-practice.js"></script>
+		<script src="js/myjs/angular1.3.1.js"></script>
 	</body>
 
 </html>

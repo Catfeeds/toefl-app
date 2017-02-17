@@ -10,10 +10,10 @@
 		<link href="css/mycss/hearing-quietly.css" rel="stylesheet" />
 	</head>
 
-	<body>
+	<body ng-controller="PriceCtrl">
 		<header class="mui-bar mui-bar-nav">
 			<a href="hearing-way.html" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left orangeColor"></a>
-			<h1 class="mui-title">TPO 01-C1精听</h1>
+			<h1 class="mui-title">{{catname}}-{{title}}精听</h1>
 		</header>
 		<nav class="mui-bar mui-bar-tab bg-nowhite">
 			<!-------------底部播放器------------->
@@ -77,8 +77,8 @@
 			<!-------------底部播放器 end------------->
 		</nav>
 		<div class="mui-content">
-			<input type="hidden" id="currentTime"/>
-			<div  ng-controller="PriceCtrl">
+			<input type="hidden" id="currentTime" />
+			<div ng-controller="PriceCtrl">
 
 				<div class="container">
 					<div class="row">
@@ -87,17 +87,9 @@
 							<h4>第<span id="current-sentence">1</span>/<span id="total-sentence">34</span>句</h4>
 							<img src="images/myimages/listenQ_chinese.png" alt="中文翻译图标" class="china_icon" onclick="showChinese()" />
 							<ul>
-								<li data-num="1" data-starttime="0" data-endtime="3" data-write="1">
-									<p>I'm supposed to do a literature review for my psychology course, but I'm having a hard time finding articles</p>
-									<p class="chinese">第一句第一句第一句第一句第一句第一句第一句第一句第一句第一句第一句第一句第一句第一句第一句第一句第一句</p>
-								</li>
-								<li data-num="2" data-starttime="3" data-endtime="5">
-									<p>Hi, um... I really hope you can help me.</p>
-									<p class="chinese">第二句第二句第二句第二句第二句第二句第二句第二句第二句</p>
-								</li>
-								<li data-num="3" data-starttime="5" data-endtime="8">
-									<p>You said this is for your psychology course, right?</p>
-									<p class="chinese">第三句第三句第三句第三句第三句</p>
+								<li data-num="{{$index+1}}" data-starttime="{{sentenceT.start_time}}" data-endtime="{{sentenceT.endTime}}" ng-repeat="sentenceT in sentence" is-over="toggle.now">
+									<p data-wordId="{{sentenceT.id}}">{{sentenceT.content}}</p>
+									<p class="chinese">{{sentenceT.cnSentence}}</p>
 								</li>
 							</ul>
 						</div>
@@ -110,40 +102,11 @@
 							<div class="full_article">
 								<img src="images/myimages/listenQ_chinese.png" alt="中文翻译图标" class="china_icon02" onclick="showChina()" />
 								<ul>
-									<li data-num="1" data-starttime="0" data-endtime="3" class="on">
-										<p>
-											Hmmm... well, there're a few things... oh wait... have you checked to see if your professor put any material for you to look at on reserve?
+									<li data-num="{{$index+1}}" data-starttime="{{sentenceT.start_time}}" data-endtime="{{sentenceT.endTime}}" ng-repeat="sentenceT in sentence">
+										<p data-wordId="{{sentenceT.id}}">
+											{{sentenceT.content}}
 										</p>
-										<span>中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文
-                                     中文中文中文中文中文中文中文中文中文中文中文中文中文中文中</span>
-									</li>
-									<li data-num="2" data-starttime="3" data-endtime="5">
-										<p>
-											Hmmm... well, there're a few things... oh wait... have you checked to see if your professor put any material for you to look at on reserve?
-										</p>
-										<span>中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文
-                                     中文中文中文中文中文中文中文中文中文中文中文中文中文中文中</span>
-									</li>
-									<li data-num="3" data-starttime="5" data-endtime="8">
-										<p>
-											Hmmm... well, there're a few things... oh wait... have you checked to see if your professor put any material for you to look at on reserve?
-										</p>
-										<span>中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文
-                                     中文中文中文中文中文中文中文中文中文中文中文中文中文中文中</span>
-									</li>
-									<li data-num="4" data-starttime="8" data-endtime="9">
-										<p>
-											Hmmm... well, there're a few things... oh wait... have you checked to see if your professor put any material for you to look at on reserve?
-										</p>
-										<span>中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文
-                                     中文中文中文中文中文中文中文中文中文中文中文中文中文中文中</span>
-									</li>
-									<li data-num="5" data-starttime="40" data-endtime="50">
-										<p>
-											Hmmm... well, there're a few things... oh wait... have you checked to see if your professor put any material for you to look at on reserve?
-										</p>
-										<span>中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文
-                                     中文中文中文中文中文中文中文中文中文中文中文中文中文中文中</span>
+										<span>{{sentenceT.cnSentence}}</span>
 									</li>
 
 								</ul>
@@ -153,23 +116,11 @@
 						<div class="dictation">
 							<h4>第<span id="current-sen">1</span>/<span id="total-sen">34</span>句</h4>
 							<p>把你所听到的都写下来吧！</p>
-							<ul>
-								<li ng-repeat="datasT in datas" class="have_an" is-over="toggle.now">
-									<div class="col-xs-4 col-sm-4" style="width: 33.3%;float: left;">
-										<div class="have_bg">
-											<input type="text" data-html="{{datasT.word}}" />
-										</div>
-									</div>
-								</li>
-
-								<li>
-									<div class="mui-clearfix"></div>
-								</li>
-							</ul>
+							<ul id="dic_ul"></ul>
+							<div class="mui-clearfix"></div>
+							<div class="saveAnswer" onclick="saveAnswer();">保存答案</div>
 							<!--答案-->
-							<div class="dicta_answer">
-								Hmmm... well, there're a few things... oh wait... have you checked to see if your professor put any material for you to look at on reserve?
-							</div>
+							<div class="dicta_answer"></div>
 						</div>
 
 					</div>
@@ -182,8 +133,8 @@
 		<script src="js/myjs/jquery.jplayer.min.js"></script>
 		<script src="js/myjs/public.js"></script>
 		<script src="js/myjs/hearing-quietly.js"></script>
-		   <!--angularJs只能放在最后，不然会报错-->
-    <script type="text/javascript" src="js/myjs/angular1.3.1.js"></script>
+		<!--angularJs只能放在最后，不然会报错-->
+		<script type="text/javascript" src="js/myjs/angular1.3.1.js"></script>
 	</body>
 
 </html>

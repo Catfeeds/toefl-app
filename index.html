@@ -84,10 +84,10 @@
 								<li class="mui-table-view-cell">
 									<img src="images/myimages/ExerciseToday4@2x.png" alt="今日任务图标 " />
 									<b>今日任务</b>
-									<span class="mui-badge mui-badge-primary"><b>{{nums}}</b><b class="noLogin">0</b>/4</span>
+									<span class="mui-badge mui-badge-primary"><b id="usually">0</b>/4</span>
 								</li>
-								<li class="mui-table-view-cell">
-									<a href="grammar.html">
+								<li class="mui-table-view-cell" id="yufa" disabled="{{grDisable}}">
+									<!--<a href="grammar.html">-->
 										<h4>语法学习</h4>
 										<p>Grammar learning</p>
 										<span class="mui-badge mui-badge-success noLogin"> 开始</span>
@@ -95,10 +95,10 @@
 						        	<img src="images/myimages/ExerciseToday5@2x.png" alt="完成图标" />
 						        </span>
 										<span class="mui-badge mui-badge-success" ng-show="htmlStr!='5'"> {{htmlStr}}</span>
-									</a>
+									<!--</a>-->
 								</li>
-								<li class="mui-table-view-cell">
-									<a href="extensive.html">
+								<li class="mui-table-view-cell" id="fanting">
+									<!--<a href="extensive.html">-->
 										<h4>泛听练习</h4>
 										<p>General listening</p>
 										<span class="mui-badge mui-badge-success noLogin"> 开始</span>
@@ -106,10 +106,10 @@
 						        	<img src="images/myimages/ExerciseToday5@2x.png" alt="完成图标" />
 						        </span>
 										<span class="mui-badge mui-badge-success" ng-show="htmlFan!='5'"> {{htmlFan}}</span>
-									</a>
+									<!--</a>-->
 								</li>
-								<li class="mui-table-view-cell">
-									<a href="listensArticles.html">
+								<li class="mui-table-view-cell" id="jingting">
+									<!--<a href="listensArticles.html">-->
 										<h4>精听文章</h4>
 										<p>Intensive listening</p>
 										<span class="mui-badge mui-badge-success noLogin"> 开始</span>
@@ -117,10 +117,10 @@
 						        	<img src="images/myimages/ExerciseToday5@2x.png" alt="完成图标" />
 						        </span>
 										<span class="mui-badge mui-badge-success" ng-show="htmlJing!='5'"> {{htmlJing}}</span>
-									</a>
+									<!--</a>-->
 								</li>
-								<li class="mui-table-view-cell">
-									<a href="vocabulary.html">
+								<li class="mui-table-view-cell" id="hexinch">
+									<!--<a href="vocabulary.html">-->
 										<h4>核心词汇</h4>
 										<p>Vocabulary</p>
 										<span class="mui-badge mui-badge-success noLogin"> 开始</span>
@@ -128,7 +128,7 @@
 						        	<img src="images/myimages/ExerciseToday5@2x.png" alt="完成图标" />
 						        </span>
 										<span class="mui-badge mui-badge-success" ng-show="htmlHe!='5'"> {{htmlHe}}</span>
-									</a>
+									<!--</a>-->
 								</li>
 							</ul>
 						</div>
@@ -153,7 +153,7 @@
 									</a>
 								</li>
 								<li>
-									<a href="writing.html">
+									<a href="test.html">
 										<img src="images/myimages/ExerciseToday9@2x.png" alt="图标" />
 										<p>写作</p>
 									</a>

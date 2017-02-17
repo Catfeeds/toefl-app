@@ -44,13 +44,22 @@ jQuery(function() {
 
 			}
 		});
-		var userId = getCookie("userId");
+		var userId = localStorage.getItem('userId');
 
 		if(userId) {
+			//			语法学习跳转
+			jQuery("#yufa")[0].addEventListener("tap", yufa);
+			//		泛听练习跳转
+			jQuery("#fanting")[0].addEventListener("tap", fanting);
+			//		精听文章跳转
+			jQuery("#jingting")[0].addEventListener("tap", jingting);
+			//		核心词汇跳转
+			jQuery("#hexinch")[0].addEventListener("tap", hexing);
 			//点击头像到更多设置界面
 			jQuery(".c-t-head")[0].addEventListener("tap", function() {
-
-				location.href = 'moreSettings.html';
+				mui.openWindow({
+					url: "moreSettings.html"
+				})
 
 			});
 
@@ -71,6 +80,7 @@ jQuery(function() {
 				var str01 = '开始';
 				var str02 = '继续';
 				var str03 = '<img src="images/myimages/ExerciseToday5@2x.png" alt="完成图标" />';
+				var num = 0;
 				$scope.days = data.taskDays;
 				$scope.nums = data.taskNumber;
 				$scope.grnum = data.todayTask.grammarLearning.num;
@@ -81,8 +91,10 @@ jQuery(function() {
 				$scope.jingstatus = data.todayTask.intensiveListening.status;;
 				$scope.henum = data.todayTask.keyWords.num;
 				$scope.hestatus = data.todayTask.keyWords.status;
-				if(data.taskSession){
-					setCookie("taskSession",data.taskSession);
+
+				if(data.taskSession) {
+//					setCookie("taskSession", data.taskSession);
+					localStorage.setItem("taskSession", data.taskSession);
 				}
 
 				//				语法学习
@@ -90,6 +102,8 @@ jQuery(function() {
 					//					"完成"
 					$scope.htmlStr = 5;
 					$scope.htmlStrThree = $sce.trustAsHtml(str03);
+					num++;
+					jQuery("#yufa")[0].removeEventListener("tap", yufa);
 				} else if($scope.grstatus != 1 && $scope.grnum == 1) {
 					//					"开始"
 					$scope.htmlStr = str01;
@@ -102,6 +116,8 @@ jQuery(function() {
 					//					"完成"
 					$scope.htmlFan = 5;
 					$scope.htmlFanThree = $sce.trustAsHtml(str03);
+					jQuery("#fanting")[0].removeEventListener("tap", fanting);
+					num++;
 				} else if($scope.fanstatus != 1 && $scope.fannum == 1) {
 					//					"开始"
 					$scope.htmlFan = str01;
@@ -114,6 +130,8 @@ jQuery(function() {
 					//					"完成"
 					$scope.htmlJing = 5;
 					$scope.htmlJingThree = $sce.trustAsHtml(str03);
+					jQuery("#jingting")[0].removeEventListener("tap", jingting);
+					num++;
 				} else if($scope.jingstatus != 1 && $scope.jingnum == 1) {
 					//					"开始"
 					$scope.htmlJing = str01;
@@ -127,6 +145,8 @@ jQuery(function() {
 					//					"完成"
 					$scope.htmlHe = 5;
 					$scope.htmlHeThree = $sce.trustAsHtml(str03);
+					jQuery("#hexinch")[0].removeEventListener("tap", hexing);
+					num++;
 				} else if($scope.hestatus != 1 && $scope.henum == 1) {
 					//					"开始"
 					$scope.htmlHe = str01;
@@ -134,7 +154,7 @@ jQuery(function() {
 					//					"继续"
 					$scope.htmlHe = str02;
 				}
-
+				jQuery("#usually").html(num);
 			});
 
 		} else {
@@ -143,11 +163,70 @@ jQuery(function() {
 			jQuery(".c-t-head")[0].addEventListener("tap", function() {
 				var r = confirm("立即登录?")
 				if(r == true) {
-					location.href = 'login.html';
+					mui.openWindow({
+						url: "login.html"
+					})
 				}
 			});
+			//			语法学习未登录跳转
+			jQuery("#yufa")[0].addEventListener("tap", function() {
+				mui.openWindow({
+					url: "login.html"
+				})
+			});
+			//		泛听未登录跳转
+			jQuery("#fanting")[0].addEventListener("tap", function() {
+				mui.openWindow({
+					url: "login.html"
+				})
+			});
+			//		精听未登录跳转
+			jQuery("#jingting")[0].addEventListener("tap", function() {
+				mui.openWindow({
+					url: "login.html"
+				})
+			});
+			//		核心词汇未登录跳转
+			jQuery("#hexinch")[0].addEventListener("tap", function() {
+				mui.openWindow({
+					url: "login.html"
+				})
+			});
+
 		}
 
 	}]);
 
 });
+//语法学习登录之后的调整函数
+function yufa() {
+	mui.openWindow({
+		url: "grammar.html"
+	});
+	plus.webview.currentWebview().hide();
+	plus.webview.open('grammar.html', 'grammar.html');
+}
+//泛听练习登录之后的调整函数
+function fanting() {
+	mui.openWindow({
+		url: "extensive.html"
+	});
+	plus.webview.currentWebview().hide();
+	plus.webview.open('extensive.html', 'extensive.html');
+}
+//精听文章登录之后的调整函数
+function jingting() {
+	mui.openWindow({
+		url: "listensArticles.html"
+	});
+	plus.webview.currentWebview().hide();
+	plus.webview.open('listensArticles.html', 'listensArticles.html');
+}
+//核心词汇登录之后的调整函数
+function hexing() {
+	mui.openWindow({
+		url: "vocabulary.html"
+	});
+	plus.webview.currentWebview().hide();
+	plus.webview.open('vocabulary.html', 'vocabulary.html');
+}

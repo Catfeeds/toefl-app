@@ -1,4 +1,7 @@
 jQuery(function() {
+	mui('.know-body').scroll({
+		deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+	});
 	//声明模块
 	var myApp = angular.module("myApp", []);
 	myApp.directive('isOver', function() {
@@ -14,8 +17,8 @@ jQuery(function() {
 			}
 		}
 	});
-	var todayTask = getCookie("taskSession");
-	var userId = getCookie("userId");
+	var taskSession = localStorage.getItem("taskSession");
+	var userId =localStorage.getItem('userId');
 	//通过模块生成调用控制器
 	myApp.controller("PriceCtrl", ["$scope", "$http", "$sce", function($scope, $http, $sce) {
 		$scope.toggle = {
@@ -35,12 +38,17 @@ jQuery(function() {
 			},
 			data: {
 				userId: userId,
-				todayTask: todayTask
+				taskSession: taskSession
 			}
 		}).success(function(data) {
-
+            $scope.name=data.grammarLearning.name;
+            $scope.answer=data.grammarLearning.answer;
 		});
 	}]);
+	
+    jQuery("#closeMask")[0].addEventListener("tap",function(){
+    	closeMaskM();
+    });
 
 });
 

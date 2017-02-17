@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html  ng-app="myApp">
 
 	<head>
 		<meta charset="UTF-8">
@@ -12,7 +12,7 @@
 	<body>
 		<!-- 主界面菜单同时移动 -->
     <!-- 侧滑导航根容器 -->
-    <div class="mui-off-canvas-wrap mui-draggable">
+    <div class="mui-off-canvas-wrap mui-draggable" ng-controller="PriceCtrl">
         <!-- 主页面容器 -->
         <div class="mui-inner-wrap">
             <!-- 菜单容器 -->
@@ -27,7 +27,9 @@
             <!-- 主页面标题 -->
          <header id="header" class="mui-bar mui-bar-transparent" style="background-color: rgba(247, 247, 247, 0);">
 			<a href="index.html" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: white;"></a>
-			<h1 class="mui-title">泛听文章(1/3)</h1>
+			<h1 class="mui-title">泛听文章({{num}}/3)</h1>
+			<button class="mui-btn mui-btn-blue mui-btn-link mui-pull-right" style="color: white;" id="next">下一篇</button>
+			  <div class="wc-btn"><img src="images/myimages/chinese_icon.png" alt="切换中文图标"/></div>
 		</header>
             <nav class="mui-bar mui-bar-tab" style="border-top: none;">
     		     <div id="jquery_jplayer_1" class="jp-jplayer"></div>
@@ -59,65 +61,16 @@
             <div class="mui-content mui-scroll-wrapper">
                 <div class="mui-scroll">
                     <!-- 主界面具体展示内容 -->
-                    <div class="article">
-                    	<div class="wc-btn"><img src="images/myimages/chinese_icon.png" alt="切换中文图标"/></div>
+                  
+                    <div class="article">                   	
                     	<ul>
-	                	  <li data-num="1" data-starttime="0" data-endtime="3" class="on">
+	                	  <li data-num="1" data-starttime="{{sentenceT.start_time}}" data-audiotime="{{sentenceT.audio_time}}" ng-repeat="sentenceT in sentence" is-over="toggle.now">
                                  <p>
-                                     Hmmm... well, there're a few things... oh wait... have you checked to
-                                     see if your professor put any material for you to look at on reserve?
+                                    {{sentenceT.content}}
                                  </p>
-                                 <span>中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文
-                                     中文中文中文中文中文中文中文中文中文中文中文中文中文中文中</span>
+                                 <span>{{sentenceT.cnSentence}}</span>
                              </li>
-                             <li data-num="2" data-starttime="3" data-endtime="5">
-                                 <p>
-                                     Hmmm... well, there're a few things... oh wait... have you checked to
-                                     see if your professor put any material for you to look at on reserve?
-                                 </p>
-                                 <span>中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文
-                                     中文中文中文中文中文中文中文中文中文中文中文中文中文中文中</span>
-                             </li>
-                             <li data-num="3" data-starttime="5" data-endtime="8">
-                                 <p>
-                                     Hmmm... well, there're a few things... oh wait... have you checked to
-                                     see if your professor put any material for you to look at on reserve?
-                                 </p>
-                                 <span>中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文
-                                     中文中文中文中文中文中文中文中文中文中文中文中文中文中文中</span>
-                             </li>
-                             <li data-num="4" data-starttime="30" data-endtime="40">
-                                 <p>
-                                     Hmmm... well, there're a few things... oh wait... have you checked to
-                                     see if your professor put any material for you to look at on reserve?
-                                 </p>
-                                 <span>中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文
-                                     中文中文中文中文中文中文中文中文中文中文中文中文中文中文中</span>
-                             </li>
-                             <li data-num="5" data-starttime="40" data-endtime="50">
-                                 <p>
-                                     Hmmm... well, there're a few things... oh wait... have you checked to
-                                     see if your professor put any material for you to look at on reserve?
-                                 </p>
-                                 <span>中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文
-                                     中文中文中文中文中文中文中文中文中文中文中文中文中文中文中</span>
-                             </li>
-                                <li data-num="5" data-starttime="50" data-endtime="60">
-                                 <p>
-                                     Hmmm... well, there're a few things... oh wait... have you checked to
-                                     see if your professor put any material for you to look at on reserve?
-                                 </p>
-                                 <span>中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文
-                                     中文中文中文中文中文中文中文中文中文中文中文中文中文中文中</span>
-                             </li>
-                             <li data-num="5" data-starttime="60" data-endtime="70">
-                                 <p>
-                                     Hmmm... well, there're a few things... oh wait... have you checked to
-                                     see if your professor put any material for you to look at on reserve?
-                                 </p>
-                                 <span>中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文
-                                     中文中文中文中文中文中文中文中文中文中文中文中文中文中文中</span>
-                             </li>
+                           
                     	</ul>
                     </div>
                 </div>
@@ -131,6 +84,7 @@
 	<script src="js/myjs/jquery.jplayer.min.js"></script>
 	<script src="js/myjs/public.js"></script>
 	<script src="js/myjs/extensive.js"></script>
+		<script src="js/myjs/angular1.3.1.js"></script>
 	</body>
 
 </html>

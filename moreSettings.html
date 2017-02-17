@@ -127,6 +127,7 @@
 							delCookie('userId');
 							delCookie('s_userId');
 							delCookie('userName');
+							localStorage.clear();
 							$("#scriptBox").html(str);
 							setTimeout(function() {
 								location.href = "index.html";

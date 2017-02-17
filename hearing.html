@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="myApp">
 
 	<head>
 		<meta charset="UTF-8">
@@ -10,9 +10,9 @@
 		<link href="css/mycss/hearing.css" rel="stylesheet" />
 	</head>
 
-	<body>
+	<body ng-controller="PriceCtrl">
 		<header class="mui-bar mui-bar-nav">
-			<a href="index.html"  class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left orangeColor"></a>
+			<a href="index.html" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left orangeColor"></a>
 			<h1 class="mui-title">听力练习</h1>
 		</header>
 
@@ -35,125 +35,8 @@
 						<!--内容区-->
 						<div class="mui-card-content">
 							<ul>
-								<li>
-									<a href="hearing-list.html">01</a>
-								</li>
-								<li>
-									<a href="#">02</a>
-								</li>
-								<li>
-									<a href="#">03</a>
-								</li>
-								<li>
-									<a href="#">04</a>
-								</li>
-								<li>
-									<a href="#">05</a>
-								</li>
-								<li>
-									<a href="#">01</a>
-								</li>
-								<li>
-									<a href="#">02</a>
-								</li>
-								<li>
-									<a href="#">03</a>
-								</li>
-								<li>
-									<a href="#">04</a>
-								</li>
-								<li>
-									<a href="#">05</a>
-								</li>
-								<li>
-									<a href="#">01</a>
-								</li>
-								<li>
-									<a href="#">02</a>
-								</li>
-								<li>
-									<a href="#">03</a>
-								</li>
-								<li>
-									<a href="#">04</a>
-								</li>
-								<li>
-									<a href="#">05</a>
-								</li>
-								<li>
-									<a href="#">01</a>
-								</li>
-								<li>
-									<a href="#">02</a>
-								</li>
-								<li>
-									<a href="#">03</a>
-								</li>
-								<li>
-									<a href="#">04</a>
-								</li>
-								<li>
-									<a href="#">05</a>
-								</li>
-								<li>
-									<a href="#">01</a>
-								</li>
-								<li>
-									<a href="#">02</a>
-								</li>
-								<li>
-									<a href="#">03</a>
-								</li>
-								<li>
-									<a href="#">04</a>
-								</li>
-								<li>
-									<a href="#">05</a>
-								</li>
-								<li>
-									<a href="#">01</a>
-								</li>
-								<li>
-									<a href="#">02</a>
-								</li>
-								<li>
-									<a href="#">03</a>
-								</li>
-								<li>
-									<a href="#">04</a>
-								</li>
-								<li>
-									<a href="#">05</a>
-								</li>
-								<li>
-									<a href="#">01</a>
-								</li>
-								<li>
-									<a href="#">02</a>
-								</li>
-								<li>
-									<a href="#">03</a>
-								</li>
-								<li>
-									<a href="#">04</a>
-								</li>
-								<li>
-									<a href="#">05</a>
-								</li>
-								<li>
-									<a href="#">01</a>
-								</li>
-								<li>
-									<a href="#">02</a>
-								</li>
-								<li>
-									<a href="#">03</a>
-								</li>
-								<li>
-									<a href="#">04</a>
-								</li>
-								<li>
-									<a href="#">05</a>
+								<li ng-repeat="nameT in name" is-over="toggle.now" data-id = "{{nameT.id}}" data-name = "{{nameT.name}}">
+									<a href="javascript:void(0);">{{nameT.name | splitKG}}</a>
 								</li>
 							</ul>
 						</div>
@@ -161,65 +44,65 @@
 				</div>
 				<div id="item3" class="mui-control-content">
 					<ul class="mui-table-view">
-						<li class="mui-table-view-cell mui-media">
-							<a href="javascript:;">
+						<li class="mui-table-view-cell mui-media" data-id="16" data-name = "课程学业">
+							<!--<a href="javascript:;">-->
 								<img class="mui-media-object mui-pull-left" src="images/myimages/Exercise1@2x.png">
 								<div class="mui-media-body">
 									课程学业
-									<p class='mui-ellipsis'>共33篇</p>
+									<p class='mui-ellipsis'>共50篇</p>
 									<img src="images/myimages/Exercise7@2x.png" alt="右边箭头" class="right-j" />
 								</div>
-							</a>
+							<!--</a>-->
 						</li>
-						<li class="mui-table-view-cell mui-media">
-							<a href="javascript:;">
+						<li class="mui-table-view-cell mui-media" data-id="27" data-name = "校园生活">
+							<!--<a href="javascript:;">-->
 								<img class="mui-media-object mui-pull-left" src="images/myimages/Exercise2@2x.png">
 								<div class="mui-media-body">
 									校园生活
-									<p class='mui-ellipsis'>共33篇</p>
+									<p class='mui-ellipsis'>共52篇</p>
 									<img src="images/myimages/Exercise7@2x.png" alt="右边箭头" class="right-j" />
 								</div>
-							</a>
+							<!--</a>-->
 						</li>
-						<li class="mui-table-view-cell mui-media">
-							<a href="javascript:;">
+						<li class="mui-table-view-cell mui-media" data-id="18" data-name = "自然科学">
+							<!--<a href="javascript:;">-->
 								<img class="mui-media-object mui-pull-left" src="images/myimages/Exercise3@2x.png">
 								<div class="mui-media-body">
 									自然科学
-									<p class='mui-ellipsis'>共33篇</p>
+									<p class='mui-ellipsis'>共59篇</p>
 									<img src="images/myimages/Exercise7@2x.png" alt="右边箭头" class="right-j" />
 								</div>
-							</a>
+							<!--</a>-->
 						</li>
-						<li class="mui-table-view-cell mui-media">
-							<a href="javascript:;">
+						<li class="mui-table-view-cell mui-media" data-id="19" data-name = "社会科学">
+							<!--<a href="javascript:;">-->
 								<img class="mui-media-object mui-pull-left" src="images/myimages/Exercise4@2x.png">
 								<div class="mui-media-body">
 									社会科学
-									<p class='mui-ellipsis'>共33篇</p>
+									<p class='mui-ellipsis'>共48篇</p>
 									<img src="images/myimages/Exercise7@2x.png" alt="右边箭头" class="right-j" />
 								</div>
-							</a>
+							<!--</a>-->
 						</li>
-						<li class="mui-table-view-cell mui-media">
-							<a href="javascript:;">
+						<li class="mui-table-view-cell mui-media" data-id="36" data-name = "生命科学">
+							<!--<a href="javascript:;">-->
 								<img class="mui-media-object mui-pull-left" src="images/myimages/Exercise5@2x.png">
 								<div class="mui-media-body">
 									生命科学
-									<p class='mui-ellipsis'>共33篇</p>
+									<p class='mui-ellipsis'>共45篇</p>
 									<img src="images/myimages/Exercise7@2x.png" alt="右边箭头" class="right-j" />
 								</div>
-							</a>
+							<!--</a>-->
 						</li>
-						<li class="mui-table-view-cell mui-media">
-							<a href="javascript:;">
+						<li class="mui-table-view-cell mui-media" data-id="37" data-name = "文化艺术">
+							<!--<a href="javascript:;">-->
 								<img class="mui-media-object mui-pull-left" src="images/myimages/Exercise6@2x.png">
 								<div class="mui-media-body">
 									文化艺术
-									<p class='mui-ellipsis'>共33篇</p>
+									<p class='mui-ellipsis'>共52篇</p>
 									<img src="images/myimages/Exercise7@2x.png" alt="右边箭头" class="right-j" />
 								</div>
-							</a>
+							<!--</a>-->
 						</li>
 					</ul>
 				</div>
@@ -230,6 +113,7 @@
 		<script src="js/myjs/jquery-1.11.1.min.js"></script>
 		<script src="js/myjs/public.js"></script>
 		<script src="js/myjs/hearing.js"></script>
+		<script src="js/myjs/angular1.3.1.js"></script>
 	</body>
 
 </html>

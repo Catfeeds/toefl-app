@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="myApp">
 
 	<head>
 		<meta charset="UTF-8">
@@ -13,7 +13,7 @@
 	<body>
 		<!-- 主界面菜单同时移动 -->
 		<!-- 侧滑导航根容器 -->
-		<div class="mui-off-canvas-wrap mui-draggable">
+		<div class="mui-off-canvas-wrap mui-draggable" ng-controller="PriceCtrl">
 			<!-- 主页面容器 -->
 			<div class="mui-inner-wrap">
 				<!-- 菜单容器 -->
@@ -31,7 +31,7 @@
 					<h1 class="mui-title">核心词汇</h1>
 				</header>
 				<nav class="mui-bar mui-bar-tab bg-nowhite">
-					<a href="#"><button type="button" class="mui-btn mui-btn-warning orangeBg">下一题</button></a>
+					<a href="#"><button type="button" class="mui-btn mui-btn-warning orangeBg" id="next">下一题</button></a>
 				</nav>
 				<!-- 主页面内容容器 -->
 				<div class="mui-content mui-scroll-wrapper">
@@ -41,36 +41,40 @@
 							<h2>单词意译</h2>
 							<div class="w-m-word">
 								<div class="word-box">
-									<h4>Money</h4>
+									<h4>{{name}}</h4>
 									<div class="out-box">
-										<span style="float: left;">['m^ni]</span>
-										<div id="jquery_jplayer_1" class="jp-jplayer"></div>
-										<div id="jp_container_1" class="jp-audio" style="float: left;">
-											<button class="jp-play" style="border: none;position: relative;top: -5px;left: -10px;background-color: transparent;">
-                   	    	  	              <img src="images/myimages/ExerciseToday14@2x.png" alt="图标" height="18px"/></button>
+										<div style="position: relative;">
+											[{{answer}}]
+											<div id="jquery_jplayer_1" class="jp-jplayer"></div>
+											<div id="jp_container_1" class="jp-audio" style="position: absolute;top: 0;right: -20px;">
+												<button class="jp-play" style="border: none;background-color: transparent;
+												background: url(images/myimages/ExerciseToday14@2x.png) no-repeat;background-size: 100% 100%;
+												width: 18px;height: 20px;padding: 0;">                  	
+											</button>
+											</div>
 										</div>
-										<div class="mui-clearfix"></div>
+
 									</div>
 								</div>
-								<!--选择正确跳转到下一题，选择错误跳转到单词意译-->
+
 								<div class="meaning">
-									<h4>abbr.</h4>
-									<p>Early Money Is Like Yeast面粉可作为早期钱币；</p>
+									<h4>{{cnName}}</h4>
+									<p>{{numbering}}</p>
 									<h4>例句</h4>
 
 									<ul class="mui-table-view">
 										<li class="mui-table-view-cell mui-media">
 											<!--<a href="javascript:;">-->
-												<div id="jquery_jplayer_2" class="jp-jplayer"></div>
-												<div id="jp_container_2" class="jp-audio mui-media-object mui-pull-left">
-													<button class="jp-play" style="border:none;position: relative;top: -5px;left: -10px;z-index:999;background-color: transparent;">
+											<!--<div id="jquery_jplayer_2" class="jp-jplayer"></div>
+											<div id="jp_container_2" class="jp-audio mui-media-object mui-pull-left">
+												<button class="jp-play" style="border:none;position: relative;top: -5px;left: -10px;z-index:999;background-color: transparent;">
 	                   	    	  	              <img src="images/myimages/ExerciseToday14@2x.png" alt="图标" height="18px"/>
 													</button>
-												</div>
-												<div class="mui-media-body">
-													Poor Emily,Her konsfolk should come to her
-													<p class='mui-ellipsis'>可怜的艾米丽，她的亲人应该到她这来。</p>
-												</div>
+											</div>-->
+											<div class="mui-media-body">
+												{{duration}}
+												<p class='mui-ellipsis'>{{problemComplement}}</p>
+											</div>
 											<!--</a>-->
 										</li>
 									</ul>
@@ -83,43 +87,19 @@
 				<!--<div class="mui-off-canvas-backdrop"></div>-->
 			</div>
 		</div>
+		<!--任务通过，题目做完之后显示下面弹窗-->
+				<div class="mui-backdrop">
+					<div class="in-div">
+						<img src="images/myimages/ExerciseToday15@2x.png" alt="img" />
+						<a href="index.html"><button type="button" class="mui-btn mui-btn-success">确定</button></a>
+					</div>
+				</div>
 		<script src="js/mui.min.js"></script>
 		<script src="js/myjs/jquery-1.11.1.min.js"></script>
 		<script src="js/myjs/jquery.jplayer.min.js"></script>
 		<script src="js/myjs/public.js"></script>
-		<script type="text/javascript">
-			jQuery(function() {
-				jQuery("#jquery_jplayer_1").jPlayer({
-					ready: function(event) {
-						$(this).jPlayer("setMedia", {
-							m4a: "",
-							mp3: "audio.mp3"
-						});
-					},
-					swfPath: "../../js",
-					supplied: "m4a, oga,mp3",
-					wmode: "window",
-					useStateClassSkin: true,
-					toggleDuration: true,
-					cssSelectorAncestor: "#jp_container_1"
-				});
-
-				jQuery("#jquery_jplayer_2").jPlayer({
-					ready: function(event) {
-						$(this).jPlayer("setMedia", {
-							m4a: "",
-							mp3: "audio.mp3"
-						});
-					},
-					swfPath: "../../js",
-					supplied: "m4a, oga,mp3",
-					wmode: "window",
-					useStateClassSkin: true,
-					toggleDuration: true,
-					cssSelectorAncestor: "#jp_container_2"
-				});
-			});
-		</script>
+		<script src="js/myjs/vocab-word.js"></script>
+		<script src="js/myjs/angular1.3.1.js"></script>
 	</body>
 
 </html>
