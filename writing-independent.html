@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="myApp">
 
 	<head>
 		<meta charset="UTF-8">
@@ -10,7 +10,7 @@
 		<link href="css/mycss/reading-ogList.css" rel="stylesheet" />
 	</head>
 
-	<body>
+	<body ng-controller="PriceCtrl">
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left orangeColor"></a>
 			<h1 class="mui-title">独立话题练习</h1>
@@ -18,115 +18,56 @@
 		<div class="mui-content">
 			<div class="pop-slide" id="slidePop">
 				<div class="slideBd bd">
-					<ul>
-						<li>
-							<a href="#">01-20</a>
-						</li>
+					<ul id="in_ul01">
 						<li class="on">
-							<a href="#">21-40</a>
+							<a href="javascript:void(0);" data-page="1">01-20</a>
 						</li>
 						<li>
-							<a href="#">41-60</a>
+							<a href="javascript:void(0);" data-page="2">21-40</a>
 						</li>
 						<li>
-							<a href="#">61-80</a>
+							<a href="javascript:void(0);" data-page="3">41-60</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);" data-page="4">61-80</a>
 						</li>
 					</ul>
-					<ul>
+					<ul id="in_ul02">
 						<li>
-							<a href="#">81-100</a>
+							<a href="javascript:void(0);" data-page="5">81-100</a>
 						</li>
 						<li>
-							<a href="#">101-120</a>
-						</li>
-						<li class="on">
-							<a href="#">121-140</a>
+							<a href="javascript:void(0);" data-page="6">101-120</a>
 						</li>
 						<li>
-							<a href="#">141-160</a>
+							<a href="javascript:void(0);" data-page="7">121-140</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);" data-page="8">141-160</a>
 						</li>
 					</ul>
-					<ul>
+					<ul id="in_ul03">
 						<li>
-							<a href="#">161-180</a>
+							<a href="javascript:void(0);" data-page="9">161-180</a>
 						</li>
 						<li>
-							<a href="#">181-200</a>
+							<a href="javascript:void(0);" data-page="10">181-200</a>
 						</li>
 					</ul>
 				</div>
 			</div>
 			<ul class="mui-table-view">
-				<li class="mui-table-view-cell mui-media">
-					<a href="javascript:;">
-						<div class="mui-media-object mui-pull-left">01</div>
-						<div class="mui-media-body">
-							Feeding Habits of East African
+				<li class="mui-table-view-cell mui-media"  ng-repeat="goldDataT in goldData" id="{{goldDataT.id}}">
+					<!--<a href="javascript:;">-->
+						<div class="mui-media-object mui-pull-left">{{goldDataT.goldNum | beforeNum}}</div>
+						<div class="mui-media-body mui-ellipsis">
+							{{goldDataT.name}}
 							<p class='mui-ellipsis'>116人练习</p>
 						</div>
-						<a href="#" class="rj"><img src="images/myimages/Exercise7@2x.png" alt="箭头" /></a>
-					</a>
+						<a href="javascript:void(0);" class="rj"><img src="images/myimages/Exercise7@2x.png" alt="箭头" /></a>
+					<!--</a>-->
 				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a href="javascript:;">
-						<div class="mui-media-object mui-pull-left">02</div>
-						<div class="mui-media-body">
-							Feeding Habits of East African
-							<p class='mui-ellipsis'>116人练习</p>
-						</div>
-						<a href="#" class="rj"><img src="images/myimages/Exercise7@2x.png" alt="箭头" /></a>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a href="javascript:;">
-						<div class="mui-media-object mui-pull-left">01</div>
-						<div class="mui-media-body">
-							Feeding Habits of East African
-							<p class='mui-ellipsis'>116人练习</p>
-						</div>
-						<a href="#" class="rj"><img src="images/myimages/Exercise7@2x.png" alt="箭头" /></a>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a href="javascript:;">
-						<div class="mui-media-object mui-pull-left">01</div>
-						<div class="mui-media-body">
-							Feeding Habits of East African
-							<p class='mui-ellipsis'>116人练习</p>
-						</div>
-						<a href="#" class="rj"><img src="images/myimages/Exercise7@2x.png" alt="箭头" /></a>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a href="javascript:;">
-						<div class="mui-media-object mui-pull-left">01</div>
-						<div class="mui-media-body">
-							Feeding Habits of East African
-							<p class='mui-ellipsis'>116人练习</p>
-						</div>
-						<a href="#" class="rj"><img src="images/myimages/Exercise7@2x.png" alt="箭头" /></a>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a href="javascript:;">
-						<div class="mui-media-object mui-pull-left">01</div>
-						<div class="mui-media-body">
-							Feeding Habits of East African
-							<p class='mui-ellipsis'>116人练习</p>
-						</div>
-						<a href="#" class="rj"><img src="images/myimages/Exercise7@2x.png" alt="箭头" /></a>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a href="javascript:;">
-						<div class="mui-media-object mui-pull-left">01</div>
-						<div class="mui-media-body">
-							Feeding Habits of East African
-							<p class='mui-ellipsis'>116人练习</p>
-						</div>
-						<a href="#" class="rj"><img src="images/myimages/Exercise7@2x.png" alt="箭头" /></a>
-					</a>
-				</li>
+			
 			</ul>
 
 		</div>
@@ -135,19 +76,8 @@
 		<script src="js/myjs/jquery-1.11.1.min.js"></script>
 		<script src="js/myjs/TouchSlide.1.1.js"></script>
 		<script src="js/myjs/public.js"></script>
-		<script type="text/javascript">
-			jQuery(function() {
-				TouchSlide({
-					slideCell: "#slidePop",
-					effect: "leftLoop"
-				});
-				mui(".mui-table-view").on("tap",".mui-table-view-cell",function(){
-					mui.openWindow({
-						url:"writing-practice.html"
-					})
-				});
-			});
-		</script>
+		<script src="js/myjs/writing-independent.js"></script>
+			<script src="js/myjs/angular1.3.1.js"></script>
 	</body>
 
 </html>

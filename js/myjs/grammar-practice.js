@@ -28,7 +28,7 @@ jQuery(function() {
 
 			}
 		});
-	
+
 		$http({
 			method: 'post',
 			url: 'http://www.toeflonline.cn/cn/app-api/grammar-learning',
@@ -39,12 +39,12 @@ jQuery(function() {
 				userId: userId,
 				taskSession: taskSession
 			}
-		}).success(function(data){
-				
+		}).success(function(data) {
+
 			$scope.jiexi = data.grammarLearning.answer;
 			$scope.listeningFile = data.question.listeningFile;
 			$scope.alternatives = data.question.alternatives.split("\r");
-//			获取动态改变的当前题目数量(做到了第几道题) 只能再次请求
+			//			获取动态改变的当前题目数量(做到了第几道题) 只能再次请求
 			$http({
 				method: 'post',
 				url: 'http://www.toeflonline.cn/cn/app-api/today-task',
@@ -55,9 +55,9 @@ jQuery(function() {
 					userId: userId
 				}
 			}).success(function(data) {
-				$scope.num=data.todayTask.grammarLearning.num;
+				$scope.num = data.todayTask.grammarLearning.num;
 			});
-//			选项点击事件
+			//			选项点击事件
 			mui(".mui-table-view").on("tap", ".mui-table-view-cell", function() {
 				jQuery(this).addClass("li-orange").siblings("li").removeClass("li-orange");
 			});
@@ -86,14 +86,12 @@ jQuery(function() {
 					//             	  	alert("还没选择答案哦!");
 					//             	  }
 				});
-				
-				
 
 			});
 			//          下一题
-			jQuery("#next")[0].addEventListener("tap", function() {
+			jQuery("#next-gram")[0].addEventListener("tap", function() {
 				var userId = localStorage.getItem('userId');
-				var type = "grammarLearning";			
+				var type = "grammarLearning";
 				$http({
 					method: 'post',
 					url: 'http://www.toeflonline.cn/cn/app-api/task-next',
@@ -105,26 +103,33 @@ jQuery(function() {
 						type: type
 					}
 				}).success(function(data) {
-			
+
 					if(data.code == 2) {
 						jQuery(".mui-backdrop").show();
 					} else {
-
+//						closeme();
 						mui.openWindow({
+							id:"grammar-practice-"+$scope.num,
 							url: "grammar-practice.html"
 						});
-						
+
 					}
 				});
 			});
 
 		});
 	}]);
-//	将数字0123转化为字母ABCD
+	//	将数字0123转化为字母ABCD
 	myApp.filter('optionsAll', function() {
 		return function(r) {
 			return String.fromCharCode(65 + r);
 		}
+	});
+	jQuery("#sure-index")[0].addEventListener("tap",function(){
+		mui.openWindow({
+			id:"index",
+			url:"index.html"
+		})
 	});
 
 });

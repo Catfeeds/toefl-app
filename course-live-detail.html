@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="myApp">
 
 	<head>
 		<meta charset="UTF-8">
@@ -10,42 +10,44 @@
 		<link href="css/mycss/course-live-detail.css" rel="stylesheet" />
 	</head>
 
-	<body>
-
+	<body ng-controller="PriceCtrl">
+    <input type="hidden" value="{{pid}}" id="pid"/>
+    <input type="hidden" value="{{courseId}}" id="courseId"/>
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left orangeColor"></a>
 			<h1 class="mui-title">直播课详情</h1>
 		</header>
 		<nav class="mui-bar mui-bar-tab bg-nowhite">
-			<button type="button" class="mui-btn mui-btn-warning orangeBg">立即购买</button>
+			<button type="button" class="mui-btn mui-btn-warning orangeBg" id="comeBuy">立即购买</button>
 		</nav>
 		<div class="mui-content">
 			<div class="live-d-top">
-				<p class="title-p">托福阅读班</p>
+				<p class="title-p">{{name}}</p>
 				<ul>
 					<li class="price-li">
-						<span class="redPrice">￥9800</span>
-						<span class="oldPrice">原价:45000</span>
+						<span class="redPrice">￥{{price}}</span>
+						<span class="oldPrice">原价:{{originalPrice}}</span>
 					</li>
-					<li class="choose-li">
-						<p class="choose-p">请选择老师：</p>
+					<li class="choose-li" ng-repeat="tagT in tag" is-over="toggle.now">
+						<p class="choose-p">{{tagT.name}}：</p>
 						<div class="choose-all">
-							<span class="on">培训老师</span>
-							<span>总监老师</span>
+							<span ng-class="{'on':'{{tagT.tagContentId}}'=='{{tagChild.id}}'}" data-myId="{{tagChild.id}}" 
+							ng-repeat="tagChild in tagT.child">{{tagChild.name}}</span>					
 						</div>
 						<div class="mui-clearfix"></div>
 					</li>
 					<li>
-						<p>课程时长：20课时</p>
+						<p>课程时长：{{duration}}</p>
 					</li>
 					<li>
-						<p>开课日期：2017-01-12 11:13:02</p>
+						<p>开课日期：{{numbering}}</p>
 					</li>
 				</ul>
 			</div>
 
 			<div class="live-d-bot">
-				授课内容 <br /> 听力：对话和讲座出题点，笔记方法 口语：命题规律、答题策略和标准答题结果 阅读：题型、解题步骤和技巧、干扰选项特征/不同题材文字的结构 写作：命题规律、常考题型和解题思路
+			    <p>授课内容</p>
+				<div ng-bind-html="description"></div>
 			</div>
 
 		</div>
@@ -53,18 +55,9 @@
 		<script src="js/mui.min.js"></script>
 		<script src="js/myjs/jquery-1.11.1.min.js"></script>
 		<script src="js/myjs/public.js"></script>
-		<script type="text/javascript">
-			jQuery(function() {
-				//				选择老师切换样式
-				mui(".choose-all").on("tap", "span", function() {
-					if(jQuery(this).hasClass("on")) {
-						jQuery(this).removeClass("on").siblings("span").addClass("on");
-					} else {
-						jQuery(this).addClass("on").siblings("span").removeClass("on");
-					}
-				});
-			});
-		</script>
+		<script src="js/myjs/course-live-detail.js"></script>
+		<script src="js/myjs/angular1.3.1.js"></script>
+
 	</body>
 
 </html>

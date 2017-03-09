@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="myApp">
 
 	<head>
 		<meta charset="UTF-8">
@@ -10,7 +10,7 @@
 		<link href="css/mycss/listenRecord.css" rel="stylesheet" />
 	</head>
 
-	<body>
+	<body ng-controller="PriceCtrl">
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left orangeColor"></a>
 			<h1 class="mui-title">口语记录</h1>
@@ -18,25 +18,25 @@
 		<div class="mui-content">
 			<div style="background-color: white;">
 				<div id="segmentedControl" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-primary">
-					<a class="mui-control-item mui-active" href="#item1">
+					<a class="mui-control-item mui-active" href="#item1" data-type="1">
 						Q1
 					</a>
-					<a class="mui-control-item" href="#item2">
+					<a class="mui-control-item" href="#item2" data-type="2">
 						Q2
 					</a>
-					<a class="mui-control-item" href="#item3">
+					<a class="mui-control-item" href="#item3" data-type="3">
 						Q3
 					</a>
-					<a class="mui-control-item" href="#item4">
+					<a class="mui-control-item" href="#item4" data-type="4">
 						Q4
 					</a>
-					<a class="mui-control-item" href="#item5">
+					<a class="mui-control-item" href="#item5" data-type="5">
 						Q5
 					</a>
-					<a class="mui-control-item" href="#item6">
+					<a class="mui-control-item" href="#item6" data-type="6">
 						Q6
 					</a>
-					<a class="mui-control-item" href="#item7" style="width: 2%;">
+					<a class="mui-control-item" href="#item7" style="width: 2%;" data-type="7">
 						黄金口语
 					</a>
 				</div>
@@ -44,19 +44,19 @@
 			<div>
 				<div id="item1" class="mui-control-content mui-active">
 					<ul class="mui-table-view">
-						<li class="mui-table-view-cell mui-media">
+						<li class="mui-table-view-cell mui-media"  ng-repeat="dataT in data" is-over="toggle.now">
 							<!--<a href="javascript:void(0);">-->
-								<div id="jquery_jplayer_1" class="jp-jplayer"></div>
-								<div id="jp_container_1" class="jp-audio">
+								<div id="jquery_jplayer_{{$index}}" class="jp-jplayer" data-tsrc="http://www.toeflonline.cn{{dataT.answer}}"></div>
+								<div id="jp_container_{{$index}}" class="jp-audio">
 									<div class="mui-media-object mui-pull-left play-icon jp-play">
 										<!--<img src="images/myimages/userCenter3@2x.png" style="width: 100%;" class="jp-play" />-->
 									</div>
 									<div class="mui-pull-right r-or-btn">
-										<button type="button" class="mui-btn mui-btn-warning mui-btn-outlined">重新练习</button>
+										<!--<button type="button" class="mui-btn mui-btn-warning mui-btn-outlined">重新练习</button>-->
 									</div>
 									<div class="mui-media-body">
-										<div class='mui-ellipsis'>TPO-08-Question1</div>
-										<p class='mui-ellipsis'>事件 2015/12/30 12:30</p>
+										<div class='mui-ellipsis'>{{dataT.catName}}-Question{{dataT.title}}</div>
+										<p class='mui-ellipsis'>时间 {{dataT.createTime}}</p>
 										<!--进度条-->
 										<div class="progress_box jp-progress">
 											<div class="progress_bgOut jp-seek-bar">
@@ -69,71 +69,18 @@
 								</div>
 							<!--</a>-->
 						</li>
-						<li class="mui-table-view-cell mui-media">
-							<!--<a href="javascript:void(0);">-->
-								<div id="jquery_jplayer_2" class="jp-jplayer"></div>
-								<div id="jp_container_2" class="jp-audio">
-									<div class="mui-media-object mui-pull-left play-icon jp-play">
-										<!--<img src="images/myimages/userCenter3@2x.png" style="width: 100%;" class="jp-play" />-->
-									</div>
-									<div class="mui-pull-right r-or-btn">
-										<button type="button" class="mui-btn mui-btn-warning mui-btn-outlined">重新练习</button>
-									</div>
-									<div class="mui-media-body">
-										<div class='mui-ellipsis'>TPO-08-Question1</div>
-										<p class='mui-ellipsis'>事件 2015/12/30 12:30</p>
-										<!--进度条-->
-										<div class="progress_box jp-progress">
-											<div class="progress_bgOut jp-seek-bar">
-												<div class="progress_bg jp-play-bar">
-													<div class="progress_move"></div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							<!--</a>-->
-						</li>
+						
 					</ul>
 				</div>
-				<div id="item2" class="mui-control-content">
-
-				</div>
-				<div id="item3" class="mui-control-content">
-
-				</div>
+			
 			</div>
 		</div>
 		<script src="js/mui.min.js"></script>
 		<script src="js/myjs/jquery-1.11.1.min.js"></script>
 		<script src="js/myjs/jquery.jplayer.min.js"></script>
 		<script src="js/myjs/public.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function() {
-				jQuery(".mui-table-view li").each(function() {
-					var num = jQuery(this).index() + 1;
-					jQuery("#jquery_jplayer_" + num).jPlayer({
-						ready: function(event) {
-							$(this).jPlayer("setMedia", {
-								m4a: "",
-								mp3: "audio.mp3"
-							});
-						},
-						swfPath: "../../js",
-						supplied: "m4a, oga,mp3",
-						wmode: "window",
-						useStateClassSkin: true,
-						cssSelectorAncestor: "#jp_container_" + num,
-						toggleDuration: true,
-						play: function() {
-							jQuery(this).jPlayer("pauseOthers"); // pause all players except this one.
-						}
-					});
-
-				});
-
-			});
-		</script>
+		<script src="js/myjs/speakRecord.js"></script>
+		<script src="js/myjs/angular1.3.1.js"></script>
 	</body>
 
 </html>

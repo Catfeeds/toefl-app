@@ -14,6 +14,7 @@
 		<header class="mui-bar mui-bar-nav">
 			<a href="hearing-way.html" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left orangeColor"></a>
 			<h1 class="mui-title">{{catname}}-{{title}}精听</h1>
+			<img src="images/myimages/listenQ_chinese.png" alt="中文翻译图标" class="china_icon02" onclick="showChina()" />
 		</header>
 		<nav class="mui-bar mui-bar-tab bg-nowhite">
 			<!-------------底部播放器------------->
@@ -48,7 +49,7 @@
 								<img src="images/myimages/listenQ_next.png" alt="下一句图标" onclick="playNext()" />
 							</div>
 							<div class="col-xs-2 col-sm-2" style="width: 20%;float: left;">
-								<div class="btn_common" onclick="listenWrite(this)">听写</div>
+								<div class="btn_common" onclick="listenWrite(this)" id="listen_w">听写</div>
 								<div class="btn_common return_dica" onclick="quietly(this)">精听</div>
 							</div>
 							<div class="mui-clearfix"></div>
@@ -76,54 +77,52 @@
 			</div>
 			<!-------------底部播放器 end------------->
 		</nav>
-		<div class="mui-content">
-			<input type="hidden" id="currentTime" />
-			<div ng-controller="PriceCtrl">
+		<div class="mui-content mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<input type="hidden" id="currentTime" />
+				<div ng-controller="PriceCtrl">
 
-				<div class="container">
-					<div class="row">
-						<!-------------单句精听---------------->
-						<div class="simpleSentence">
-							<h4>第<span id="current-sentence">1</span>/<span id="total-sentence">34</span>句</h4>
-							<img src="images/myimages/listenQ_chinese.png" alt="中文翻译图标" class="china_icon" onclick="showChinese()" />
+					<!-------------单句精听---------------->
+					<div class="simpleSentence">
+						<h4>第<span id="current-sentence">1</span>/<span id="total-sentence">34</span>句</h4>
+						<img src="images/myimages/listenQ_chinese.png" alt="中文翻译图标" class="china_icon" onclick="showChinese()" />
+						<ul>
+							<li data-num="{{$index+1}}" data-starttime="{{sentenceT.start_time}}" data-endtime="{{sentenceT.endTime}}" ng-repeat="sentenceT in sentence" is-over="toggle.now">
+								<p data-wordId="{{sentenceT.id}}">{{sentenceT.content}}</p>
+								<p class="chinese">{{sentenceT.cnSentence}}</p>
+							</li>
+						</ul>
+					</div>
+					<!------------全文精听------------------>
+					<div class="fullText">
+						<div class="full_start" onclick="clickShowA(this)">
+							<img src="images/myimages/listenQ_clickIcon.png" alt="图片" />
+							<p>点击屏幕显示原文</p>
+						</div>
+						<div class="full_article">
+							
 							<ul>
-								<li data-num="{{$index+1}}" data-starttime="{{sentenceT.start_time}}" data-endtime="{{sentenceT.endTime}}" ng-repeat="sentenceT in sentence" is-over="toggle.now">
-									<p data-wordId="{{sentenceT.id}}">{{sentenceT.content}}</p>
-									<p class="chinese">{{sentenceT.cnSentence}}</p>
+								<li data-num="{{$index+1}}" data-starttime="{{sentenceT.start_time}}" data-endtime="{{sentenceT.endTime}}" ng-repeat="sentenceT in sentence">
+									<p data-wordId="{{sentenceT.id}}">
+										{{sentenceT.content}}
+									</p>
+									<span>{{sentenceT.cnSentence}}</span>
 								</li>
+
 							</ul>
 						</div>
-						<!------------全文精听------------------>
-						<div class="fullText">
-							<div class="full_start" onclick="clickShowA(this)">
-								<img src="images/myimages/listenQ_clickIcon.png" alt="图片" />
-								<p>点击屏幕显示原文</p>
-							</div>
-							<div class="full_article">
-								<img src="images/myimages/listenQ_chinese.png" alt="中文翻译图标" class="china_icon02" onclick="showChina()" />
-								<ul>
-									<li data-num="{{$index+1}}" data-starttime="{{sentenceT.start_time}}" data-endtime="{{sentenceT.endTime}}" ng-repeat="sentenceT in sentence">
-										<p data-wordId="{{sentenceT.id}}">
-											{{sentenceT.content}}
-										</p>
-										<span>{{sentenceT.cnSentence}}</span>
-									</li>
-
-								</ul>
-							</div>
-						</div>
-						<!------------听写------------------>
-						<div class="dictation">
-							<h4>第<span id="current-sen">1</span>/<span id="total-sen">34</span>句</h4>
-							<p>把你所听到的都写下来吧！</p>
-							<ul id="dic_ul"></ul>
-							<div class="mui-clearfix"></div>
-							<div class="saveAnswer" onclick="saveAnswer();">保存答案</div>
-							<!--答案-->
-							<div class="dicta_answer"></div>
-						</div>
-
 					</div>
+					<!------------听写------------------>
+					<div class="dictation">
+						<h4>第<span id="current-sen">1</span>/<span id="total-sen">34</span>句</h4>
+						<p>把你所听到的都写下来吧！</p>
+						<ul id="dic_ul"></ul>
+						<div class="mui-clearfix"></div>
+						<div class="saveAnswer">保存答案</div>
+						<!--答案-->
+						<div class="dicta_answer"></div>
+					</div>
+
 				</div>
 			</div>
 		</div>

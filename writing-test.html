@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="myApp">
 
 	<head>
 		<meta charset="UTF-8">
@@ -21,7 +21,10 @@
 		</style>
 	</head>
 
-	<body>
+	<body ng-controller="PriceCtrl">
+			  <input type="hidden" value="{{conId}}" id="contentId"/>
+    <input type="hidden" value="{{title}}" id="title"/>
+    <input type="hidden" id="time" value="0"/>
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left orangeColor"></a>
 			<h1 class="mui-title">发表文字</h1>
@@ -34,14 +37,9 @@
 		<script src="js/mui.min.js"></script>
 		<script src="js/myjs/jquery-1.11.1.min.js"></script>
 		<script src="js/myjs/public.js"></script>
-		<script type="text/javascript">			
-			
-			jQuery("#sub")[0].addEventListener("tap", function() {
-				mui.openWindow({
-					url: "writing-result.html"
-				})
-			});
-		</script>
+		<script src="js/myjs/writing-test.js"></script>
+		<script src="js/myjs/angular1.3.1.js"></script>
+
 	</body>
 
 </html>

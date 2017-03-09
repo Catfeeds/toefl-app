@@ -1,0 +1,85 @@
+<!doctype html>
+<html ng-app="myApp">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/mycss/public.css" rel="stylesheet" />
+		<link href="css/mycss/sureOrder.css" rel="stylesheet" />
+	</head>
+
+	<body ng-controller="PriceCtrl">
+		<input type="hidden" placeholder="省" id="userS" />
+		<input type="hidden" placeholder="市" id="userC" />
+		<input type="hidden" placeholder="区" id="userQ" />
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left orangeColor"></a>
+			<h1 class="mui-title" id="title_name">修改收货地址</h1>
+		</header>
+		<div class="mui-content">
+			<div class="pay_two">
+				<ul>
+					<li>
+						<p><span>*</span>所在地区：</p>
+						<!--<div class="btn-group">-->
+						<!--<button type="button" class="btn btn-default dropdown-toggle"-->
+						<!--data-toggle="dropdown">-->
+						<!--<span class="bei_val">请选择</span> <span class="caret"></span>-->
+						<!--</button>-->
+						<!--<ul class="dropdown-menu" role="menu">-->
+						<!--<li onclick="assignmentVal(this)"><a href="javascript:void(0);">四川省</a></li>-->
+						<!--<li class="divider"></li>-->
+						<!--<li onclick="assignmentVal(this)"><a href="javascript:void(0);">云南省</a></li>-->
+						<!--<li class="divider"></li>-->
+						<!--<li onclick="assignmentVal(this)"><a href="javascript:void(0);">贵州省</a></li>-->
+						<!--</ul>-->
+						<!--</div>-->
+						<div class="mui-row">
+							<div class="col-xs-4 col-sm-4 mui-col-sm-4 mui-col-xs-4">
+								<select name="province" id="province"></select>
+							</div>
+							<div class="col-xs-4 col-sm-4 mui-col-sm-4 mui-col-xs-4">
+								<select name="city" id="city"></select>
+							</div>
+							<div class="col-xs-4 col-sm-4 mui-col-sm-4 mui-col-xs-4">
+								<select name="area" id="area"></select>
+							</div>
+							<div class="mui-clearfix"></div>
+						</div>
+
+					</li>
+					<li>
+						<p><span>*</span>收货人：</p>
+						<input type="text" id="name" />
+					</li>
+					<li>
+						<p><span>*</span>详细地址：</p>
+						<input type="text" id="details_address" />
+					</li>
+					<li>
+						<p><span>*</span>手机号码：</p>
+						<input type="text" id="phone" />
+					</li>
+					<li>
+						<p>地址别名：</p>
+						<input type="text" id="alias" />
+						<span>建议填写常用名称【家里】【父母家】【公司】</span>
+					</li>
+					<li>
+						<input type="button" value="保存收货人信息" id="saveAddress" />
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<script src="js/mui.min.js"></script>
+		<script src="js/myjs/jquery-1.11.1.min.js"></script>
+		<script src="js/myjs/public.js"></script>
+		<script src="js/myjs/PCASClass.js"></script>
+		<script src="js/myjs/saveAddress.js"></script>
+		<script src="js/myjs/angular1.3.1.js"></script>
+	</body>
+
+</html>

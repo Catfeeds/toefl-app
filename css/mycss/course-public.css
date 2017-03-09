@@ -1,0 +1,29 @@
+.mui-table-view-cell {
+	position: relative;
+	margin-bottom: 10px;
+	background-color: white;
+}
+
+.jian-icon {
+	height: 20px;
+	position: absolute;
+	top: 50%;
+	right: 2%;
+}
+
+.caleDiv {
+	margin: 0 0 10px 8px;
+	font-size: 0.8em;
+}
+
+.mui-table-view-cell:after {
+	height: 0;
+}
+
+.mui-table-view {
+	background-color: transparent;
+}
+.title-t{
+width: 95%;
+  font-size: 0.9em;
+}

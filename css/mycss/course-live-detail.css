@@ -14,8 +14,8 @@ html,body,.mui-content{
 	-webkit-box-sizing: border-box;
 }
 .live-d-top .title-p{
-	font-weight: bold;
-	font-size: 1.2em;
+	/*font-weight: bold;*/
+	font-size: 1em;
 	color: black;
 	margin-bottom: 10px;
 }
@@ -48,6 +48,7 @@ html,body,.mui-content{
 	border: 1px #999999 solid;
 	color: #666666;
 	padding: 0 10px;
+	margin-right: 10px;
 }
 .live-d-top .choose-all span.on{
 	border: 1px #FF6600 solid;
@@ -61,4 +62,10 @@ html,body,.mui-content{
 	margin-top: 20px;
 	font-size: 0.8em;
 	color: #666666;
+}
+.live-d-bot img{
+  display: none;
+}
+.live-d-bot  h1{
+  font-size: 1em;
 }

@@ -21,6 +21,7 @@ nav.mui-bar{
 .simpleSentence ul li{
     display: none;
 }
+
 .simpleSentence h4{
     font-size: 1em;
     color: #fe6b02;
@@ -151,9 +152,10 @@ nav.mui-bar{
 }
 .china_icon02{
     width: 8%;
-    position: absolute;
-    right: -8%;
-    top: 0;
+    position: fixed;
+    right: 4%;
+    top: 50px;
+    display: none;
 }
 .full_article ul li{
     margin-top: 30px;
@@ -192,6 +194,10 @@ nav.mui-bar{
 .dictation ul{
     margin-top: 30px;
 }
+.dictation ul li{
+	width: 33%;
+	float: left;
+}
 .dictation ul li .have_bg{
     width: 80%;
     height: 40px;
@@ -214,6 +220,16 @@ nav.mui-bar{
     border-bottom: 1px #b6b6b6 solid;
     padding-left: 5%;
     font-size: 0.8em;
+}
+.saveAnswer{
+    width: 30%;
+    color: #ffffff;
+    background: #f49d6f;
+    border-radius: 5px;
+    text-align: center;
+    padding: 2px 0;
+    margin: 0 auto;
+    font-size: 1em;
 }
 .dicta_answer{
     width: 90%;
@@ -244,3 +260,4 @@ nav.mui-bar{
 .listen_btn{
     display: none;
 }
+

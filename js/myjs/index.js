@@ -1,6 +1,36 @@
+	mui.plusReady(function() {
+				//读取本地存储，检查是否为首次启动
+				var showGuide = plus.storage.getItem("lauchFlag");
+				if(showGuide){
+					//有值，说明已经显示过了，无需显示；
+					//关闭splash页面；
+					plus.navigator.closeSplashscreen();
+					plus.navigator.setFullscreen(false);
+				
+				}else{
+					//显示启动导航
+					mui.openWindow({
+						id:'guide',
+						url:'guide.html',
+						styles: {
+							popGesture:"none"
+						},
+						show:{
+							aniShow:'none'
+						},
+						waiting:{
+							autoShow:false
+						}
+					});
+				
+				}
+			});
 jQuery(function() {
+
+//	头像高度
 	var heights = jQuery(".c-t-head").width();
-	jQuery(".c-t-head").css("height", heights);
+	jQuery(".c-t-head").css("height", heights + "px");
+ 
 	//初始化预加载详情页面
 	mui.init({
 		preloadPages: [{
@@ -15,9 +45,21 @@ jQuery(function() {
 					url: "encyclopedia.html"
 				}, {
 					url: "encyclopedia-bbs.html"
+				}, {
+					url: "moreSettings.html"
 				}] //预加载页面的子页面
 		}]
 	});
+	jumpPage("#l-icon-ting","hearing.html");
+	jumpPage("#r-icon-read","reading.html");
+	jumpPage("#w-icon-write","writing.html");
+	
+	jumpPage("#fixed-1","index.html");
+	jumpPage("#fixed-2","course.html");
+	jumpPage("#fixed-3","encyclopedia-main.html");
+	jumpPage("#fixed-4","personalCenter.html");
+
+	
 
 	//声明模块
 	var myApp = angular.module("myApp", []);
@@ -44,6 +86,8 @@ jQuery(function() {
 
 			}
 		});
+		
+		//	   setTimeout(function(){
 		var userId = localStorage.getItem('userId');
 
 		if(userId) {
@@ -55,17 +99,26 @@ jQuery(function() {
 			jQuery("#jingting")[0].addEventListener("tap", jingting);
 			//		核心词汇跳转
 			jQuery("#hexinch")[0].addEventListener("tap", hexing);
-			//点击头像到更多设置界面
-			jQuery(".c-t-head")[0].addEventListener("tap", function() {
-				mui.openWindow({
-					url: "moreSettings.html"
-				})
-
-			});
 
 			jQuery(".noLogin").each(function() {
 
 				jQuery(this).hide();
+			});
+			$http({
+				method: 'post',
+				url: 'http://www.toeflonline.cn/cn/wap-api/manage',
+				headers: {
+					'Content-Type': 'application/x-www-form-urlencoded'
+				},
+				data: {
+					userId: userId
+				}
+			}).success(function(data) {
+				if(data.image) {
+					$scope.image = 'http://www.toeflonline.cn' + data.image;
+				} else {
+					$scope.image = 'images/myimages/userDefault.png';
+				}
 			});
 			$http({
 				method: 'post',
@@ -91,9 +144,10 @@ jQuery(function() {
 				$scope.jingstatus = data.todayTask.intensiveListening.status;;
 				$scope.henum = data.todayTask.keyWords.num;
 				$scope.hestatus = data.todayTask.keyWords.status;
-
+				var heights = jQuery(".c-t-head").width();
+				jQuery(".c-t-head").css("height", heights + "px");
 				if(data.taskSession) {
-//					setCookie("taskSession", data.taskSession);
+					//					setCookie("taskSession", data.taskSession);
 					localStorage.setItem("taskSession", data.taskSession);
 				}
 
@@ -155,15 +209,27 @@ jQuery(function() {
 					$scope.htmlHe = str02;
 				}
 				jQuery("#usually").html(num);
+
+				//点击头像到更多设置界面
+				jQuery(".c-t-head")[0].addEventListener("tap", function() {
+					mui.openWindow({
+						id: "moreSettings-" + $scope.nums,
+						url: "moreSettings.html"
+					})
+
+				});
+
 			});
+			
 
 		} else {
-
+			$scope.image = 'images/myimages/touxiang@2x.png';
 			//点击头像到登陆界面
 			jQuery(".c-t-head")[0].addEventListener("tap", function() {
 				var r = confirm("立即登录?")
 				if(r == true) {
 					mui.openWindow({
+						id: "login",
 						url: "login.html"
 					})
 				}
@@ -192,12 +258,15 @@ jQuery(function() {
 					url: "login.html"
 				})
 			});
+			
 
 		}
+		//	   },2000);
 
 	}]);
 
 });
+
 //语法学习登录之后的调整函数
 function yufa() {
 	mui.openWindow({

@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="myApp">
 
 	<head>
 		<meta charset="UTF-8">
@@ -10,36 +10,41 @@
 		<link href="css/mycss/writing-result.css" rel="stylesheet" />
 	</head>
 
-	<body>
+	<body ng-controller="PriceCtrl">
 
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left orangeColor"></a>
-			<h1 class="mui-title">TPO 01</h1>
+			<h1 class="mui-title">{{catName}}-{{name}}</h1>
 		</header>
 		<div class="mui-content">
-			<div class="resultCon">
+			<div class="writing_art">
+				{{answer}}
+			</div>
+			<div class="result">
+				<div class="resultCon">
 
-				<div class="col-xs-8 col-sm-8" style="width: 60%;margin: 0 auto;">
-					<div class="border_center">
-						<div class="centerData">
-							<div class="inCenter">
-								<h2>1000</h2>
-								<span>单词数量</span>
+					<div class="col-xs-8 col-sm-8" style="width: 60%;margin: 0 auto;">
+						<div class="border_center">
+							<div class="centerData">
+								<div class="inCenter">
+									<h2>{{num}}</h2>
+									<span>单词数量</span>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
 
-				<div class="clearBox"></div>
-			</div>
-			<div class="blueFont">
-				<h4>总耗时：32m</h4>
-			</div>
-			<div class="greyBtn">
-				<button type="button" class="mui-btn" id="seeDetail-w">查看详情</button>
-				<a href="#popover" id="openPopover">
-					<button type="button" class="mui-btn" id="reWrite">重新写作</button>
-				</a>
+					<div class="clearBox"></div>
+				</div>
+				<div class="blueFont">
+					<h4>总耗时：{{elapsedTime}}s</h4>
+				</div>
+				<div class="greyBtn">
+					<button type="button" class="mui-btn" id="seeDetail-w">查看详情</button>
+					<a href="#popover" id="openPopover">
+						<button type="button" class="mui-btn" id="reWrite">重新写作</button>
+					</a>
+				</div>
 			</div>
 
 		</div>
@@ -66,23 +71,9 @@
 		<script src="js/mui.min.js"></script>
 		<script src="js/myjs/jquery-1.11.1.min.js"></script>
 		<script src="js/myjs/public.js"></script>
-		<script type="text/javascript">
-			jQuery(function() {
+		<script src="js/myjs/writing-result.js"></script>
+		<script src="js/myjs/angular1.3.1.js"></script>
 
-				//    圆高度
-				jQuery(".border_center").css("height", $(".border_center").width());
-				jQuery(".centerData").css("height", $(".centerData").width());
-				//				弹窗取消
-				jQuery("#quxiao")[0].addEventListener("tap", function() {
-					mui('.mui-popover').popover('hide');
-				});
-				jQuery("#seeDetail-w")[0].addEventListener("tap", function() {
-					mui.openWindow({
-						url: "writing-result-details.html"
-					})
-				});
-			});
-		</script>
 	</body>
 
 </html>

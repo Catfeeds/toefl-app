@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="myApp">
 
 	<head>
 		<meta charset="UTF-8">
@@ -10,25 +10,25 @@
 		<link href="css/mycss/myCourse-detials.css" rel="stylesheet" />
 	</head>
 
-	<body>
+	<body ng-controller="PriceCtrl">
 
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left orangeColor"></a>
 			<h1 class="mui-title">订单详情</h1>
 		</header>
 		<nav class="mui-bar mui-bar-tab bg-nowhite">
-			<button type="button" class="mui-btn mui-btn-warning orangeBg" style="width: 100%;border-radius: 0;">立即付款</button>
+
 		</nav>
 		<div class="mui-content">
 			<div class="order-status">
-				<ul>
+				<!--<ul>
 					<li>订单状态：等待买家付款</li>
 					<li>订单编号：356589787987</li>
 					<li>创建时间：2016-02-03 21:23:34</li>
-				</ul>
+				</ul>-->
 			</div>
 			<div class="course-details">
-				<div class="mui-row">
+				<!--<div class="mui-row">
 					<div class="mui-col-sm-4 mui-col-xs-4 l-img-cou">
                          <img src="images/cbd.jpg"/>
 					</div>
@@ -46,9 +46,10 @@
 					<span>实付款（含运费）</span>
 					<span class="red">￥9800</span>
 				</div>
+			-->
 			</div>
 			<div class="order-address">
-				<ul>
+				<!--<ul>
 					<li>
 						<img src="images/myimages/19@2x.png"/>
 						<span>收货人：Emily</span>
@@ -62,12 +63,15 @@
 						<span>收货地址：时代广场A座2807</span>
 					</li>
 				</ul>
+			-->
 			</div>
 		</div>
 
 		<script src="js/mui.min.js"></script>
 		<script src="js/myjs/jquery-1.11.1.min.js"></script>
 		<script src="js/myjs/public.js"></script>	
+		<script src="js/myjs/myCourse-details.js"></script>
+		<script src="js/myjs/angular1.3.1.js"></script>
 	</body>
 
 </html>

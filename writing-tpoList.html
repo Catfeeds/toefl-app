@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="myApp">
 
 	<head>
 		<meta charset="UTF-8">
@@ -10,7 +10,7 @@
 		<link href="css/mycss/writing-tpoList.css" rel="stylesheet" />
 	</head>
 
-	<body>
+	<body ng-controller="PriceCtrl">
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left orangeColor"></a>
 			<h1 class="mui-title">TPO写作练习</h1>
@@ -19,97 +19,52 @@
 		<div class="mui-content">
 			<div class="pop-slide" id="slidePop">
 				<div class="slideBd bd">
-					<ul>
-						<li>
-							<a href="#">TPO 01-06</a>
+					<ul id="first_ul">
+						<li class="on" data-ids="151,152,153,154,155,156">
+							<a href="javascript:void(0);">TPO 01-06</a>
 						</li>
-						<li class="on">
-							<a href="#">TPO 07-12</a>
+						<li data-ids="157,158,159,160,161,162">
+							<a href="javascript:void(0);">TPO 07-12</a>
 						</li>
-						<li>
-							<a href="#">TPO 13-18</a>
+						<li data-ids="163,164,165,166,167,168">
+							<a href="javascript:void(0);">TPO 13-18</a>
 						</li>
 					</ul>
-					<ul>
-						<li>
-							<a href="#">TPO 19-24</a>
+					<ul id="second_ul">
+						<li data-ids="169,170,171,172,173,174">
+							<a href="javascript:void(0);">TPO 19-24</a>
 						</li>
-						<li>
-							<a href="#">TPO 25-30</a>
+						<li data-ids="175,176,177,178,179,180">
+							<a href="javascript:void(0);">TPO 25-30</a>
 						</li>
-						<li class="on">
-							<a href="#">TPO 31-34</a>
+						<li data-ids="181,182,183,184">
+							<a href="javascript:void(0);">TPO 31-34</a>
 						</li>
 
 					</ul>
-					<ul>
-						<li>
-							<a href="#">TPO 40-45</a>
+					<ul id="third_ul">
+						<li data-ids="252,253,254,255,256,259">
+							<a href="javascript:void(0);">TPO 40-45</a>
 						</li>
-						<li>
-							<a href="#">TPO 46-48</a>
+						<li data-ids="260,261,262">
+							<a href="javascript:void(0);">TPO 46-48</a>
 						</li>
 					</ul>
 				</div>
 			</div>
 			<div class="tpo-con">
 				<ul class="mui-table-view">
-					<li class="title-grey">TPO 01</li>
-					<li class="mui-table-view-cell mui-media">
-						<a href="javascript:;">
+					<li ng-repeat="tpoDataT in tpoData">
+						<div class="title-grey">{{tpoDataT.catName}}</div>
+						<div class="mui-table-view-cell mui-media" ng-repeat="questionT in tpoDataT.question" id="{{questionT.id}}">
+							<!--<a href="javascript:;">-->
 							<div class="mui-media-body">
-								Integrated Writing Task
-								<p class='mui-ellipsis'>114人练习过</p>
+								{{questionT.name}}
+								<p class='mui-ellipsis'>{{questionT.num}}人练习过</p>
 							</div>
 							<a href="#" class="rj"><img src="images/myimages/Exercise7@2x.png" alt="箭头" /></a>
-						</a>
-					</li>
-					<li class="mui-table-view-cell mui-media">
-						<a href="javascript:;">
-							<div class="mui-media-body">
-								Integrated Writing Task
-								<p class='mui-ellipsis'>114人练习过</p>
-							</div>
-							<a href="#" class="rj"><img src="images/myimages/Exercise7@2x.png" alt="箭头" /></a>
-						</a>
-					</li>
-					<li class="title-grey">TPO 02</li>
-					<li class="mui-table-view-cell mui-media">
-						<a href="javascript:;">
-							<div class="mui-media-body">
-								Integrated Writing Task
-								<p class='mui-ellipsis'>114人练习过</p>
-							</div>
-							<a href="#" class="rj"><img src="images/myimages/Exercise7@2x.png" alt="箭头" /></a>
-						</a>
-					</li>
-					<li class="mui-table-view-cell mui-media">
-						<a href="javascript:;">
-							<div class="mui-media-body">
-								Integrated Writing Task
-								<p class='mui-ellipsis'>114人练习过</p>
-							</div>
-							<a href="#" class="rj"><img src="images/myimages/Exercise7@2x.png" alt="箭头" /></a>
-						</a>
-					</li>
-					<li class="title-grey">TPO 03</li>
-					<li class="mui-table-view-cell mui-media">
-						<a href="javascript:;">
-							<div class="mui-media-body">
-								Integrated Writing Task
-								<p class='mui-ellipsis'>114人练习过</p>
-							</div>
-							<a href="#" class="rj"><img src="images/myimages/Exercise7@2x.png" alt="箭头" /></a>
-						</a>
-					</li>
-					<li class="mui-table-view-cell mui-media">
-						<a href="javascript:;">
-							<div class="mui-media-body">
-								Integrated Writing Task
-								<p class='mui-ellipsis'>114人练习过</p>
-							</div>
-							<a href="#" class="rj"><img src="images/myimages/Exercise7@2x.png" alt="箭头" /></a>
-						</a>
+							<!--</a>-->
+						</div>
 					</li>
 				</ul>
 			</div>
@@ -120,19 +75,8 @@
 		<script src="js/myjs/jquery-1.11.1.min.js"></script>
 		<script src="js/myjs/TouchSlide.1.1.js"></script>
 		<script src="js/myjs/public.js"></script>
-		<script type="text/javascript">
-			jQuery(function() {
-				TouchSlide({
-					slideCell: "#slidePop",
-					effect: "leftLoop"
-				});
-				mui(".mui-table-view").on("tap",".mui-table-view-cell",function(){
-					mui.openWindow({
-						url:"writing-practice.html"
-					})
-				});
-			});
-		</script>
+		<script src="js/myjs/writing-tpoList.js"></script>
+		<script src="js/myjs/angular1.3.1.js"></script>
 	</body>
 
 </html>

@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="myApp">
 
 	<head>
 		<meta charset="UTF-8">
@@ -10,154 +10,135 @@
 		<link href="css/mycss/reading-practice.css" rel="stylesheet" />
 	</head>
 
-	<body>
+	<body ng-controller="PriceCtrl">
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left orangeColor"></a>
-			<h1 class="mui-title">TPO 01-Passage1</h1>
+			<h1 class="mui-title">{{titleName}}</h1>
 		</header>
 
 		<div class="mui-content">
 			<div class="pop-slide" id="slidePop">
-				<div class="slideBd bd">
-					<ul>
-						<li class="red">
-							<a href="#">1</a>
+				<div class="slideBd bd optionBd">
+					<ul id="firstUl">
+						<!--<li data-showNum="{{$index}}" ng-repeat="dataArrT in dataArr" ng-show="'{{$index}}'<7" is-over="toggle.now"
+                	 ng-class="{'red':'{{dataArrT.answer}}'!='{{dataArrT.extend.answer}}'
+                    ,'green':'{{dataArrT.answer}}'=='{{dataArrT.extend.answer}}'}">
+                    <a href="javascript:void(0);">{{$index+1}}</a>
+                </li>-->
+						<li data-showNum="1" class="on">
+							<a href="javascript:void(0);">1</a>
 						</li>
-						<li class="green">
-							<a href="#">2</a>
+						<li data-showNum="2">
+							<a href="javascript:void(0);">2</a>
 						</li>
-						<li class="redOn">
-							<a href="#">3</a>
+						<li data-showNum="3">
+							<a href="javascript:void(0);">3</a>
 						</li>
-						<li class="greenOn">
-							<a href="#">4</a>
+						<li data-showNum="4">
+							<a href="javascript:void(0);">4</a>
 						</li>
-						<li class="red">
-							<a href="#">5</a>
+						<li data-showNum="5">
+							<a href="javascript:void(0);">5</a>
 						</li>
-						<li class="red">
-							<a href="#">6</a>
+						<li data-showNum="6">
+							<a href="javascript:void(0);">6</a>
 						</li>
-						<li class="red">
-							<a href="#">7</a>
+						<li data-showNum="7">
+							<a href="javascript:void(0);">7</a>
 						</li>
 					</ul>
-					<ul>
-						<li class="red">
-							<a href="#">8</a>
+					<ul id="secondUl">
+						<!--<li data-showNum="{{$index}}" ng-repeat="dataArrT in dataArr" ng-show="'{{$index}}'>=7" 
+                	ng-class="{'red':'{{dataArrT.answer}}'!='{{dataArrT.extend.answer}}'
+                    ,'green':'{{dataArrT.answer}}'=='{{dataArrT.extend.answer}}'}">
+                    <a href="javascript:void(0);">{{$index+1}}</a>
+                </li>-->
+						<li data-showNum="8">
+							<a href="javascript:void(0);">8</a>
 						</li>
-						<li class="red">
-							<a href="#">9</a>
+						<li data-showNum="9">
+							<a href="javascript:void(0);">9</a>
 						</li>
-						<li class="red">
-							<a href="#">10</a>
+						<li data-showNum="10">
+							<a href="javascript:void(0);">10</a>
 						</li>
-						<li class="red">
-							<a href="#">11</a>
+						<li data-showNum="11">
+							<a href="javascript:void(0);">11</a>
 						</li>
-						<li class="red">
-							<a href="#">12</a>
+						<li data-showNum="12">
+							<a href="javascript:void(0);">12</a>
 						</li>
-						<li class="red">
-							<a href="#">13</a>
+						<li data-showNum="13">
+							<a href="javascript:void(0);">13</a>
 						</li>
-						<li class="red">
-							<a href="#">14</a>
+						<li data-showNum="14">
+							<a href="javascript:void(0);">14</a>
 						</li>
 					</ul>
 				</div>
 			</div>
-			
-			
-			<div class="mui-card first-card">
-				<!--页眉，放置标题-->
-				<div class="mui-card-header">
-					<span><1/14></span>
-					<a href="javascript:void(0);" id="seeArticle">查看全文</a>
-				</div>
-				<!--内容区-->
-				<div class="mui-card-content">
-					<div class="article-tpo">
-						<div class="in-box">
-							Groundwater is the word used to describe water that saturates the ground, filling all the available spaces. By far the most abundant type of groundwater is meteoric water; this is the groundwater that circulates as part of the water cycle. Ordinary meteoric water is water that has soaked into the ground from the surface, from precipitation (rain and snow) and from lakes and streams. There it remains, sometimes for long periods, before emerging at the surface again. At first thought it seems incredible that there can be enough space in the "solid" ground underfoot to hold all this water. The necessary space is there, however, in many forms. The commonest spaces are those among the particles—sand grains and tiny pebbles—of loose, unconsolidated sand and gravel. Beds of this material, out of sight beneath the soil, are common. They are found wherever fast rivers carrying loads of coarse sediment once flowed. For example, as the great ice sheets that covered North America during the last ice age steadily melted away, huge volumes of water flowed from them. The water was always laden with pebbles, gravel, and sand, known as glacial outwash, that was deposited as the flow slowed down.
 
+			<div class="common" ng-repeat="dataArrT in dataArr" id="{{$index}}" is-over="toggle.now">
+				<div class="mui-card first-card">
+					<!--页眉，放置标题-->
+					<div class="mui-card-header">
+						<span><{{$index+1}}/{{total}}></span>
+						<a href="javascript:void(0);" class="seeAll qubie">查看全文</a>
+					</div>
+					<!--内容区-->
+					<div class="mui-card-content">
+						<div class="article-tpo">
+							<div class="in-box" ng-bind-html="dataArrT.potion.question | trustHtml">
+								<!--文章部分-->
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
 
-			<div class="mui-card option">
-				<!--页眉，放置标题-->
-				<div class="mui-card-header">What can be inferred about why the woman decides to use the computer in the library?</div>
-				<!--内容区-->
-				<div class="mui-card-content">
-					<ul class="mui-table-view">
-						<li class="mui-table-view-cell mui-media li-red">
-							<a href="javascript:;">
-								<div class="mui-media-object mui-pull-left">A</div>
+				<div class="mui-card option abcd_option">
+					<!--页眉，放置标题-->
+					<div class="mui-card-header" ng-bind-html="dataArrT.extend.question | trustHtml"></div>
+					<!--内容区-->
+					<div class="mui-card-content">
+						<ul class="mui-table-view">
+							<li class="mui-table-view-cell mui-media" ng-repeat="arrTitleT in dataArrT.extend.answerA | optionsAll" ng-class="{'li-red':'{{dataArrT.answer}}'!='{{dataArrT.extend.answer}}'&&
+                             '{{dataArrT.answer}}'=='{{arrTitleT | options}}',
+                             'li-green':'{{dataArrT.answer}}'=='{{dataArrT.extend.answer}}'
+                             &&'{{dataArrT.extend.answer}}'=='{{arrTitleT | options}}',
+                             'li-green02':'{{dataArrT.extend.answer}}'=='{{arrTitleT | options}}'}">
+
+								<div class="mui-media-object mui-pull-left">{{arrTitleT | options}}</div>
 								<div class="mui-media-body">
-									She thinks she might need additional help from the man
+									{{arrTitleT | selectLabel}}
 								</div>
-							</a>
+
+							</li>
+
+						</ul>
+					</div>
+
+				</div>
+				<div class="special_ti">
+					<p ng-bind-html="dataArrT.extend.question | trustHtml"></p>
+					<ul>
+						<li ng-class="{'red':'{{dataArrT.extend.answer}}'!='{{dataArrT.answer}}',
+                         'green':'{{dataArrT.extend.answer}}'=='{{dataArrT.answer}}'}">
+							<span>你的答案：{{dataArrT.answer}}</span>
 						</li>
-						<li class="mui-table-view-cell mui-media li-grey">
-							<a href="javascript:;">
-								<div class="mui-media-object mui-pull-left">B</div>
-								<div class="mui-media-body">
-									She does not have a computer at home
-								</div>
-							</a>
-						</li>
-						<li class="mui-table-view-cell mui-media li-green">
-							<a href="javascript:;">
-								<div class="mui-media-object mui-pull-left">C</div>
-								<div class="mui-media-body">
-									She has to hand in her assignment by the end of the day
-								</div>
-							</a>
-						</li>
-						<li class="mui-table-view-cell mui-media li-grey">
-							<a href="javascript:;">
-								<div class="mui-media-object mui-pull-left">D</div>
-								<div class="mui-media-body">
-									She will be meeting a friend in the library later on
-								</div>
-							</a>
-						</li>
+						<li><span>正确答案：{{dataArrT.extend.answer}}</span></li>
 					</ul>
 				</div>
 
-			</div>
-			<div class="jiexi">
-				<p>解析：water that saturates the ground, filling all the available spaces. By far the most</p>
 			</div>
 
 		</div>
 
 		<script src="js/mui.min.js"></script>
 		<script src="js/myjs/jquery-1.11.1.min.js"></script>
-			<script src="js/myjs/TouchSlide.1.1.js"></script>
+		<script src="js/myjs/TouchSlide.1.1.js"></script>
 		<script src="js/myjs/public.js"></script>
-		<script type="text/javascript">
-		jQuery(function(){
-			
-				//    标题tpo01
-	TouchSlide({slideCell: "#slidePop",effect: "leftLoop"});
-	      
-	        jQuery(".slideBd ul li").each(function(){
-	        	jQuery(this).find("a").css({
-	        		"height":jQuery(this).find('a').width(),
-	        		"lineHeight":jQuery(this).find('a').width()+"px"
-	        	});
-	        });
-			jQuery("#seeArticle")[0].addEventListener("tap", function() {
-			
-				mui.openWindow({
-				url:"reading-article.html"
-			})
-			});
-		});
-		</script>
+		<script src="js/myjs/reading-result-details.js"></script>
+		<script src="js/myjs/angular1.3.1.js"></script>
 	</body>
 
 </html>

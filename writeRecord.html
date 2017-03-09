@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="myApp">
 
 	<head>
 		<meta charset="UTF-8">
@@ -10,7 +10,7 @@
 		<link href="css/mycss/listenRecord.css" rel="stylesheet" />
 	</head>
 
-	<body>
+	<body ng-controller="PriceCtrl">
 
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left orangeColor"></a>
@@ -19,13 +19,13 @@
 		<div class="mui-content">
 			<div style="background-color: white;">
 				<div id="segmentedControl" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-primary">
-					<a class="mui-control-item mui-active" href="#item1">
+					<!--<a class="mui-control-item mui-active" href="#item1">
 						全部
-					</a>
-					<a class="mui-control-item" href="#item2">
+					</a>-->
+					<a class="mui-control-item mui-active" href="#item1" data-type="2" id="type02">
 						TPO
 					</a>
-					<a class="mui-control-item" href="#item3">
+					<a class="mui-control-item" href="#item2" data-type="3" id="type03">
 						独立话题
 					</a>
 				</div>
@@ -33,103 +33,35 @@
 			<div>
 				<div id="item1" class="mui-control-content mui-active">
 					<ul class="mui-table-view">
-						<li class="mui-table-view-cell mui-media">
+						<li class="mui-table-view-cell mui-media"  ng-repeat="dataT in data">
 							<a href="javascript:void(0);">
 								<div class="mui-pull-left l-or-time">
 									<img src="images/myimages/userCenter15@2x.png" alt="时钟图标" height="20px"/>
-									<p class="orangeColor">12:30</p>
-									<p>2016/03/11</p>
+									<p class="orangeColor">{{dataT.createTime | timeOne}}</p>
+									<p>{{dataT.createTime | timeTwo}}</p>
 								</div>
 								<div class="mui-pull-right r-or-btn">
-									<button type="button" class="mui-btn mui-btn-warning mui-btn-outlined">查看结果</button>
+									<button type="button" class="mui-btn mui-btn-warning mui-btn-outlined" data-recordId="{{dataT.id}}">查看结果</button>
 								</div>
 								<div class="mui-media-body c-or-font">
-									<div class='mui-ellipsis'>TPO 11-综合写作1</div>
-									<p class='mui-ellipsis'>Integrated Writing Task</p>
+									<div class='mui-ellipsis'>{{dataT.catName}}-{{diffName}}-{{dataT.num}}</div>
+									<p class='mui-ellipsis'>{{diffName02}}</p>
 								</div>								
 							</a>
 						</li>
-						<li class="mui-table-view-cell mui-media">
-							<a href="javascript:void(0);">
-								<div class="mui-pull-left l-or-time">
-									<img src="images/myimages/userCenter15@2x.png" alt="时钟图标" height="20px"/>
-									<p class="orangeColor">12:30</p>
-									<p>2016/03/11</p>
-								</div>
-								<div class="mui-pull-right r-or-btn">
-									<button type="button" class="mui-btn mui-btn-warning mui-btn-outlined">查看结果</button>
-								</div>
-								<div class="mui-media-body c-or-font">
-									<div class='mui-ellipsis'>TPO 11-综合写作1</div>
-									<p class='mui-ellipsis'>Integrated Writing Task</p>
-								</div>								
-							</a>
-						</li>
+					
 						
 					</ul>
 				</div>
-				<div id="item2" class="mui-control-content">
-					<ul class="mui-table-view">
-						<li class="mui-table-view-cell mui-media">
-							<a href="javascript:void(0);">
-								<div class="mui-pull-left l-or-time">
-									<img src="images/myimages/userCenter15@2x.png" alt="时钟图标" height="20px"/>
-									<p class="orangeColor">12:30</p>
-									<p>2016/03/11</p>
-								</div>
-								<div class="mui-pull-right r-or-btn">
-									<button type="button" class="mui-btn mui-btn-warning mui-btn-outlined">查看结果</button>
-								</div>
-								<div class="mui-media-body c-or-font">
-									<div class='mui-ellipsis'>TPO 11-综合写作1</div>
-									<p class='mui-ellipsis'>Integrated Writing Task</p>
-								</div>								
-							</a>
-						</li>
-					</ul>
-				</div>
-				<div id="item3" class="mui-control-content">
-				<ul class="mui-table-view">
-						<li class="mui-table-view-cell mui-media">
-							<a href="javascript:void(0);">
-								<div class="mui-pull-left l-or-time">
-									<img src="images/myimages/userCenter15@2x.png" alt="时钟图标" height="20px"/>
-									<p class="orangeColor">12:30</p>
-									<p>2016/03/11</p>
-								</div>
-								<div class="mui-pull-right r-or-btn">
-									<button type="button" class="mui-btn mui-btn-warning mui-btn-outlined">查看结果</button>
-								</div>
-								<div class="mui-media-body c-or-font">
-									<div class='mui-ellipsis'>TPO 11-综合写作1</div>
-									<p class='mui-ellipsis'>Integrated Writing Task</p>
-								</div>								
-							</a>
-						</li>
-						<li class="mui-table-view-cell mui-media">
-							<a href="javascript:void(0);">
-								<div class="mui-pull-left l-or-time">
-									<img src="images/myimages/userCenter15@2x.png" alt="时钟图标" height="20px"/>
-									<p class="orangeColor">12:30</p>
-									<p>2016/03/11</p>
-								</div>
-								<div class="mui-pull-right r-or-btn">
-									<button type="button" class="mui-btn mui-btn-warning mui-btn-outlined">查看结果</button>
-								</div>
-								<div class="mui-media-body c-or-font">
-									<div class='mui-ellipsis'>TPO 11-综合写作1</div>
-									<p class='mui-ellipsis'>Integrated Writing Task</p>
-								</div>								
-							</a>
-						</li>
-					</ul>
-				</div>
+			
 			</div>
 		</div>
 
 		<script src="js/mui.min.js"></script>
 		<script src="js/myjs/jquery-1.11.1.min.js"></script>
 		<script src="js/myjs/public.js"></script>
+		<script src="js/myjs/writeRecord.js"></script>
+		<script src="js/myjs/angular1.3.1.js"></script>
 	</body>
 
 </html>

@@ -1,3 +1,6 @@
+.words,.paragraph,.insertContent{
+	display: none;
+}
 .first-card {
 	box-shadow: none;
 }
@@ -22,11 +25,19 @@
 .mui-card.option {
 	box-shadow: none;
 }
-
-.mui-card.option .mui-card-header {
+.article-tpo h2{
+	font-size: 1.4em;
+}
+.article-tpo h2,.article-tpo p{
+	font-size: 1em!important;
+	color: black;
+}
+.mui-card.option .mui-card-header{
 	font-size: 0.8em;
 }
-
+.mui-card.option p{
+	color:black;
+}
 .mui-card.option .mui-table-view-cell>a:not(.mui-btn) {
 	white-space: normal;
 }
@@ -61,7 +72,13 @@
 .li-green .mui-media-object {
 	background-color: #2acc5d;
 }
+.li-green02 .mui-media-body {
+	color: #2acc5d;
+}
 
+.li-green02 .mui-media-object {
+	background-color: #2acc5d;
+}
 .li-red .mui-media-body {
 	color: #ea2c16;
 }
@@ -93,8 +110,99 @@
 }
 
 
-/*阅读结果详情页*/
 
+.black_line{
+    width: 93%;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 0.8em;
+    font-weight: bold;
+    display: none;
+    background-color: white;
+}
+.black_line p,.trag_test p{
+    display: none;
+    font-size: 0.8em;
+    color: #008000;
+    margin-top: 10px;
+}
+
+.trag_test{
+    width: 93%;
+    margin: 0 auto;
+    padding-top: 1px;
+    display: none;
+    background-color: white;
+}
+.trag_test ul{
+	padding: 10px;
+}
+.trag_test ul li{
+    font-size: 0.8em;
+    margin-top: 10px;
+}
+.write_an{
+    width:100%;
+    margin-top: 20px;
+    background-color: white;
+}
+.write_an .col-xs-4 div{
+    width: 90%;
+    height: 40px;
+    margin: 0 auto;
+    border: 1px #eeeeee solid;
+    background: #ffffff;
+    padding: 5px 0;
+    font-size: 0.8em;
+}
+
+.write_an .col-xs-4 div input{
+    width: 70%;height:100%;border: none;background: #ffffff;
+}
+/*定位高亮*/
+.highlight{
+    background-color: #dcdcdc;
+    font-weight: bold;
+    /*-moz-border-radius: 5px; *//* FF1+ */
+    /*-webkit-border-radius: 5px; *//* Saf3-4 */
+    /*border-radius: 5px; *//* Opera 10.5, IE 9, Saf5, Chrome */
+    /*-moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.7); *//* FF3.5+ */
+    /*-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.7); *//* Saf3.0+, Chrome */
+    /*box-shadow: 0 1px 4px rgba(0, 0, 0, 0.7); *//* Opera 10.5+, IE 9.0 */
+}
+
+/*不能删除，这两个空的class是有用的*/
+.nullHigh{
+
+}
+.specialHigh{
+    /*background: url("../images/read_specialIcon.png") no-repeat right center;*/
+    /*padding-right: 10px;*/
+}
+.specialHigh02{
+    width: 8px;
+    height: 19px;
+    display: inline-block;
+    background: url("../../images/myimages/read_specialIcon.png") no-repeat;
+}
+.specialHigh02:hover{
+    cursor: pointer;
+}
+.highlight02{
+    width: 10px;
+    height: 12px;
+    display: inline-block;
+    background:url("../../images/myimages/highlight.png") no-repeat;
+    padding-left: 12px;
+}
+
+
+
+/*阅读结果详情页*/
+.common{
+	display: none;
+}
 .slideBd {
 	padding: 5px 0!important;
 	background-color: white;
@@ -119,6 +227,7 @@
 	margin: 0 auto;
 	display: block;
 	border-radius: 50%;
+	color: black;
 }
 
 .slideBd ul li.red a {
@@ -128,13 +237,40 @@
 .slideBd ul li.green a {
 	color: #33CC66;
 }
-
-.slideBd ul li.redOn a {
+.slideBd ul li.on a {
+	color: white;
+	background-color: #FF6600;
+}
+.slideBd ul li.red.on a {
 	color: white;
 	background-color: #F23030;
 }
 
-.slideBd ul li.greenOn a {
+.slideBd ul li.green.on a {
 	color: white;
 	background-color: #33CC66;
 }
+.special_ti{
+    width: 93%;
+    margin: 0 auto;
+    font-family: '微软雅黑';
+    margin-top: 10px;
+    padding: 10px;
+    display: none;
+    background-color: white;
+    border-radius: 3px;
+}
+.special_ti ul li{
+    font-size: 0.8em;
+    margin-bottom: 5px;
+}
+.special_ti ul li:last-child{
+    color: #008000;
+}
+.special_ti ul li:first-child.green{
+    color: #008000;
+}
+.special_ti ul li:first-child.red{
+    color: red;
+}
+/*阅读结果详情页 end*/

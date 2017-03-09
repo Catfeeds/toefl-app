@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="myApp">
 
 	<head>
 		<meta charset="UTF-8">
@@ -10,27 +10,27 @@
 		<link href="css/mycss/reading-result.css" rel="stylesheet" />
 	</head>
 
-	<body>
+	<body ng-controller="PriceCtrl">
 
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left orangeColor"></a>
-			<h1 class="mui-title">TPO 01-Passage1</h1>
+			<h1 class="mui-title">{{titleName}}</h1>
 		</header>
 		<div class="mui-content">
 			<div class="resultCon">
 				<div class="col-xs-3 col-sm-3" style="width: 25%;float: left;">
-					<h4>34m</h4>
+					<h4>{{time}}</h4>
 					<p>耗时</p>
 				</div>
 				<div class="col-xs-6 col-sm-6" style="width: 50%;float: left;">
 					<div class="centerData">
-						<h2>06</h2>
+						<h2>{{trueT}}</h2>
 						<span>你做对的题数</span>
-						<p>共14题</p>
+						<p>共{{sum}}题</p>
 					</div>
 				</div>
 				<div class="col-xs-3 col-sm-3" style="width: 25%;float: left;">
-					<h4>45%</h4>
+					<h4>{{accuracy}}%</h4>
 					<p>正确率</p>
 				</div>
 				<div class="mui-clearfix"></div>
@@ -69,25 +69,8 @@
 		<script src="js/mui.min.js"></script>
 		<script src="js/myjs/jquery-1.11.1.min.js"></script>
 		<script src="js/myjs/public.js"></script>
-		<script type="text/javascript">
-			jQuery(function() {
-				//    中间的绿色圆形
-				jQuery(".centerData").css("height", $(".centerData").width() + "px");
-				jQuery("#seeDetail")[0].addEventListener("tap", function() {
-					mui.openWindow({
-						url: "reading-result-details.html"
-					})
-				});
-				jQuery("#quxiao")[0].addEventListener("tap", function() {
-					mui('.mui-popover').popover('hide');
-				});
-				jQuery("#sureBtn")[0].addEventListener("tap", function() {
-					mui.openWindow({
-						url: ""
-					})
-				})
-			});
-		</script>
+		<script src="js/myjs/reading-result.js"></script>
+		<script src="js/myjs/angular1.3.1.js"></script>
 	</body>
 
 </html>

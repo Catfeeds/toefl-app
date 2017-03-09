@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="myApp">
 
 	<head>
 		<meta charset="UTF-8">
@@ -10,7 +10,7 @@
 		<link href="css/mycss/hearing-answerKeys.css" rel="stylesheet" />
 	</head>
 
-	<body>
+	<body ng-controller="PriceCtrl">
 
 		<header class="mui-bar mui-bar-nav">
 			<a href="hearing.html" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left orangeColor"></a>
@@ -18,8 +18,8 @@
 		</header>
 		<div class="mui-content">
 			<div class="top-audio">
-				<h2>Find articles in the library
-               	<a href="#">精听本文</a></h2>
+				<h2>{{name}}
+               	<a href="javascript:void(0);" id="jingListen">精听本文</a></h2>
 				<div id="jquery_jplayer_1" class="jp-jplayer"></div>
 				<div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
 					<div class="out-grey">
@@ -38,141 +38,47 @@
 						</div>
 					</div>
 				</div>
-				<h4>本次做题结果 3/6
-				<a href="#">再做一次</a></h4>
+				<h4>本次做题结果 {{trueLen}}/{{timuTotal}}
+				<a href="javascript:void(0);" id="reTest">再做一次</a></h4>
 			</div>
 			<div class="line-x"></div>
 			<div class="option-answer">
 				<div>
 					<div id="segmentedControl" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-primary">
-						<a class="mui-control-item mui-active" href="#item1">
-							<span class="bor bor-red">1<b></b></span>
-
+						<a class="mui-control-item" href="#item{{$index}}" ng-repeat="questionT in question" is-over="toggle.now">
+							<span class="bor" ng-class="{'bor-red':'{{questionT.answer}}'!='{{questionT.userAnswer}}'
+								,'bor-green':'{{questionT.answer}}'=='{{questionT.userAnswer}}'}">{{$index+1}}<b></b></span>
 						</a>
-						<a class="mui-control-item" href="#item2">
-							<span class="bor bor-green">2 <b></b></span>
-						</a>
-						<a class="mui-control-item" href="#item3">
-							<span class="bor bor-red">3<b></b></span>
-						</a>
-						<a class="mui-control-item" href="#item4">
-							<span class="bor bor-green">4<b></b></span>
-						</a>
-						<a class="mui-control-item" href="#item5">
-							<span class="bor bor-red">5<b></b></span>
-						</a>
-						<a class="mui-control-item" href="#item6">
-							<span class="bor bor-green">6<b></b></span>
-						</a>
+					
 					</div>
 				</div>
 				<div>
-					<div id="item1" class="mui-control-content mui-active">
+					<div id="item{{$index}}" class="mui-control-content" ng-repeat="questionT in question">
 						<div class="mui-card">
 							<!--页眉，放置标题-->
-							<div class="mui-card-header">What can be inferred about why the woman decides to use the computer in the library?</div>
+							<div class="mui-card-header">{{questionT.name}}</div>
 							<!--内容区-->
 							<div class="mui-card-content">
 								<ul class="mui-table-view">
-									<li class="mui-table-view-cell mui-media li-red">
+									<li class="mui-table-view-cell mui-media" ng-repeat="select in questionT.questSelect | splitArr"
+										ng-class="{'li-red':'{{questionT.answer}}'!='{{questionT.userAnswer}}'&&
+										'{{$index | optionsAll}}'=='{{questionT.userAnswer}}',
+										'li-green':'{{questionT.answer}}'=='{{questionT.userAnswer}}'&&
+										'{{$index | optionsAll}}'=='{{questionT.userAnswer}}','li-green02':'{{$index | optionsAll}}'=='{{questionT.answer}}'}">
 										<a href="javascript:;">
-											<div class="mui-media-object mui-pull-left">A</div>
+											<div class="mui-media-object mui-pull-left">{{$index | optionsAll}}</div>
 											<div class="mui-media-body">
-												She thinks she might need additional help from the man
+												{{select}}
 											</div>
 										</a>
 									</li>
-									<li class="mui-table-view-cell mui-media li-grey">
-										<a href="javascript:;">
-											<div class="mui-media-object mui-pull-left">B</div>
-											<div class="mui-media-body">
-												She does not have a computer at home
-											</div>
-										</a>
-									</li>
-									<li class="mui-table-view-cell mui-media li-green">
-										<a href="javascript:;">
-											<div class="mui-media-object mui-pull-left">C</div>
-											<div class="mui-media-body">
-												She has to hand in her assignment by the end of the day
-											</div>
-										</a>
-									</li>
-									<li class="mui-table-view-cell mui-media li-grey">
-										<a href="javascript:;">
-											<div class="mui-media-object mui-pull-left">D</div>
-											<div class="mui-media-body">
-												She will be meeting a friend in the library later on
-											</div>
-										</a>
-									</li>
-									<li class="mui-table-view-cell mui-media">
-										<p class="jiexi">解析：usually because of a lack of moisture. usually because of a lack of moisture</p>
-									</li>
+									
 								</ul>
 							</div>
 
 						</div>
 					</div>
-					<div id="item2" class="mui-control-content">
-						<div class="mui-card">
-							<!--页眉，放置标题-->
-							<div class="mui-card-header">oh you say what can be inferred about why the woman decides to use the computer in the library?</div>
-							<!--内容区-->
-							<div class="mui-card-content">
-								<ul class="mui-table-view">
-									<li class="mui-table-view-cell mui-media li-red">
-										<a href="javascript:;">
-											<div class="mui-media-object mui-pull-left">A</div>
-											<div class="mui-media-body">
-												She thinks she might need additional help from the man
-											</div>
-										</a>
-									</li>
-									<li class="mui-table-view-cell mui-media li-grey">
-										<a href="javascript:;">
-											<div class="mui-media-object mui-pull-left">B</div>
-											<div class="mui-media-body">
-												She does not have a computer at home
-											</div>
-										</a>
-									</li>
-									<li class="mui-table-view-cell mui-media li-green">
-										<a href="javascript:;">
-											<div class="mui-media-object mui-pull-left">C</div>
-											<div class="mui-media-body">
-												She has to hand in her assignment by the end of the day
-											</div>
-										</a>
-									</li>
-									<li class="mui-table-view-cell mui-media li-grey">
-										<a href="javascript:;">
-											<div class="mui-media-object mui-pull-left">D</div>
-											<div class="mui-media-body">
-												She will be meeting a friend in the library later on
-											</div>
-										</a>
-									</li>
-									<li class="mui-table-view-cell mui-media">
-										<p class="jiexi">解析：usually because of a lack of moisture. usually because of a lack of moisture</p>
-									</li>
-								</ul>
-							</div>
-
-						</div>
-					</div>
-					<div id="item3" class="mui-control-content">
-
-					</div>
-					<div id="item4" class="mui-control-content">
-
-					</div>
-					<div id="item5" class="mui-control-content">
-
-					</div>
-					<div id="item6" class="mui-control-content">
-
-					</div>
+					
 				</div>
 
 			</div>
@@ -183,6 +89,7 @@
 		<script src="js/myjs/jquery.jplayer.min.js"></script>
 		<script src="js/myjs/public.js"></script>
 		<script src="js/myjs/hearing-answerKeys.js"></script>
+		<script src="js/myjs/angular1.3.1.js"></script>
 	</body>
 
 </html>

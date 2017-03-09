@@ -62,7 +62,18 @@ jQuery(function() {
 				useStateClassSkin: true,
 				toggleDuration: true
 			});
-
+			$http({
+				method: 'post',
+				url: 'http://www.toeflonline.cn/cn/app-api/today-task',
+				headers: {
+					'Content-Type': 'application/x-www-form-urlencoded'
+				},
+				data: {
+					userId: userId
+				}
+			}).success(function(data) {
+				$scope.num = data.todayTask.keywords.num;
+			});
 			//			添加点击事件
 			mui(".choose-ul").on("tap", "li", function() {
 				var _that = jQuery(this);
@@ -83,7 +94,7 @@ jQuery(function() {
 						if(userAnswer == $scope.trueAnswer) {
 							_that.addClass("green");
 							//							跳转到下一题
-						var userId = localStorage.getItem('userId');
+							var userId = localStorage.getItem('userId');
 							var type = "keyWords";
 							$http({
 								method: 'post',
@@ -99,18 +110,23 @@ jQuery(function() {
 								if(data.code == 2) {
 									jQuery(".mui-backdrop").show();
 								} else {
-
+//									closeme();
 									mui.openWindow({
-										url: "vocabulary.html"
+										id: "vocabulary"+$scope.num, //id保持传不一样的值，不然会出现跳转逻辑错误
+										url: "vocabulary.html",
+										createNew:true
 									});
 
 								}
 							});
 						} else {
 							_that.addClass("red");
+//							closeme();
 							//							跳转到单词译意
 							mui.openWindow({
-								url: "vocab-word.html"
+								id: "vocab-word" + $scope.num, //id保持传不一样的值，不然会出现跳转逻辑错误
+								url: "vocab-word.html",
+								createNew:true
 							})
 						}
 

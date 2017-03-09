@@ -130,3 +130,10 @@ html,body,.mui-content{
 .mui-card-footer div button:last-child{
 	float: right;
 }
+
+.writing_art{
+	width: 90%;
+	margin: 0 auto;
+	margin-top: 10px;
+	display: none;
+}

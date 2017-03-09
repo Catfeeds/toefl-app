@@ -28,12 +28,21 @@
 		<script src="js/myjs/public.js"></script>
 		<script type="text/javascript">
 			jQuery(function() {
-
 				jQuery("#sure")[0].addEventListener("tap", function() {
 					var textareaH = jQuery("#idea").val();
 					var inputt = jQuery("#way").val();
+					var userId=localStorage.getItem("userId");
 					if(!textareaH || !inputt) {
-						alert("再写点儿吧");
+						alert("再写点儿吧!");
+					}else{				
+						localStorage.setItem("yjContent-"+userId,textareaH);
+						localStorage.setItem("yjWay-"+userId,inputt);
+						alert("提交成功！");
+						closeme();
+						mui.openWindow({
+							id:"moreSet",
+							url:"moreSettings.html"
+						})
 					}
 				});
 			});

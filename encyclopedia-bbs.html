@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="myApp">
 
 	<head>
 		<meta charset="UTF-8">
@@ -8,10 +8,11 @@
 		<link href="css/mui.min.css" rel="stylesheet" />
 		<link href="css/mycss/bottomNav.css" rel="stylesheet" />
 		<link href="css/mycss/public.css" rel="stylesheet" />
+		<link href="css/mycss/emojione.min.css" rel="stylesheet" />
 		<link href="css/mycss/encyclopedia-bbs.css" rel="stylesheet" />
 	</head>
 
-	<body>
+	<body ng-controller="PriceCtrl">
 
 		<!-- 主界面不动、菜单移动 -->
 		<!-- 侧滑导航根容器 -->
@@ -50,7 +51,7 @@
 					<a href="javascript:void(0);" class="mui-pull-right" id="edit-post"><img src="images/myimages/Toeflbi@2x.png" /></a>
 				</header>
 				<nav class="mui-bar mui-bar-tab">
-					<a href="index.html" class="mui-tab-item ">
+					<a class="mui-tab-item" id="fixed-1">
 						<span class="bgCom bg01"></span>
 						<span class="mui-tab-label">做题练习</span>
 					</a>
@@ -58,15 +59,15 @@
 	        <span class="bgCom bg03"></span>
 	        <span class="mui-tab-label">模考</span>
 	    </a>-->
-					<a href="course.html" class="mui-tab-item">
+					<a class="mui-tab-item" id="fixed-2">
 						<span class="bgCom bg02"></span>
 						<span class="mui-tab-label">在线课程</span>
 					</a>
-					<a href="encyclopedia.html" class="mui-tab-item mui-active">
+					<a class="mui-tab-item mui-active" id="fixed-3">
 						<span class="bgCom bg03"></span>
 						<span class="mui-tab-label">托福圈</span>
 					</a>
-					<a href="personalCenter.html" class="mui-tab-item">
+					<a class="mui-tab-item" id="fixed-4">
 						<span class="bgCom bg04"></span>
 						<span class="mui-tab-label">个人中心</span>
 					</a>
@@ -79,117 +80,57 @@
 				<div class="mui-content mui-scroll-wrapper">
 					<div class="mui-scroll" id="bbs-poster">
 						<!-- 主界面具体展示内容 -->
-						<div class="bbs-li">
-							<div class="haveClickDetails">
+						<div class="bbs-li" ng-repeat="items1T in items1" is-over="toggle.now">
+							<div class="haveClickDetails" data-tieziId="{{items1T.id}}" data-publisherUid="{{items1T.uid}}">
 								<ul class="mui-table-view">
 									<li class="mui-table-view-cell mui-media">
-										<a href="javascript:;">
-											<img class="mui-media-object mui-pull-left" src="images/60x60.gif" style="border-radius: 50%;">
+										<a href="javascript:void(0);">
+											<div class="mui-media-object mui-pull-left user-img">
+												<img src="http://www.toeflonline.cn{{items1T.icon | defaultImg}}" alt="用户头像" />
+											</div>
 											<div class="mui-media-body">
-												丽水夜海
-												<p class='mui-ellipsis'>2017.01.31 22:31:01</p>
+												{{items1T.publisher}}
+												<p class='mui-ellipsis'>{{(items1T.createTime)*1000 | date:'yyyy-MM-dd HH:mm:ss'}}</p>
 											</div>
 										</a>
 									</li>
 								</ul>
 								<div class="bbs-content">
-									<h4 class="mui-ellipsis">狠狠甩了GMAT君fdfgfshjksflhklkl快递费看过dg</h4>
-									<p class="mui-ellipsis-3">2017申请到自己满意的学校2017申请到自己满意的学校2017申请到自己满意的学校2017申请到自己满意的学校2017申请到自己满意的学校2017申请到自己满意的学校2017申请到自己满意的学校2017申请到自己满意的学校2017申请到自己满意的学校2017申请到自己满意的学校2017申请到自己满意的学校2017申请到自己满意的学校</p>
-									<ul>
-										<li>
-											<img src="images/muwu.jpg" alt="上传的图片" />
-										</li>
-										<li>
-											<img src="images/muwu.jpg" alt="上传的图片" />
-										</li>
-										<li>
-											<img src="images/muwu.jpg" alt="上传的图片" />
-										</li>
-										<li>
-											<img src="images/muwu.jpg" alt="上传的图片" />
-										</li>
-									</ul>
-									<div class="mui-clearfix"></div>
+									<h4 class="mui-ellipsis" ng-bind-html="items1T.title"><!--{{items1T.title}}--></h4>
+									<p class="mui-ellipsis-3" ng-bind-html="items1T.content">
+										<!--{{items1T.content}}-->
+									</p>
 								</div>
 							</div>
+							<!--上传的图片展示-->
+							<div class="img-show">
+								<ul>
+									<li ng-repeat="imagesT in items1T.image">
+										<img src="http://gossip.gmatonline.cn{{imagesT}}" alt="上传的图片" />
+									</li>
+								</ul>
+								<div class="mui-clearfix"></div>
+							</div>
 							<div class="zan-pl">
-								<p class="praise-p on">2</p>
-								<p class="review-p">5</p>
+								<p class="praise-p" data-tieziId="{{items1T.id}}" ng-class="{'on':'{{items1T.likeId}}'=='true'}">{{items1T.likeNum}}</p>
+								<p class="review-p" data-tieziId="{{items1T.id}}" data-publisherUid="{{items1T.uid}}">{{items1T.count}}</p>
 							</div>
 							<div class="mui-clearfix"></div>
 							<div class="reviewShow">
 								<ul>
-									<li class="mui-ellipsis-2">
-										<span class="blue">diuxi123</span>
+									<li class="mui-ellipsis-2" ng-repeat="replyT in items1T.reply" ng-show="$index<4">
+										<span class="blue">{{replyT.uName | nullName }}</span>
+										<span class="grey" ng-show="replyT.replyUserName!=''">回复</span>
+										<span class="blue" ng-show="replyT.replyUserName!=''">{{replyT.replyUserName}}</span>
 										<span class="grey">:</span>
-										<span class="grey">厉害了dhgdgk kdfgk放大看孤苦伶仃锋利的赶快来付款了开了个会绿豆粉改好了的施工方的</span>
+										<span class="grey" ng-bind-html="replyT.content"></span>
 									</li>
-									<li class="mui-ellipsis-2">
-										<span class="blue">甩了GMAT君</span>
-										<span class="grey">回复</span>
-										<span class="blue">西西军</span>
-										<span class="grey">:</span>
-										<span class="grey">我都不敢做语法了...</span>
-									</li>
+									<li><span class="seeAll-reply blue" ng-show="items1T.count>4" data-tieziId="{{items1T.id}}" data-publisherUid="{{items1T.uid}}">查看全部评论…</span></li>
 								</ul>
 							</div>
 
 						</div>
-
-						<div class="bbs-li">
-							<div class="haveClickDetails">
-								<ul class="mui-table-view">
-									<li class="mui-table-view-cell mui-media">
-										<a href="javascript:;">
-											<img class="mui-media-object mui-pull-left" src="images/60x60.gif" style="border-radius: 50%;">
-											<div class="mui-media-body">
-												丽水夜海
-												<p class='mui-ellipsis'>2017.01.31 22:31:01</p>
-											</div>
-										</a>
-									</li>
-								</ul>
-								<div class="bbs-content">
-									<h4 class="mui-ellipsis">狠狠甩了GMAT君</h4>
-									<p>2017申请到自己满意的学校</p>
-									<ul>
-										<li>
-											<img src="images/muwu.jpg" alt="上传的图片" />
-										</li>
-										<li>
-											<img src="images/muwu.jpg" alt="上传的图片" />
-										</li>
-										<li>
-											<img src="images/muwu.jpg" alt="上传的图片" />
-										</li>
-									</ul>
-									<div class="mui-clearfix"></div>
-
-								</div>
-							</div>
-							<div class="zan-pl">
-								<p class="praise-p">2</p>
-								<p class="review-p">5</p>
-							</div>
-							<div class="mui-clearfix"></div>
-							<div class="reviewShow">
-								<ul>
-									<li class="mui-ellipsis-2">
-										<span class="blue">diuxi123</span>
-										<span class="grey">:</span>
-										<span class="grey">厉害了</span>
-									</li>
-									<li class="mui-ellipsis-2">
-										<span class="blue">甩了GMAT君</span>
-										<span class="grey">回复</span>
-										<span class="blue">西西军</span>
-										<span class="grey">:</span>
-										<span class="grey">我都不敢做语法了...</span>
-									</li>
-								</ul>
-							</div>
-
-						</div>
+						<!--bbs-li end-->
 
 					</div>
 					<!--mui-scroll-->
@@ -197,10 +138,19 @@
 				<!--<div class="mui-off-canvas-backdrop"></div>-->
 			</div>
 		</div>
-		<script src="js/mui.min.js"></script>
-		<script src="js/myjs/jquery-1.11.1.min.js"></script>
-		<script src="js/myjs/public.js"></script>
-		<script src="js/myjs/encyclopedia-bbs.js"></script>
+		<!--查看大图遮罩层-->
+		<div id="popover" class="mui-popover">
+			<div class="imgBox">
+				<img src="images/cbd.jpg" alt="查看大图" />
+				<div class="close-icon mui-icon mui-icon-close"></div>
+			</div>
+		</div>
 	</body>
+	<script src="js/mui.min.js"></script>
+	<script src="js/myjs/jquery-1.11.1.min.js"></script>
+	<script src="js/myjs/public.js"></script>
+	<script src="js/myjs/emojione.js"></script>
+	<script src="js/myjs/encyclopedia-bbs.js"></script>
+	<script src="js/myjs/angular1.3.1.js"></script>
 
 </html>

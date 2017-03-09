@@ -59,3 +59,133 @@
 .li-red .mui-media-object{
 	background-color: #ea2c16;
 }
+/*拖拽题样式*/
+.three_tragT{
+    width: 90%;
+    height: 500px;
+    margin: 0 auto;
+    margin-top: 10px;
+    font-size: 0.8em;
+    display: none;
+    background-color: white;
+    position: relative;
+}
+
+.three_tragT p{
+    display: none;
+    color: #008000;
+    font-size: 0.8em;
+}
+.three_tragT ul li{
+ 
+}
+/*表格题型*/
+.table-box{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 10px;
+    display: none;
+}
+.table-box table{
+	 width: 100%;
+    margin: 0 auto;
+	    background-color: white;
+    border-collapse:collapse;
+    border:1px #e0e0e0 solid;
+ 
+}
+.table-box table th,.table-box table td{
+    border:1px #d4d3d3 solid;
+    font-size: 0.8em;
+    line-height: 15px;
+    padding: 10px 0;
+    position: relative;
+}
+.table-box table th{
+    text-align: center;
+    font-weight: normal;
+}
+.table-box table th:first-child{
+    position: relative;
+    height: 50px;
+}
+.table-box table th:first-child b{
+    font-weight: normal;
+    position: absolute;
+    bottom: 5px;
+    left: 10%;
+}
+.table-box table th:first-child em{
+    font-style: normal;
+    position: absolute;
+    top: 5px;
+    right: 10%;
+}
+.table-box table th:first-child,.table-box table td:first-child{
+    width: 50%;
+}
+.table-box table th:nth-child(2),.table-box table td:nth-child(2)
+,.table-box table th:nth-child(3),.table-box table td:nth-child(3){
+    width: 25%;
+}
+.out{
+    border-bottom: 1px #d4d3d3 solid;
+    transform: rotate(20deg);
+}
+
+.group_rad{
+   position: absolute;
+    top: 50%;
+    margin-top: -10px;
+    left: 50%;
+    margin-left: -10px;
+}
+.group_rad input{
+    display: none;
+    position: absolute;
+}
+.group_rad label{
+    position: relative;
+    display: block;
+    cursor: pointer;
+}
+.group_rad input+label:after{
+    width: 10px;
+    height: 10px;
+    border-radius:50%;
+    background: #ff6702;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    content: '';
+    display: none;
+}
+.group_rad input+label:before{
+    width: 20px;
+    height: 20px;
+    border-radius:50%;
+    background: #e7e7e7;
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: '';
+}
+.group_rad input:checked+label:before{
+    /*border: 1px red solid;*/
+}
+.group_rad input:checked+label:after{
+    display: block;
+}
+.answer_tab{
+    width: 100%;
+    margin-top: 10px;
+    font-size: 0.8em;
+}
+.tab-user{
+    display: none;
+}
+.tab-true{
+    margin-left: 10px;
+    color: #008000;
+    display: none;
+}

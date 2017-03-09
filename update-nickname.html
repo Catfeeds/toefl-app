@@ -35,7 +35,9 @@
 								alert("6-20个字符，支持中英文、下划线");
 								return false;
 							} else {
-								location.href="moreSettings.html";
+
+								changeUserInfo();
+
 							}
 						} else {
 							alert("昵称长度为6-20个字符！");
@@ -48,6 +50,32 @@
 				});
 
 			});
+			//修改个人资料
+			function changeUserInfo() {
+				var userId = localStorage.getItem("userId");
+				var nickname = $(".nickname input").val();
+				$.ajax({
+					type: "post",
+					url: "http://www.toeflonline.cn/cn/wap-api/change-user-info?userId=" + userId + "&nickname=" + nickname,
+					dataType: "jsonp",
+					jsonp: "callback", //传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(默认为:callback)
+					jsonpCallback: "success_jsonpCallback", //自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名
+					success: function(data) {
+						alert(data.message);
+						if(data.code == 1) {
+							closeme();
+							mui.openWindow({
+								id: "moreSet",
+								url: "moreSettings.html"
+							})
+						}
+					},
+					error: function() {
+						alert('fail');
+					}
+				});
+
+			}
 		</script>
 	</body>
 

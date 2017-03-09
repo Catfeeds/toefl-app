@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="myApp">
 
 	<head>
 		<meta charset="UTF-8">
@@ -10,7 +10,7 @@
 		<link href="css/mycss/encyclopedia-postings.css" rel="stylesheet" />
 	</head>
 
-	<body>
+	<body ng-controller="PriceCtrl">
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left orangeColor"></a>
 			<h1 class="mui-title">发表帖子</h1>
@@ -26,25 +26,37 @@
 			<div class="content-text">
 				<textarea placeholder="写点什么..."></textarea>
 			</div>
-			<div class="img-group">
-				<ul>
-					<li>
-						<div class="closeBlack"><span class="mui-icon mui-icon-closeempty"></span></div>
-						<img src="images/cbd.jpg" />
-					</li>
+			<form id="upform" name="myForm" method="post" enctype="multipart/form-data">
+				<div class="img-group">
+					<ul>
+						<!--<li>
+							<div class="closeBlack"><span class="mui-icon mui-icon-closeempty"></span></div>
+							<div class="img-box">
+								<img src="images/cbd.jpg" />
+							</div>
+						</li>-->
 
-				</ul>
-				<div class="add-icon">
-					<input type="file"/>
+					</ul>
+					<div class="add-icon">
+						<input name="upload" type="file" />
+					</div>
+					<div class="mui-clearfix"></div>
 				</div>
-				<div class="mui-clearfix"></div>
+			</form>
+			<div class="fileUrl"></div>
+		</div>
+		<!--查看大图遮罩层-->
+		<div id="popover" class="mui-popover">
+			<div class="imgBox">
+				<img src="images/cbd.jpg" alt="查看大图" />
+				<div class="close-icon mui-icon mui-icon-close"></div>
 			</div>
 		</div>
-
 		<script src="js/mui.min.js"></script>
 		<script src="js/myjs/jquery-1.11.1.min.js"></script>
 		<script src="js/myjs/public.js"></script>
 		<script src="js/myjs/encyclopedia-postings.js"></script>
+		<script src="js/myjs/angular1.3.1.js"></script>
 	</body>
 
 </html>

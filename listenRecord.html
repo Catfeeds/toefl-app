@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="myApp">
 
 	<head>
 		<meta charset="UTF-8">
@@ -10,7 +10,7 @@
 		<link href="css/mycss/listenRecord.css" rel="stylesheet" />
 	</head>
 
-	<body>
+	<body ng-controller="PriceCtrl">
 
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left orangeColor"></a>
@@ -33,204 +33,66 @@
 			<div>
 				<div id="item1" class="mui-control-content mui-active">
 					<ul class="mui-table-view">
-						<li class="mui-table-view-cell mui-media">
+						<li class="mui-table-view-cell mui-media" ng-repeat="recordsT in records">
 							<a href="javascript:void(0);">
 								<div class="mui-pull-left l-or-time">
-									<img src="images/myimages/userCenter15@2x.png" alt="时钟图标" height="20px"/>
-									<p class="orangeColor">12:30</p>
-									<p>2016/03/11</p>
+									<img src="images/myimages/userCenter15@2x.png" alt="时钟图标" height="20px" />
+									<p class="orangeColor">{{recordsT.newTime | timeNYR}}</p>
+									<p>{{recordsT.newTime | timeSFM}}</p>
 								</div>
 								<div class="mui-pull-right r-or-btn">
-									<button type="button" class="mui-btn mui-btn-warning mui-btn-outlined">继续做题</button>
+									<button type="button" class="mui-btn mui-btn-warning mui-btn-outlined" ng-show="'{{recordsT.num}}'!='{{recordsT.total}}'" data-valus="{{recordsT.id}}">继续做题</button>
+									<button type="button" class="mui-btn mui-btn-success mui-btn-outlined" ng-show="'{{recordsT.num}}'=='{{recordsT.total}}'" data-valus="{{recordsT.id}}">重新做题</button>
 								</div>
 								<div class="mui-media-body c-or-font">
-									<div class='mui-ellipsis'>TPO 11-C1-Use the gym pass</div>
-									<p class='mui-ellipsis'>共34句，完成1句</p>
-								</div>								
+									<div class='mui-ellipsis'>{{recordsT.catName}}-{{recordsT.title}}-{{recordsT.name}}</div>
+									<p class='mui-ellipsis'>练习结果：{{recordsT.correct}}/{{recordsT.num}} 正确率：{{(recordsT.correct/recordsT.num)*100}}% 耗时：{{recordsT.elapsedTime}}</p>
+								</div>
 							</a>
 						</li>
-						<li class="mui-table-view-cell mui-media">
-								<a href="javascript:void(0);">
-								<div class="mui-pull-left l-or-time">
-									<img src="images/myimages/userCenter15@2x.png" alt="时钟图标" height="20px"/>
-									<p class="orangeColor">12:30</p>
-									<p>2016/03/11</p>
-								</div>
-								<div class="mui-pull-right r-or-btn">
-									<button type="button" class="mui-btn mui-btn-success mui-btn-outlined">重新做题</button>
-								</div>
-								<div class="mui-media-body c-or-font">
-									<div class='mui-ellipsis'>TPO 11-C1-Use the gym pass</div>
-									<p class='mui-ellipsis'>共34句，完成1句</p>
-								</div>								
-							</a>
-						</li>
-						<li class="mui-table-view-cell mui-media">
-							<a href="javascript:void(0);">
-								<div class="mui-pull-left l-or-time">
-									<img src="images/myimages/userCenter15@2x.png" alt="时钟图标" height="20px"/>
-									<p class="orangeColor">12:30</p>
-									<p>2016/03/11</p>
-								</div>
-								<div class="mui-pull-right r-or-btn">
-									<button type="button" class="mui-btn mui-btn-warning mui-btn-outlined">继续做题</button>
-								</div>
-								<div class="mui-media-body c-or-font">
-									<div class='mui-ellipsis'>TPO 11-C1-Use the gym pass</div>
-									<p class='mui-ellipsis'>共34句，完成1句</p>
-								</div>								
-							</a>
-						</li>
-						<li class="mui-table-view-cell mui-media">
-								<a href="javascript:void(0);">
-								<div class="mui-pull-left l-or-time">
-									<img src="images/myimages/userCenter15@2x.png" alt="时钟图标" height="20px"/>
-									<p class="orangeColor">12:30</p>
-									<p>2016/03/11</p>
-								</div>
-								<div class="mui-pull-right r-or-btn">
-									<button type="button" class="mui-btn mui-btn-warning mui-btn-outlined">继续做题</button>
-								</div>
-								<div class="mui-media-body c-or-font">
-									<div class='mui-ellipsis'>TPO 11-C1-Use the gym pass</div>
-									<p class='mui-ellipsis'>共34句，完成1句</p>
-								</div>								
-							</a>
-						</li>
+
 					</ul>
 				</div>
 				<div id="item2" class="mui-control-content">
 					<ul class="mui-table-view">
-						<li class="mui-table-view-cell mui-media">
+						<li class="mui-table-view-cell mui-media" ng-repeat="recordsJTT in recordsJT">
 							<a href="javascript:void(0);">
 								<div class="mui-pull-left l-or-time">
-									<img src="images/myimages/userCenter15@2x.png" alt="时钟图标" height="20px"/>
-									<p class="orangeColor">12:30</p>
-									<p>2016/03/11</p>
+									<img src="images/myimages/userCenter15@2x.png" alt="时钟图标" height="20px" />
+									<p class="orangeColor">{{recordsJTT.startTime | timeNYR}}</p>
+									<p>{{recordsJTT.startTime | timeSFM}}</p>
 								</div>
 								<div class="mui-pull-right r-or-btn">
-									<button type="button" class="mui-btn mui-btn-warning mui-btn-outlined">继续精听</button>
+									<button type="button" class="mui-btn mui-btn-warning mui-btn-outlined" data-valus="{{recordsJTT.testId}}"
+                                       data-name="{{recordsJTT.catName}}" data-titles="{{recordsJTT.title}}">继续精听</button>
 								</div>
 								<div class="mui-media-body c-or-font">
-									<div class='mui-ellipsis'>TPO 11-C1-Use the gym pass</div>
-									<p class='mui-ellipsis'>共34句，完成1句</p>
-								</div>								
+									<div class='mui-ellipsis'>{{recordsJTT.catName}}-{{recordsJTT.title}}-{{recordsJTT.name}}</div>
+									<p class='mui-ellipsis'>累计精听{{recordsJTT.num}}次</p>
+								</div>
 							</a>
 						</li>
-						<li class="mui-table-view-cell mui-media">
-								<a href="javascript:void(0);">
-								<div class="mui-pull-left l-or-time">
-									<img src="images/myimages/userCenter15@2x.png" alt="时钟图标" height="20px"/>
-									<p class="orangeColor">12:30</p>
-									<p>2016/03/11</p>
-								</div>
-								<div class="mui-pull-right r-or-btn">
-									<button type="button" class="mui-btn mui-btn-warning mui-btn-outlined">继续精听</button>
-								</div>
-								<div class="mui-media-body c-or-font">
-									<div class='mui-ellipsis'>TPO 11-C1-Use the gym pass</div>
-									<p class='mui-ellipsis'>共34句，完成1句</p>
-								</div>								
-							</a>
-						</li>
-						<li class="mui-table-view-cell mui-media">
-							<a href="javascript:void(0);">
-								<div class="mui-pull-left l-or-time">
-									<img src="images/myimages/userCenter15@2x.png" alt="时钟图标" height="20px"/>
-									<p class="orangeColor">12:30</p>
-									<p>2016/03/11</p>
-								</div>
-								<div class="mui-pull-right r-or-btn">
-									<button type="button" class="mui-btn mui-btn-warning mui-btn-outlined">继续精听</button>
-								</div>
-								<div class="mui-media-body c-or-font">
-									<div class='mui-ellipsis'>TPO 11-C1-Use the gym pass</div>
-									<p class='mui-ellipsis'>共34句，完成1句</p>
-								</div>								
-							</a>
-						</li>
-						<li class="mui-table-view-cell mui-media">
-								<a href="javascript:void(0);">
-								<div class="mui-pull-left l-or-time">
-									<img src="images/myimages/userCenter15@2x.png" alt="时钟图标" height="20px"/>
-									<p class="orangeColor">12:30</p>
-									<p>2016/03/11</p>
-								</div>
-								<div class="mui-pull-right r-or-btn">
-									<button type="button" class="mui-btn mui-btn-warning mui-btn-outlined">继续精听</button>
-								</div>
-								<div class="mui-media-body c-or-font">
-									<div class='mui-ellipsis'>TPO 11-C1-Use the gym pass</div>
-									<p class='mui-ellipsis'>共34句，完成1句</p>
-								</div>								
-							</a>
-						</li>
+
 					</ul>
 				</div>
 				<div id="item3" class="mui-control-content">
-				<ul class="mui-table-view">
-						<li class="mui-table-view-cell mui-media">
+					<ul class="mui-table-view">
+
+						<li class="mui-table-view-cell mui-media" ng-repeat="recordsTXT in recordsTX">
 							<a href="javascript:void(0);">
 								<div class="mui-pull-left l-or-time">
-									<img src="images/myimages/userCenter15@2x.png" alt="时钟图标" height="20px"/>
-									<p class="orangeColor">12:30</p>
-									<p>2016/03/11</p>
+									<img src="images/myimages/userCenter15@2x.png" alt="时钟图标" height="20px" />
+									<p class="orangeColor">{{recordsTXT.newTime | timeNYR}}</p>
+									<p>{{recordsTXT.newTime | timeSFM}}</p>
 								</div>
 								<div class="mui-pull-right r-or-btn">
-									<button type="button" class="mui-btn mui-btn-warning mui-btn-outlined">继续听写</button>
+									<button type="button" class="mui-btn mui-btn-warning mui-btn-outlined"  data-valus="{{recordsTXT.id}}"
+                                       data-name="{{recordsTXT.catName}}" data-titles="{{recordsTXT.title}}">继续听写</button>
 								</div>
 								<div class="mui-media-body c-or-font">
-									<div class='mui-ellipsis'>TPO 11-C1-Use the gym pass</div>
-									<p class='mui-ellipsis'>共34句，完成1句</p>
-								</div>								
-							</a>
-						</li>
-						<li class="mui-table-view-cell mui-media">
-								<a href="javascript:void(0);">
-								<div class="mui-pull-left l-or-time">
-									<img src="images/myimages/userCenter15@2x.png" alt="时钟图标" height="20px"/>
-									<p class="orangeColor">12:30</p>
-									<p>2016/03/11</p>
+									<div class='mui-ellipsis'>{{recordsTXT.catName}}-{{recordsTXT.title}}-{{recordsTXT.name}}</div>
+									<p class='mui-ellipsis'>共{{recordsTXT.total}}句，完成{{recordsTXT.num}}句</p>
 								</div>
-								<div class="mui-pull-right r-or-btn">
-									<button type="button" class="mui-btn mui-btn-warning mui-btn-outlined">继续听写</button>
-								</div>
-								<div class="mui-media-body c-or-font">
-									<div class='mui-ellipsis'>TPO 11-C1-Use the gym pass</div>
-									<p class='mui-ellipsis'>共34句，完成1句</p>
-								</div>								
-							</a>
-						</li>
-						<li class="mui-table-view-cell mui-media">
-							<a href="javascript:void(0);">
-								<div class="mui-pull-left l-or-time">
-									<img src="images/myimages/userCenter15@2x.png" alt="时钟图标" height="20px"/>
-									<p class="orangeColor">12:30</p>
-									<p>2016/03/11</p>
-								</div>
-								<div class="mui-pull-right r-or-btn">
-									<button type="button" class="mui-btn mui-btn-warning mui-btn-outlined">继续听写</button>
-								</div>
-								<div class="mui-media-body c-or-font">
-									<div class='mui-ellipsis'>TPO 11-C1-Use the gym pass</div>
-									<p class='mui-ellipsis'>共34句，完成1句</p>
-								</div>								
-							</a>
-						</li>
-						<li class="mui-table-view-cell mui-media">
-								<a href="javascript:void(0);">
-								<div class="mui-pull-left l-or-time">
-									<img src="images/myimages/userCenter15@2x.png" alt="时钟图标" height="20px"/>
-									<p class="orangeColor">12:30</p>
-									<p>2016/03/11</p>
-								</div>
-								<div class="mui-pull-right r-or-btn">
-									<button type="button" class="mui-btn mui-btn-warning mui-btn-outlined">继续听写</button>
-								</div>
-								<div class="mui-media-body c-or-font">
-									<div class='mui-ellipsis'>TPO 11-C1-Use the gym pass</div>
-									<p class='mui-ellipsis'>共34句，完成1句</p>
-								</div>								
 							</a>
 						</li>
 					</ul>
@@ -241,6 +103,8 @@
 		<script src="js/mui.min.js"></script>
 		<script src="js/myjs/jquery-1.11.1.min.js"></script>
 		<script src="js/myjs/public.js"></script>
+		<script src="js/myjs/listenRecord.js"></script>
+		<script src="js/myjs/angular1.3.1.js"></script>
 	</body>
 
 </html>

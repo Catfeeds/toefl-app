@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="myApp">
 
 	<head>
 		<meta charset="UTF-8">
@@ -10,7 +10,7 @@
 		<link href="css/mycss/reading-ogList.css" rel="stylesheet" />
 	</head>
 
-	<body>
+	<body ng-controller="PriceCtrl">
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left orangeColor"></a>
 			<h1 class="mui-title">OG真题练习</h1>
@@ -18,105 +18,27 @@
 
 		<div class="mui-content">
 			<ul class="mui-table-view">
-				<li class="mui-table-view-cell mui-media">
-					<a href="javascript:;">
-						<div class="mui-media-object mui-pull-left">01</div>
+				<li class="mui-table-view-cell mui-media" ng-repeat="questionOgT in questionOg" id="{{questionOgT.id}}"
+					 data-title="{{questionOgT.catName}}" data-num = "{{$index+1 | numW}}">
+					<!--<a href="javascript:;">-->
+						<div class="mui-media-object mui-pull-left">{{$index+1 | numW}}</div>
 						<div class="mui-media-body">
-							The Origins of
-							<p class='mui-ellipsis'>鲸类的起源</p>
+							{{questionOgT.name}}
+							<p class='mui-ellipsis'>{{questionOgT.title}}</p>
 						</div>
-						<a href="#" class="rj"><img src="images/myimages/Exercise7@2x.png" alt="箭头" /></a>
-					</a>
+						<a href="javascript:void(0);" class="rj"><img src="images/myimages/Exercise7@2x.png" alt="箭头" /></a>
+					<!--</a>-->
 				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a href="javascript:;">
-						<div class="mui-media-object mui-pull-left">02</div>
-						<div class="mui-media-body">
-							Aggression
-							<p class='mui-ellipsis'>侵略</p>
-						</div>
-						<a href="#" class="rj"><img src="images/myimages/Exercise7@2x.png" alt="箭头" /></a>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a href="javascript:;">
-						<div class="mui-media-object mui-pull-left">03</div>
-						<div class="mui-media-body">
-							The Origins of Cetaceans
-							<p class='mui-ellipsis'>鲸类的起源</p>
-						</div>
-						<a href="#" class="rj"><img src="images/myimages/Exercise7@2x.png" alt="箭头" /></a>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a href="javascript:;">
-						<div class="mui-media-object mui-pull-left">02</div>
-						<div class="mui-media-body">
-							Aggression
-							<p class='mui-ellipsis'>侵略</p>
-						</div>
-						<a href="#" class="rj"><img src="images/myimages/Exercise7@2x.png" alt="箭头" /></a>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a href="javascript:;">
-						<div class="mui-media-object mui-pull-left">02</div>
-						<div class="mui-media-body">
-							Aggression
-							<p class='mui-ellipsis'>侵略</p>
-						</div>
-						<a href="#" class="rj"><img src="images/myimages/Exercise7@2x.png" alt="箭头" /></a>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a href="javascript:;">
-						<div class="mui-media-object mui-pull-left">02</div>
-						<div class="mui-media-body">
-							Aggression
-							<p class='mui-ellipsis'>侵略</p>
-						</div>
-						<a href="#" class="rj"><img src="images/myimages/Exercise7@2x.png" alt="箭头" /></a>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a href="javascript:;">
-						<div class="mui-media-object mui-pull-left">02</div>
-						<div class="mui-media-body">
-							Aggression
-							<p class='mui-ellipsis'>侵略</p>
-						</div>
-						<a href="#" class="rj"><img src="images/myimages/Exercise7@2x.png" alt="箭头" /></a>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a href="javascript:;">
-						<div class="mui-media-object mui-pull-left">02</div>
-						<div class="mui-media-body">
-							Aggression
-							<p class='mui-ellipsis'>侵略</p>
-						</div>
-						<a href="#" class="rj"><img src="images/myimages/Exercise7@2x.png" alt="箭头" /></a>
-					</a>
-				</li>
+			
 			</ul>
 		</div>
 
 		<script src="js/mui.min.js"></script>
 		<script src="js/myjs/jquery-1.11.1.min.js"></script>
 		<script src="js/myjs/public.js"></script>
-		<script type="text/javascript">
-			jQuery(function() {
-				jQuery(".mui-media-object").css({
-					"height": jQuery(".mui-media-object").width(),
-					"lineHeight": jQuery(".mui-media-object").width() + "px"
-				});
-				mui(".mui-table-view").on("tap", ".mui-table-view-cell", function() {
-					mui.openWindow({
-						url: "reading-practice.html"
-					})
-				});
-			});
-		</script>
+		<script src="js/myjs/reading-ogList.js"></script>
+		<script src="js/myjs/angular1.3.1.js"></script>
+
 	</body>
 
 </html>

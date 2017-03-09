@@ -40,33 +40,19 @@
            jQuery(".mui-content ul li").each(function(){
                jQuery(this).css("height",jQuery(".mui-content").height()/4);
            });
+           mui('.mui-content ul li').on('tap', 'a', function(e) {  
+			  var ids = this.getAttribute('data-class');  
+            mui.openWindow({  
+			    id:'course-lis-detail.html',
+			    url:'course-lis-detail.html',
+			    extras:{
+			    	ids:ids
+			    }
+			  }); 
+          }); 
           
         });
-        //初始化预加载详情页面  
-			mui.init({  
-			  preloadPages:[{   
-			    id:"course-lis-detail.html",
-			    url:'course-lis-detail.html'             
-			  }  
-			  ]  
-			});  
-			var detailPage = null;  
-			//添加列表项的点击事件  
-			mui('.mui-content ul li').on('tap', 'a', function(e) {  
-			  var id = this.getAttribute('data-class');  
-			  //获得详情页面  
-			  if(!detailPage){  
-			    detailPage = plus.webview.getWebviewById('course-lis-detail.html');  
-			  }  
-			  //触发详情页面的newsId事件  
-			  mui.fire(detailPage,'newsId',{  
-			    id:id  
-			  });  
-			//打开详情页面            
-			  mui.openWindow({  
-			    id:'course-lis-detail.html'  
-			  });  
-			});  
+     
 		</script>
 	</body>
 

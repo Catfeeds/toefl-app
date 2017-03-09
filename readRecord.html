@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="myApp">
 
 	<head>
 		<meta charset="UTF-8">
@@ -10,7 +10,7 @@
 		<link href="css/mycss/listenRecord.css" rel="stylesheet" />
 	</head>
 
-	<body>
+	<body ng-controller="PriceCtrl">
 
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left orangeColor"></a>
@@ -19,13 +19,13 @@
 		<div class="mui-content">
 			<div style="background-color: white;">
 				<div id="segmentedControl" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-primary">
-					<a class="mui-control-item mui-active" href="#item1">
+					<a class="mui-control-item mui-active" href="#item1" data-type="1"> 
 						全部
 					</a>
-					<a class="mui-control-item" href="#item2">
+					<a class="mui-control-item" href="#item2" data-type="3">
 						TPO
 					</a>
-					<a class="mui-control-item" href="#item3">
+					<a class="mui-control-item" href="#item3" data-type="2">
 						OG
 					</a>
 				</div>
@@ -33,119 +33,42 @@
 			<div>
 				<div id="item1" class="mui-control-content mui-active">
 					<ul class="mui-table-view">
-						<li class="mui-table-view-cell mui-media">
+						<li class="mui-table-view-cell mui-media" ng-repeat="dataT in data">
 							<a href="javascript:void(0);">
 								<div class="mui-pull-left l-or-time">
 									<img src="images/myimages/userCenter15@2x.png" alt="时钟图标" height="20px"/>
-									<p class="orangeColor">12:30</p>
-									<p>2016/03/11</p>
+									<p class="orangeColor">{{dataT.createTime | timeNYR}}</p>
+									<p>{{dataT.createTime | timeSFM}}</p>
 								</div>
 								<div class="mui-pull-right r-or-btn">
-									<button type="button" class="mui-btn mui-btn-warning mui-btn-outlined">继续练习</button>
+									<button type="button" class="mui-btn mui-btn-success mui-btn-outlined"  
+										ng-show="'{{dataT.userAnswerRecord}}'=='{{dataT.userAnswerRecord}}'"
+										data-id="{{dataT.pid}}" data-belong="{{dataT.belong}}"
+										data-name="{{dataT.catName}}" data-title="{{dataT.title}}">查看结果</button>
+									<button type="button" class="mui-btn mui-btn-warning mui-btn-outlined"  
+										ng-show="'{{dataT.userAnswerRecord}}'!='{{dataT.userAnswerRecord}}'"
+										data-id="{{dataT.id}}" data-belong="{{dataT.belong}}"
+										data-name="{{dataT.catName}}" data-title="{{dataT.title}}">继续练习</button>
 								</div>
 								<div class="mui-media-body c-or-font">
-									<div class='mui-ellipsis'>TPO 11-蒸汽机的发展</div>
-									<p class='mui-ellipsis'>完成14/14</p>
-								</div>								
-							</a>
-						</li>
-						<li class="mui-table-view-cell mui-media">
-								<a href="javascript:void(0);">
-								<div class="mui-pull-left l-or-time">
-									<img src="images/myimages/userCenter15@2x.png" alt="时钟图标" height="20px"/>
-									<p class="orangeColor">12:30</p>
-									<p>2016/03/11</p>
-								</div>
-								<div class="mui-pull-right r-or-btn">
-									<button type="button" class="mui-btn mui-btn-warning mui-btn-outlined">继续练习</button>
-								</div>
-								<div class="mui-media-body c-or-font">
-								<div class='mui-ellipsis'>TPO 11-蒸汽机的发展</div>
-									<p class='mui-ellipsis'>完成14/14</p>
+									<div class='mui-ellipsis'>{{dataT.catName}}-{{dataT.title}}</div>
+									<p class='mui-ellipsis'>完成：{{dataT.userAnswerRecord}}/{{dataT.son}}</p>
 								</div>								
 							</a>
 						</li>
 						
+						
 					</ul>
 				</div>
-				<div id="item2" class="mui-control-content">
-					<ul class="mui-table-view">
-						<li class="mui-table-view-cell mui-media">
-							<a href="javascript:void(0);">
-								<div class="mui-pull-left l-or-time">
-									<img src="images/myimages/userCenter15@2x.png" alt="时钟图标" height="20px"/>
-									<p class="orangeColor">12:30</p>
-									<p>2016/03/11</p>
-								</div>
-								<div class="mui-pull-right r-or-btn">
-									<button type="button" class="mui-btn mui-btn-warning mui-btn-outlined">继续练习</button>
-								</div>
-								<div class="mui-media-body c-or-font">
-									<div class='mui-ellipsis'>TPO 11-2蒸汽机的发展</div>
-									<p class='mui-ellipsis'>完成14/14</p>
-								</div>								
-							</a>
-						</li>
-						<li class="mui-table-view-cell mui-media">
-								<a href="javascript:void(0);">
-								<div class="mui-pull-left l-or-time">
-									<img src="images/myimages/userCenter15@2x.png" alt="时钟图标" height="20px"/>
-									<p class="orangeColor">12:30</p>
-									<p>2016/03/11</p>
-								</div>
-								<div class="mui-pull-right r-or-btn">
-									<button type="button" class="mui-btn mui-btn-warning mui-btn-outlined">继续练习</button>
-								</div>
-								<div class="mui-media-body c-or-font">
-								<div class='mui-ellipsis'>TPO 11-蒸汽机的发展</div>
-									<p class='mui-ellipsis'>完成14/14</p>
-								</div>								
-							</a>
-						</li>
-					</ul>
-				</div>
-				<div id="item3" class="mui-control-content">
-				<ul class="mui-table-view">
-						<li class="mui-table-view-cell mui-media">
-							<a href="javascript:void(0);">
-								<div class="mui-pull-left l-or-time">
-									<img src="images/myimages/userCenter15@2x.png" alt="时钟图标" height="20px"/>
-									<p class="orangeColor">12:30</p>
-									<p>2016/03/11</p>
-								</div>
-								<div class="mui-pull-right r-or-btn">
-									<button type="button" class="mui-btn mui-btn-warning mui-btn-outlined">继续练习</button>
-								</div>
-								<div class="mui-media-body c-or-font">
-									<div class='mui-ellipsis'>TPO 11-3蒸汽机的发展</div>
-									<p class='mui-ellipsis'>完成14/14</p>
-								</div>								
-							</a>
-						</li>
-						<li class="mui-table-view-cell mui-media">
-								<a href="javascript:void(0);">
-								<div class="mui-pull-left l-or-time">
-									<img src="images/myimages/userCenter15@2x.png" alt="时钟图标" height="20px"/>
-									<p class="orangeColor">12:30</p>
-									<p>2016/03/11</p>
-								</div>
-								<div class="mui-pull-right r-or-btn">
-									<button type="button" class="mui-btn mui-btn-warning mui-btn-outlined">继续练习</button>
-								</div>
-								<div class="mui-media-body c-or-font">
-								<div class='mui-ellipsis'>TPO 11-蒸汽机的发展</div>
-									<p class='mui-ellipsis'>完成14/14</p>
-								</div>								
-							</a>
-						</li>
-					</ul>
-				</div>
+			
 			</div>
 		</div>
 
 		<script src="js/mui.min.js"></script>
 		<script src="js/myjs/jquery-1.11.1.min.js"></script>
 		<script src="js/myjs/public.js"></script>
+		<script src="js/myjs/readRecord.js"></script>
+		<script src="js/myjs/angular1.3.1.js"></script>
 	</body>
 
 </html>

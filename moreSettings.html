@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="myApp">
 
 	<head>
 		<meta charset="UTF-8">
@@ -10,7 +10,7 @@
 		<link href="css/mycss/moreSettings.css" rel="stylesheet" />
 	</head>
 
-	<body>
+	<body ng-controller="PriceCtrl">
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left orangeColor"></a>
 			<h1 class="mui-title">更多设置</h1>
@@ -25,23 +25,29 @@
 			<div class="personInfo">
 				<ul class="mui-table-view">
 					<li class="mui-table-view-cell">
-						<input type="file" id="fileInput" />
-						<a href="javascript:void(0);" class="mui-navigate-right">头像</a>
+						<iframe name="upiframe" style="display:none"></iframe>
+						<form method="post" action="http://www.toeflonline.cn/cn/api/app-image" enctype="multipart/form-data" target="upiframe" id="upform">
+							<span class="upload_success" style="color: #fff"></span>
+							<input type="hidden" name="bactfun" id="bactfun" value="upcallbact" />
+							<input name="upload" type="file" id="fileInput" />
+							<input type="submit" value="上传头像" id="upsubmit" style="display: none;" />
+						</form>
+						<a href="javascript:void(0);" class="mui-navigate-right" style="color: black;">头像</a>
 						<div class="userImg">
-							<img src="images/myimages/touxiang@2x.png" />
+							<img src="http://www.toeflonline.cn{{image | defaultImg}}" />
 						</div>
 					</li>
 					<li class="mui-table-view-cell">
 						<a href="update-nickname.html" class="mui-navigate-right">昵称</a>
-						<p>Emily</p>
+						<p>{{nameS}}</p>
 					</li>
 					<li class="mui-table-view-cell">
 						<a href="update-phone.html" class="mui-navigate-right">电话</a>
-						<p>15281075954</p>
+						<p>{{phone}}</p>
 					</li>
 					<li class="mui-table-view-cell">
 						<a href="update-email.html" class="mui-navigate-right">邮箱</a>
-						<p>45566655@qq.com</p>
+						<p>{{email}}</p>
 					</li>
 					<li class="mui-table-view-cell">
 						<a href="update-password.html" class="mui-navigate-right">密码</a>
@@ -85,61 +91,9 @@
 		<script src="js/mui.min.js"></script>
 		<script src="js/myjs/jquery-1.11.1.min.js"></script>
 		<script src="js/myjs/public.js"></script>
-		<script type="text/javascript">
-			jQuery(function() {
-				//             头像更换
-				jQuery("#fileInput").change(function() {
-					var fileVal = $(this).val();
-					filepath = fileVal;
-					var extStart = filepath.lastIndexOf(".");
-					var ext = filepath.substring(extStart, filepath.length).toUpperCase();
-					//        判断文件是不是图片
-					if(ext != ".BMP" && ext != ".PNG" && ext != ".GIF" && ext != ".JPG" && ext != ".JPEG") {
-						alert("图片限于png,gif,jpeg,jpg格式");
-					} else {
-						var objUrl = getObjectURL(this.files[0]); //本地路径转换为本地Url;
-						if(objUrl) {
-							//                本地预览
-							var str = '<img src="' + objUrl + '"/>';
-							jQuery(str).prependTo(jQuery(".userImg"));
-						}
-					}
-				});
+		<script src="js/myjs/moreSettings.js"></script>
+		<script src="js/myjs/angular1.3.1.js"></script>
 
-				jQuery("#loginOut")[0].addEventListener("tap", function() {
-					loginOut();
-				});
-
-			});
-
-			function loginOut() {
-				$.ajax({
-					type: "post",
-					url: "http://www.toeflonline.cn/cn/wap-api/login-out",
-					dataType: "jsonp",
-					jsonp: "callback", //传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(默认为:callback)
-					jsonpCallback: "success_jsonpCallback", //自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名
-					success: function(data) {
-						if(data.code == 1) {
-							alert("退出成功!");
-							var str = data.loginOut;
-							delCookie('userCode');
-							delCookie('userId');
-							delCookie('s_userId');
-							delCookie('userName');
-							localStorage.clear();
-							$("#scriptBox").html(str);
-							setTimeout(function() {
-								location.href = "index.html";
-							}, 2000);
-						}
-					},
-					error: function() {
-						alert('fail');
-					}
-				});
-			}
-		</script>
 	</body>
 
 </html>

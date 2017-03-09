@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="myApp">
 
 	<head>
 		<meta charset="UTF-8">
@@ -10,69 +10,28 @@
 		<link href="css/mycss/notebook.css" rel="stylesheet" />
 	</head>
 
-	<body>
+	<body ng-controller="PriceCtrl">
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left orangeColor"></a>
 			<h1 class="mui-title">生词本</h1>
 		</header>
 		<div class="mui-content">
 			<ul class="mui-table-view">
-				<li class="mui-table-view-cell mui-media">
+				<li class="mui-table-view-cell mui-media" ng-repeat="dataT in data" data-key="{{dataT.startTime}}">
 					<a href="javascript:void(0);">
 						<div class="mui-pull-left">
 							<img src="images/myimages/userCenter23@2x.png" height="20px" />
-							<p>共45个</p>
+							<p>共{{dataT.num}}个</p>
 						</div>
 						<div class="mui-media-object mui-pull-right">
 							<img src="images/myimages/3@2x.png" height="15" />
 						</div>
 						<div class="mui-media-body">
-							<div class='mui-ellipsis'>2015/12/2—2015/12/9</div>
+							<div class='mui-ellipsis'>{{dataT.startTime*1000 | date:'yyyy/MM/dd'}}—{{dataT.endTime*1000 | date:'yyyy/MM/dd'}}</div>
 						</div>
 					</a>
 				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a href="javascript:;">
-						<div class="mui-pull-left">
-							<img src="images/myimages/userCenter23@2x.png" height="20px" />
-							<p>共45个</p>
-						</div>
-						<div class="mui-media-object mui-pull-right">
-							<img src="images/myimages/3@2x.png" height="15" />
-						</div>
-						<div class="mui-media-body">
-							<div class='mui-ellipsis'>2015/12/2—2015/12/9</div>
-						</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a href="javascript:;">
-						<div class="mui-pull-left">
-							<img src="images/myimages/userCenter23@2x.png" height="20px" />
-							<p>共45个</p>
-						</div>
-						<div class="mui-media-object mui-pull-right">
-							<img src="images/myimages/3@2x.png" height="15" />
-						</div>
-						<div class="mui-media-body">
-							<div class='mui-ellipsis'>2015/12/2—2015/12/9</div>
-						</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a href="javascript:;">
-						<div class="mui-pull-left">
-							<img src="images/myimages/userCenter23@2x.png" height="20px" />
-							<p>共45个</p>
-						</div>
-						<div class="mui-media-object mui-pull-right">
-							<img src="images/myimages/3@2x.png" height="15" />
-						</div>
-						<div class="mui-media-body">
-							<div class='mui-ellipsis'>2015/12/2—2015/12/9</div>
-						</div>
-					</a>
-				</li>
+
 			</ul>
 		</div>
 
@@ -80,14 +39,64 @@
 		<script src="js/myjs/jquery-1.11.1.min.js"></script>
 		<script src="js/myjs/public.js"></script>
 		<script type="text/javascript">
-			jQuery(function() {		
-				mui(".mui-table-view").on("tap", ".mui-table-view-cell", function() {
-					mui.openWindow({
-						url: "notebook-details.html"
-					})
-				})
+			jQuery(function() {
+
+				//声明模块
+				var myApp = angular.module("myApp", []);
+				myApp.directive('isOver', function() {
+					return {
+						restrict: 'A',
+						scope: {
+							over: '=isOver'
+						},
+						link: function(scope, elm, attr) {
+							if(scope.$parent.$last) {
+								scope.over = true;
+							}
+						}
+					}
+				});
+				//通过模块生成调用控制器
+				myApp.controller("PriceCtrl", ["$scope", "$http", function($scope, $http) {
+					$scope.toggle = {
+						now: false
+					};
+					$scope.$watch('toggle.now', function() {
+						if($scope.toggle.now) { //界面的angularjs循环的元素加载完毕
+
+						}
+					});
+					$http({
+						method: 'post',
+						url: 'http://www.toeflonline.cn/cn/wap-api/vocab',
+						headers: {
+							'Content-Type': 'application/x-www-form-urlencoded'
+						},
+						data: {
+							userId: localStorage.getItem("userId"),
+							page: 1, //页数、第几页
+							pageSize: 1000 //分页显示条数
+						}
+					}).success(function(data) {
+						$scope.data = data.data;
+						$scope.totalNum = parseInt(Math.ceil(data.count / 10));
+						mui(".mui-table-view").on("tap", ".mui-table-view-cell", function() {
+							var keywords = jQuery(this).attr("data-key");
+							closeme();
+							mui.openWindow({
+								id: "notebook-details-" + keywords,
+								url: "notebook-details.html",
+								extras: {
+									keywords: keywords
+								}
+							});
+						});
+					});
+
+				}]);
 			})
 		</script>
+		<script src="js/myjs/angular1.3.1.js"></script>
 	</body>
 
 </html>

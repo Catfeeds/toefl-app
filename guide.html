@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			html,
+			body,
+			.mui-content {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.second_i {
+				width: 100%;
+				height: 100%;
+				background: url('images/myimages/active_img.png') no-repeat;
+				background-size: 100% 100%;
+				/*display: none;*/
+				position: relative;
+			}
+			
+			.op-div {
+				width: 70px;
+				height: 30px;
+				line-height: 30px;
+				text-align: center;
+				background-color: rgba(0, 0, 0, 0.3);
+				color: white;
+				position: absolute;
+				right: 10px;
+				bottom: 30px;
+				border-radius: 3px;
+			}
+			
+			.op-div span {
+				color: #FF6000;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--引导页-->
+		<div class="mui-content" id="guide">
+			<!--<div class="first_i"></div>-->
+			<div class="second_i">
+				<div class="op-div">跳过(<span id="num">3</span>)</div>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/myjs/jquery-1.11.1.min.js"></script>
+		<script src="js/myjs/public.js"></script>
+		<script type="text/javascript">
+			jQuery(function() {
+				secondTZ();
+			});
+			//引导页
+			function secondTZ() {
+				localStorage.setItem("oneT", "1");
+				var num = jQuery("#num").html();
+				var timer = setInterval(function() {
+					num--;
+					if(num < 0) {
+						clearInterval(timer);
+						plus.storage.setItem("lauchFlag", "true");
+						plus.navigator.setFullscreen(false);
+						plus.webview.currentWebview().close();
+					}
+					jQuery("#num").html(num)
+				}, 1000);
+				jQuery(".op-div")[0].addEventListener("tap", function() {
+					plus.storage.setItem("lauchFlag", "true");
+					plus.navigator.setFullscreen(false);
+					plus.webview.currentWebview().close();
+				});
+			}
+		</script>
+	</body>
+
+</html>

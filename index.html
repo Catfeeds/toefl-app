@@ -12,9 +12,8 @@
 	</head>
 
 	<body>
-		<!-- 主界面不动、菜单移动 -->
-		<!-- 侧滑导航根容器 -->
-		<div class="mui-off-canvas-wrap mui-draggable mui-slide-in" ng-controller="PriceCtrl">
+		<!--首页内容-->
+		<div class="mui-off-canvas-wrap mui-draggable mui-slide-in" ng-controller="PriceCtrl" id="index">
 			<!-- 菜单容器 -->
 			<!--  <aside class="mui-off-canvas-left" id="offCanvasSide">
     <div class="mui-scroll-wrapper">
@@ -39,7 +38,7 @@
       <h1 class="mui-title">special oneself</h1>
     </header>-->
 				<nav class="mui-bar mui-bar-tab">
-					<a href="index.html" class="mui-tab-item mui-active">
+					<a class="mui-tab-item mui-active" id="fixed-1">
 						<span class="bgCom bg01"></span>
 						<span class="mui-tab-label">做题练习</span>
 					</a>
@@ -47,20 +46,20 @@
 	        <span class="bgCom bg03"></span>
 	        <span class="mui-tab-label">模考</span>
 	    </a>-->
-					<a href="course.html" class="mui-tab-item">
+					<a class="mui-tab-item" id="fixed-2">
 						<span class="bgCom bg02"></span>
 						<span class="mui-tab-label">在线课程</span>
 					</a>
-					<a href="encyclopedia.html" class="mui-tab-item">
+					<a class="mui-tab-item" id="fixed-3">
 						<span class="bgCom bg03"></span>
 						<span class="mui-tab-label">托福圈</span>
 					</a>
-					<a href="personalCenter.html" class="mui-tab-item">
+					<a class="mui-tab-item" id="fixed-4">
 						<span class="bgCom bg04"></span>
 						<span class="mui-tab-label">个人中心</span>
 					</a>
 				</nav>
-				<div class="mui-content mui-scroll-wrapper">
+				<div class="mui-content mui-scroll-wrapper" id="index-con">
 					<div class="mui-scroll">
 						<!-- 主界面具体展示内容 -->
 						<div class="three-bu">
@@ -70,7 +69,7 @@
 							</div>
 							<div class="c-three">
 								<div class="c-t-head">
-									<img src="images/myimages/touxiang@2x.png" alt="默认头像" />
+									<img src="{{image}}" alt="默认头像" />
 								</div>
 							</div>
 							<div class="l-three">
@@ -134,26 +133,26 @@
 						</div>
 						<div class="bot-bar">
 							<ul>
-								<li>
-									<a href="hearing.html">
+								<li id="l-icon-ting">
+									<a>
 										<img src="images/myimages/ExerciseToday6@2x.png" alt="图标" />
 										<p>听力</p>
 									</a>
 								</li>
-								<li>
-									<a href="reading.html">
+								<li id="r-icon-read">
+									<a>
 										<img src="images/myimages/ExerciseToday7@2x.png" alt="图标" />
 										<p>阅读</p>
 									</a>
 								</li>
-								<li>
+								<!--<li>
 									<a href="speaking.html">
 										<img src="images/myimages/ExerciseToday8@2x.png" alt="图标" />
 										<p>口语</p>
 									</a>
-								</li>
-								<li>
-									<a href="test.html">
+								</li>-->
+								<li id="w-icon-write">
+									<a>
 										<img src="images/myimages/ExerciseToday9@2x.png" alt="图标" />
 										<p>写作</p>
 									</a>

@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="myApp">
 
 	<head>
 		<meta charset="UTF-8">
@@ -10,98 +10,112 @@
 		<link href="css/mycss/reading-practice.css" rel="stylesheet" />
 	</head>
 
-	<body>
+	<body ng-controller="PriceCtrl">
+		<input type="hidden" id="user_answer" />
+		<input type="hidden" id="answers" value="{{answerB}}" />
+		<input type="hidden" value="{{questionType}}" id="types" />
+		<!--定位类型-->
+		<span class='paragraph' ng-repeat="postionDT in postionD" ng-bind-html="postionDT | trustHtml"><!-- {{postionDT}}--></span>
+		<!--定位到段-->
+		<span data-value="zimu{{$index}}" class='insertContent' ng-repeat="arrSelectT in arrSelect">{{arrSelectT}}</span>
+		<!--插入句子位置-->
+		<span class='words' ng-repeat="postionWT in postionW">{{postionWT}}</span>
+		<!--定位单词-->
+		<input type="hidden" value="" id="userAnswer" />
+		<!--记录特殊定位用户答案-->
+		<!--保存答案需要参数-->
+		<input type="hidden" value="{{pid}}" id="pid" />
+		<input type="hidden" value="{{contentId}}" id="contentId" />
+		<input type="hidden" id="time" value="0" />
 		<header class="mui-bar mui-bar-nav">
 			<a href="reading.html" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left orangeColor"></a>
-			<h1 class="mui-title">TPO 01-Passage1</h1>
+			<h1 class="mui-title">{{title}}</h1>
 		</header>
 		<nav class="mui-bar mui-bar-tab bg-nowhite">
-			<button type="button" class="mui-btn mui-btn-success" id="showAnswer">显示答案</button>
-			<button type="button" class="mui-btn mui-btn-warning" id="nextTi">下一题</button>
+			<button type="button" class="mui-btn mui-btn-success" id="showAnswer" data-trueAn="{{answer}}">显示答案</button>
+			<button type="button" class="mui-btn mui-btn-warning" id="nextTi" ng-click="readNext()">下一题</button>
 		</nav>
 		<div class="mui-content">
 			<div class="mui-card first-card">
 				<!--页眉，放置标题-->
 				<div class="mui-card-header">
-					<span><1/14></span>
-					<a href="javascript:void(0);" id="seeArticle">查看全文</a>
+					<span><{{titleNum}}/{{count}}></span>
+					<a href="javascript:void(0);" id="seeArticle" class="qubie">查看全文</a>
 				</div>
 				<!--内容区-->
 				<div class="mui-card-content">
 					<div class="article-tpo">
-						<div class="in-box">
-							Groundwater is the word used to describe water that saturates the ground, filling all the available spaces. By far the most abundant type of groundwater is meteoric water; this is the groundwater that circulates as part of the water cycle. Ordinary meteoric water is water that has soaked into the ground from the surface, from precipitation (rain and snow) and from lakes and streams. There it remains, sometimes for long periods, before emerging at the surface again. At first thought it seems incredible that there can be enough space in the "solid" ground underfoot to hold all this water. The necessary space is there, however, in many forms. The commonest spaces are those among the particles—sand grains and tiny pebbles—of loose, unconsolidated sand and gravel. Beds of this material, out of sight beneath the soil, are common. They are found wherever fast rivers carrying loads of coarse sediment once flowed. For example, as the great ice sheets that covered North America during the last ice age steadily melted away, huge volumes of water flowed from them. The water was always laden with pebbles, gravel, and sand, known as glacial outwash, that was deposited as the flow slowed down.
-
+						<div class="in-box" ng-bind-html="question">
+							<!--文章部分-->
 						</div>
 					</div>
 				</div>
 			</div>
 
-			<div class="mui-card option">
+			<div class="mui-card option option_box">
 				<!--页眉，放置标题-->
-				<div class="mui-card-header">What can be inferred about why the woman decides to use the computer in the library?</div>
+				<div class="mui-card-header" ng-bind-html="questionTi"></div>
 				<!--内容区-->
 				<div class="mui-card-content">
 					<ul class="mui-table-view">
-						<li class="mui-table-view-cell mui-media li-orange">
-							<a href="javascript:;">
-								<div class="mui-media-object mui-pull-left">A</div>
-								<div class="mui-media-body">
-									She thinks she might need additional help from the man
-								</div>
-							</a>
-						</li>
-						<li class="mui-table-view-cell mui-media li-grey">
-							<a href="javascript:;">
-								<div class="mui-media-object mui-pull-left">B</div>
-								<div class="mui-media-body">
-									She does not have a computer at home
-								</div>
-							</a>
-						</li>
-						<li class="mui-table-view-cell mui-media li-grey">
-							<a href="javascript:;">
-								<div class="mui-media-object mui-pull-left">C</div>
-								<div class="mui-media-body">
-									She has to hand in her assignment by the end of the day
-								</div>
-							</a>
-						</li>
-						<li class="mui-table-view-cell mui-media li-grey">
-							<a href="javascript:;">
-								<div class="mui-media-object mui-pull-left">D</div>
-								<div class="mui-media-body">
-									She will be meeting a friend in the library later on
-								</div>
-							</a>
+						<li class="mui-table-view-cell mui-media" ng-repeat="arrSelectT in arrSelect" is-over="toggle.now">
+							<!--<a href="javascript:;">-->
+							<div class="mui-media-object mui-pull-left">{{$index | optionsAll}}</div>
+							<div class="mui-media-body">
+								{{arrSelectT}}
+							</div>
+							<!--							</a>-->
 						</li>
 					</ul>
 				</div>
 
 			</div>
+
+			<!--特殊题型 黑线 点击-->
+			<div class="black_line">
+				{{answerB}}
+				<p>正确答案：{{answer}}</p>
+			</div>
+			<!--特殊题型 拖拽-->
+			<div class="trag_test">
+				<div class="write_an">
+					<div class="col-xs-4 col-xs-4">
+						<div>
+							<span>1:</span>
+							<input type="text" />
+						</div>
+					</div>
+					<div class="col-xs-4 col-xs-4">
+						<div>
+							<span>2:</span>
+							<input type="text" />
+						</div>
+					</div>
+					<div class="col-xs-4 col-xs-4">
+						<div>
+							<span>3:</span>
+							<input type="text" />
+						</div>
+					</div>
+					<div class="clearBox"></div>
+				</div>
+				<p>正确答案：{{answer}}</p>
+				<ul>
+					<li ng-repeat="arrSelectT in arrSelect">
+						<span>{{arrSelectT}}</span>
+					</li>
+				</ul>
+			</div>
+
 		</div>
 
 		<script src="js/mui.min.js"></script>
 		<script src="js/myjs/jquery-1.11.1.min.js"></script>
+		<script src="js/myjs/highlight.js"></script>
 		<script src="js/myjs/public.js"></script>
-		<script type="text/javascript">
-			jQuery("#seeArticle")[0].addEventListener("tap", function() {
-				mui.openWindow({
-					url: "reading-article.html"
-				})
+		<script src="js/myjs/reading-practice.js"></script>
+		<script src="js/myjs/angular1.3.1.js"></script>
 
-			});
-			jQuery("#showAnswer")[0].addEventListener("tap", function() {
-				mui.openWindow({
-					url: "reading-answerJX.html"
-				})
-			});
-			jQuery("#nextTi")[0].addEventListener("tap", function() {
-				mui.openWindow({
-					url: "reading-result.html"
-				})
-			});
-		</script>
 	</body>
 
 </html>

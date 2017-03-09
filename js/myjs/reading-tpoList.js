@@ -1,19 +1,6 @@
 jQuery(function() {
-	//    标题tpo01
-	TouchSlide({slideCell: "#slidePop",effect: "leftLoop"});
-//	mui.init({
-//		pullRefresh: {
-//			container: "#tpo-content", //待刷新区域标识，querySelector能定位的css选择器均可，比如：id、.class等
-//			up: {
-//				height: 50, //可选.默认50.触发上拉加载拖动距离
-//				auto: false, //可选,默认false.自动上拉加载一次
-//				contentrefresh: "正在加载...", //可选，正在加载状态时，上拉加载控件上显示的标题内容
-//				contentnomore: '没有更多数据了', //可选，请求完毕若没有更多数据时显示的提醒内容；
-//				callback: tpoPullfreshFun //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
-//			}
-//		}
-//	});
-//声明模块
+
+	//声明模块
 	var myApp = angular.module("myApp", []);
 	myApp.directive('isOver', function() {
 		return {
@@ -28,82 +15,124 @@ jQuery(function() {
 			}
 		}
 	});
-	
+
 	//通过模块生成调用控制器
 	myApp.controller("PriceCtrl", ["$scope", "$http", "$sce", function($scope, $http, $sce) {
 		$scope.toggle = {
 			now: false
 		};
 		$scope.$watch('toggle.now', function() {
-			if($scope.toggle.now) { //界面的angularjs循环的元素加载完毕
+			if($scope.toggle.now) { //界面的angularjs循环的元素加载完毕			
 
 			}
 		});
-		
-		$http({
-            method: 'post',
-            url: 'http://www.toeflonline.cn/cn/wap-api/read',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            data:{
-               id:188
+		mui.plusReady(function() {
+			var self = plus.webview.currentWebview();
+			var ids = self.ids;
+			var nameTitle = self.name;
+            if(!nameTitle){
+            	nameTitle="TPO 01";
             }
-        }).success(function(data) {
-             $scope.question=data.read[0].question;
-            $scope.questionOg=data.OG[0].question;
-            $scope.tpo=data.tpo;
-        });
-	}]);
-	
-	//初始化预加载详情页面
-			mui.init({
-				preloadPages: [{
-					id: 'reading-practice.html',
-					url: 'reading-practice.html'
-				}]
-			});
+			touchS(ids);
+			$http({
+				method: 'post',
+				url: 'http://www.toeflonline.cn/cn/wap-api/read',
+				headers: {
+					'Content-Type': 'application/x-www-form-urlencoded'
+				},
+				data: {
+					id: ids
+				}
+			}).success(function(data) {
+				$scope.question = data.read[0].question;
+				$scope.tpo = data.tpo;
+				$scope.read = data.read[0].question;
 
-			var detailPage = null;
-			//添加列表项的点击事件
-			mui('#tpo-content').on('tap', 'li', function(e) {
-				//		  var id = this.getAttribute('id');
-				//获得详情页面
-				//		  if(!detailPage){
-				//		    detailPage = plus.webview.getWebviewById('reading-practice.html');
-				//		  }
-				//		  //触发详情页面的newsId事件
-				//		  mui.fire(detailPage,'newsId',{
-				//		    id:id
-				//		  });
-				//打开详情页面          
-				mui.openWindow({
-					//		    id:'reading-practice.html',注意：传值时只需要这一行，删除下面一行
-					url: 'reading-practice.html'
+				//           随机练习人数 
+				for(var i = 0; i < $scope.read.length; i++) {
+					$scope.read[i].nums = parseInt(Math.random() * 400);
+				}
+				//				tpo Li的点击事件
+				mui(".slideBd").on("tap", "li", function() {
+					var idD = jQuery(this).attr("data-sid");
+					var name = jQuery(this).html();
+
+					//					closeme();
+					mui.openWindow({
+						id: "reading-tpoList-" + idD,
+						url: "reading-tpoList.html",
+						extras: {
+							ids: idD,
+							name: name
+						}
+					});
+
+				});
+		
+				//添加列表项的点击事件
+				mui('#tpo-content').on('tap', 'li', function(e) {
+					var id = this.getAttribute('id');
+					var title = this.getAttribute('data-title');
+//					closeme();
+					mui.openWindow({
+						id: "reading-practice" + id,
+						url: 'reading-practice.html',
+						extras: {
+							ids: id,
+							name: nameTitle,
+							title: title
+						}
+					});
+
 				});
 
 			});
-	
-	
+		});
+	}]);
+
 });
 
 
-//function tpoPullfreshFun() {
-//	var strTpo = '<li>' +
-//	'<div class="left-img">' + 
-//	'<a href="#">' + 
-//	'<img src="images/myimages/reading-tpo.png" alt="tpo" />' + 
-//	'</a>' + 
-//	'</div>' + 
-//	'<div class="right-info">' + 
-//	'<h2>pullfresh</h2>' + 
-//	'<p>144人在练习</p>' + 
-//	'<button type="button" class="mui-btn mui-btn-warning orangeBg">GO</button>' + 
-//	'</div>' + 
-//	'<div class="mui-clearfix"></div>' + 
-//	'</li>';
-//	$("#tpo-content ul").append(strTpo);
-//  this.endPullupToRefresh(true);
-////  切换选项卡后重置上拉加载
-////mui('#pullup-container').pullRefresh().refresh(true);
-//}
+
+function touchS(idD) {
+	var indexNum = 0;
+	var id = idD;
+	if(!id) {
+		id = 188;
+	}
+	// alert(id);
+	//    标题tpo01
+	if(id == 188 || id == 189 || id == 190 || id == 191) {
+		indexNum = 0;
+	} else if(id == 192 || id == 193 || id == 194 || id == 195) {
+		indexNum = 1;
+	} else if(id == 196 || id == 197 || id == 198 || id == 199) {
+		indexNum = 2;
+	} else if(id == 200 || id == 201 || id == 202 || id == 203) {
+		indexNum = 3;
+	} else if(id == 204 || id == 205 || id == 206 || id == 207) {
+		indexNum = 4;
+	} else if(id == 208 || id == 209 || id == 210 || id == 211) {
+		indexNum = 5;
+	} else if(id == 212 || id == 213 || id == 214 || id == 215) {
+		indexNum = 6;
+	} else if(id == 216 || id == 217 || id == 218 || id == 219) {
+		indexNum = 7;
+	} else if(id == 220 || id == 221 || id == 263 || id == 264) {
+		indexNum = 8;
+	} else if(id == 265 || id == 266 || id == 267 || id == 268) {
+		indexNum = 9;
+	} else if(id == 269 || id == 270 || id == 271) {
+		indexNum = 10;
+	}
+	//  alert(indexNum);
+
+	jQuery("#" + id).addClass("on").siblings("li").removeClass("on").parent().siblings("ul").find("li").removeClass("on");
+
+	//    标题tpo01
+	TouchSlide({
+		slideCell: "#slidePop",
+		effect: "leftLoop",
+		defaultIndex: indexNum
+	});
+}

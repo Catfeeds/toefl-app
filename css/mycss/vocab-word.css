@@ -53,11 +53,29 @@
 	white-space: normal;
 }
 .out-box{
-	 float:left;
+	display: inline-block;
+	 /*float:left;
 	 position:relative;
-	 left:50%;
+	 left:50%;*/
 }
 .out-box img,.out-box span{
-	 position:relative;
-	 right:50%;
+	 /*position:relative;
+	 right:50%;*/
+}
+
+.mui-backdrop{
+	display: none;
+	text-align: center;
+}
+.mui-backdrop img{
+	width: 60%;
+}
+.mui-backdrop button{
+	width: 80%;
+	margin-top: 10%;
+}
+.in-div{
+	position: absolute;
+	top: 50%;
+	margin-top: -50%;
 }

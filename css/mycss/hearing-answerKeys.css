@@ -183,6 +183,14 @@ body {
 	background-color: #2acc5d;
 }
 
+.li-green02 .mui-media-body {
+	color: #2acc5d;
+}
+
+.li-green02 .mui-media-object {
+	background-color: #2acc5d;
+}
+
 .li-red .mui-media-body {
 	color: #ea2c16;
 }
@@ -272,4 +280,3 @@ body {
 .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
 	border-bottom: none;
 }
-

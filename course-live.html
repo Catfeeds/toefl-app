@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="myApp">
 
 	<head>
 		<meta charset="UTF-8">
@@ -10,7 +10,7 @@
 		<link href="css/mycss/course-live.css" rel="stylesheet" />
 	</head>
 
-	<body>
+	<body ng-controller="PriceCtrl">
 
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left orangeColor"></a>
@@ -18,109 +18,38 @@
 		</header>
 		<div class="mui-content">
 			<div class="live-con">
-				<div class="top-class course-li">
-					<img src="images/cbd.jpg" alt="课程图片" />
+				<div class="top-class course-li" data-id="{{firstId}}">
+					<img src="http://smartapply.gmatonline.cn{{firstImg}}" alt="课程图片" />
 					<div class="mask-box">
-						单项模块快速提分班（录播课）
+						{{firstName}}
 					</div>
 				</div>
 
 				<div class="bot-con">
 					<div class="mui-row">
-						<div class="mui-col-sm-6 mui-col-xs-6 course-li">
+						<div class="mui-col-sm-6 mui-col-xs-6 course-li" ng-repeat="listT in list" ng-show="{{$index}}>0" data-id="{{listT.id}}">
 							<div class="mui-card">
 								<!--内容区-->
 								<div class="mui-card-content">
-									<img src="images/muwu.jpg" style="width: 100%;" />
+									<img src="http://smartapply.gmatonline.cn{{listT.image}}" style="width: 100%;" />
 								</div>
 								<!--页脚，放置补充信息或支持的操作-->
 								<div class="mui-card-footer">
 									<ul class="mui-table-view">
 										<li class="mui-table-view-cell mui-media">
-											<a href="javascript:;">
+											<!--<a href="javascript:;">-->
 												<img class="mui-media-object mui-pull-right" src="images/myimages/Course22@2x.png">
 												<div class="mui-media-body">
 
-													<p class='mui-ellipsis'>全程提分班</p>
+													<p class='mui-ellipsis'>{{listT.name}}</p>
 												</div>
-											</a>
+											<!--</a>-->
 										</li>
 									</ul>
 								</div>
 							</div>
 						</div>
-						<!--mui-col-sm-6-->
-						<div class="mui-col-sm-6 mui-col-xs-6 course-li">
-							<div class="mui-card">
-								<!--内容区-->
-								<div class="mui-card-content">
-									<img src="images/muwu.jpg" style="width: 100%;" />
-								</div>
-								<!--页脚，放置补充信息或支持的操作-->
-								<div class="mui-card-footer">
-									<ul class="mui-table-view">
-										<li class="mui-table-view-cell mui-media">
-											<a href="javascript:;">
-												<img class="mui-media-object mui-pull-right" src="images/myimages/Course22@2x.png">
-												<div class="mui-media-body">
-
-													<p class='mui-ellipsis'>全程提分班</p>
-												</div>
-											</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<!--mui-col-sm-6-->
-
-						<div class="mui-col-sm-6 mui-col-xs-6 course-li">
-							<div class="mui-card">
-								<!--内容区-->
-								<div class="mui-card-content">
-									<img src="images/muwu.jpg" style="width: 100%;" />
-								</div>
-								<!--页脚，放置补充信息或支持的操作-->
-								<div class="mui-card-footer">
-									<ul class="mui-table-view">
-										<li class="mui-table-view-cell mui-media">
-											<a href="javascript:;">
-												<img class="mui-media-object mui-pull-right" src="images/myimages/Course22@2x.png">
-												<div class="mui-media-body">
-
-													<p class='mui-ellipsis'>全程提分班</p>
-												</div>
-											</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<!--mui-col-sm-6-->
-						<div class="mui-col-sm-6 mui-col-xs-6 course-li">
-							<div class="mui-card">
-								<!--内容区-->
-								<div class="mui-card-content">
-									<img src="images/muwu.jpg" style="width: 100%;" />
-								</div>
-								<!--页脚，放置补充信息或支持的操作-->
-								<div class="mui-card-footer">
-									<ul class="mui-table-view">
-										<li class="mui-table-view-cell mui-media">
-											<a href="javascript:;">
-												<img class="mui-media-object mui-pull-right" src="images/myimages/Course22@2x.png">
-												<div class="mui-media-body">
-
-													<p class='mui-ellipsis'>全程提分班</p>
-												</div>
-											</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<!--mui-col-sm-6-->
-
+					
 					</div>
 				</div>
 
@@ -129,15 +58,8 @@
 		<script src="js/mui.min.js"></script>
 		<script src="js/myjs/jquery-1.11.1.min.js"></script>
 		<script src="js/myjs/public.js"></script>
-		<script type="text/javascript">
-			jQuery(function(){
-				mui(".mui-content").on("tap",".course-li",function(){
-					mui.openWindow({
-						url:"course-live-detail.html"
-					})
-				});
-			});
-		</script>
+		<script src="js/myjs/course-live.js"></script>
+		<script src="js/myjs/angular1.3.1.js"></script>
 	</body>
 
 </html>

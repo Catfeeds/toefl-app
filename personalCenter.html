@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="myApp">
 
 	<head>
 		<meta charset="UTF-8">
@@ -11,39 +11,39 @@
 		<link href="css/mycss/personalCenter.css" rel="stylesheet" />
 	</head>
 
-	<body>
+	<body ng-controller="PriceCtrl">
 		<nav class="mui-bar mui-bar-tab">
-	    <a href="index.html" class="mui-tab-item">
-	        <span class="bgCom bg01"></span>
-	        <span class="mui-tab-label">做题练习</span>
-	    </a>
-	    <!--<a class="mui-tab-item">
+					<a class="mui-tab-item" id="fixed-1">
+						<span class="bgCom bg01"></span>
+						<span class="mui-tab-label">做题练习</span>
+					</a>
+					<!--<a class="mui-tab-item">
 	        <span class="bgCom bg03"></span>
 	        <span class="mui-tab-label">模考</span>
 	    </a>-->
-	    <a href="course.html" class="mui-tab-item">
-	        <span class="bgCom bg02"></span>
-	        <span class="mui-tab-label">在线课程</span>
-	    </a>
-	    <a href="encyclopedia.html" class="mui-tab-item">
-	       <span class="bgCom bg03"></span>
-	        <span class="mui-tab-label">托福圈</span>
-	    </a>
-	    <a href="personalCenter.html" class="mui-tab-item mui-active">
-	        <span class="bgCom bg04"></span>
-	        <span class="mui-tab-label">个人中心</span>
-	    </a>
-	</nav>
+					<a class="mui-tab-item" id="fixed-2">
+						<span class="bgCom bg02"></span>
+						<span class="mui-tab-label">在线课程</span>
+					</a>
+					<a class="mui-tab-item" id="fixed-3">
+						<span class="bgCom bg03"></span>
+						<span class="mui-tab-label">托福圈</span>
+					</a>
+					<a class="mui-tab-item mui-active" id="fixed-4">
+						<span class="bgCom bg04"></span>
+						<span class="mui-tab-label">个人中心</span>
+					</a>
+				</nav>
 		<div class="mui-content">
              <div class="userShow">
              	<div class="userImg">
         			<div class="user-out-white">
         				<div class="user-in-white">
-        					<img src="images/myimages/touxiang@2x.png" alt="默认头像"/>   
+        					<img src="{{photo | defaultImg}}" alt="默认头像"/>   
         				</div>
         			</div>         		
              	</div>
-             	<div class="userName">Emily</div>
+             	<div class="userName">{{name}}</div>
              </div>
              <div class="all-sort mui-row">
              	<div class="mui-col-sm-6 mui-col-xs-6" id="listen">
@@ -87,51 +87,8 @@
 		<script src="js/mui.min.js"></script>
 		<script src="js/myjs/jquery-1.11.1.min.js"></script>
 		<script src="js/myjs/public.js"></script>
-		<script type="text/javascript">
-			jQuery(function(){
-				jQuery(".userImg").css("height",jQuery(".userImg").width()+10);
-				jQuery("#listen")[0].addEventListener("tap",function(){
-					mui.openWindow({
-						url:"listenRecord.html"
-					});
-				});
-				jQuery("#speak")[0].addEventListener("tap",function(){
-					mui.openWindow({
-						url:"speakRecord.html"
-					});
-				});
-				jQuery("#read")[0].addEventListener("tap",function(){
-					mui.openWindow({
-						url:"readRecord.html"
-					});
-				});
-				jQuery("#write")[0].addEventListener("tap",function(){
-					mui.openWindow({
-						url:"writeRecord.html"
-					});
-				});
-				jQuery("#mycourse")[0].addEventListener("tap",function(){
-					mui.openWindow({
-						url:"myCourse.html"
-					});
-				});
-				jQuery("#word")[0].addEventListener("tap",function(){
-					mui.openWindow({
-						url:"notebook.html"
-					});
-				});
-				jQuery("#message")[0].addEventListener("tap",function(){
-					mui.openWindow({
-						url:"message.html"
-					});
-				});
-				jQuery("#moreSet")[0].addEventListener("tap",function(){
-					mui.openWindow({
-						url:"moreSettings.html"
-					});
-				});
-			});
-		</script>
+		<script src="js/myjs/personalCenter.js"></script>
+		<script src="js/myjs/angular1.3.1.js"></script>
 	</body>
 
 </html>

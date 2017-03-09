@@ -21,24 +21,39 @@
 	margin-bottom: 10px;
 }
 
-.bbs-content{
+.bbs-content,.img-show{
 	width: 90%;
 	margin: 0 auto;
+}
+img.emojione{
+	border: 1px transparent solid!important;
 }
 .bbs-content h4{
 	font-weight: normal;
 	font-size: 1em;
 }
-.bbs-content ul li{
+.bbs-content ul li,.img-show ul li{
 	width: 30%;
+	height: 80px;
 	float: left;
 	margin-right: 4%;
+	margin-bottom: 10px;
 }
-.bbs-content ul li:nth-child(3n){
+.bbs-content ul li:nth-child(3n),.img-show ul li:nth-child(3n){
 	margin-right: 0;
 }
-.bbs-content ul li img{
+.bbs-content ul li img,.img-show ul li img{
 	width: 100%;
+	height: 100%;
+}
+.user-img{
+	width: 100%;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.user-img img{
+	width: 100%;
+	height: 100%;
 }
 .zan-pl{
 	float: right;
@@ -138,4 +153,25 @@
 .replyIShow img{
 	width: 60%;
 	border-radius: 50%;
+}
+.mui-popover-arrow.mui-bottom{
+	display: none;
+}
+.imgBox{
+	width: 100%;
+}
+.imgBox img{
+	width: 100%;
+	max-height: 100%;
+}
+#popover{
+	position: fixed;
+	left: 50%;
+	top: 50%;
+}
+.close-icon{
+   color: white;
+   position: absolute;
+   right: 0;
+   top: 0;
 }

@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="myApp">
 
 	<head>
 		<meta charset="UTF-8">
@@ -10,7 +10,7 @@
 		<link href="css/mycss/message.css" rel="stylesheet" />
 	</head>
 
-	<body>
+	<body ng-controller="PriceCtrl">
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left orangeColor"></a>
 			<h1 class="mui-title">消息中心</h1>
@@ -18,30 +18,31 @@
 		<div class="mui-content">
 			<div style="background-color: white;">
 				<div id="segmentedControl" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-primary">
-					<a class="mui-control-item mui-active" href="#item1">
+					<a class="mui-control-item mui-active" href="#item1" data-status="3">
 						全部
 					</a>
-					<a class="mui-control-item" href="#item2">
+					<a class="mui-control-item" href="#item2" data-status="1">
 						未读
 					</a>
-					<a class="mui-control-item" href="#item3">
+					<a class="mui-control-item" href="#item3" data-status="2">
 						已读
 					</a>
 				</div>
 			</div>
 			<div style="margin-top: 20px;">
 				<div id="item1" class="mui-control-content mui-active">
-					<div class="mess-li mui-row">
+
+					<div class="mess-li mui-row" ng-repeat="dataT in data">
 						<div class="mui-col-xs-3 mui-col-sm-3">
 							<div class="left_time">
-								<p>08月04日</p>
-								<span>15:47:52</span>
+								<p>{{dataT.createTime*1000 | date:'yyyy/MM/dd'}}</p>
+								<span>{{dataT.createTime*1000 | date:'hh:mm:ss'}}</span>
 							</div>
 						</div>
 						<div class="mui-col-xs-9 mui-col-sm-9">
 							<div class="essay_title">
 								<div class="white-bg">
-									<p><span class="green">【已读消息】</span>已读消息已读消息已读消息已读消息已读消息已读消息已读消息已读消息 已读消息已读消息已读消息已读消息
+									<p><span class="{{dataT.status | className}}">【{{dataT.status | strRead}}】</span> {{dataT.news}}
 									</p>
 									<b></b>
 								</div>
@@ -49,55 +50,106 @@
 						</div>
 						<div class="mui-clearfix"></div>
 					</div>
-					<div class="mess-li mui-row">
-						<div class="mui-col-xs-3 mui-col-sm-3">
-							<div class="left_time">
-								<p>08月04日</p>
-								<span>15:47:52</span>
-							</div>
-						</div>
-						<div class="mui-col-xs-9 mui-col-sm-9">
-							<div class="essay_title">
-								<div class="white-bg">
-									<p><span class="red">【未读消息】</span>已读消息已读消息已读消息已读消息已读消息已读消息已读消息已读消息 已读消息已读消息已读消息已读消息
-									</p>
-									<b></b>
-								</div>
-							</div>
-						</div>
-						<div class="mui-clearfix"></div>
-					</div>
-					<div class="mess-li mui-row">
-						<div class="mui-col-xs-3 mui-col-sm-3">
-							<div class="left_time">
-								<p>08月04日</p>
-								<span>15:47:52</span>
-							</div>
-						</div>
-						<div class="mui-col-xs-9 mui-col-sm-9">
-							<div class="essay_title">
-								<div class="white-bg">
-									<p><span class="green">【已读消息】</span>已读消息已读消息已读消息已读消息已读消息已读消息已读消息已读消息 已读消息已读消息已读消息已读消息
-									</p>
-									<b></b>
-								</div>
-							</div>
-						</div>
-						<div class="mui-clearfix"></div>
-					</div>
-				</div>
-				<div id="item2" class="mui-control-content">
 
 				</div>
-				<div id="item3" class="mui-control-content">
 
-				</div>
 			</div>
 		</div>
 
 		<script src="js/mui.min.js"></script>
 		<script src="js/myjs/jquery-1.11.1.min.js"></script>
 		<script src="js/myjs/public.js"></script>
+		<script type="text/javascript">
+			jQuery(function() {
+				//声明模块
+				var myApp = angular.module("myApp", []);
+				myApp.directive('isOver', function() {
+					return {
+						restrict: 'A',
+						scope: {
+							over: '=isOver'
+						},
+						link: function(scope, elm, attr) {
+							if(scope.$parent.$last) {
+								scope.over = true;
+							}
+						}
+					}
+				});
+				myApp.filter('strRead', function() {
+					return function(input) {
+						var str = '';
+						if(input == 2) {
+							str = '已读消息';
+						} else {
+							str = '未读消息';
+						}
+						return str;
+					}
+				});
+				myApp.filter('className', function() {
+					return function(input) {
+						var className = '';
+						if(input == 2) {
+							className = 'green';
+						} else {
+							className = 'red';
+						}
+						return className;
+					}
+				});
+				//通过模块生成调用控制器
+				myApp.controller("PriceCtrl", ["$scope", "$http", function($scope, $http) {
+					$scope.toggle = {
+						now: false
+					};
+					$scope.$watch('toggle.now', function() {
+						if($scope.toggle.now) { //界面的angularjs循环的元素加载完毕
+
+						}
+					});
+					mui.plusReady(function() {
+						var self = plus.webview.currentWebview();
+						var status = self.status;
+						$http({
+							method: 'post',
+							url: 'http://www.toeflonline.cn/cn/wap-api/user-news',
+							headers: {
+								'Content-Type': 'application/x-www-form-urlencoded'
+							},
+							data: {
+								userId: localStorage.getItem("userId"),
+								status: status, //状态1为未读 2为已读 3为全部
+								page: 1, //页数、第几页
+								pageSize: 1000 //分页显示条数
+							}
+						}).success(function(data) {
+							$scope.data = data.data;
+							$scope.totalNum = parseInt(Math.ceil(data.count / 5));
+							if(status == 3) {
+								$("#segmentedControl a").first().addClass("mui-active").siblings().removeClass("mui-active");
+							} else if(status == 1) {
+								$("#segmentedControl a").eq(1).addClass("mui-active").siblings().removeClass("mui-active");
+							} else if(status == 2) {
+								$("#segmentedControl a").last().addClass("mui-active").siblings().removeClass("mui-active");
+							}
+						});
+					});
+				}]);
+				mui("#segmentedControl").on("tap", "a", function() {
+					var status = jQuery(this).attr("data-status");
+//					closeme();
+					mui.openWindow({
+						id: "message-" + status,
+						url: "message.html",
+						extras: {
+							status: status
+						}
+					});
+				});
+			});
+		</script>
+		<script src="js/myjs/angular1.3.1.js"></script>
 	</body>
 
 </html>

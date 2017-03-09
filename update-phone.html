@@ -7,7 +7,28 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="css/mui.min.css" rel="stylesheet" />
 		<link href="css/mycss/public.css" rel="stylesheet" />
+		<link href="css/mycss/validform.css" rel="stylesheet" />
 		<link href="css/mycss/update.css" rel="stylesheet" />
+		<style type="text/css">
+			input[type=color],
+			input[type=date],
+			input[type=datetime-local],
+			input[type=datetime],
+			input[type=email],
+			input[type=month],
+			input[type=number],
+			input[type=password],
+			input[type=search],
+			input[type=tel],
+			input[type=text],
+			input[type=time],
+			input[type=url],
+			input[type=week],
+			select,
+			textarea {
+				margin-bottom: 0;
+			}
+		</style>
 	</head>
 
 	<body>
@@ -16,41 +37,75 @@
 			<h1 class="mui-title">电话</h1>
 		</header>
 		<div class="mui-content">
-			<div class="nickname">
-				<input type="text" placeholder="请输入电话" id="phone" />
-				<input type="text" placeholder="请输入验证码" style="width: 60%;" id="yzm" />
-				<button type="button" class="mui-btn mui-btn-success" style="width: 36%;height: 40px;" id="yzm-btn">验证码</button>
+			<div class="nickname phoneGourp">
+				<ul>
+					<li>
+						<input type="text" placeholder="请输入电话" id="phone" datatype="m" errormsg="手机号格式不正确！" />
+					</li>
+					<li>
+						<input type="text" placeholder="请输入验证码" style="width: 60%;" id="yzm" datatype="*" errormsg="验证码不能为空！" />
+						<button type="button" class="mui-btn mui-btn-success" style="width: 36%;height: 40px;" id="yzm-btn">验证码</button>
+
+					</li>
+				</ul>
 				<button type="button" class="mui-btn mui-btn-warning orangeBg" id="sure02">确定</button>
 			</div>
 		</div>
 		<script src="js/mui.min.js"></script>
 		<script src="js/myjs/jquery-1.11.1.min.js"></script>
+		<script src="js/myjs/Validform_v5.3.2_min.js"></script>
 		<script src="js/myjs/public.js"></script>
 		<script type="text/javascript">
 			jQuery(function() {
+				jQuery(".phoneGourp").Validform({
+					btnSubmit: "#sure02",
+					showAllError: true,
+					tiptype: 3
+				});
 				jQuery("#sure02")[0].addEventListener("tap", function() {
 					var phone = jQuery("#phone").val();
-					var yzm = jQuery("#yzm").val();					
+					var yzm = jQuery("#yzm").val();
 					if(!phone || !yzm) {
-						alert('请将信息填写完整！');
-					}
-				});
-				jQuery("#yzm-btn")[0].addEventListener("tap", function() {
-					var phone = jQuery("#phone").val();
-					var reg02 = /^1[34578]\d{9}$/;
-					if(!phone) {
-						alert("请输入手机号！");
 						return false;
-					} else {
-						if(!reg02.test(phone)) {
-							alert("手机号格式不正确！");
-							return false;
-						}else{
-							alert("短信发送成功!");
-						}
 					}
+					changeUserInfo(phone, yzm);
+				});
+
+				jQuery("#yzm-btn")[0].addEventListener("tap", function() {
+					clickDX(this, 60, 1);
 				});
 			});
+			//修改个人资料
+			function changeUserInfo(phone, phoneCode) {
+				var userId = 498;
+				var sendCode = localStorage.getItem("phoneCode").substr(11, localStorage.getItem("phoneCode").length);
+				if(phoneCode && sendCode != phoneCode) {
+					alert("验证码输入错误!");
+					return false;
+				}
+				$.ajax({
+					type: "post",
+					url: "http://www.toeflonline.cn/cn/wap-api/change-user-info?userId=" + userId + "&phone=" + phone + "&phoneCode=" + phoneCode,
+					dataType: "jsonp",
+					jsonp: "callback", //传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(默认为:callback)
+					jsonpCallback: "success_jsonpCallback", //自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名
+					success: function(data) {
+						localStorage.clear("phoneCode");
+						alert(data.message);
+						if(data.code == 1) {
+							closeme();
+							mui.openWindow({
+								id: "moreSet",
+								url: "moreSettings.html"
+							})
+						}
+					},
+					error: function() {
+						alert('fail');
+					}
+				});
+
+			}
 		</script>
 	</body>
 

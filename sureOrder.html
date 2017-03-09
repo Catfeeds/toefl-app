@@ -1,0 +1,128 @@
+<!doctype html>
+<html ng-app="myApp">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/mycss/public.css" rel="stylesheet" />
+		<link href="css/mycss/sureOrder.css" rel="stylesheet" />
+	</head>
+
+	<body ng-controller="PriceCtrl">
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left orangeColor"></a>
+			<h1 class="mui-title">确认订单信息</h1>
+		</header>
+
+		<div class="mui-content">
+			<div class="pay_one">
+				<div class="oneSort mui-row" id="showAdd">
+					<div class="col-xs-11 col-sm-11 mui-col-xs-11 mui-col-sm-11">
+						<ul>
+							<li>
+								<!--<div class="col-xs-1 col-sm-1">-->
+								<!--<img src="images/sureOrder_icon01.png" alt="图标"/>-->
+								<!--</div>-->
+								<div class="col-xs-12 col-sm-12 mui-col-sm-12 mui-col-xs-12">
+									<span>收货人：<span id="name_sh"></span></span>
+								</div>
+								<div class="clearBox"></div>
+							</li>
+							<li>
+								<!--<div class="col-xs-1 col-sm-1">-->
+								<!--<img src="images/sureOrder_icon02.png" alt="图标"/>-->
+								<!--</div>-->
+								<div class="col-xs-12 col-sm-12 mui-col-sm-12 mui-col-xs-12">
+									<span>联系电话：<span id="phone"></span></span>
+								</div>
+								<div class="clearBox"></div>
+							</li>
+							<li>
+								<!--<div class="col-xs-1 col-sm-1">-->
+								<!--<img src="images/sureOrder_icon03.png" alt="图标"/>-->
+								<!--</div>-->
+								<div class="col-xs-12 col-sm-12 mui-col-sm-12 mui-col-xs-12">
+									<span>收货地址：<span id="address_sh"></span></span>
+								</div>
+								<div class="clearBox"></div>
+							</li>
+						</ul>
+					</div>
+					<div class="col-xs-1 col-xm-1 mui-col-sm-1 mui-col-xs-1">
+						<img src="images/myimages/3@2x.png" alt="icon" />
+					</div>
+					<div class="mui-clearfix"></div>
+				</div>
+
+				<div class="twoSort">
+					<ul>
+						<li>
+							<div class="mui-row">
+								<div class="col-xs-10 col-sm-10 mui-col-sm-10 mui-col-xs-10">
+									<h2 id="courseName"></h2>
+									<span><span id="unitCost">400</span></span>
+								</div>
+								<div class="col-xs-2 col-sm-2 mui-col-sm-2 mui-col-xs-2">
+									<span>×<span id="num">1</span></span>
+								</div>
+								<div class="mui-clearfix"></div>
+							</div>
+						</li>
+						<li>
+							<div class="mui-row">
+								<div class="col-xs-7 col-sm-7 buyNumL mui-col-sm-7 mui-col-xs-7">
+									<span>购买数量</span>
+								</div>
+								<div class="col-xs-5 col-sm-5 buyNumR mui-col-sm-5 mui-col-xs-5">
+									<div class="btnGroup">
+										<input type="button" value="-" onclick="subtractNum(this)" />
+										<span id="totNum">1</span>
+										<input type="button" value="+" onclick="addNum(this)" />
+									</div>
+								</div>
+								<div class="mui-clearfix"></div>
+							</div>
+						</li>
+					</ul>
+				</div>
+
+				<div class="threeSort">
+					<ul>
+						<li>
+							<div class="mui-row">
+								<div class="col-xs-8 col-sm-8 mui-col-sm-8 mui-col-xs-8">
+									<span>金额总计</span>
+								</div>
+								<div class="col-xs-4 col-sm-4 mui-col-sm-4 mui-col-xs-4">
+									<span>￥<span id="totalP">400</span></span>
+								</div>
+								<div class="mui-clearfix"></div>
+							</div>
+						</li>
+					</ul>
+				</div>
+
+				<div class="payDiv mui-row">
+					<div class="col-xs-6 col-sm-6 mui-col-sm-6 mui-col-xs-6">
+						<div class="left-white">合计：<b>￥<span id="totalPrice">400</span></b></div>
+					</div>
+					<div class="col-xs-6 col-sm-6 mui-col-sm-6 mui-col-xs-6">
+						<div class="right-red" id="payCome">
+							<a href="javascript:void(0);">立即支付</a>
+						</div>
+					</div>
+					<div class="mui-clearfix"></div>
+				</div>
+			</div>
+		</div>
+
+		<script src="js/mui.min.js"></script>
+		<script src="js/myjs/jquery-1.11.1.min.js"></script>
+		<script src="js/myjs/public.js"></script>
+		<script src="js/myjs/sureOrder.js"></script>
+		<script src="js/myjs/angular1.3.1.js"></script>
+	</body>
+
+</html>

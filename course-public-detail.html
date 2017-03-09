@@ -1,0 +1,63 @@
+<!doctype html>
+<html ng-app="myApp">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/mycss/public.css" rel="stylesheet" />
+		<link href="css/mycss/course-live-detail.css" rel="stylesheet" />
+	</head>
+
+	<body ng-controller="PriceCtrl">
+    <input type="hidden" value="{{pid}}" id="pid"/>
+    <input type="hidden" value="{{courseId}}" id="courseId"/>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left orangeColor"></a>
+			<h1 class="mui-title">公开课详情</h1>
+		</header>
+		<!--<nav class="mui-bar mui-bar-tab bg-nowhite">
+			<button type="button" class="mui-btn mui-btn-warning orangeBg">立即购买</button>
+		</nav>-->
+		<div class="mui-content">
+			<div class="live-d-top">
+				<p class="title-p">{{name}}</p>
+				<ul>
+					<!--<li class="price-li">
+						<span class="redPrice">￥{{price}}</span>
+						<span class="oldPrice">原价:{{originalPrice}}</span>
+					</li>
+					<li class="choose-li" ng-repeat="tagT in tag" is-over="toggle.now">
+						<p class="choose-p">{{tagT.name}}：</p>
+						<div class="choose-all">
+							<span ng-class="{'on':'{{tagT.tagContentId}}'=='{{tagChild.id}}'}" data-myId="{{tagChild.id}}" 
+							ng-repeat="tagChild in tagT.child">{{tagChild.name}}</span>					
+						</div>
+						<div class="mui-clearfix"></div>
+					</li>-->
+					<li>
+						<p>主讲：{{listeningFile}}</p>
+					</li>
+					<!--<li>
+						<p>开课日期：{{numbering}}</p>
+					</li>-->
+				</ul>
+			</div>
+
+			<div class="live-d-bot">
+			    <p class="orangeColor">课程详情</p>
+				<div>{{alternatives}}</div>
+			</div>
+
+		</div>
+
+		<script src="js/mui.min.js"></script>
+		<script src="js/myjs/jquery-1.11.1.min.js"></script>
+		<script src="js/myjs/public.js"></script>
+		<script src="js/myjs/course-public-detail.js"></script>
+		<script src="js/myjs/angular1.3.1.js"></script>
+
+	</body>
+
+</html>

@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="myApp">
 
 	<head>
 		<meta charset="UTF-8">
@@ -11,18 +11,18 @@
 		<link href="css/mycss/hearing-practice.css" rel="stylesheet" />
 	</head>
 
-	<body>
+	<body ng-controller="PriceCtrl">
 		<header class="mui-bar mui-bar-nav">
 			<a href="hearing-way.html" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left orangeColor"></a>
-			<h1 class="mui-title">TPO 01-C1做题</h1>
+			<h1 class="mui-title">{{titleBig}}做题</h1>
 		</header>
 		<nav class="mui-bar mui-bar-tab bg-nowhite">
-			<a href="hearing-pra-test.html"><button type="button" class="mui-btn mui-btn-warning orangeBg">开始做题</button></a>
+			<button type="button" class="mui-btn mui-btn-warning orangeBg" id="startTest">开始做题</button>
 		</nav>
 		<div class="mui-content">
 			<div class="white-con">
 				<h2>请认真听完录音后开始答题</h2>
-				<p>Find articles in the library</p>
+				<p>{{name}}</p>
 				<div class="audio-box">
 					<!-- The jPlayer div must not be hidden. Keep it at the root of the body element to avoid any such problems. -->
 					<div id="jquery_jplayer_1" class="cp-jplayer"></div>
@@ -62,31 +62,9 @@
 		<script type="text/javascript" src="js/myjs/jquery.grab.js"></script>
 		<script type="text/javascript" src="js/myjs/mod.csstransforms.min.js"></script>
 		<script type="text/javascript" src="js/myjs/circle.player.js"></script>
-		<script type="text/javascript">
-			//<![CDATA[
-
-			$(document).ready(function() {
-
-				var myCirclePlayer = new CirclePlayer("#jquery_jplayer_1", {
-					mp3:"audio.mp3",
-					m4a: "",
-					oga: ""
-				}, {
-					cssSelectorAncestor: "#cp_container_1",
-					swfPath: "js/myjs",
-					wmode: "window",
-					keyEnabled: true,
-					supplied: "m4a, oga,mp3",
-					timeupdate: function(event) {
-						$(".jp-current-time").html($.jPlayer.convertTime(event.jPlayer.status.currentTime)) //获得当前时间
-						$(".jp-duration").html($.jPlayer.convertTime(event.jPlayer.status.duration)) //获得当前时间
-					}
-				});
-				//	为了小时能正常显示
-				$.jPlayer.timeFormatshowHour = true;
-			});
-			//]]>
-		</script>
+		<script type="text/javascript" src="js/myjs/hearing-practice.js"></script>
+		<script type="text/javascript" src="js/myjs/angular1.3.1.js"></script>
+		
 	</body>
 
 </html>

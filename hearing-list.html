@@ -19,12 +19,13 @@
 			<ul class="mui-table-view">
 			
 				<li class="mui-table-view-cell mui-media" ng-repeat="contentT in content"
-					 data-catname = "{{contentT.catName}}" data-title = "{{contentT.title}}">
+					 data-catname = "{{contentT.catName}}" data-title = "{{contentT.title}}" data-articleId="{{contentT.id}}">
 					<!--<a href="javascript:;">-->
 						<img class="mui-media-object mui-pull-right" src="images/myimages/Exercise7@2x.png" alt="箭头" style="height: 20px;position: relative;top: 10px;" />
 						<div class="mui-media-body">
 							{{contentT.name}}
-							<p class='mui-ellipsis'>正确率：0% 耗时：00:00h</p>
+							<p class='mui-ellipsis'>正确率：{{contentT.record | percentage}} 
+								&nbsp;&nbsp;耗时：{{contentT.record | times}}</p>
 						</div>
 					<!--</a>-->
 				</li>

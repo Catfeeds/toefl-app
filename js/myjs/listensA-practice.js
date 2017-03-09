@@ -42,8 +42,8 @@ jQuery(function() {
 		}).success(function(data) {
 			$scope.cnName = data.question.cnName;
 			$scope.alternatives = data.question.alternatives.split("\r");
-			$scope.listeningFile=data.question.listeningFile;
-				//			获取动态改变的当前题目数量(做到了第几道题) 只能再次请求
+			$scope.listeningFile = data.question.listeningFile;
+			//			获取动态改变的当前题目数量(做到了第几道题) 只能再次请求
 			$http({
 				method: 'post',
 				url: 'http://www.toeflonline.cn/cn/app-api/today-task',
@@ -54,7 +54,7 @@ jQuery(function() {
 					userId: userId
 				}
 			}).success(function(data) {
-				$scope.num=data.todayTask.intensiveListening.num;
+				$scope.num = data.todayTask.intensiveListening.num;
 			});
 			//			音频播放
 			jQuery("#jquery_jplayer_1").jPlayer({
@@ -70,12 +70,12 @@ jQuery(function() {
 				useStateClassSkin: true,
 				toggleDuration: true
 			});
-				mui(".mui-table-view").on("tap", ".mui-table-view-cell", function() {
+			mui(".mui-table-view").on("tap", ".mui-table-view-cell", function() {
 				jQuery(this).addClass("orange").siblings("li").removeClass("orange");
 			});
 			//          提交答案点击
 			jQuery("#subAnswer")[0].addEventListener("tap", function() {
-				
+
 				jQuery(this).hide().siblings("button").show();
 				jQuery(".mui-table-view-cell").each(function() {
 					var userAnswer = jQuery(this).attr("data-options");
@@ -99,13 +99,13 @@ jQuery(function() {
 					//             	  	alert("还没选择答案哦!");
 					//             	  }
 				});
-			jQuery("#title").removeClass("tranp");
+				jQuery("#title").removeClass("tranp");
 
 			});
-				//          下一题
+			//          下一题
 			jQuery("#next")[0].addEventListener("tap", function() {
 				var userId = localStorage.getItem('userId');
-				var type = "intensiveListening";			
+				var type = "intensiveListening";
 				$http({
 					method: 'post',
 					url: 'http://www.toeflonline.cn/cn/app-api/task-next',
@@ -120,16 +120,16 @@ jQuery(function() {
 					if(data.code == 2) {
 						jQuery(".mui-backdrop").show();
 					} else {
-
+//							closeme();
 						mui.openWindow({
+							id:"listensA-practice-"+$scope.num,
 							url: "listensA-practice.html"
 						});
-						
+
 					}
 				});
 			});
-			
-			
+
 		});
 	}]);
 	//	将数字0123转化为字母ABCD

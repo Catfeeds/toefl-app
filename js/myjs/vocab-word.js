@@ -1,7 +1,7 @@
 jQuery(function() {
 
 	var taskSession = localStorage.getItem("taskSession");
-	var userId =localStorage.getItem('userId');
+	var userId = localStorage.getItem('userId');
 	//声明模块
 	var myApp = angular.module("myApp", []);
 	myApp.directive('isOver', function() {
@@ -61,6 +61,18 @@ jQuery(function() {
 			});
 			//			下一题
 			jQuery("#next")[0].addEventListener("tap", function() {
+				$http({
+					method: 'post',
+					url: 'http://www.toeflonline.cn/cn/app-api/today-task',
+					headers: {
+						'Content-Type': 'application/x-www-form-urlencoded'
+					},
+					data: {
+						userId: userId
+					}
+				}).success(function(data) {
+					$scope.num = data.todayTask.keywords.num;
+				});
 				var userId = localStorage.getItem('userId');
 				var type = "keyWords";
 				$http({
@@ -77,9 +89,11 @@ jQuery(function() {
 					if(data.code == 2) {
 						jQuery(".mui-backdrop").show();
 					} else {
-
+//						closeme();
 						mui.openWindow({
-							url: "vocabulary.html"
+							id: "vocabulary.html" + $scope.num, //id保持传不一样的值，不然会出现跳转逻辑错误
+							url: "vocabulary.html",
+							createNew:true
 						});
 
 					}

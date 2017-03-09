@@ -1,0 +1,47 @@
+<!doctype html>
+<html ng-app="myApp">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/mycss/public.css" rel="stylesheet" />
+		<link href="css/mycss/course-public.css" rel="stylesheet" />
+	</head>
+
+	<body ng-controller="PriceCtrl">
+
+		<header class="mui-bar mui-bar-nav">
+			<a id="courseReturn" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left orangeColor"></a>
+			<h1 class="mui-title">公开课</h1>
+		</header>
+		<div class="mui-content">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell mui-media" ng-repeat="pubClassT in pubClass" data-id="{{pubClassT.id}}">
+					<!--<a href="javascript:;">-->
+					    <!--箭头--> 
+					    <img src="images/myimages/3@2x.png" alt="箭头图标" class="jian-icon"/>
+					    <div class="caleDiv orangeColor">
+					    <img src="images/myimages/CourseCalender@2x.png" alt="日历图标" height="15"/>
+					    <span>{{pubClassT.createTime}}</span>
+					    </div>
+						<img class="mui-media-object mui-pull-left" src="http://smartapply.gmatonline.cn{{pubClassT.image}}" style="border-radius: 50%;">
+						<div class="mui-media-body">
+							<div class='title-t mui-ellipsis'>{{pubClassT.name}}</div>
+							<p class='mui-ellipsis'>{{pubClassT.catName}}</p>
+						</div>
+					<!--</a>-->
+				</li>
+				
+			</ul>
+		</div>
+
+		<script src="js/mui.min.js"></script>
+		<script src="js/myjs/jquery-1.11.1.min.js"></script>
+		<script src="js/myjs/public.js"></script>
+		<script src="js/myjs/course-public.js"></script>
+		<script src="js/myjs/angular1.3.1.js"></script>
+	</body>
+
+</html>

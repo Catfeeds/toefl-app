@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="myApp">
 
 	<head>
 		<meta charset="UTF-8">
@@ -10,7 +10,7 @@
 		<link href="css/mycss/myCourse.css" rel="stylesheet" />
 	</head>
 
-	<body>
+	<body ng-controller="PriceCtrl">
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left orangeColor"></a>
 			<h1 class="mui-title">我的课程</h1>
@@ -18,94 +18,44 @@
 		<div class="mui-content">
 			<div style="background-color: white;">
 				<div id="segmentedControl" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-primary">
-					<a class="mui-control-item mui-active" href="#item1">
+					<!--<a class="mui-control-item mui-active" href="#item1">
 						全部
-					</a>
-					<a class="mui-control-item" href="#item2">
+					</a>-->
+					<a class="mui-control-item mui-active" href="#item2" data-status="3">
 						已付款
 					</a>
-					<a class="mui-control-item" href="#item3">
+					<a class="mui-control-item" href="#item3" data-status="1">
 						未付款
 					</a>
 				</div>
 			</div>
 			<div>
 				<div id="item1" class="mui-control-content mui-active">
-					<div class="mui-row">
+					
+					<!--<div class="mui-row" ng-repeat="courseT in course">
 						<div class="mui-col-sm-4 mui-col-xs-4">
 							<img src="images/cbd.jpg" />
 						</div>
 						<div class="mui-col-sm-8 mui-col-xs-8">
-							<h4>GMAT在线机经冲刺班</h4>
-							<p>购买数量：1 实付 <span class="orangeColor">￥2340</span></p>
-							<button type="button" class="mui-btn mui-btn-warning mui-btn-outlined orangeBorder">取消订单</button>
+							<h4>{{courseT.contentName}}</h4>
+							<p>购买数量：{{courseT.num}} 实付 <span class="orangeColor">￥{{courseT.price}}</span></p>
+							<button type="button" class="mui-btn mui-btn-warning mui-btn-outlined orangeBorder"
+								ng-show="'{{courseT.status}}'==3">取消订单</button>
+								<button type="button" class="mui-btn mui-btn-warning orangeBg"
+									ng-show="'{{courseT.status}}'==1">立即支付</button>
 						</div>
 						<div class="mui-clearfix"></div>
-					</div>
-					<div class="mui-row">
-						<div class="mui-col-sm-4 mui-col-xs-4">
-							<img src="images/cbd.jpg" />
-						</div>
-						<div class="mui-col-sm-8 mui-col-xs-8">
-							<h4>GMAT在线机经冲刺班</h4>
-							<p>购买数量：1 实付 <span class="orangeColor">￥2340</span></p>
-							<button type="button" class="mui-btn mui-btn-warning orangeBg">立即支付</button>
-						</div>
-						<div class="mui-clearfix"></div>
-					</div>
-					<div class="mui-row">
-						<div class="mui-col-sm-4 mui-col-xs-4">
-							<img src="images/cbd.jpg" />
-						</div>
-						<div class="mui-col-sm-8 mui-col-xs-8">
-							<h4>GMAT在线机经冲刺班</h4>
-							<p>购买数量：1 实付 <span class="orangeColor">￥2340</span></p>
-							<button type="button" class="mui-btn mui-btn-warning mui-btn-outlined orangeBorder">取消订单</button>
-						</div>
-						<div class="mui-clearfix"></div>
-					</div>
-					<div class="mui-row">
-						<div class="mui-col-sm-4 mui-col-xs-4">
-							<img src="images/cbd.jpg" />
-						</div>
-						<div class="mui-col-sm-8 mui-col-xs-8">
-							<h4>GMAT在线机经冲刺班</h4>
-							<p>购买数量：1 实付 <span class="orangeColor">￥2340</span></p>
-							<button type="button" class="mui-btn mui-btn-warning mui-btn-outlined orangeBorder">取消订单</button>
-						</div>
-						<div class="mui-clearfix"></div>
-					</div>
+					</div>-->
+			
 				</div>
-				<div id="item2" class="mui-control-content">
-					<div class="mui-row">
-						<div class="mui-col-sm-4 mui-col-xs-4">
-							<img src="images/cbd.jpg" />
-						</div>
-						<div class="mui-col-sm-8 mui-col-xs-8">
-							<h4>GMAT在线机经冲刺班</h4>
-							<p>购买数量：1 实付 <span class="orangeColor">￥2340</span></p>
-							<button type="button" class="mui-btn mui-btn-warning mui-btn-outlined orangeBorder">取消订单</button>
-						</div>
-						<div class="mui-clearfix"></div>
-					</div>
-				</div>
-				<div id="item3" class="mui-control-content">
-
-				</div>
+				
 			</div>
 		</div>
 		<script src="js/mui.min.js"></script>
 		<script src="js/myjs/jquery-1.11.1.min.js"></script>
 		<script src="js/myjs/public.js"></script>
-		<script type="text/javascript">
-			jQuery(function() {
-				mui(".mui-control-content").on("tap", ".mui-row", function() {
-					mui.openWindow({
-						url: "myCourse-details.html"
-					})
-				})
-			})
-		</script>
+		<script src="js/myjs/myCourse.js"></script>
+		<script src="js/myjs/angular1.3.1.js"></script>
 	</body>
 
 </html>

@@ -14,6 +14,7 @@ header{
 	color: #333333;
 }
 .slideBd ul li.on{
+	color: #FF6600;
 	border-bottom: 1px #FF6600 solid;
 }
 .slideBd ul li.on a{

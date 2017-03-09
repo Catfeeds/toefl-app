@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="myApp">>
 
 	<head>
 		<meta charset="UTF-8">
@@ -10,53 +10,51 @@
 		<link href="css/mycss/course-class-detail.css" rel="stylesheet" />
 	</head>
 
-	<body>
+	<body ng-controller="PriceCtrl">
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left orangeColor"></a>
-			<h1 class="mui-title">Amanda</h1>
+			<h1 class="mui-title">{{name}}</h1>
 		</header>
 		<nav class="mui-bar mui-bar-tab bg-nowhite">
 			<a href="#popover" id="openPopover"><button type="button" class="mui-btn mui-btn-warning orangeBg">预约课程</button></a>
 		</nav>
 		<div id="popover" class="mui-popover">
-		      <div class="white-line"></div>
-		      <div class="white-con">
-		      	<div class="center-black-d"></div>
-		      	<img src="images/myimages/Course37@2x.png" alt="关闭图标" id="close-img"/>
-		        <ul>
-		        	<li>
-		        		<span>
+			<div class="white-line"></div>
+			<div class="white-con">
+				<div class="center-black-d"></div>
+				<img src="images/myimages/Course37@2x.png" alt="关闭图标" id="close-img" />
+				<ul>
+					<li>
+						<span>
 		        			<b>*</b>
 		        			请输入您的姓名：
 		        		</span>
-		        		<input type="text" placeholder="请填写"/>
-		        	</li>
-		        	<li>
-		        		<span>
+						<input type="text" placeholder="请填写" id="stuName"/>
+					</li>
+					<li>
+						<span>
 		        			<b>*</b>
 		        			请输入您的电话：
 		        		</span>
-		        		<input type="text" placeholder="请填写"/>
-		        	</li>
-		        </ul>
-		        <p>我们将会在一个工作日内与您取得联系哦~</p>
-		        <button type="button" class="mui-btn mui-btn-success">确认提交</button>
-		      </div>
+						<input type="text" placeholder="请填写" id="stuPhone"/>
+					</li>
+				</ul>
+				<p>我们将会在一个工作日内与您取得联系哦~</p>
+				<button type="button" class="mui-btn mui-btn-success" id="sureTiJiao">确认提交</button>
+			</div>
 		</div>
 		<div class="mui-content">
 			<div class="mui-row cou-c-t">
 				<div class="mui-col-sm-4 mui-col-xs-4">
 					<div class="tea-img">
-						<img src="images/60x60.gif" alt="图片" />
+						<img src="http://www.toeflonline.cn/{{image}}" alt="图片" />
 					</div>
 				</div>
 				<div class="mui-col-sm-8 mui-col-xs-8">
-					<h2>Amanda</h2>
+					<h2>{{name}}</h2>
 					<ul>
-						<li class="mui-ellipsis">GMAT新派宗师</li>
-						<li class="mui-ellipsis">留学规划与英语教育名家</li>
-						<li class="mui-ellipsis">新TOEFL名师</li>
-						<li class="mui-ellipsis">申友联合创始人</li>
+						<li class="mui-ellipsis" ng-repeat="performanceT in performance">{{performanceT}}</li>
+
 					</ul>
 				</div>
 				<div class="mui-clearfix"></div>
@@ -65,25 +63,17 @@
 				<div class="grey-title">个人简介</div>
 				<div class="jian-con">
 					<p>
-						申友联合创始人,国内较早的一批新托福教师留学英语名师，培养托福教师、 雅思教师、GMAT讲师数人。长期专注海外留学规划和出国考试研究，培养留学学生过万，遍布世界名校。留学考试学术成果：“新托福听力阈值训练法”、“新托福万能口语法”、“雅思西方批判式作文法”等，是留学英语考试的集大成者。在国内研发“新托福四化一中心作文法”。研发和出版多本留学英语培训教材，并不断优化教学方法。
+						{{description}}
 					</p>
 				</div>
 			</div>
 			<div class="cou-c-b">
 				<div class="grey-title">主讲课程</div>
 				<div class="mui-row zhujiang-con">
-					<div class="mui-col-sm-6 mui-col-xs-6">
-						<div class="orange-piece">托福口语单项冲刺</div>
+					<div class="mui-col-sm-6 mui-col-xs-6" ng-repeat="speakT in speak">
+						<div class="orange-piece mui-ellipsis"> {{speakT}}</div>
 					</div>
-					<div class="mui-col-sm-6 mui-col-xs-6">
-						<div class="orange-piece">托福口语单项冲刺</div>
-					</div>
-					<div class="mui-col-sm-6 mui-col-xs-6">
-						<div class="orange-piece">托福口语单项冲刺</div>
-					</div>
-					<div class="mui-col-sm-6 mui-col-xs-6">
-						<div class="orange-piece">托福口语单项冲刺</div>
-					</div>
+
 					<div class="mui-clearfix"></div>
 				</div>
 			</div>
@@ -92,15 +82,8 @@
 		<script src="js/mui.min.js"></script>
 		<script src="js/myjs/jquery-1.11.1.min.js"></script>
 		<script src="js/myjs/public.js"></script>
-		<script type="text/javascript">
-			jQuery(function() {
-				jQuery(".tea-img").css("height", jQuery(".tea-img").width() + 10);
-//				关闭弹窗
-                 jQuery("#close-img")[0].addEventListener("tap",function(){
-                 	mui('#popover').popover('hide');
-                 })
-			})
-		</script>
+		<script src="js/myjs/course-class-detail.js"></script>
+		<script src="js/myjs/angular1.3.1.js"></script>
 	</body>
 
 </html>

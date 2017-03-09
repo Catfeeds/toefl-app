@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="myApp">
 
 	<head>
 		<meta charset="UTF-8">
@@ -10,91 +10,58 @@
 		<link href="css/mycss/course-class.css" rel="stylesheet" />
 	</head>
 
-	<body>
+	<body ng-controller="PriceCtrl">
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left orangeColor"></a>
 			<h1 class="mui-title">约课</h1>
 		</header>
+		<div id="popover" class="mui-popover">
+			<div class="white-line"></div>
+			<div class="white-con">
+				<div class="center-black-d"></div>
+				<img src="images/myimages/Course37@2x.png" alt="关闭图标" id="close-img" />
+				<ul>
+					<li>
+						<span>
+		        			<b>*</b>
+		        			请输入您的姓名：
+		        		</span>
+						<input type="text" placeholder="请填写" id="stuName" />
+					</li>
+					<li>
+						<span>
+		        			<b>*</b>
+		        			请输入您的电话：
+		        		</span>
+						<input type="text" placeholder="请填写" id="stuPhone" />
+					</li>
+				</ul>
+				<p>我们将会在一个工作日内与您取得联系哦~</p>
+				<button type="button" class="mui-btn mui-btn-success" id="sureTiJiao">确认提交</button>
+			</div>
+		</div>
 		<div class="mui-content">
 			<ul class="mui-table-view">
-				<li class="mui-table-view-cell mui-media">
-					<a href="javascript:void(0);">
-						<img class="mui-media-object mui-pull-left" src="images/60x60.gif" style="border-radius: 50%;">
+				<li class="mui-table-view-cell mui-media" ng-repeat="teacherT in teacher">
+					<a href="javascript:void(0);" data-ids="{{teacherT.id}}">
+						<div class="mui-media-object mui-pull-left left-tea">
+							<img src="http://www.toeflonline.cn{{teacherT.image}}">
+						</div>
 						<div class="mui-media-body">
-							Amanda
-							<button type="button" class="mui-btn mui-btn-success subscribe">预约</button>
+							{{teacherT.name}}							
 							<div class="custom-line"></div>
-							<p class='mui-ellipsis-2'>能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？使劲疯加上动画见到帅哥就贷款</p>
+							<p class='mui-ellipsis-2'>{{teacherT.performance}}</p>
 						</div>
 					</a>
-				</li>
-			</ul>
-			<ul class="mui-table-view">
-				<li class="mui-table-view-cell mui-media">
-					<a href="javascript:void(0);">
-						<img class="mui-media-object mui-pull-left" src="images/60x60.gif" style="border-radius: 50%;">
-						<div class="mui-media-body">
-							Amanda
-							<button type="button" class="mui-btn mui-btn-success subscribe">预约</button>
-							<div class="custom-line"></div>
-							<p class='mui-ellipsis-2'>介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍</p>
-						</div>
-					</a>
-				</li>
-			</ul>
-			<ul class="mui-table-view">
-				<li class="mui-table-view-cell mui-media">
-					<a href="javascript:void(0);">
-						<img class="mui-media-object mui-pull-left" src="images/60x60.gif" style="border-radius: 50%;">
-						<div class="mui-media-body">
-							Amanda
-							<button type="button" class="mui-btn mui-btn-success subscribe">预约</button>
-							<div class="custom-line"></div>
-							<p class='mui-ellipsis-2'>介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍</p>
-						</div>
-					</a>
-				</li>
-			</ul>
-			<ul class="mui-table-view">
-				<li class="mui-table-view-cell mui-media">
-					<a href="javascript:void(0);">
-						<img class="mui-media-object mui-pull-left" src="images/60x60.gif" style="border-radius: 50%;">
-						<div class="mui-media-body">
-							Amanda
-							<button type="button" class="mui-btn mui-btn-success subscribe">预约</button>
-							<div class="custom-line"></div>
-							<p class='mui-ellipsis-2'>介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍</p>
-						</div>
-					</a>
-				</li>
-			</ul>
-			<ul class="mui-table-view">
-				<li class="mui-table-view-cell mui-media">
-					<a href="javascript:void(0);">
-						<img class="mui-media-object mui-pull-left" src="images/60x60.gif" style="border-radius: 50%;">
-						<div class="mui-media-body">
-							Amanda
-							<button type="button" class="mui-btn mui-btn-success subscribe">预约</button>
-							<div class="custom-line"></div>
-							<p class='mui-ellipsis-2'>介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍</p>
-						</div>
-					</a>
-				</li>
+					<button type="button" class="mui-btn mui-btn-success subscribe" data-ids="{{teacherT.id}}">预约</button>
 			</ul>
 		</div>
 
 		<script src="js/mui.min.js"></script>
 		<script src="js/myjs/jquery-1.11.1.min.js"></script>
 		<script src="js/myjs/public.js"></script>
-		<script type="text/javascript">
-			jQuery(function(){
-				mui(".mui-content").on("tap",".mui-table-view",function(){
-					mui.openWindow({
-						url:"course-class-detail.html"
-					})
-				});
-			});
-		</script>
+		<script src="js/myjs/course-class.js"></script>
+		<script src="js/myjs/angular1.3.1.js"></script>
 	</body>
 
 </html>

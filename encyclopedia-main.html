@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/mycss/bottomNav.css" rel="stylesheet" />
+		<link href="css/mycss/public.css" rel="stylesheet" />
+		<link href="css/mycss/encyclopedia.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<!-- 主页面标题 -->
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title mui-row">
+						<div class="mui-col-sm-2 mui-col-xs-2"></div>
+						<div class="mui-col-sm-4 mui-col-xs-4">
+							<span class="on">推荐</span> 
+						</div>
+						<div class="mui-col-sm-4 mui-col-xs-4" id="bbs">
+							<span>社区</span>
+						</div>
+						<div class="mui-col-sm-2 mui-col-xs-2"></div>
+						<div class="mui-clearfix"></div>
+					</h1>
+		</header>
+
+		<div class="mui-content"></div>
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script src="js/myjs/jquery-1.11.1.min.js"></script>
+	<script src="js/myjs/public.js"></script>
+	<script type="text/javascript">
+	   jQuery(function(){
+	   	jumpPage("#bbs", "encyclopedia-bbs.html");
+	   	
+	   });
+		//启用双击监听
+		mui.init({
+			gestureConfig: {
+				doubletap: true
+			},
+			subpages: [{
+				url: 'encyclopedia.html',
+				id: 'encyclopedia',
+				styles: {
+					top: '45px',
+					bottom: '0px',
+				}
+			}]
+		});
+
+		var contentWebview = null;
+		document.querySelector('header').addEventListener('doubletap', function() {
+			if(contentWebview == null) {
+				contentWebview = plus.webview.currentWebview().children()[0];
+			}
+			contentWebview.evalJS("mui('#pullrefresh').pullRefresh().scrollTo(0,0,100)");
+		});
+	
+	</script>
+
+</html>

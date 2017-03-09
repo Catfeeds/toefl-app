@@ -1,0 +1,264 @@
+#totNum{
+position: relative;
+top: 5px;
+}
+.pay_one{
+    width: 100%;
+    background: #ffffff;
+    font-size: 1em;
+}
+.oneSort{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+.oneSort ul li{
+    margin-top: 10px;
+}
+.oneSort ul li .col-xs-1 img{
+    width: 70%;
+    vertical-align: middle;
+}
+.oneSort ul li .col-xs-11 span{
+    /*margin-left: 5%;*/
+}
+.oneSort>.col-xs-1{
+    text-align: right;
+}
+.oneSort>.col-xs-1 img{
+    width: 50%;
+    margin-top: 50px;
+}
+.twoSort{
+    width: 100%;
+    margin-top: 20px;
+}
+.twoSort ul li{
+    padding: 10px 0;
+    border-top: 1px #d0d0d0 solid;
+    background: white;
+}
+.twoSort ul li:last-child{
+    border-bottom: 1px #d0d0d0 solid;
+}
+.twoSort ul li .col-xs-10 h2{
+    font-size: 1em;
+    margin-bottom: 10px;
+    margin-left: 15px;
+    font-weight: normal;
+}
+.twoSort ul li .col-xs-10 span{
+    color: #f02e35;
+}
+.twoSort ul li .col-xs-10>span{
+    margin-left: 15px;
+}
+.twoSort ul li .col-xs-2{
+    /*text-align: right;*/
+    font-size: 1em;
+}
+.twoSort ul li .buyNumL{
+    margin-top: 5px;
+    padding-left: 5% !important;
+    font-size: 1em;
+}
+.twoSort ul li .buyNumR{
+    text-align: right;
+}
+.btnGroup{
+    width: 100%;
+    padding-right: 10px;
+}
+.twoSort ul li .buyNumR input{
+    background: #e6e6e6;
+    color: #b3b3b3;
+    border: none;
+    padding: 10px;
+}
+.twoSort ul li .buyNumR span{
+    width: 35%;
+    display: inline-block;
+    font-size: 1.2em;
+    padding: 0 8%;
+    text-align: center;
+}
+.threeSort{
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 150px;
+}
+.threeSort ul li{
+    background: white;
+    border-top: 1px #d0d0d0 solid;
+    border-bottom: 1px #d0d0d0 solid;
+    padding: 10px 0;
+}
+.threeSort ul li .col-xs-8{
+    font-size: 1em;
+    padding-left: 5%!important;
+}
+.threeSort ul li .col-xs-4{
+    font-size: 1em;
+    color: #f02e35;
+    text-align: right;
+    padding-right: 10%!important;
+}
+.payDiv{
+    width: 100%;
+    background: white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 11;
+}
+.left-white{
+    font-size: 1em;
+    padding: 10px 0 10px 10%;
+}
+.left-white b{
+    color: #f02e35;
+    font-weight: normal;
+}
+.right-red{
+    background: #f23131;
+    text-align: center;
+    font-size: 1em;
+}
+.right-red a{
+    width: 100%;
+    height: 100%;
+    display: block;
+    color: white;
+    padding: 10px 0;
+}
+.pay_two{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 10px;
+    /*display: none;*/
+}
+.pay_two ul li{
+    margin-top: 10px;
+}
+.pay_two ul li select{
+    width: 95%;
+    /*height: 30px;*/
+    border: 1px #aaaaaa solid;
+    font-size: 0.8em;
+}
+.pay_two ul li p{
+    margin-bottom: 10px;
+}
+.pay_two ul li p span{
+    color: #e8313a;
+}
+.pay_two ul li input{
+    height: 30px;
+    border: 1px #c4c4c4 solid;
+    border-radius: 3px;
+    /*background: none;*/
+}
+.pay_two ul li:first-child input{
+    width: 32%;
+    padding-left: 2%;
+}
+.pay_two ul li:nth-child(3) input{
+    width: 100%;
+}
+.pay_two ul li:nth-child(4) input,.pay_two ul li:nth-child(5) input{
+    width: 40%;
+}
+.pay_two ul li:nth-child(5) span{
+    font-size: 0.6em;
+}
+.pay_two ul li:last-child input{
+    float: right;
+    background: #f86a05;
+    color: white;
+    border-radius: 3px;
+    padding: 2px 5px;
+    font-size: 0.8em;
+    border: none;
+}
+.pay_three{
+    width: 100%;
+    /*display: none;*/
+}
+.pay_three>ul>li{
+    padding: 20px 0 10px 0;
+    margin-top: 10px;
+    background: #ffffff;
+}
+.address{
+    width: 90%;
+    margin: 0 auto;
+    border-bottom: 1px #aaaaaa solid;
+}
+.address ul li{
+    margin-bottom: 10px;
+}
+.address ul li .col-xs-1{
+    text-align: center;
+}
+.address ul li img{
+    width: 70%;
+}
+.icon_default{
+    width: 10%;
+    /*height: 20px;*/
+    background: url("../../images/myimages/sureOrder_default02.png") no-repeat center;
+    background-size: 100% 100%;
+    display: inline-block;
+    position: relative;
+    top: 3px;
+    margin-right: 2%;
+}
+.icon_default.on{
+    background: url("../../images/myimages/sureOrder_default.png") no-repeat center;
+    background-size: 100% 100%;
+}
+.address ul li span{
+    margin-left: 5%;
+}
+.editControls{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+.editControls img{
+    height: 18px;
+    position: relative;
+    top: -2px;
+}
+.editControls .col-xs-2{
+    text-align: right;
+}
+.addNew{
+    width: 100%;
+    color: #ffffff;
+    background: #ff6702;
+    text-align: center;
+    /*position: fixed;
+    bottom: 0;
+    left: 0;*/
+    padding: 10px 0;
+}
+.addNew a{
+    width: 100%;
+    height: 100%;
+    display: block;
+    color: #ffffff;
+}
+.pay_three ul{
+    /*display: none;*/
+}
+.noAddress{
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    display: none;
+}
+.noAddress span{
+    color: red;
+    font-family: '楷体';
+}

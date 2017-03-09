@@ -5,7 +5,18 @@ jQuery(function() {
 		tiptype: 3
 	});
 	jQuery("#yzm-btn")[0].addEventListener("tap", function() {
-		clickDX(this, 60, 1);
+		var val=jQuery("#reg-phem").val();
+		var timeStr='';
+		var typeStr='';
+		var regPhone=/^1[0-9]{10}$/;
+		if(regPhone.test(val)){
+			timeStr=60;
+			typeStr=1;
+		}else{
+			timeStr=120;
+			typeStr=2;
+		}
+		clickDX(this, timeStr, typeStr);
 	});
 	jQuery("#sub_reg")[0].addEventListener("tap", function() {
 		registerSub();
@@ -18,7 +29,7 @@ function registerSub(){
     var password=$("#reg-password").val();
     var code_yz=$("#reg-yzm").val();
     var repass=$("#reg-repassword").val();
-    var phoneCode=getCookie("phoneCode");
+    var phoneCode=localStorage.getItem("phoneCode");
   
     if(username && regphem && password && code_yz && repass && phoneCode){
         $.ajax({
@@ -40,7 +51,9 @@ function registerSub(){
                 alert(data.message);
                 if(data.code==1){
                     subLogin("#reg-phem","#reg-password");
-                    delCookie("phoneCode");
+//                  delCookie("phoneCode");
+                    localStorage.clear("phoneCode");
+                    localStorage.clear("emailCode");
                 }
             },
             error:function(){

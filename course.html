@@ -8,14 +8,15 @@
 		<link href="css/mui.min.css" rel="stylesheet" />
 		<link href="css/mycss/bottomNav.css" rel="stylesheet" />
 		<link href="css/mycss/public.css" rel="stylesheet" />
-		<link rel="stylesheet" type="text/css" href="css/mycss/course.css"/>
+		<link rel="stylesheet" type="text/css" href="css/mycss/course.css" />
 	</head>
+
 	<body>
 		<!-- 主界面不动、菜单移动 -->
-<!-- 侧滑导航根容器 -->
-<div class="mui-off-canvas-wrap mui-draggable mui-slide-in">
-  <!-- 菜单容器 -->
-<!--  <aside class="mui-off-canvas-left" id="offCanvasSide">
+		<!-- 侧滑导航根容器 -->
+		<div class="mui-off-canvas-wrap mui-draggable mui-slide-in">
+			<!-- 菜单容器 -->
+			<!--  <aside class="mui-off-canvas-left" id="offCanvasSide">
     <div class="mui-scroll-wrapper">
       <div class="mui-scroll">
         <!-- 菜单具体展示内容 
@@ -29,79 +30,90 @@
       </div>
     </div>
   </aside>-->
-  <!-- 主页面容器 -->
-  <div class="mui-inner-wrap">
-    <!-- 主页面标题 -->
-    <header class="mui-bar mui-bar-nav">
-      <h1 class="mui-title">约课</h1>
-    </header>
-    <nav class="mui-bar mui-bar-tab">
-	    <a href="index.html" class="mui-tab-item">
-	        <span class="bgCom bg01"></span>
-	        <span class="mui-tab-label">做题练习</span>
-	    </a>
-	    <!--<a class="mui-tab-item">
+			<!-- 主页面容器 -->
+			<div class="mui-inner-wrap">
+				<!-- 主页面标题 -->
+				<header class="mui-bar mui-bar-nav">
+					<h1 class="mui-title">约课</h1>
+				</header>
+				<nav class="mui-bar mui-bar-tab">
+					<a class="mui-tab-item" id="fixed-1">
+						<span class="bgCom bg01"></span>
+						<span class="mui-tab-label">做题练习</span>
+					</a>
+					<!--<a class="mui-tab-item">
 	        <span class="bgCom bg03"></span>
 	        <span class="mui-tab-label">模考</span>
 	    </a>-->
-	    <a href="javascript:void(0);" class="mui-tab-item mui-active">
-	        <span class="bgCom bg02"></span>
-	        <span class="mui-tab-label">在线课程</span>
-	    </a>
-	    <a href="encyclopedia.html" class="mui-tab-item">
-	       <span class="bgCom bg03"></span>
-	        <span class="mui-tab-label">托福圈</span>
-	    </a>
-	    <a href="personalCenter.html" class="mui-tab-item">
-	        <span class="bgCom bg04"></span>
-	        <span class="mui-tab-label">个人中心</span>
-	    </a>
-	</nav>
-    <div class="mui-content mui-scroll-wrapper">
-      <div class="mui-scroll">
-        <!-- 主界面具体展示内容 -->       
-		<ul>
-			<li>
-			    <a href="course-listen.html">
-			     <img src="images/myimages/Course10@2x.png" alt="图标" />
-			     <p>试听课</p>
-			    </a>
-			</li>
-			<li>
-			  <a href="course-live.html">
-			     <img src="images/myimages/Course32@2x.png" alt="图标" />
-			     <p>直播课</p>
-			    </a>
-			</li>
-			<li>
-			  <a href="course-live.html">
-			     <img src="images/myimages/Course33@2x.png" alt="图标" />
-			     <p>公开课</p>
-			    </a>
-			</li>
-			<li>
-			  <a href="course-class.html">
-			     <img src="images/myimages/Course34@2x.png" alt="图标" />
-			     <p>约课</p>
-			    </a>
-			</li>
-		</ul>
-		  
-      </div><!--mui-scroll-->
-    </div>  
-    <div class="mui-off-canvas-backdrop"></div>
-  </div>
-</div>
+					<a class="mui-tab-item mui-active" id="fixed-2">
+						<span class="bgCom bg02"></span>
+						<span class="mui-tab-label">在线课程</span>
+					</a>
+					<a class="mui-tab-item" id="fixed-3">
+						<span class="bgCom bg03"></span>
+						<span class="mui-tab-label">托福圈</span>
+					</a>
+					<a class="mui-tab-item" id="fixed-4">
+						<span class="bgCom bg04"></span>
+						<span class="mui-tab-label">个人中心</span>
+					</a>
+				</nav>
+				<div class="mui-content mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<!-- 主界面具体展示内容 -->
+						<ul>
+							<li id="shiting">
+								<a href="javascript:void(0);">
+									<img src="images/myimages/Course10@2x.png" alt="图标" />
+									<p>试听课</p>
+								</a>
+							</li>
+							<li id="zhibo">
+								<a href="javascript:void(0);">
+									<img src="images/myimages/Course32@2x.png" alt="图标" />
+									<p>直播课</p>
+								</a>
+							</li>
+							<li id="gongkai">
+								<a href="javascript:void(0);">
+									<img src="images/myimages/Course33@2x.png" alt="图标" />
+									<p>公开课</p>
+								</a>
+							</li>
+							<li id="yueke">
+								<a href="javascript:void(0);">
+									<img src="images/myimages/Course34@2x.png" alt="图标" />
+									<p>约课</p>
+								</a>
+							</li>
+						</ul>
+
+					</div>
+					<!--mui-scroll-->
+				</div>
+				<div class="mui-off-canvas-backdrop"></div>
+			</div>
+		</div>
 		<script src="js/mui.min.js"></script>
 		<script src="js/myjs/jquery-1.11.1.min.js"></script>
 		<script src="js/myjs/public.js"></script>
-        <script type="text/javascript">
-        jQuery(function(){
-           jQuery(".mui-content ul li").each(function(){
-               jQuery(this).css("height",jQuery(".mui-content").height()/4);
-           });
-        })
-        </script>
+		<script type="text/javascript">
+			jQuery(function() {
+				jQuery(".mui-content ul li").each(function() {
+					jQuery(this).css("height", jQuery(".mui-content").height() / 4);
+				});
+				jumpPage("#shiting", "course-listen.html");
+				jumpPage("#zhibo", "course-live.html");
+				jumpPage("#gongkai", "course-public.html");
+				jumpPage("#yueke", "course-class.html");
+				//				底部导航跳转
+				jumpPage("#fixed-1","index.html",1);
+	jumpPage("#fixed-2","course.html",1);
+	jumpPage("#fixed-3","encyclopedia-main.html",1);
+	jumpPage("#fixed-4","personalCenter.html",1);
+
+			})
+		</script>
 
 	</body>
 
