@@ -2,130 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f0a8e00-5896-4602-b230-f8c435254ac6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/toefl-app.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/mycss/circle.player.css" afterPath="$PROJECT_DIR$/css/mycss/circle.player.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/myjs/circle.player.js" afterPath="$PROJECT_DIR$/js/myjs/circle.player.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/mycss/course-class-detail.css" afterPath="$PROJECT_DIR$/css/mycss/course-class-detail.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/course-class-detail.html" afterPath="$PROJECT_DIR$/course-class-detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/mycss/course-class.css" afterPath="$PROJECT_DIR$/css/mycss/course-class.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/course-class.html" afterPath="$PROJECT_DIR$/course-class.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/course-lis-detail.html" afterPath="$PROJECT_DIR$/course-lis-detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/mycss/course-listen.css" afterPath="$PROJECT_DIR$/css/mycss/course-listen.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/course-listen.html" afterPath="$PROJECT_DIR$/course-listen.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/mycss/course-live-detail.css" afterPath="$PROJECT_DIR$/css/mycss/course-live-detail.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/course-live-detail.html" afterPath="$PROJECT_DIR$/course-live-detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/mycss/course-live.css" afterPath="$PROJECT_DIR$/css/mycss/course-live.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/course-live.html" afterPath="$PROJECT_DIR$/course-live.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/course.html" afterPath="$PROJECT_DIR$/course.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/encyclopedia-bbs-details.html" afterPath="$PROJECT_DIR$/encyclopedia-bbs-details.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/myjs/encyclopedia-bbs-details.js" afterPath="$PROJECT_DIR$/js/myjs/encyclopedia-bbs-details.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/mycss/encyclopedia-bbs.css" afterPath="$PROJECT_DIR$/css/mycss/encyclopedia-bbs.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/encyclopedia-bbs.html" afterPath="$PROJECT_DIR$/encyclopedia-bbs.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/myjs/encyclopedia-bbs.js" afterPath="$PROJECT_DIR$/js/myjs/encyclopedia-bbs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/encyclopedia-details.html" afterPath="$PROJECT_DIR$/encyclopedia-details.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/mycss/encyclopedia-postings.css" afterPath="$PROJECT_DIR$/css/mycss/encyclopedia-postings.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/encyclopedia-postings.html" afterPath="$PROJECT_DIR$/encyclopedia-postings.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/myjs/encyclopedia-postings.js" afterPath="$PROJECT_DIR$/js/myjs/encyclopedia-postings.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/encyclopedia.html" afterPath="$PROJECT_DIR$/encyclopedia.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/mycss/extensive.css" afterPath="$PROJECT_DIR$/css/mycss/extensive.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extensive.html" afterPath="$PROJECT_DIR$/extensive.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/myjs/extensive.js" afterPath="$PROJECT_DIR$/js/myjs/extensive.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/feedback.html" afterPath="$PROJECT_DIR$/feedback.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/foundPassword.html" afterPath="$PROJECT_DIR$/foundPassword.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/mycss/grammar-practice.css" afterPath="$PROJECT_DIR$/css/mycss/grammar-practice.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grammar-practice.html" afterPath="$PROJECT_DIR$/grammar-practice.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/myjs/grammar-practice.js" afterPath="$PROJECT_DIR$/js/myjs/grammar-practice.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/mycss/grammar.css" afterPath="$PROJECT_DIR$/css/mycss/grammar.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grammar.html" afterPath="$PROJECT_DIR$/grammar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/mycss/hearing-answerKeys.css" afterPath="$PROJECT_DIR$/css/mycss/hearing-answerKeys.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hearing-answerKeys.html" afterPath="$PROJECT_DIR$/hearing-answerKeys.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/myjs/hearing-answerKeys.js" afterPath="$PROJECT_DIR$/js/myjs/hearing-answerKeys.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hearing-list.html" afterPath="$PROJECT_DIR$/hearing-list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/myjs/hearing-list.js" afterPath="$PROJECT_DIR$/js/myjs/hearing-list.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/mycss/hearing-pra-test.css" afterPath="$PROJECT_DIR$/css/mycss/hearing-pra-test.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hearing-pra-test.html" afterPath="$PROJECT_DIR$/hearing-pra-test.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/myjs/hearing-pra-test.js" afterPath="$PROJECT_DIR$/js/myjs/hearing-pra-test.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hearing-practice.html" afterPath="$PROJECT_DIR$/hearing-practice.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/mycss/hearing-quietly.css" afterPath="$PROJECT_DIR$/css/mycss/hearing-quietly.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hearing-quietly.html" afterPath="$PROJECT_DIR$/hearing-quietly.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/myjs/hearing-quietly.js" afterPath="$PROJECT_DIR$/js/myjs/hearing-quietly.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hearing-way.html" afterPath="$PROJECT_DIR$/hearing-way.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/myjs/hearing-way.js" afterPath="$PROJECT_DIR$/js/myjs/hearing-way.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/mycss/hearing.css" afterPath="$PROJECT_DIR$/css/mycss/hearing.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hearing.html" afterPath="$PROJECT_DIR$/hearing.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/mycss/index.css" afterPath="$PROJECT_DIR$/css/mycss/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/myjs/index.js" afterPath="$PROJECT_DIR$/js/myjs/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/myjs/jquery.grab.js" afterPath="$PROJECT_DIR$/js/myjs/jquery.grab.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/myjs/jquery.transform2d.js" afterPath="$PROJECT_DIR$/js/myjs/jquery.transform2d.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/listenRecord.html" afterPath="$PROJECT_DIR$/listenRecord.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/listensA-practice.html" afterPath="$PROJECT_DIR$/listensA-practice.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/myjs/listensA-practice.js" afterPath="$PROJECT_DIR$/js/myjs/listensA-practice.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/listensArticles.html" afterPath="$PROJECT_DIR$/listensArticles.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/mycss/login.css" afterPath="$PROJECT_DIR$/css/mycss/login.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/login.html" afterPath="$PROJECT_DIR$/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/myjs/login.js" afterPath="$PROJECT_DIR$/js/myjs/login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manifest.json" afterPath="$PROJECT_DIR$/manifest.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/mycss/message.css" afterPath="$PROJECT_DIR$/css/mycss/message.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/message.html" afterPath="$PROJECT_DIR$/message.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/myjs/mod.csstransforms.min.js" afterPath="$PROJECT_DIR$/js/myjs/mod.csstransforms.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/mycss/moreSettings.css" afterPath="$PROJECT_DIR$/css/mycss/moreSettings.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/moreSettings.html" afterPath="$PROJECT_DIR$/moreSettings.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myCourse-details.html" afterPath="$PROJECT_DIR$/myCourse-details.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/mycss/myCourse-detials.css" afterPath="$PROJECT_DIR$/css/mycss/myCourse-detials.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myCourse.html" afterPath="$PROJECT_DIR$/myCourse.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/notebook-details.html" afterPath="$PROJECT_DIR$/notebook-details.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/mycss/notebook.css" afterPath="$PROJECT_DIR$/css/mycss/notebook.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/notebook.html" afterPath="$PROJECT_DIR$/notebook.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/mycss/personalCenter.css" afterPath="$PROJECT_DIR$/css/mycss/personalCenter.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/personalCenter.html" afterPath="$PROJECT_DIR$/personalCenter.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/myjs/public.js" afterPath="$PROJECT_DIR$/js/myjs/public.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readRecord.html" afterPath="$PROJECT_DIR$/readRecord.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reading-answerJX.html" afterPath="$PROJECT_DIR$/reading-answerJX.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reading-article.html" afterPath="$PROJECT_DIR$/reading-article.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reading-ogList.html" afterPath="$PROJECT_DIR$/reading-ogList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/mycss/reading-practice.css" afterPath="$PROJECT_DIR$/css/mycss/reading-practice.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reading-practice.html" afterPath="$PROJECT_DIR$/reading-practice.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reading-result-details.html" afterPath="$PROJECT_DIR$/reading-result-details.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/mycss/reading-result.css" afterPath="$PROJECT_DIR$/css/mycss/reading-result.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reading-result.html" afterPath="$PROJECT_DIR$/reading-result.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/mycss/reading-tpoList.css" afterPath="$PROJECT_DIR$/css/mycss/reading-tpoList.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reading-tpoList.html" afterPath="$PROJECT_DIR$/reading-tpoList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/myjs/reading-tpoList.js" afterPath="$PROJECT_DIR$/js/myjs/reading-tpoList.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reading.html" afterPath="$PROJECT_DIR$/reading.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/register.html" afterPath="$PROJECT_DIR$/register.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/myjs/register.js" afterPath="$PROJECT_DIR$/js/myjs/register.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/speakRecord.html" afterPath="$PROJECT_DIR$/speakRecord.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/speaking-goldList.html" afterPath="$PROJECT_DIR$/speaking-goldList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/speaking-practice.html" afterPath="$PROJECT_DIR$/speaking-practice.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/speaking-tpoList.html" afterPath="$PROJECT_DIR$/speaking-tpoList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/speaking.html" afterPath="$PROJECT_DIR$/speaking.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/update-email.html" afterPath="$PROJECT_DIR$/update-email.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/update-nickname.html" afterPath="$PROJECT_DIR$/update-nickname.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/update-password.html" afterPath="$PROJECT_DIR$/update-password.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/update-phone.html" afterPath="$PROJECT_DIR$/update-phone.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/mycss/vocab-word.css" afterPath="$PROJECT_DIR$/css/mycss/vocab-word.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vocab-word.html" afterPath="$PROJECT_DIR$/vocab-word.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/myjs/vocab-word.js" afterPath="$PROJECT_DIR$/js/myjs/vocab-word.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/mycss/vocabulary.css" afterPath="$PROJECT_DIR$/css/mycss/vocabulary.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vocabulary.html" afterPath="$PROJECT_DIR$/vocabulary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/myjs/vocabulary.js" afterPath="$PROJECT_DIR$/js/myjs/vocabulary.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/writeRecord.html" afterPath="$PROJECT_DIR$/writeRecord.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/writing-article.html" afterPath="$PROJECT_DIR$/writing-article.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/writing-independent.html" afterPath="$PROJECT_DIR$/writing-independent.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/mycss/writing-practice.css" afterPath="$PROJECT_DIR$/css/mycss/writing-practice.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/writing-practice.html" afterPath="$PROJECT_DIR$/writing-practice.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/writing-result-details.html" afterPath="$PROJECT_DIR$/writing-result-details.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/mycss/writing-result.css" afterPath="$PROJECT_DIR$/css/mycss/writing-result.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/writing-result.html" afterPath="$PROJECT_DIR$/writing-result.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/writing-test.html" afterPath="$PROJECT_DIR$/writing-test.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/mycss/writing-tpoList.css" afterPath="$PROJECT_DIR$/css/mycss/writing-tpoList.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/writing-tpoList.html" afterPath="$PROJECT_DIR$/writing-tpoList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/writing.html" afterPath="$PROJECT_DIR$/writing.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="toefl-app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -153,8 +30,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.1517067" vertical-offset="0" max-vertical-offset="5460">
-              <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.3256936" vertical-offset="270" max-vertical-offset="5460">
+              <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -224,6 +101,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="ignore_missing_gitignore" value="true" />
   </component>
   <component name="RunManager">
     <list size="0" />
@@ -249,7 +127,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17270789" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -287,8 +165,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1517067" vertical-offset="0" max-vertical-offset="5460">
-          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.3256936" vertical-offset="270" max-vertical-offset="5460">
+          <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
           <folding />
         </state>
       </provider>
