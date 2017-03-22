@@ -56,7 +56,7 @@ jQuery(function() {
 				//				tpo Li的点击事件
 				mui(".slideBd").on("tap", "li", function() {
 					var idD = jQuery(this).attr("data-ids");
-					//					closeme();
+
 					mui.openWindow({
 						id: "writing-tpoList-" + idD,
 						url: "writing-tpoList.html",

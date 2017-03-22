@@ -107,7 +107,6 @@ jQuery(function() {
 					if(data.code == 2) {
 						jQuery(".mui-backdrop").show();
 					} else {
-//						closeme();
 						mui.openWindow({
 							id:"grammar-practice-"+$scope.num,
 							url: "grammar-practice.html"

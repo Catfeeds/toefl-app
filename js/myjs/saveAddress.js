@@ -47,7 +47,7 @@ jQuery(function() {
 						saveAddress(ids);
 					});
 				} else {
-//					closeme();
+
 					mui.openWindow({
 						id: "login",
 						url: "login.html"
@@ -102,7 +102,7 @@ function saveAddress(idT) {
 				jsonpCallback: "success_jsonpCallback", //自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名
 				success: function(data) {
 					if(data.code == 1) {　　　　　
-//						closeme();
+
 						mui.openWindow({
 							id: "sureAddress",
 							url: "sureAddress.html",

@@ -26,9 +26,36 @@ jQuery(function() {
 			}
 		});
 	}]);
+	
+	mui("#segmentedControl").on("tap", "a", function() {
+		var status = jQuery(this).attr("data-status");
+
+		mui.openWindow({
+			id: "myCourse" + status,
+			url: "myCourse.html",
+			extras: {
+				status: status
+			}
+		});
+
+	});
+	orderLoad();
+	jQuery("#load")[0].addEventListener("tap",function(){
+		count++;
+		orderLoad();
+	});
+
+});
+var count=1;
+function orderLoad(){
 	mui.plusReady(function() {
 		var self = plus.webview.currentWebview();
 		var status = self.status;
+		if(status == 3) {
+			$("#segmentedControl a#course1").addClass("mui-active").siblings().removeClass("mui-active");
+		} else if(status == 1) {
+			$("#segmentedControl a#course2").addClass("mui-active").siblings().removeClass("mui-active");
+		}
 		$.ajax({
 			type: "get",
 			url: 'http://order.gmatonline.cn/pay/wap-api/get-list',
@@ -37,20 +64,25 @@ jQuery(function() {
 			//		jsonp: "callback", //传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(默认为:callback)
 			//		jsonpCallback: "success_jsonpCallback", //自定义的jsonp回调函啊啊数名称，默认为jQuery自动生成的随机函数名
 			data: {
-				uid: localStorage.getItem("uid"),
+				uid:localStorage.getItem("uid"),
 				type: 2,
-				page: 1, //页数、第几页
+				page: count, //页数、第几页
 				status: status //付款状态
 			},
 			success: function(data) {
+                if(data.code==0){
+                	jQuery("#load").hide();
+                }
 				var str = '',
 					statusStr = '';
 				if(data.data) {
 					for(var i = 0; i < data.data.length; i++) {
 						if(data.data[i].status == 3) {
-							statusStr = '<button type="button" class="mui-btn mui-btn-warning mui-btn-outlined orangeBorder">取消订单</button>';
+							statusStr = '';
 						} else {
-							statusStr = '<button type="button" class="mui-btn mui-btn-warning orangeBg">立即支付</button>';
+							statusStr = '<div class="mui-col-xs-6 mui-col-sm-6"><button type="button" class="mui-btn mui-btn-warning mui-btn-outlined orangeBorder">取消订单</button></div>'
+							+'<div class="mui-col-xs-6 mui-col-sm-6"><button type="button" class="mui-btn mui-btn-warning orangeBg">立即支付</button></div>'+
+							'<div class="mui-clearfix"></div>';
 						}
 						str = '<div class="mui-row" data-id="' + data.data[i].orderId + '">' +
 							'<div class="mui-col-sm-4 mui-col-xs-4">' +
@@ -76,27 +108,9 @@ jQuery(function() {
 						})
 					});
 
-					if(status == 3) {
-						$("#segmentedControl a").first().addClass("mui-active").siblings().removeClass("mui-active");
-					} else if(status == 1) {
-						$("#segmentedControl a").last().addClass("mui-active").siblings().removeClass("mui-active");
-					}
-
 				}
 
 			}
 		});
 	});
-	mui("#segmentedControl").on("tap", "a", function() {
-		var status = jQuery(this).attr("data-status");
-		//		closeme();
-		mui.openWindow({
-			id: "myCourse" + status,
-			url: "myCourse.html",
-			extras: {
-				status: status
-			}
-		});
-	});
-
-})
+}

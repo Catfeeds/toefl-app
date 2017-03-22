@@ -28,6 +28,21 @@ jQuery(function() {
 		mui.plusReady(function() {
 			var self = plus.webview.currentWebview();
 			var type = self.type;
+				if(type == 1) {
+					$("#segmentedControl a").first().addClass("mui-active").siblings().removeClass("mui-active");
+				} else if(type == 2) {		
+					$("#segmentedControl a:nth-child(2)").addClass("mui-active").siblings().removeClass("mui-active");
+				} else if(type == 3) {
+					$("#segmentedControl a:nth-child(3)").addClass("mui-active").siblings().removeClass("mui-active");
+				} else if(type == 4) {
+					$("#segmentedControl a:nth-child(4)").addClass("mui-active").siblings().removeClass("mui-active");
+				} else if(type == 5) {
+					$("#segmentedControl a:nth-child(5)").addClass("mui-active").siblings().removeClass("mui-active");
+				} else if(type == 6) {
+					$("#segmentedControl a:nth-child(6)").addClass("mui-active").siblings().removeClass("mui-active");
+				} else if(type == 7) {
+					$("#segmentedControl a:nth-child(7)").addClass("mui-active").siblings().removeClass("mui-active");
+				}
 			$http({
 				method: 'post',
 				url: 'http://www.toeflonline.cn/cn/wap-api/spoken-page',
@@ -45,28 +60,13 @@ jQuery(function() {
 					$scope.data = data.data;
 					$scope.totalNum = parseInt(Math.ceil(data.count / 5));
 				}
-				if(type == 1) {
-					$("#segmentedControl a").first().addClass("mui-active").siblings().removeClass("mui-active");
-				} else if(type == 2) {		
-					$("#segmentedControl a:nth-child(2)").addClass("mui-active").siblings().removeClass("mui-active");
-				} else if(type == 3) {
-					$("#segmentedControl a:nth-child(3)").addClass("mui-active").siblings().removeClass("mui-active");
-				} else if(type == 4) {
-					$("#segmentedControl a:nth-child(4)").addClass("mui-active").siblings().removeClass("mui-active");
-				} else if(type == 5) {
-					$("#segmentedControl a:nth-child(5)").addClass("mui-active").siblings().removeClass("mui-active");
-				} else if(type == 6) {
-					$("#segmentedControl a:nth-child(6)").addClass("mui-active").siblings().removeClass("mui-active");
-				} else if(type == 7) {
-					$("#segmentedControl a:nth-child(7)").addClass("mui-active").siblings().removeClass("mui-active");
-				}
+			
 			});
 		});
 
 	}]);
 	mui("#segmentedControl").on("tap", "a", function() {
-		var type = jQuery(this).attr("data-type");
-//		closeme();
+		var type = jQuery(this).attr("data-type");	
 		mui.openWindow({
 			id: "speakRecord-" + type,
 			url: "speakRecord.html",
@@ -74,6 +74,7 @@ jQuery(function() {
 				type: type
 			}
 		});
+	
 	});
 
 });

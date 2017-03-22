@@ -55,7 +55,7 @@ jQuery(function() {
 				//				头部 Li的点击事件
 				mui(".slideBd").on("tap", "li", function() {
 					var page = jQuery(this).find("a").attr("data-page");
-					//					closeme();
+				
 					mui.openWindow({
 						id: "writing-independent-" + page,
 						url: "writing-independent.html",

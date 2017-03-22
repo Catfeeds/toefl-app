@@ -70,7 +70,6 @@ jQuery(function() {
 	});
 	mui("#segmentedControl").on("tap", "a", function() {
 		var type = jQuery(this).attr("data-type");
-//		closeme();
 		mui.openWindow({
 			id: "writeRecord-" + type,
 			url: "writeRecord.html",
@@ -78,10 +77,11 @@ jQuery(function() {
 				type: type
 			}
 		});
+	
 	});
 	mui(".mui-content").on("tap", ".mui-btn-warning", function() {
 		var recordId = jQuery(this).attr("data-recordId");
-		closeme();
+	
 		mui.openWindow({
 			id: "writing-result-" + recordId,
 			url: "writing-result.html",

@@ -78,7 +78,6 @@ $(document).ready(function() {
 
 			//	精听本文
 			jQuery("#jingListen")[0].addEventListener("tap", function() {
-//				closeme();
 				mui.openWindow({
 					url: 'hearing-quietly.html',
 					extras: {
@@ -90,7 +89,6 @@ $(document).ready(function() {
 			});
 			//再做一次
 			jQuery("#reTest")[0].addEventListener("tap", function() {
-				closeme();
 				mui.openWindow({
 					url: 'hearing-practice.html',
 					extras: {

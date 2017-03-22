@@ -6,7 +6,7 @@ jQuery(function() {
 	jQuery(".img_play").css("height", jQuery(".img_play").css("width"));
 	//    点击屏幕查看全文---div高度
 	jQuery(".full_start").css("height", (jQuery(window).height() - 150) + "px");
-
+ 
 
 	//声明模块
 	var myApp = angular.module("myApp", []);
@@ -31,21 +31,22 @@ jQuery(function() {
 		};
 		$scope.$watch('toggle.now', function() {
 			if($scope.toggle.now) { //界面的angularjs循环的元素加载完毕
-						//当句属性
-				$(".simpleSentence ul li").eq(0).show().addClass("on");
+				
 				//     句子精听模块的总句子数
 				$("#total-sentence").html($(".simpleSentence ul li").length);
 				//    当前句子数量
 				currentNum();
+				setTimeout(function(){
+							//当句属性
+				$(".simpleSentence ul li").eq(0).show().addClass("on");
 				//全文首句样式
 				$(".full_article ul li").first().addClass("on");
+				},1000);
 				//插件控制播放
-				loadAudio($scope.filePath);
-		
-				//听力记录跳转过来
-//				if(listenWrite) {
-//					                  $("#listen_w")[0].onclick();
-//				}
+				loadAudio($scope.filePath);  
+             
+                playIcon();
+               
 			}
 		});
 		mui.plusReady(function() {
@@ -54,6 +55,7 @@ jQuery(function() {
 		var catname = self.catName;
 		var title = self.title;
 		var listenWrite=self.listenWrite;
+	
 		$http({
 			method: 'post',
 			url: 'http://www.toeflonline.cn/cn/wap-api/careful-listening',
@@ -87,10 +89,7 @@ jQuery(function() {
 
 	}]);
 
-	$(".img_play")[0].addEventListener('tap', function() {
-		//点击响应逻辑  
-		playIcon(this);
-	});
+
 });
 
 function loadAudio(src) {
@@ -107,20 +106,22 @@ function loadAudio(src) {
 		useStateClassSkin: true,
 		toggleDuration: true,
 		timeupdate: function(event) {
-			playCurrent = event.jPlayer.status.currentTime; //获得当前时间
+			playCurrent = event.jPlayer.status.currentTime; //获得当前时间		
 			//          playDuration=event.jPlayer.status.duration;//获得当前时间
 		}
 	});
 }
 //切换到精听模式  听写、精听功能不同
 function quietly(o) {
+	styleObj="block";
+	playIcon();
 	jQuery(o).hide().siblings(".btn_common").show();
 	jQuery(".dictation").hide();
 	jQuery(".listen_btn").hide();
 	jQuery(".simpleSentence").show();
 	jQuery(".fullText").hide();
 	jQuery(".dicta_btn").show().find(".single").hide().end().find(".full").show();
-	jQuery(".img_play").attr("data-mold", "句子精听");
+	
 }
 
 //======================================================================
@@ -132,15 +133,17 @@ function quietly(o) {
 function showChinese() {
 	jQuery(".chinese").slideToggle();
 }
-//切换到单句
+//点击单句
 function toggleAll(o) {
+	styleObj="block";
+	playIcon();
 	jQuery(".china_icon02").hide();
 	jQuery(o).hide().siblings(".btn_common").show();
 	jQuery(".simpleSentence").show();
 	jQuery(".fullText").hide();
 	jQuery(".full_start").show().siblings(".full_article").hide();
 	jQuery("#jquery_jplayer_1").jPlayer("pause", 0);
-	jQuery(".img_play").attr("data-mold", "句子精听");
+
 }
 //记录当前句子是第几句--句子精听
 function currentNum() {
@@ -167,14 +170,16 @@ var clearTime = '';
  * 监听单句结束时间，到时间暂停播放
  * @param endTime
  */
-function endTimes(endTime) {
-
-	clearTime = setInterval(function() {
-		if(playCurrent >= endTime) {
-			clearInterval(clearTime);
-			jQuery("#jquery_jplayer_1").jPlayer("pause", parseFloat(endTime));
-		}
-	}, 1000 / 60);
+function endTimes(endTime){
+    clearTime=setInterval(function(){
+        if(playCurrent>=endTime){
+            clearInterval(clearTime);
+            $("#jquery_jplayer_1").jPlayer("pause",parseFloat(endTime));
+            $(".nextImg").show();
+        }else{
+            $(".nextImg").hide();
+        }
+    },1000/60);
 }
 //======================================================================
 /**
@@ -184,12 +189,15 @@ function endTimes(endTime) {
 function showChina() {
 	jQuery(".full_article ul li span").slideToggle();
 }
-//切换到全文
+//点击全文
 function toggleSingle(o) {
+	styleObj="none";
+	playIcon();
+	jQuery(".china_icon02").show();
 	jQuery(o).hide().siblings(".btn_common").show();
 	jQuery(".simpleSentence").hide();
 	jQuery(".fullText").show();
-	jQuery(".img_play").attr("data-mold", "全文精听");
+
 	clearInterval(clearTime);
 	jQuery("#jquery_jplayer_1").jPlayer("pause", 0);
 }
@@ -246,6 +254,8 @@ function seeAnswer(o) {
 }
 //切换到听写模式
 function listenWrite(o) {
+	styleObj='none';
+	playIcon();
 	jQuery(".china_icon02").hide();
 	if($(".fullText").css("display") == "block") {
 		fuzhiDat(1);
@@ -259,8 +269,7 @@ function listenWrite(o) {
 	jQuery(".fullText").hide();
 	jQuery(".dicta_btn").hide();
 	jQuery("#jquery_jplayer_1").jPlayer("pause", 0);
-	//    jQuery(".img_play").attr("data-mold","听写模式");
-	jQuery(".img_play").attr("data-mold", "句子精听");
+
     writeWords();
 }
 //听写模式将精听的值赋给听写模式
@@ -318,14 +327,13 @@ function saveAnswer(idA){
     });
 }
 //======================================================================
-
+var styleObj='block';
 //控制播放（区分那种模式）
-function playIcon(o) {
-	var mold = jQuery(o).attr("data-mold");
-	if(mold == "句子精听") {
+function playIcon() {
+	if(styleObj=="block") {//句子精听
 		startTimes(startT);
 		endTimes(endT);
-	} else if(mold == "全文精听") {
+	} else{	
 		jQuery("#jquery_jplayer_1").jPlayer("play", 0);
 		var timer = setInterval(function() {
 			var currentLi = jQuery(".full_article ul li.on");
@@ -333,8 +341,10 @@ function playIcon(o) {
 			var endtime = currentLi.attr("data-endtime");
 			//          var playCurrent= jQuery("#jquery_jplayer_1").data("jPlayer").status.currentTime;
 			if(playCurrent >= starttime && playCurrent <= endtime) {
+
 				scrollPos();
 			} else {
+				
 				allSentence();
 			}
 		}, 1000 / 60);
@@ -344,12 +354,11 @@ function playIcon(o) {
 //控制文章滚动条
 function scrollPos() {
 	var topT = "-" + $(".full_article ul li.on")[0].offsetTop;
-	mui('.mui-scroll-wrapper').scroll().scrollTo(0, topT, 2000);
+	mui('.mui-scroll-wrapper').scroll().scrollTo(0, topT);
 }
 //播放上一句
 function playPrev() {
-	var mold = jQuery(".img_play").attr("data-mold");
-	if(mold == "句子精听") {
+if(jQuery(".full").css("display")=="block") {//句子精听
 		var num = parseInt(jQuery("#current-sentence").html());
 		if(num > 1) {
 			jQuery("#current-sentence").html(num - 1);
@@ -367,7 +376,7 @@ function playPrev() {
 			alert("当前句是首句！");
 			return false;
 		}
-	} else if(mold == "全文精听") {
+	} else{
 		var currentLi = jQuery(".full_article ul li.on");
 		var num_full = currentLi.attr("data-num");
 		if(num_full > 1) {
@@ -386,9 +395,9 @@ function playPrev() {
 }
 //播放下一句
 function playNext() {
-	var mold = jQuery(".img_play").attr("data-mold");
+
 	clearInterval(clearTime);
-	if(mold == "句子精听") {
+	if(jQuery(".full").css("display")=="block") {//句子精听
 		var num = parseInt(jQuery("#current-sentence").html());
 		var totalNum = parseInt(jQuery("#total-sentence").html());
 		if(num < totalNum) {
@@ -406,7 +415,7 @@ function playNext() {
 			alert("当前句是尾句！");
 			return false;
 		}
-	} else if(mold == "全文精听") {
+	} else{
 		var currentLi = jQuery(".full_article ul li.on");
 		var num_full = currentLi.attr("data-num");
 		if(num_full < jQuery(".full_article ul li").length) {

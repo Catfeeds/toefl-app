@@ -96,7 +96,7 @@ jQuery(function() {
  */
 function practice(_this) {
 	var id = $(_this).attr('data-valus');
-	closeme();
+
 	mui.openWindow({
 		id: "hearing-practice",
 		url: 'hearing-practice.html',
@@ -113,7 +113,7 @@ function dictationAgain(_this) {
 	var id = $(_this).attr('data-valus');
 	var names = $(_this).attr('data-name');
 	var titles = $(_this).attr('data-titles');
-	closeme();
+
 	mui.openWindow({
 		url: 'hearing-quietly.html',
 		extras: {
@@ -133,7 +133,7 @@ function listeningAgain(_this) {
 	var id = $(_this).attr('data-valus');
 	var names = $(_this).attr('data-name');
 	var titles = $(_this).attr('data-titles');
-		closeme();
+	
 	mui.openWindow({
 		url: 'hearing-quietly.html',
 		extras: {

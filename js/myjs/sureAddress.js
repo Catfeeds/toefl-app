@@ -111,7 +111,7 @@ mui.plusReady(function() {
 
 //添加新地址
 function addNew(idT,addressNum){
-//      closeme();
+
       mui.openWindow({
 					id:"saveAddress",
 					url: "saveAddress.html",
@@ -128,7 +128,7 @@ function addNew(idT,addressNum){
 function editAddress(o,idT){
     var id=$(o).attr("data-ids");
     var num=$(o).parents("li").index();
-//  	closeme();
+
       mui.openWindow({
 					id:"saveAddress",
 					url: "saveAddress.html",
@@ -171,7 +171,7 @@ function deleteAddress(o,addressNum){
 //返回订单信息页面
 function returnOrder(courseId){
     var num=$("#pay_shouh li").find(".icon_default.on").attr("data-addressN");
-//  closeme();
+
 	mui.openWindow({
 		id: "sureOrder-"+num,
 		url: "sureOrder.html",

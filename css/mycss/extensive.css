@@ -123,3 +123,20 @@ nav.mui-bar{
     background: url('../../images/myimages/ExerciseToday10@2x.png') no-repeat;
     background-size: 100% 100%;
 }
+
+.mui-backdrop{
+	display: none;
+	text-align: center;
+}
+.mui-backdrop img{
+	width: 60%;
+}
+.mui-backdrop button{
+	width: 80%;
+	margin-top: 10%;
+}
+.in-div{
+	position: absolute;
+	top: 50%;
+	margin-top: -50%;
+}

@@ -107,10 +107,21 @@
 				jumpPage("#gongkai", "course-public.html");
 				jumpPage("#yueke", "course-class.html");
 				//				底部导航跳转
-				jumpPage("#fixed-1","index.html",1);
-	jumpPage("#fixed-2","course.html",1);
-	jumpPage("#fixed-3","encyclopedia-main.html",1);
-	jumpPage("#fixed-4","personalCenter.html",1);
+
+				mui.plusReady(function() {
+					if(plus.webview.getWebviewById('index.html')) {
+						sessionStorage.setItem("flag", "true");
+						plus.webview.getWebviewById('index.html').close();
+					} else if(plus.webview.getWebviewById('encyclopedia-main.html')) {
+						plus.webview.getWebviewById('encyclopedia-main.html').close();
+					} else if(plus.webview.getWebviewById('personalCenter.html')) {
+						plus.webview.getWebviewById('personalCenter.html').close();
+					}
+				});
+				jumpPage("#fixed-1", "index.html", 1);
+				jumpPage("#fixed-2", "course.html", 1);
+				jumpPage("#fixed-3", "encyclopedia-main.html", 1);
+				jumpPage("#fixed-4", "personalCenter.html", 1);
 
 			})
 		</script>

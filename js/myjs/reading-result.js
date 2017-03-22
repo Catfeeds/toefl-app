@@ -37,6 +37,7 @@ jQuery(function() {
 			var name = self.name;
 			var title = self.title;
 			var readName = self.readName;
+
 			$http({
 				method: 'post',
 				url: 'http://www.toeflonline.cn/cn/wap-api/read-result',
@@ -55,6 +56,7 @@ jQuery(function() {
 				$scope.titleName = name + "-" + title;
 				$scope.pid = ids;
 				$scope.readName = readName;
+				
 				//          查看详情
 				jQuery("#seeDetail")[0].addEventListener("tap", function() {
 					mui.openWindow({
@@ -69,7 +71,7 @@ jQuery(function() {
 				});
 				//	重新做题
 				jQuery("#sureBtn")[0].addEventListener("tap", function() {
-					reRead(ids, name, title);
+					reRead(ids, name, title,readName);
 				});
 
 			});
@@ -79,7 +81,7 @@ jQuery(function() {
 });
 
 //重新做题
-function reRead(id, nameTitle, title) {
+function reRead(id, nameTitle, title,readName) {
 	$.ajax({
 		type: "post",
 		url: "http://www.toeflonline.cn/cn/wap-api/set-read?id=" + id + "&userId=" + localStorage.getItem('userId'),
@@ -88,14 +90,15 @@ function reRead(id, nameTitle, title) {
 		jsonpCallback: "success_jsonpCallback", //自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名
 		success: function(data) {
 			if(data.code == 1) {
-				closeme();
+
 				mui.openWindow({
 					id: "reading-practice-" + id,
 					url: 'reading-practice.html',
 					extras: {
 						ids: id,
 						name: nameTitle,
-						title: title
+						title: title,
+						readName:readName
 					}
 				});
 			}

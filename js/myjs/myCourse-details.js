@@ -28,10 +28,7 @@ jQuery(function() {
 	mui.plusReady(function() {
 		var self = plus.webview.currentWebview();
 		var ids = self.ids;
-		if(!ids) {
-			ids = 53;
-		}
-
+   
 		$.ajax({
 			type: "get",
 			url: "http://order.gmatonline.cn/pay/wap-api/order-details",
@@ -51,8 +48,10 @@ jQuery(function() {
 					btnStr = '';
 				} else {
 					stu = '等待买家付款';
-					btnStr = '<button type="button" class="mui-btn mui-btn-warning orangeBg"' +
-						'data-id="' + data[1].contentId + '" style="width: 100%;border-radius: 0;">立即付款</button>';
+					btnStr = '<div class="mui-col-xs-6 mui-col-sm-6"><button type="button" id="pay" class="mui-btn mui-btn-warning orangeBg"' +
+						'data-id="' + data[1].contentId + '" style="width: 100%;border-radius: 0;">立即付款</button></div>'+
+						'<div class="mui-col-xs-6 mui-col-sm-6"><button type="button" id="quxiao" class="mui-btn mui-btn-warning mui-btn-outlined orangeBorder"' +
+						'data-id="' +ids +'" style="width: 100%;border-radius: 0;">取消订单</button></div><div class="mui-clearfix"></div>';
 				}
 				jQuery("nav").append(btnStr);
 				str1 = '<ul>' +
@@ -99,10 +98,10 @@ jQuery(function() {
 					'</ul>';
 				jQuery(".order-address").append(str3);
 				//			立即付款
-				if(jQuery("nav button")[0]) {
-					jQuery("nav button")[0].addEventListener("tap", function() {
+				if(jQuery("nav button#pay")[0]) {
+					jQuery("nav button#pay")[0].addEventListener("tap", function() {
 						var courseId = jQuery(this).attr("data-id");
-						closeme();
+
 						mui.openWindow({
 							id: "sureOrder" + courseId,
 							url: "sureOrder.html",
@@ -110,6 +109,32 @@ jQuery(function() {
 								ids: courseId
 							}
 						})
+					});
+				}
+				//				取消订单
+				if(jQuery("nav button#quxiao")[0]) {
+					jQuery("nav button#quxiao")[0].addEventListener("tap", function() {
+						var orderId = jQuery(this).attr("data-id");
+						$.ajax({
+							type: "get",
+							url: "http://order.gmatonline.cn/pay/wap-api/cancel-order",
+							dataType: "json",
+							data: {
+								orderId: orderId
+							},
+							success: function(data) {
+								alert(data.message);
+								mui.openWindow({
+									id: "myCourse",
+									url: "myCourse.html",
+									extras: {
+										status: 3
+									}
+								});
+							}
+
+						});
+
 					});
 				}
 
@@ -121,5 +146,3 @@ jQuery(function() {
 
 	});
 });
-
-

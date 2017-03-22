@@ -1,5 +1,10 @@
 jQuery(function() {
-
+	mui(".orangeColor")[0].addEventListener("tap",function(){
+          mui.openWindow({
+          	id:"index.html",
+          	url:"index.html"
+          })
+	});
 	var taskSession = localStorage.getItem("taskSession");
 	var userId = localStorage.getItem('userId');
 	//声明模块

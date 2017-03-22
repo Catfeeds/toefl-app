@@ -24,6 +24,8 @@
 }
 .mui-card-content ul li{
 	width: 20%;
+	height: 45px;
+	line-height: 45px;
 	float: left;
 	border-left: 1px #dfd7d4 solid;
 	border-bottom: 1px #dfd7d4 solid;
@@ -55,7 +57,7 @@
 
 .mui-table-view-cell{
 	position: relative;
-	padding: 18px 15px;
+	padding:15px;
 }
 .right-j{
 	height: 20px;

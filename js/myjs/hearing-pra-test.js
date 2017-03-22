@@ -146,7 +146,6 @@ jQuery(function() {
 						saveUserAnswer(inputC, $scope.nextId);
 					} else {
 						if($scope.nextId == 0) {
-//							closeme();
 							mui.openWindow({
 									id: "hearing-answerKeys",
 									url: "hearing-answerKeys.html",
@@ -156,7 +155,6 @@ jQuery(function() {
 								})
 								//                      $(".next_topic a").attr("href","listenIndex.html?page=1&category=39").html("完成");
 						} else {
-//							closeme();
 							//                      $(".next_topic a").attr("href","listen_practice.html?id="+$scope.nextId);
 							mui.openWindow({
 								id: "hearing-pra-test-" + $scope.nextId,
@@ -205,7 +203,7 @@ function saveUserAnswer(answerUser, nextId) {
 				//用户答案正确
 				//下一题跳转
 				if(nextId == 0) {
-//					closeme();
+
 					mui.openWindow({
 						id: "hearing-answerKeys",
 						url: "hearing-answerKeys.html",
@@ -214,8 +212,7 @@ function saveUserAnswer(answerUser, nextId) {
 						}
 					})
 				} else {
-				
-//					closeme();
+
 					mui.openWindow({
 						id: "hearing-pra-test-" + nextId,
 						url: "hearing-pra-test.html",
@@ -229,7 +226,7 @@ function saveUserAnswer(answerUser, nextId) {
 				//用户答案错误
 				//下一题跳转
 				if(nextId == 0) {
-//					closeme();
+
 					mui.openWindow({
 						id: "hearing-answerKeys",
 						url: "hearing-answerKeys.html",
@@ -238,7 +235,7 @@ function saveUserAnswer(answerUser, nextId) {
 						}
 					})
 				} else {
-//					closeme();
+
 					mui.openWindow({
 						id: "hearing-pra-test-" + nextId,
 						url: "hearing-pra-test.html",

@@ -1,5 +1,10 @@
 jQuery(function() {
-
+	mui(".orangeColor")[0].addEventListener("tap",function(){
+          mui.openWindow({
+          	id:"index.html",
+          	url:"index.html"
+          })
+	});
 	jQuery(".choose-ul ul li")[0].addEventListener("tap", function() {
 		location.href = "vocab-word.html";
 	});
@@ -72,7 +77,8 @@ jQuery(function() {
 					userId: userId
 				}
 			}).success(function(data) {
-				$scope.num = data.todayTask.keywords.num;
+				$scope.num = data.todayTask.keyWords.num;
+			
 			});
 			//			添加点击事件
 			mui(".choose-ul").on("tap", "li", function() {
@@ -110,7 +116,7 @@ jQuery(function() {
 								if(data.code == 2) {
 									jQuery(".mui-backdrop").show();
 								} else {
-//									closeme();
+//								
 									mui.openWindow({
 										id: "vocabulary"+$scope.num, //id保持传不一样的值，不然会出现跳转逻辑错误
 										url: "vocabulary.html",
@@ -121,7 +127,7 @@ jQuery(function() {
 							});
 						} else {
 							_that.addClass("red");
-//							closeme();
+
 							//							跳转到单词译意
 							mui.openWindow({
 								id: "vocab-word" + $scope.num, //id保持传不一样的值，不然会出现跳转逻辑错误

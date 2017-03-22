@@ -8,8 +8,31 @@ jQuery(function() {
 	//	我也说一句
 	jQuery("#show-input").focus(showNinput);
 	var myApp = angular.module("myApp", []);
+		myApp.directive('isOver', function() {
+		return {
+			restrict: 'A',
+			scope: {
+				over: '=isOver'
+			},
+			link: function(scope, elm, attr) {
+				if(scope.$parent.$last) {
+					scope.over = true;
+				}
+			}
+		}
+	});
 	//通过模块生成调用控制器
 	myApp.controller("PriceCtrl", ["$scope", "$http", "$sce", function($scope, $http, $sce) {
+			$scope.toggle = {
+			now: false
+		};
+		$scope.$watch('toggle.now', function() {
+			if($scope.toggle.now) { //界面的angularjs循环的元素加载完毕
+	
+                 jQuery(".l-i-user-in").css("height",jQuery(".l-i-user-in").width()+"px");
+			}
+		});
+		
 		//用户信息
 		$http({
 			method: 'post',
@@ -51,10 +74,10 @@ jQuery(function() {
 			}).success(function(data) {
 				$scope.data = data;
 				$scope.count = data.reply.length;
-				$scope.content = $sce.trustAsHtml(escape2Html(emojione.toImage(data.content)));
-				$scope.title = $sce.trustAsHtml(escape2Html(emojione.toImage(data.title)));
+				$scope.content = $sce.trustAsHtml(escape2Html(data.content));
+				$scope.title = $sce.trustAsHtml(escape2Html(data.title));
 				for(var i = 0; i < $scope.data.reply.length; i++) {
-					$scope.data.reply[i].content = $sce.trustAsHtml(escape2Html(emojione.toImage($scope.data.reply[i].content)));
+					$scope.data.reply[i].content = $sce.trustAsHtml(escape2Html($scope.data.reply[i].content));
 				}
 				//   查看大图
 				mui(".mui-content").on("tap", ".bbs-content li", function() {
@@ -70,7 +93,7 @@ jQuery(function() {
 				jQuery(".close-icon")[0].addEventListener("tap", function() {
 					mui('#popover').popover('hide');
 				});
-
+			
 			});
 		});
 
@@ -78,7 +101,7 @@ jQuery(function() {
 myApp.filter('defaultImg', function() {
 		return function(img) {
 			var str = '';
-			if(!img || img == 'undefined') {
+			if(!img || img == 'undefined'|| img=='null') {
 				str = '/cn/images/details_defaultImg.png';
 			}else{
 				str = img;
@@ -119,7 +142,7 @@ function clickZan() {
 }
 //点击评论
 function clickReview() {
-	jQuery(".replyInput").show().find("input").focus().val("");
+	jQuery(".replyInput").show().find("input").val("");
 	jQuery("#mySay").hide();
 	jQuery("#sendBtn")[0].addEventListener("tap", function() {
 		send(1);
@@ -135,14 +158,15 @@ function send(type) {
 	var content = jQuery("#content").val(); //input的值
 	var uid = localStorage.getItem("uid");
 	var uName = localStorage.getItem('nickname');
-	if(uid == null) {
+	if(uid == 'null') {
 		alert('请先登录');
 		mui.openWindow({
 			id: "login",
 			url: "login.html"
 		});
 	}
-	if(uName == null) {
+	
+	if(uName == 'null' || !uName || uName == 'undefined') {
 		uName = localStorage.getItem("userName");
 	}
 //	if(type == 1) {
@@ -154,16 +178,17 @@ function send(type) {
 		return false;
 	} else {
 		var bid,bname=null;
-		if(type==1 && !$("#Bid").val() || $("#Bid").val()==undefined){
+		if(type==1 || $("#Bid").val()=='null' || $("#Bid").val()=='undefined'){
 			bid=0;
 		}else{
 			bid=$("#Bid").val();
 		}
-		if(type==1 && !$("#Bname").val() || $("#Bname").val()==undefined){
+		if(type==1 || $("#Bname").val()=='null' || $("#Bname").val()=='undefined'){
 			bname='';
 		}else{
 			bname=$("#Bname").val();
 		}
+
 		$.ajax({
 			method: "POST",
 			url: 'http://gossip.gmatonline.cn/cn/wap-api/reply',

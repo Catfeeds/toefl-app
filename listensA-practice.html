@@ -31,37 +31,42 @@
 					<h1 class="mui-title">精听文章({{num}}/5)</h1>
 				</header>
 				<nav class="mui-bar mui-bar-tab bg-nowhite">
-					<button type="button" class="mui-btn mui-btn-warning orangeBg" id="subAnswer">提交答案</button>
-					<button type="button" class="mui-btn mui-btn-warning orangeBg" style="display: none;" id="next">下一题</button>
+					<!--<button type="button" class="mui-btn mui-btn-warning orangeBg" id="subAnswer">提交答案</button>-->
+					<button type="button" class="mui-btn mui-btn-warning orangeBg" id="next">下一题</button>
 				</nav>
 				<!-- 主页面内容容器 -->
 				<div class="mui-content mui-scroll-wrapper">
 					<div class="mui-scroll">
 						<!-- 主界面具体展示内容 -->
-
-						<div class="top-font">听句子，选择正确的翻译</div>
-						<div class="two-w-word">
-							<div class="t-h-o orangeColor">
-								<span style="float: left;">点击播放句子</span>
-								<div id="jquery_jplayer_1" class="jp-jplayer"></div>
-								<div id="jp_container_1" class="jp-audio" style="float: left;">
-									<button class="jp-play" style="border: none;position: relative;top: -5px;background-color: transparent;
-										background:url(images/myimages/ExerciseToday14@2x.png) no-repeat;background-size: 100% 100%;width: 21px;height: 28px;">
-                   	    	
-									</button>
+						<div class="listenMaterial">
+							<div id="jquery_jplayer_1" class="jp-jplayer"></div>
+							<div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
+								<div class="out-grey">
+									<button class="l-play jp-play"></button>
+									<div class="center-progress">
+										<div class="progress_box jp-progress">
+											<div class="progress_bgOut jp-seek-bar">
+												<div class="progress_bg jp-play-bar">
+													<div class="progress_move"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="right-span">
+										<span class="jp-duration" role="timer" aria-label="duration">00:00</span>
+									</div>
 								</div>
 							</div>
-							<div class="mui-clearfix"></div>
-							<!--点击提交答案之后就去掉下面文字模糊的class-->
+
+						</div>
+						<div class="top-font">点击查看英文</div>
+						<div class="two-w-word eglish">
 							<h4 class="tranp" id="title">{{listeningFile}}</h4>
 						</div>
-						<div class="three-w-con">
-							<ul class="mui-table-view">
-								<li class="mui-table-view-cell">这句话的意思是</li>
-								<li class="mui-table-view-cell" ng-repeat="alternativesT in alternatives" data-options="{{$index | optionsAll}}">{{alternativesT}}</li>								
-							</ul>
+						<div class="top-font">点击查看中文</div>
+						<div class="two-w-word china">
+							<h4 class="tranp" id="title">{{china}}</h4>
 						</div>
-
 					</div>
 				</div>
 				<!--任务通过，题目做完之后显示下面弹窗-->

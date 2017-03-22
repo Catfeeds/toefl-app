@@ -66,11 +66,13 @@ jQuery(function() {
 
 			$scope.items1 = data.data.data;
 			for(var i = 0; i < $scope.items1.length; i++) {
-				$scope.items1[i].content = $sce.trustAsHtml(escape2Html(emojione.toImage($scope.items1[i].content)));
-				$scope.items1[i].title = $sce.trustAsHtml(escape2Html(emojione.toImage($scope.items1[i].title)));
+			
+				$scope.items1[i].content = $sce.trustAsHtml(escape2Html($scope.items1[i].content));
+				$scope.items1[i].title = $sce.trustAsHtml(escape2Html($scope.items1[i].title));
 				$scope.items1[i].count = $scope.items1[i].reply.length;
 				for(var j = 0; j < $scope.items1[i].reply.length; j++) {
-					$scope.items1[i].reply[j].content = $sce.trustAsHtml(escape2Html(emojione.toImage($scope.items1[i].reply[j].content)));
+//					emojione.toImage();特殊表情转化
+					$scope.items1[i].reply[j].content = $sce.trustAsHtml(escape2Html($scope.items1[i].reply[j].content));
 				}
 
 			}
@@ -97,7 +99,7 @@ jQuery(function() {
 	myApp.filter('defaultImg', function() {
 		return function(img) {
 			var str = '';
-			if(!img || img == 'undefined') {
+			if(!img || img == 'undefined' || img=='null') {
 				str = '/cn/images/details_defaultImg.png';
 			} else {
 				str = img;

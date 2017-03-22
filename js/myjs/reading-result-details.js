@@ -1,10 +1,5 @@
 jQuery(function() {
-	//    标题tpo01
-	TouchSlide({
-		slideCell: "#slidePop",
-		effect: "leftLoop"
-	});
-
+	var num = 1;
 	jQuery(".slideBd ul li").each(function() {
 		jQuery(this).find("a").css({
 			"height": jQuery(this).find('a').width(),
@@ -57,22 +52,22 @@ jQuery(function() {
 
 				$(".common").first().show();
 				//          查看全文
-				jQuery(".seeAll").each(function(){
+				jQuery(".seeAll").each(function() {
 					this.addEventListener("tap", function() {
-					if(jQuery(this).hasClass("qubie")) {
-						jQuery(this).parent().siblings(".mui-card-content").find(".article-tpo").animate({
-							"height": jQuery(this).parent().siblings(".mui-card-content").find(".in-box").height()
-						});
-						jQuery(this).removeClass("qubie");
-					} else {
-						jQuery(this).addClass("qubie");
-						jQuery(this).parent().siblings(".mui-card-content").find(".article-tpo").animate({
-							"height": 150
-						});
+						if(jQuery(this).hasClass("qubie")) {
+							jQuery(this).parent().siblings(".mui-card-content").find(".article-tpo").animate({
+								"height": jQuery(this).parent().siblings(".mui-card-content").find(".in-box").height()
+							});
+							jQuery(this).removeClass("qubie");
+						} else {
+							jQuery(this).addClass("qubie");
+							jQuery(this).parent().siblings(".mui-card-content").find(".article-tpo").animate({
+								"height": 150
+							});
 
-					}
+						}
 
-				});
+					});
 				});
 			}
 
@@ -81,7 +76,7 @@ jQuery(function() {
 			var self = plus.webview.currentWebview();
 			var ids = self.testId;
 			var name = self.name;
-			var title = self.title;		
+			var title = self.title;
 			$http({
 				method: 'post',
 				url: 'http://www.toeflonline.cn/cn/wap-api/read-result',
@@ -93,12 +88,21 @@ jQuery(function() {
 					userId: localStorage.getItem("userId")
 				}
 			}).success(function(data) {
-				$scope.titleName=name+"-"+title;;
+				$scope.titleName = name + "-" + title;;
 				$scope.pid = ids;
 				$scope.dataArr = data.data;
 				$scope.total = data.data.length;
-  
-//				头部题目点击事件
+				if($scope.dataArr.length < 7) {
+					jQuery("#secondUl").hide();
+					num = 2;
+				}
+				//    标题tpo01
+				TouchSlide({
+					slideCell: "#slidePop",
+					effect: "leftLoop",
+					defaultIndex: num
+				});
+				//				头部题目点击事件
 				mui(".slideBd").on("tap", "li", function() {
 					var showNum = parseInt(jQuery(this).attr("data-showNum")) - 1;
 					jQuery(this).addClass("on").siblings("li").removeClass("on").parent().siblings("ul").find("li").removeClass("on");
@@ -106,22 +110,20 @@ jQuery(function() {
 					if(showNum == $scope.dataArr.length - 1 || $scope.dataArr.length - 2 == showNum) {
 						$(".special_ti").show();
 						$(".abcd_option").hide();
-				    }else{
-				    	$(".special_ti").hide();
+					} else {
+						$(".special_ti").hide();
 						$(".abcd_option").show();
-				    }
+					}
 				});
-				if($scope.dataArr.length<7){
-					jQuery("#secondUl").hide();
-				}
-				var liLen=14;
-				if($scope.dataArr.length<liLen){
-					var num=parseInt(liLen-$scope.dataArr.length);
-					for(var i=1;i<=num;i++){
-						var t=$scope.dataArr.length+i;
-						jQuery(".slideBd li").each(function(){
-							var a=parseInt(jQuery(this).attr("data-showNum"));
-							if(a==t){
+
+				var liLen = 14;
+				if($scope.dataArr.length < liLen) {
+					var num = parseInt(liLen - $scope.dataArr.length);
+					for(var i = 1; i <= num; i++) {
+						var t = $scope.dataArr.length + i;
+						jQuery(".slideBd li").each(function() {
+							var a = parseInt(jQuery(this).attr("data-showNum"));
+							if(a == t) {
 								jQuery(this).hide();
 							}
 						});

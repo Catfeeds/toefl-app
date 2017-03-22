@@ -1,5 +1,10 @@
 jQuery(function() {
-
+	mui(".orangeColor")[0].addEventListener("tap",function(){
+          mui.openWindow({
+          	id:"index.html",
+          	url:"index.html"
+          })
+	});
 	var taskSession = localStorage.getItem("taskSession");
 	var userId = localStorage.getItem('userId');
 	//声明模块
@@ -43,6 +48,11 @@ jQuery(function() {
 			$scope.cnName = data.question.cnName;
 			$scope.alternatives = data.question.alternatives.split("\r");
 			$scope.listeningFile = data.question.listeningFile;
+			for(var i=0;i<$scope.alternatives.length;i++){				
+				if($.trim($scope.alternatives[i]).length>2){
+					$scope.china=$.trim($scope.alternatives[i]).substring(1);
+				}
+			}
 			//			获取动态改变的当前题目数量(做到了第几道题) 只能再次请求
 			$http({
 				method: 'post',
@@ -74,34 +84,34 @@ jQuery(function() {
 				jQuery(this).addClass("orange").siblings("li").removeClass("orange");
 			});
 			//          提交答案点击
-			jQuery("#subAnswer")[0].addEventListener("tap", function() {
-
-				jQuery(this).hide().siblings("button").show();
-				jQuery(".mui-table-view-cell").each(function() {
-					var userAnswer = jQuery(this).attr("data-options");
-					//             	正确答案
-					$scope.trueAnswer = data.question.answer;
-					if(userAnswer == $scope.trueAnswer) {
-						jQuery(this).addClass("green");
-					}
-					//             	  	用户选择答案比较样式
-					if(jQuery(this).hasClass("orange")) {
-						var userAnswer = jQuery(this).attr("data-options");
-						$scope.trueAnswer = data.question.answer;
-						if(userAnswer == $scope.trueAnswer) {
-							jQuery(this).addClass("green");
-						} else {
-							jQuery(this).addClass("red");
-						}
-
-					}
-					//             	  else{
-					//             	  	alert("还没选择答案哦!");
-					//             	  }
-				});
-				jQuery("#title").removeClass("tranp");
-
-			});
+//			jQuery("#subAnswer")[0].addEventListener("tap", function() {
+//
+//				jQuery(this).hide().siblings("button").show();
+//				jQuery(".mui-table-view-cell").each(function() {
+//					var userAnswer = jQuery(this).attr("data-options");
+//					//             	正确答案
+//					$scope.trueAnswer = data.question.answer;
+//					if(userAnswer == $scope.trueAnswer) {
+//						jQuery(this).addClass("green");
+//					}
+//					//             	  	用户选择答案比较样式
+//					if(jQuery(this).hasClass("orange")) {
+//						var userAnswer = jQuery(this).attr("data-options");
+//						$scope.trueAnswer = data.question.answer;
+//						if(userAnswer == $scope.trueAnswer) {
+//							jQuery(this).addClass("green");
+//						} else {
+//							jQuery(this).addClass("red");
+//						}
+//
+//					}
+//					//             	  else{
+//					//             	  	alert("还没选择答案哦!");
+//					//             	  }
+//				});
+//				jQuery("#title").removeClass("tranp");
+//
+//			});
 			//          下一题
 			jQuery("#next")[0].addEventListener("tap", function() {
 				var userId = localStorage.getItem('userId');
@@ -120,7 +130,7 @@ jQuery(function() {
 					if(data.code == 2) {
 						jQuery(".mui-backdrop").show();
 					} else {
-//							closeme();
+
 						mui.openWindow({
 							id:"listensA-practice-"+$scope.num,
 							url: "listensA-practice.html"
@@ -136,6 +146,20 @@ jQuery(function() {
 	myApp.filter('optionsAll', function() {
 		return function(r) {
 			return String.fromCharCode(65 + r);
+		}
+	});
+	jQuery(".eglish")[0].addEventListener("tap",function(){
+		if(jQuery(this).find("h4").hasClass("tranp")){
+			jQuery(this).find("h4").removeClass("tranp");
+		}else{
+			jQuery(this).find("h4").addClass("tranp")
+		}
+	});
+	jQuery(".china")[0].addEventListener("tap",function(){
+		if(jQuery(this).find("h4").hasClass("tranp")){
+			jQuery(this).find("h4").removeClass("tranp");
+		}else{
+			jQuery(this).find("h4").addClass("tranp")
 		}
 	});
 

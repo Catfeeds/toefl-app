@@ -1,5 +1,11 @@
 //jQuery(function() {
-mui.init();
+mui.init({
+	//监听Android手机的back、menu按键
+	keyEventBind: {
+		backbutton: false,  //Boolean(默认true)关闭back按键监听
+		menubutton: false   //Boolean(默认true)关闭menu按键监听
+	}
+});
 mui('.mui-scroll-wrapper').scroll({
 	deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
 });
@@ -8,6 +14,16 @@ mui('.mui-scroll-wrapper').scroll({
 //	});
 
 //});
+//在android4.4.2中的swipe事件，需要preventDefault一下，否则触发不正常
+window.addEventListener('dragstart', function(e) {
+	mui.gestures.touch.lockDirection = true; //锁定方向
+	mui.gestures.touch.startDirection = e.detail.direction;
+});
+window.addEventListener('dragright', function(e) {
+	if(!mui.isScrolling) {
+		e.detail.gesture.preventDefault();
+	}
+});
 
 // 关闭自身窗口
 function closeme() {
@@ -224,27 +240,29 @@ function formatTime(dt) {
 }
 //mui的无传值跳转页面方式
 function jumpPage(obj, urlStr) {
-		mui.plusReady(function() {
-				jQuery(obj)[0].addEventListener("tap", function() {
-						// 获取所有Webview窗口
-						var curr = plus.webview.currentWebview();
-						plus.webview.open(urlStr);
-						curr.close();
-					});
-					});
-//	var webview_style = {
-//		popGesture: "close"
-//	};
-//	jQuery(obj)[0].addEventListener("tap", function() {
-//		mui.openWindow({
-//			id: urlStr,
-//			url: urlStr,
-//			styles: webview_style,
-//			waiting: {
-//				autoShow: false
-//			}
-//		});
-//	});
+//		mui.plusReady(function() {
+//				jQuery(obj)[0].addEventListener("tap", function() {
+//						// 获取所有Webview窗口
+//						var curr = plus.webview.currentWebview();
+//						plus.webview.open(urlStr);
+//						curr.close();
+//					});
+//					});
+	var webview_style = {
+		popGesture: "close"
+	};
+	jQuery(obj)[0].addEventListener("tap", function() {
+		mui.openWindow({
+			id: urlStr,
+			url: urlStr,
+			styles: webview_style,
+			waiting: {
+				autoShow: false
+			}
+		});
+	});
+	
+	
 }
 
 //转意符换成普通字符
@@ -269,7 +287,8 @@ function formatDate(now) {
 	var hour = now.getHours();
 	var minute = now.getMinutes();
 	var second = now.getSeconds();
-	return year + "-" + fixZero(month, 2) + "-" + fixZero(date, 2) + "  " + fixZero(hour, 2) + ":" + fixZero(minute, 2) + ":" + fixZero(second, 2);
+	return year + "-" + fixZero(month, 2) + "-" + fixZero(date, 2) + "  " ;
+//	+ fixZero(hour, 2) + ":" + fixZero(minute, 2) + ":" + fixZero(second, 2);
 }
 //时间如果为单位数补0  
 function fixZero(num, length) {

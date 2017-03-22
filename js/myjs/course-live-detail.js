@@ -59,7 +59,6 @@ jQuery(function() {
 				jQuery("#comeBuy")[0].addEventListener("tap", function() {
 					var userId = localStorage.getItem("userId");
 					if(userId) {
-//						closeme();
 						mui.openWindow({
 							id: "sureOrder" + $scope.courseId,
 							url: "sureOrder.html",
@@ -68,7 +67,6 @@ jQuery(function() {
 							}
 						})
 					} else {
-						closeme();
 						mui.openWindow({
 							id: "login",
 							url: "login.html"
@@ -98,15 +96,14 @@ function chooseTeacher(o) {
 		jsonp: "callback", //传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(默认为:callback)
 		jsonpCallback: "success_jsonpCallback", //自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名
 		success: function(data) {
-			if(data.id) {
-				closeme();
+			if(data.id) {			
 				mui.openWindow({
 					id: "course-live-detail-" + data.id,
 					url: "course-live-detail.html",
 					extras: {
 						ids: data.id
 					}
-				})
+				});
 			}
 		},
 		error: function() {

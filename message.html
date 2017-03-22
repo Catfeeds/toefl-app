@@ -138,7 +138,7 @@
 				}]);
 				mui("#segmentedControl").on("tap", "a", function() {
 					var status = jQuery(this).attr("data-status");
-//					closeme();
+
 					mui.openWindow({
 						id: "message-" + status,
 						url: "message.html",
@@ -146,6 +146,7 @@
 							status: status
 						}
 					});
+//										closeme();
 				});
 			});
 		</script>

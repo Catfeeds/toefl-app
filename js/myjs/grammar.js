@@ -2,6 +2,16 @@ jQuery(function() {
 	mui('.know-body').scroll({
 		deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
 	});
+	
+
+	mui(".orangeColor")[0].addEventListener("tap",function(){
+          mui.openWindow({
+          	id:"index.html",
+          	url:"index.html"
+          })
+	});
+
+	
 	//声明模块
 	var myApp = angular.module("myApp", []);
 	myApp.directive('isOver', function() {

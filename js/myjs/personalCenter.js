@@ -1,5 +1,15 @@
 jQuery(function() {
 	//				底部导航跳转
+		mui.plusReady(function() {
+		if(plus.webview.getWebviewById('index.html')) {
+			sessionStorage.setItem("flag", "true");
+			plus.webview.getWebviewById('index.html').close();
+		} else if(plus.webview.getWebviewById('encyclopedia-main.html')) {
+			plus.webview.getWebviewById('encyclopedia-main.html').close();
+		} else if(plus.webview.getWebviewById('course.html')) {
+			plus.webview.getWebviewById('course.html').close();
+		}
+	});
 	jumpPage("#fixed-1", "index.html");
 	jumpPage("#fixed-2", "course.html");
 	jumpPage("#fixed-3", "encyclopedia-main.html");
@@ -69,7 +79,11 @@ jQuery(function() {
 				});
 				jQuery("#mycourse")[0].addEventListener("tap", function() {
 					mui.openWindow({
-						url: "myCourse.html"
+						id: "myCourse",
+						url: "myCourse.html",
+						extras: {
+							status: 3
+						}
 					});
 				});
 				jQuery("#word")[0].addEventListener("tap", function() {
@@ -82,7 +96,7 @@ jQuery(function() {
 						id: "message",
 						url: "message.html",
 						extras: {
-							status: status
+							status: 3
 						}
 					});
 				});

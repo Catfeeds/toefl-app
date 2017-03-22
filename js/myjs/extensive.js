@@ -1,13 +1,5 @@
 jQuery(function() {
 
-	$(".wc-btn")[0].addEventListener('tap', function() {
-		//		展示中文
-		showChina();
-	});
-	$(".jp-controls")[0].addEventListener('tap', function() {
-		//		//点击响应逻辑  
-		playS();
-	});
 	var taskSession = localStorage.getItem("taskSession");
 	var userId = localStorage.getItem('userId');
 	//声明模块
@@ -35,6 +27,10 @@ jQuery(function() {
 			if($scope.toggle.now) { //界面的angularjs循环的元素加载完毕
 
 				jQuery(".article ul li:first-child").addClass("on");
+				$(".wc-btn")[0].addEventListener('tap', function() {
+					//		展示中文
+					showChina();
+				});
 			}
 		});
 		if(userId) {
@@ -49,8 +45,10 @@ jQuery(function() {
 					taskSession: taskSession
 				}
 			}).success(function(data) {
+
 				$scope.sentence = data.question.sentence;
 				$scope.audioSrc = data.question.audio.filePath;
+
 				//			音频播放插件
 				jQuery("#jquery_jplayer_1").jPlayer({
 					ready: function(event) {
@@ -66,6 +64,17 @@ jQuery(function() {
 					useStateClassSkin: true,
 					toggleDuration: true
 
+				});
+				mui(".mui-icon-left-nav")[0].addEventListener("tap", function() {
+					mui.openWindow({
+						id: "index.html",
+						url: "index.html"
+					})
+				});
+				
+				$(".jp-controls")[0].addEventListener('tap', function() {
+					//		//点击响应逻辑  
+					playS();
 				});
 
 				//			获取动态改变的当前题目数量(做到了第几道题) 只能再次请求
@@ -97,16 +106,11 @@ jQuery(function() {
 						}
 					}).success(function(data) {
 						if(data.code == 2) { //已做完
-							closeme();
-							mui.openWindow({
-								id:"index",
-								url: "index.html"
-							});
+							jQuery(".mui-backdrop").show();
 
 						} else {
-//								closeme();
 							mui.openWindow({
-								id:"extensive-"+$scope.num, 
+								id: "extensive-" + $scope.num,
 								url: "extensive.html"
 							});
 
@@ -117,6 +121,12 @@ jQuery(function() {
 			});
 		}
 	}]);
+	jQuery("#sure-index")[0].addEventListener("tap", function() {
+		mui.openWindow({
+			id: "index",
+			url: "index.html"
+		});
+	});
 
 });
 
@@ -156,5 +166,5 @@ function playS() {
 function scrollPos() {
 	var topT = "-" + $(".article ul li.on")[0].offsetTop;
 	//  $(".mui-content").animate({scrollTop:topT+"px"},1000/30);
-	mui('.mui-scroll-wrapper').scroll().scrollTo(0, topT);//最后一个参数加了时间就会闪
+	mui('.mui-scroll-wrapper').scroll().scrollTo(0, topT); //最后一个参数加了时间就会闪
 }

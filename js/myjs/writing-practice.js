@@ -125,6 +125,7 @@ function conPlay(srcs) {
 	});
 
 }
+
 //立即答题
 function comeDati(idD) {
 	var cookie_val = localStorage.getItem("userCode");

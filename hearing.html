@@ -18,31 +18,18 @@
 
 		<div class="mui-content">
 			<div>
-				<div id="segmentedControl" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-primary">
-					<a class="mui-control-item mui-active" href="#item2">
-						TPO练习
-					</a>
-					<a class="mui-control-item" href="#item3">
+				<div id="segmentedControl" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-primary">					
+					<a class="mui-control-item mui-active" href="#item3">
 						分类练习
+					</a>
+					<a class="mui-control-item" href="#item2">
+						TPO练习
 					</a>
 				</div>
 			</div>
 			<div>
-				<div id="item2" class="mui-control-content mui-active">
-					<div class="mui-card">
-						<!--页眉，放置标题-->
-						<div class="mui-card-header">●TPO 01-48</div>
-						<!--内容区-->
-						<div class="mui-card-content">
-							<ul>
-								<li ng-repeat="nameT in name" is-over="toggle.now" data-id = "{{nameT.id}}" data-name = "{{nameT.name}}">
-									<a href="javascript:void(0);">{{nameT.name | splitKG}}</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div id="item3" class="mui-control-content">
+				
+				<div id="item3" class="mui-control-content mui-active">
 					<ul class="mui-table-view">
 						<li class="mui-table-view-cell mui-media" data-id="16" data-name = "课程学业">
 							<!--<a href="javascript:;">-->
@@ -106,6 +93,23 @@
 						</li>
 					</ul>
 				</div>
+				
+				<div id="item2" class="mui-control-content">
+					<div class="mui-card">
+						<!--页眉，放置标题-->
+						<div class="mui-card-header">●TPO 01-48</div>
+						<!--内容区-->
+						<div class="mui-card-content">
+							<ul>
+								<li ng-repeat="nameT in name" is-over="toggle.now" data-id = "{{nameT.id}}" data-name = "{{nameT.name}}">
+									<a href="javascript:void(0);">{{nameT.name | splitKG}}</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+				
 			</div>
 		</div>
 

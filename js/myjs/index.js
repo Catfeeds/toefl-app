@@ -1,65 +1,39 @@
-	mui.plusReady(function() {
-				//读取本地存储，检查是否为首次启动
-				var showGuide = plus.storage.getItem("lauchFlag");
-				if(showGuide){
-					//有值，说明已经显示过了，无需显示；
-					//关闭splash页面；
-					plus.navigator.closeSplashscreen();
-					plus.navigator.setFullscreen(false);
-				
-				}else{
-					//显示启动导航
-					mui.openWindow({
-						id:'guide',
-						url:'guide.html',
-						styles: {
-							popGesture:"none"
-						},
-						show:{
-							aniShow:'none'
-						},
-						waiting:{
-							autoShow:false
-						}
-					});
-				
-				}
-			});
 jQuery(function() {
+	var flag = localStorage.getItem("flag");
+	if(flag == "true") {
+		$('.second_i').hide();
+	} else {
+		$('.second_i').show();
+	}
+	secondTZ();
+	//按钮点击事件
+	document.getElementById("close").addEventListener('tap', function(event) {
+		localStorage.setItem("flag","true");
+		$('.second_i').fadeOut();
 
-//	头像高度
+	}, false);
+
+	//	头像高度
 	var heights = jQuery(".c-t-head").width();
 	jQuery(".c-t-head").css("height", heights + "px");
- 
-	//初始化预加载详情页面
-	mui.init({
-		preloadPages: [{
-			id: 'grammar.html',
-			url: 'grammar.html',
-			//  预加载多个子页面
-			subpages: [{
-					url: "extensive.html"
-				}, {
-					url: "listensArticles.html"
-				}, {
-					url: "encyclopedia.html"
-				}, {
-					url: "encyclopedia-bbs.html"
-				}, {
-					url: "moreSettings.html"
-				}] //预加载页面的子页面
-		}]
-	});
-	jumpPage("#l-icon-ting","hearing.html");
-	jumpPage("#r-icon-read","reading.html");
-	jumpPage("#w-icon-write","writing.html");
-	
-	jumpPage("#fixed-1","index.html");
-	jumpPage("#fixed-2","course.html");
-	jumpPage("#fixed-3","encyclopedia-main.html");
-	jumpPage("#fixed-4","personalCenter.html");
 
-	
+	jumpPage("#l-icon-ting", "hearing.html");
+	jumpPage("#r-icon-read", "reading.html");
+	jumpPage("#w-icon-write", "writing.html");
+	mui.plusReady(function() {
+		if(plus.webview.getWebviewById('course.html')) {
+			plus.webview.getWebviewById('course.html').close();
+		} else if(plus.webview.getWebviewById('encyclopedia-main.html')) {
+			plus.webview.getWebviewById('encyclopedia-main.html').close();
+		} else if(plus.webview.getWebviewById('personalCenter.html')) {
+			plus.webview.getWebviewById('personalCenter.html').close();
+		}
+	});
+
+	jumpPage("#fixed-1", "index.html");
+	jumpPage("#fixed-2", "course.html");
+	jumpPage("#fixed-3", "encyclopedia-main.html");
+	jumpPage("#fixed-4", "personalCenter.html");
 
 	//声明模块
 	var myApp = angular.module("myApp", []);
@@ -86,7 +60,7 @@ jQuery(function() {
 
 			}
 		});
-		
+
 		//	   setTimeout(function(){
 		var userId = localStorage.getItem('userId');
 
@@ -220,7 +194,6 @@ jQuery(function() {
 				});
 
 			});
-			
 
 		} else {
 			$scope.image = 'images/myimages/touxiang@2x.png';
@@ -258,7 +231,6 @@ jQuery(function() {
 					url: "login.html"
 				})
 			});
-			
 
 		}
 		//	   },2000);
@@ -298,4 +270,19 @@ function hexing() {
 	});
 	plus.webview.currentWebview().hide();
 	plus.webview.open('vocabulary.html', 'vocabulary.html');
+}
+//引导页
+function secondTZ() {
+	var num = jQuery("#num").html();
+	var timer = setInterval(function() {
+		num--;
+		if(num < 0) {
+			clearInterval(timer);
+			$('.second_i').fadeOut();
+			localStorage.setItem("flag","true");
+			return false;
+		}
+		jQuery("#num").html(num)
+	}, 1000);
+
 }

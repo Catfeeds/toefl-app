@@ -17,28 +17,28 @@
 			<h1 class="mui-title">阅读练习</h1>
 		</header>
 		<div class="mui-content">
-             <div class="white-box mt">
-             	<h3>TPO练习</h3>
-             	<p>48套TPO全方位满足你的需求</p>
-             	
-             	<button type="button" class="mui-btn mui-btn-warning" id="tpo">GO</button>
-             </div>
-               <div class="white-box">
-             	<h3>OG真题练习练习</h3>
-             	<p>各类对话题型练习</p>
-             	<!--<a href="reading-ogList.html">-->
-             	<button type="button" class="mui-btn mui-btn-warning" id="og">GO</button>
-             	<!--</a>-->
-             </div>
+			<div class="white-box mt">
+				<h3>TPO练习</h3>
+				<p>48套TPO全方位满足你的需求</p>
+
+				<button type="button" class="mui-btn mui-btn-warning" id="tpo">GO</button>
+			</div>
+			<div class="white-box">
+				<h3>OG真题练习练习</h3>
+				<p>各类对话题型练习</p>
+				<!--<a href="reading-ogList.html">-->
+				<button type="button" class="mui-btn mui-btn-warning" id="og">GO</button>
+				<!--</a>-->
+			</div>
 		</div>
 
 		<script src="js/mui.min.js"></script>
 		<script src="js/myjs/jquery-1.11.1.min.js"></script>
 		<script src="js/myjs/public.js"></script>
 		<script type="text/javascript">
-			jQuery(function(){
-				jQuery("#tpo")[0].addEventListener("tap",function(){
-//					closeme();
+			jQuery(function() {
+				jQuery("#tpo")[0].addEventListener("tap", function() {
+					//					closeme();
 					mui.openWindow({
 						id: "reading-tpoList",
 						url: "reading-tpoList.html",
@@ -47,13 +47,22 @@
 						}
 					});
 				});
-				jQuery("#og")[0].addEventListener("tap",function(){
-//					closeme();
+				(function(mui) {
+					//重写返回键
+					mui.back = function(event) {
+						mui.openWindow({
+							id: "index.html",
+							url: "index.html"
+						})
+					}
+				})(mui);
+				jQuery("#og")[0].addEventListener("tap", function() {
+					//					closeme();
 					mui.openWindow({
-						id:"reading-ogList",
+						id: "reading-ogList",
 						url: "reading-ogList.html",
 						extras: {
-//							id: id
+							//							id: id
 						}
 					});
 				});

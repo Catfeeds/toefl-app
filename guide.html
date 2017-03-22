@@ -47,7 +47,7 @@
 		<div class="mui-content" id="guide">
 			<!--<div class="first_i"></div>-->
 			<div class="second_i">
-				<div class="op-div">跳过(<span id="num">3</span>)</div>
+				<div class="op-div" id="close">跳过(<span id="num">3</span>)</div>
 			</div>
 		</div>
 		<script src="js/mui.min.js"></script>
@@ -55,27 +55,45 @@
 		<script src="js/myjs/public.js"></script>
 		<script type="text/javascript">
 			jQuery(function() {
+				mui.back = function() {};
+				mui.plusReady(function() {
+					if(mui.os.ios) {
+						plus.navigator.setFullscreen(true);
+					}
+					plus.navigator.closeSplashscreen();
+				});
 				secondTZ();
+				//按钮点击事件
+				document.getElementById("close").addEventListener('tap', function(event) {
+						localStorage.setItem("lauchFlag", "true");
+						mui.openWindow({
+							id:"index.html",
+							url:"index.html"
+						})
+						plus.navigator.setFullscreen(false);
+						plus.webview.currentWebview().close();
+						
+				}, false);
 			});
 			//引导页
 			function secondTZ() {
-				localStorage.setItem("oneT", "1");
 				var num = jQuery("#num").html();
 				var timer = setInterval(function() {
 					num--;
-					if(num < 0) {
+					if(num <= 0) {
 						clearInterval(timer);
-						plus.storage.setItem("lauchFlag", "true");
+						localStorage.setItem("lauchFlag", "true");
+						mui.openWindow({
+							id:"index.html",
+							url:"index.html"
+						})
 						plus.navigator.setFullscreen(false);
 						plus.webview.currentWebview().close();
+						
 					}
 					jQuery("#num").html(num)
 				}, 1000);
-				jQuery(".op-div")[0].addEventListener("tap", function() {
-					plus.storage.setItem("lauchFlag", "true");
-					plus.navigator.setFullscreen(false);
-					plus.webview.currentWebview().close();
-				});
+
 			}
 		</script>
 	</body>

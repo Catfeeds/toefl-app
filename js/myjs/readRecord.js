@@ -64,7 +64,6 @@ jQuery(function() {
 	}]);
 	mui("#segmentedControl").on("tap", "a", function() {
 		var type = jQuery(this).attr("data-type");
-//			closeme();
 		mui.openWindow({
 			id: "readRecord-" + type,
 			url: "readRecord.html",
@@ -72,6 +71,7 @@ jQuery(function() {
 				type: type
 			}
 		});
+
 	});
 	//  查看结果
 	mui(".mui-content").on("tap", ".mui-table-view-cell .mui-btn-success", function() {
@@ -79,7 +79,7 @@ jQuery(function() {
 		var name = jQuery(this).attr("data-name");
 		var title = jQuery(this).attr("data-title");
 		var belong = jQuery(this).attr("data-belong");
-		closeme();
+
 		mui.openWindow({
 			id: "reading-result-title",
 			url: "reading-result.html",
@@ -96,7 +96,7 @@ jQuery(function() {
 		var id = jQuery(this).attr("data-id");
 		var name = jQuery(this).attr("data-name");
 		var title = jQuery(this).attr("data-title");
-		closeme();
+
 		mui.openWindow({
 			id: "reading-practice-" + id,
 			url: "reading-practice.html",

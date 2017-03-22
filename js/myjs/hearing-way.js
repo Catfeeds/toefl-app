@@ -15,7 +15,7 @@ jQuery(function() {
 		//		开始练习
 		$("#startBtn")[0].addEventListener("tap", function() {
 			if($(".first").hasClass("mui-btn-success")) {
-//				closeme();
+
 				mui.openWindow({
 					url: 'hearing-quietly.html',
 					extras: {
@@ -25,7 +25,7 @@ jQuery(function() {
 					}
 				});
 			} else {
-//				closeme();
+
 				mui.openWindow({
 					url:'hearing-practice.html',
 					extras: {

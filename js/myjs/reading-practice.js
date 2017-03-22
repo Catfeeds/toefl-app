@@ -1,4 +1,5 @@
 jQuery(function() {
+
 	countTime();
 	//声明模块
 	var myApp = angular.module("myApp", []);
@@ -28,129 +29,71 @@ jQuery(function() {
 	});
 	//通过模块生成调用控制器
 	myApp.controller("PriceCtrl", ["$scope", "$http", "$sce", function($scope, $http, $sce) {
-		$scope.toggle = {
-			now: false
-		};
-		$scope.$watch('toggle.now', function() {
-			if($scope.toggle.now) { //界面的angularjs循环的元素加载完毕	
-				markWord();
-				jQuery("#seeArticle")[0].addEventListener("tap", function() {
+			$scope.toggle = {
+				now: false
+			};
+			$scope.$watch('toggle.now', function() {
+				if($scope.toggle.now) { //界面的angularjs循环的元素加载完毕	
+					markWord();
+					jQuery("#seeArticle")[0].addEventListener("tap", function() {
 
-					if(jQuery(this).hasClass("qubie")) {
-						jQuery(".article-tpo").animate({
-							"height": jQuery(".in-box").height()
-						});
-						jQuery(this).removeClass("qubie");
-					} else {
-						jQuery(this).addClass("qubie");
-						jQuery(".article-tpo").animate({
-							"height": 150
-						});
+						if(jQuery(this).hasClass("qubie")) {
+							jQuery(".article-tpo").animate({
+								"height": jQuery(".in-box").height()
+							});
+							jQuery(this).removeClass("qubie");
+						} else {
+							jQuery(this).addClass("qubie");
+							jQuery(".article-tpo").animate({
+								"height": 150
+							});
 
-					}
-
-				});
-			}
-		});
-		mui.plusReady(function() {
-			var self = plus.webview.currentWebview();
-			var ids = self.ids;
-			var name = self.name;
-			var title = self.title;
-			$http({
-				method: 'post',
-				url: 'http://www.toeflonline.cn/cn/wap-api/read-details',
-				headers: {
-					'Content-Type': 'application/x-www-form-urlencoded'
-				},
-				data: {
-					id: ids,
-					userId: localStorage.getItem("userId")
-				}
-			}).success(function(data) {
-				$scope.code = data.code;
-				$scope.title = name + "-" + title;
-				if($scope.code == 2) {
-					//					closeme();
-					mui.openWindow({
-						id: "reading-result.html",
-						url: "reading-result.html",
-						extras: {
-							testId: ids,
-							name: name,
-							title: title,
-							readName: "readTpo"
 						}
+
 					});
-					//				location.href = "readResult.html?id=" + id + "&titleName=" + catName + "&readName=" + readName;
 				}
-				$scope.catName = data.data.article.catName;
-				$scope.name = data.data.article.name;
-				$scope.question = $sce.trustAsHtml(data.data.article.question);
-				$scope.article = $sce.trustAsHtml(data.data.article.article);
-				$scope.articleId = data.data.article.id;
-				$scope.questionTi = $sce.trustAsHtml(data.data.question.question);
-				$scope.answerA = data.data.question.answerA;
-				$scope.answer = data.data.question.answer;
-				$scope.nameq = data.data.question.name;
-				$scope.nextId = data.data.nextId;
-				$scope.pid = data.data.question.pid;
-				$scope.contentId = data.data.contentId;
-				$scope.questionType = data.data.question.questionType;
-				$scope.titleNum = data.data.question.title;
-				$scope.count = data.data.count;
-				$scope.postionD = data.data.question.postionD.split("\n");
-				$scope.postionW = data.data.question.postionW.split("\n");
-				var str = new Array(); //定义一数组
-				str = $scope.answerA.split("\n"); //字符分割
-				$scope.arrSelect = str;
-				if($scope.questionType == 6) { //特殊题型（点击选择答案）
-					$(".option_box").hide();
-					$(".black_line").show();
-
-				} else if($scope.questionType == 4) { //14题 拖拽题型（有些答案字符里面有两个换行 需要后台删除一个）
-					$(".option_box").hide();
-					$(".trag_test").show();
-
-				}
-				if(data.data.question.answerB) {
-					$scope.answerB = data.data.question.answerB;
-				}
-				//			用户选择答案样式
-				mui(".mui-table-view").on("tap", ".mui-table-view-cell", function() {
-					jQuery(this).addClass("li-orange").siblings("li").removeClass("li-orange");
-
-				});
-
 			});
+			mui.plusReady(function() {
+					var self = plus.webview.currentWebview();
+					var ids = self.ids;
+					var name = self.name;
+					var title = self.title;
+					var readName = self.readName;
+					if(plus.webview.getWebviewById('reading-result.html')) {
+						plus.webview.getWebviewById('reading-result.html').close();
+					}
+					(function(mui) {
+							//重写返回键
+							mui.back = function(event) {
+									if(readName == "tpo") {
+										mui.openWindow({
+											id: "reading-tpoList.html",
+											url: "reading-tpoList.html"
+										})
+									} else {
+										mui.openWindow({
+											id: "reading-ogList.html",
+											url: "reading-ogList.html"
+										})
+									}
+							}
+					
+					})(mui)
 
-			$scope.readNext = function() {
-
-				//					点击下一题保存答案
-				var o = "#showAnswer";
-				var trueAn = $(o).attr("data-trueAn");
-				var strA = '',userAn03='',
-					userAn02 = $("#userAnswer").val();
-				var types = $("#types").val();
-				if(types == 6) { //特殊题型（点击选择答案）
-					if(userAn02) {
-						savaRead(userAn02, o);
+				$http({
+					method: 'post',
+					url: 'http://www.toeflonline.cn/cn/wap-api/read-details',
+					headers: {
+						'Content-Type': 'application/x-www-form-urlencoded'
+					},
+					data: {
+						id: ids,
+						userId: localStorage.getItem("userId")
 					}
-				} else if(types == 4) {					
-					$(".write_an .col-xs-4").each(function() {
-						userAn03 += $(this).find("input").val();
-					});
-					if(userAn03) {
-						savaRead(userAn03, o);
-					}
-				} else {
-					if($(".mui-table-view-cell").hasClass("li-orange")) {
-						strA = $(".mui-table-view-cell.li-orange").find(".mui-media-object").html();
-						savaRead(strA, o);
-					}
-				}
-				if($scope.nextId == 0) {				
-						//						closeme();
+				}).success(function(data) {
+					$scope.code = data.code;
+					$scope.title = name + "-" + title;
+					if($scope.code == 2) {
 						mui.openWindow({
 							id: "reading-result.html",
 							url: "reading-result.html",
@@ -158,25 +101,105 @@ jQuery(function() {
 								testId: ids,
 								name: name,
 								title: title,
-								readName: "readTpo"
+								readName: readName
 							}
 						});
-		
-				} else {
-					//					closeme();
-					mui.openWindow({
-						id: "reading-practice-" + $scope.nextId,
-						url: "reading-practice.html",
-						extras: {
-							ids: $scope.nextId,
-							name: name,
-							title: title
-						}
+						//				location.href = "readResult.html?id=" + id + "&titleName=" + catName + "&readName=" + readName;
+					}
+					$scope.catName = data.data.article.catName;
+					$scope.name = data.data.article.name;
+					$scope.question = $sce.trustAsHtml(data.data.article.question);
+					$scope.article = $sce.trustAsHtml(data.data.article.article);
+					$scope.articleId = data.data.article.id;
+					$scope.questionTi = $sce.trustAsHtml(data.data.question.question);
+					$scope.answerA = data.data.question.answerA;
+					$scope.answer = data.data.question.answer;
+					$scope.nameq = data.data.question.name;
+					$scope.nextId = data.data.nextId;
+					$scope.pid = data.data.question.pid;
+					$scope.contentId = data.data.contentId;
+					$scope.questionType = data.data.question.questionType;
+					$scope.titleNum = data.data.question.title;
+					$scope.count = data.data.count;
+					$scope.postionD = data.data.question.postionD.split("\n");
+					$scope.postionW = data.data.question.postionW.split("\n");
+					var str = new Array(); //定义一数组
+					str = $scope.answerA.split("\n"); //字符分割
+					$scope.arrSelect = str;
+					if($scope.questionType == 6) { //特殊题型（点击选择答案）
+						$(".option_box").hide();
+						$(".black_line").show();
+
+					} else if($scope.questionType == 4) { //14题 拖拽题型（有些答案字符里面有两个换行 需要后台删除一个）
+						$(".option_box").hide();
+						$(".trag_test").show();
+
+					}
+					if(data.data.question.answerB) {
+						$scope.answerB = data.data.question.answerB;
+					}
+					//			用户选择答案样式
+					mui(".mui-table-view").on("tap", ".mui-table-view-cell", function() {
+						jQuery(this).addClass("li-orange").siblings("li").removeClass("li-orange");
+
 					});
 
-				}
-			}
-		});
+				});
+
+				jQuery("#nextTi")[0].addEventListener("tap", function() {
+
+					//					点击下一题保存答案
+					var o = "#showAnswer";
+					var trueAn = $(o).attr("data-trueAn");
+					var strA = '',
+						userAn03 = '',
+						userAn02 = $("#userAnswer").val();
+					var types = $("#types").val();
+					if(types == 6) { //特殊题型（点击选择答案）
+						if(userAn02) {
+							savaRead(userAn02, o);
+						}
+					} else if(types == 4) {
+						$(".write_an .col-xs-4").each(function() {
+							userAn03 += $(this).find("input").val();
+						});
+						if(userAn03) {
+							savaRead(userAn03, o);
+						}
+					} else {
+						if($(".mui-table-view-cell").hasClass("li-orange")) {
+							strA = $(".mui-table-view-cell.li-orange").find(".mui-media-object").html();
+							savaRead(strA, o);
+						}
+					}
+					if($scope.nextId == 0) {
+						mui.openWindow({
+							id: "reading-result.html",
+							url: "reading-result.html",
+							extras: {
+								testId: $scope.articleId,
+								name: name,
+								title: title,
+								readName: readName
+							}
+						});
+
+					} else {
+
+						mui.openWindow({
+							id: "reading-practice-" + $scope.nextId,
+							url: "reading-practice.html",
+							extras: {
+								ids: $scope.nextId,
+								name: name,
+								title: title,
+								readName: readName
+							}
+						});
+
+					}
+				})
+			});
 		jQuery("#showAnswer")[0].addEventListener("tap", function() {
 			showAnBtn(this);
 		});

@@ -30,9 +30,9 @@ jQuery(function() {
 			var self = plus.webview.currentWebview();
 			var ids = self.ids;
 			var nameTitle = self.name;
-            if(!nameTitle){
-            	nameTitle="TPO 01";
-            }
+			if(!nameTitle) {
+				nameTitle = "TPO 01";
+			}
 			touchS(ids);
 			$http({
 				method: 'post',
@@ -47,7 +47,15 @@ jQuery(function() {
 				$scope.question = data.read[0].question;
 				$scope.tpo = data.tpo;
 				$scope.read = data.read[0].question;
-
+				(function(mui) {
+					//重写返回键
+					mui.back = function(event) {
+						mui.openWindow({
+							id: "reading.html",
+							url: "reading.html"
+						})
+					}
+				})(mui)
 				//           随机练习人数 
 				for(var i = 0; i < $scope.read.length; i++) {
 					$scope.read[i].nums = parseInt(Math.random() * 400);
@@ -56,8 +64,6 @@ jQuery(function() {
 				mui(".slideBd").on("tap", "li", function() {
 					var idD = jQuery(this).attr("data-sid");
 					var name = jQuery(this).html();
-
-					//					closeme();
 					mui.openWindow({
 						id: "reading-tpoList-" + idD,
 						url: "reading-tpoList.html",
@@ -68,19 +74,19 @@ jQuery(function() {
 					});
 
 				});
-		
+
 				//添加列表项的点击事件
 				mui('#tpo-content').on('tap', 'li', function(e) {
 					var id = this.getAttribute('id');
 					var title = this.getAttribute('data-title');
-//					closeme();
 					mui.openWindow({
 						id: "reading-practice" + id,
 						url: 'reading-practice.html',
 						extras: {
 							ids: id,
 							name: nameTitle,
-							title: title
+							title: title,
+							readName: "tpo"
 						}
 					});
 
@@ -91,8 +97,6 @@ jQuery(function() {
 	}]);
 
 });
-
-
 
 function touchS(idD) {
 	var indexNum = 0;

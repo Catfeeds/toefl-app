@@ -63,7 +63,7 @@ jQuery(function() {
 					//setCookie('adminStr',data.message.adminStr);
 					//setCookie('goods',data.message.goods);
 				} else {
-					closeme();
+			
 					mui.openWindow({
 						id: "login",
 						url: "login.html"
@@ -149,7 +149,7 @@ function showAdd(addressNum, courseId) {
 	} else {
 		num = 0;
 	}
-//	closeme();
+
 	mui.openWindow({
 		id: "sureAddress",
 		url: "sureAddress.html",

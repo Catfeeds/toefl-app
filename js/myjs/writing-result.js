@@ -1,5 +1,4 @@
 jQuery(function() {
-
 	//声明模块
 	var myApp = angular.module("myApp", []);
 	myApp.directive('isOver', function() {
@@ -45,6 +44,9 @@ jQuery(function() {
 				$scope.answer = data.data.nowResult.answer;
 				$scope.id = data.data.data.id;
 				$scope.elapsedTime = data.data.nowResult.elapsedTime;
+				mui.plusReady(function() {
+					plus.webview.getWebviewById('writing-test').close();
+				})
 
 				//    圆高度
 				jQuery(".border_center").css("height", $(".border_center").width());
@@ -64,7 +66,7 @@ jQuery(function() {
 					})
 				});
 				jQuery("#seeDetail-w")[0].addEventListener("tap", function() {
-					seeDetails();
+					seeDetails(recordId);
 				});
 			});
 		});
@@ -72,7 +74,12 @@ jQuery(function() {
 
 });
 //查看详情
-function seeDetails() {
-	$(".result").hide();
-	$(".writing_art").show();
+function seeDetails(recordId) {
+	mui.openWindow({
+		id: "writing-result-details",
+		url: "writing-result-details.html",
+		extras: {
+			ids: recordId
+		}
+	})
 }

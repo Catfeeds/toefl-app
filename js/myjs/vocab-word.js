@@ -1,5 +1,10 @@
 jQuery(function() {
-
+	mui(".orangeColor")[0].addEventListener("tap",function(){
+          mui.openWindow({
+          	id:"index.html",
+          	url:"index.html"
+          })
+	});
 	var taskSession = localStorage.getItem("taskSession");
 	var userId = localStorage.getItem('userId');
 	//声明模块
@@ -59,9 +64,7 @@ jQuery(function() {
 				toggleDuration: true,
 				cssSelectorAncestor: "#jp_container_1"
 			});
-			//			下一题
-			jQuery("#next")[0].addEventListener("tap", function() {
-				$http({
+			$http({
 					method: 'post',
 					url: 'http://www.toeflonline.cn/cn/app-api/today-task',
 					headers: {
@@ -71,8 +74,11 @@ jQuery(function() {
 						userId: userId
 					}
 				}).success(function(data) {
-					$scope.num = data.todayTask.keywords.num;
+					$scope.num = data.todayTask.keyWords.num;
 				});
+			//			下一题
+			jQuery("#next")[0].addEventListener("tap", function() {
+				
 				var userId = localStorage.getItem('userId');
 				var type = "keyWords";
 				$http({
@@ -89,7 +95,7 @@ jQuery(function() {
 					if(data.code == 2) {
 						jQuery(".mui-backdrop").show();
 					} else {
-//						closeme();
+
 						mui.openWindow({
 							id: "vocabulary.html" + $scope.num, //id保持传不一样的值，不然会出现跳转逻辑错误
 							url: "vocabulary.html",

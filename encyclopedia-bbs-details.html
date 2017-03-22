@@ -79,10 +79,13 @@
 					<div class="line-grey"></div>
 					<div class="reviewShow rev-detail">
 						<ul>
-							<li ng-repeat="item2 in data.reply" data-bid="{{item2.uid}}" data-bname="{{item2.uName}}" data-tieziId="{{data.id}}" data-type="2">
+							<li ng-repeat="item2 in data.reply" data-bid="{{item2.uid}}" data-bname="{{item2.uName}}" data-tieziId="{{data.id}}"
+								 data-type="2" is-over="toggle.now">
 								<div class="mui-row">
 									<div class="l-i-user mui-col-sm-3 mui-col-xs-3">
-										<img src="http://www.toeflonline.cn{{item2.userImage | defaultImg}}" alt="用户头像" />
+										<div class="l-i-user-in">
+											<img src="http://www.toeflonline.cn{{item2.userImage | defaultImg}}" alt="用户头像" />
+										</div>
 									</div>
 									<div class="r-i-info mui-col-sm-9 mui-col-xs-9">
 										<span class="blue">{{item2.uName}}</span>

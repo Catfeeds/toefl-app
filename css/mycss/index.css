@@ -1,131 +1,195 @@
-html,body,.mui-content{
+html,
+body,
+.mui-content {
 	width: 100%;
 	height: 100%;
 }
 
-#index{
+.second_i {
+	width: 100%;
+	height: 100%;
+	background: url('../../images/myimages/active_img.png') no-repeat;
+	background-size: 100% 100%;
+	/*display: none;*/
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 9999;
+}
+
+.op-div {
+	width: 70px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0.3);
+	color: white;
+	position: absolute;
+	right: 10px;
+	bottom: 30px;
+	border-radius: 3px;
+}
+
+.op-div span {
+	color: #FF6000;
+}
+
+#index {
 	/*display: none;*/
 }
 
-#index-con{
+#index-con {
 	background: url(../../images/myimages/index_bg.jpg) no-repeat;
 	background-size: 100% 100%;
 	font-family: "微软雅黑";
 }
-.three-bu{
+
+.three-bu {
 	width: 80%;
 	margin: 0 auto;
 }
-.l-three{
+
+.l-three {
 	width: 30%;
 	float: left;
 	text-align: center;
-	margin-top: 15%;
+	margin-top: 14%;
 }
-.l-three h2{
+
+.l-three h2 {
 	font-size: 1.5em;
 	color: white;
 	font-weight: normal;
 }
-.l-three h2 b{
+
+.l-three h2 b {
 	color: #d8d3d7;
 	font-size: 0.5em;
 }
-.l-three p{
+
+.l-three p {
 	font-size: 0.8em;
 }
-.c-three{
+
+.c-three {
 	width: 40%;
 	float: left;
 }
-.c-t-head{
+
+.c-t-head {
 	width: 70%;
 	margin: 0 auto;
 	border-radius: 50%;
 	overflow: hidden;
-	margin-top: 30%;
+	margin-top: 29%;
 }
-.c-t-head img{
+
+.c-t-head img {
 	width: 100%;
 }
 
-
-.mui-table-view{
+.mui-table-view {
 	width: 95%;
 	margin: 0 auto;
-	margin-top: 7%;
+	margin-top: 4%;
 	border-radius: 5px;
-	background-color:rgba(255,255,255,0.4);
+	background-color: rgba(255, 255, 255, 0.4);
 }
 
+
 /*点击变蓝色高亮*/
-.mui-table-view-cell>a:not(.mui-btn).mui-active{
-	background-color:rgba(255,255,255,0.4);
+
+.mui-table-view-cell>a:not(.mui-btn).mui-active {
+	background-color: rgba(255, 255, 255, 0.4);
 }
-.mui-table-view-cell.mui-active{
-	background-color:rgba(255,255,255,0.4);
+
+.mui-table-view-cell.mui-active {
+	background-color: rgba(255, 255, 255, 0.4);
 }
-.mui-table-view li:first-child img{
+
+.mui-table-view li:first-child img {
 	height: 40px;
 	vertical-align: middle;
 }
-.mui-table-view b{
+
+.mui-table-view b {
 	font-size: 1.2em;
 	color: #f4efec;
 	font-weight: normal;
 }
-.mui-table-view h4{
+
+.mui-table-view h4 {
 	font-weight: normal;
 	color: white;
 	font-size: 1em;
 }
-.mui-table-view p{
+
+.mui-table-view p {
 	color: #c0bebf;
 	font-size: 0.8em;
 }
-.mui-badge-primary{
-	background: none;
-	font-size: 1em;
-}
-.mui-badge-primary b{
-	color: #ffb93f;
-	font-size: 1em;
-}
-.mui-badge-success{
+
+.mui-badge-primary {
 	background: none;
 	font-size: 1em;
 }
 
-.succes-m{
+.mui-badge-primary b {
+	color: #ffb93f;
+	font-size: 1em;
+}
+
+.mui-badge-success {
+	background: none;
+	font-size: 1em;
+}
+
+.succes-m {
 	background: none;
 }
-.succes-m img{
+
+.succes-m img {
 	height: 25px;
 }
-.bot-bar{
+
+.bot-bar {
 	width: 100%;
-	margin-top: 5%;
+	margin-top: 3%;
 }
-.bot-bar ul{
+
+.bot-bar ul {
 	margin: 0;
 	padding: 0;
 }
-.bot-bar ul li{
+
+.bot-bar ul li {
 	width: 33.3%;
 	float: left;
 	list-style: none;
 }
-.bot-bar ul li a{
+
+.bot-bar ul li a {
 	display: block;
 	width: 100%;
 	text-align: center;
 	color: white;
 }
-.bot-bar ul li a img{
-	height: 45px;
+
+.bot-bar ul li a img {
+	height: 30px;
 }
-.bot-bar ul li a p{
+
+.bot-bar ul li a p {
 	margin-top: 5px;
 	color: white;
 	font-size: 1em;
+}
+
+.mui-table-view:before,
+.mui-table-view:after {
+	background-color: transparent;
+}
+
+.mui-table-view-cell {
+	padding: 2.2% 15px;
 }

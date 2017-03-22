@@ -9,38 +9,58 @@
 	border-bottom: 1px #FF6600 solid;
 	color: #FF6600;
 }
-.mui-card{
+.mui-table-view{
+	background-color: transparent
+}
+.mui-table-view li:first-child{
+	margin-top: 10px;
+	background-color: white;padding-bottom: 10px;
+}
+.mui-table-view li:first-child .mui-row{
 	width: 100%;
 	margin: 0;
-	margin-top: 10px;
 	box-shadow: none;
 }
-.mui-card-content img{
+.mui-table-view li:first-child .mui-row>[class*=mui-col-]{
+	float: none;
+}
+.mui-table-view li:first-child .mui-row .mui-col-sm-4,
+.mui-table-view li:first-child .mui-row .mui-col-sm-8{
+   width: 100%;
+}
+.mui-table-view li:first-child .mui-row .mui-col-sm-8{
+	padding-left: 4%;
+	padding-top: 10px;
+}
+.mui-table-view li:first-child .mui-col-sm-4 img{
 	width: 100%;
 }
-.mui-card-content h4{
+.mui-table-view li:first-child .mui-ellipsis{
 	font-weight: normal;
-	padding: 0 5%;
-	margin-top: 10px;
+	margin-bottom: 10px;
 }
-.mui-card-footer:before, .mui-card-header:after{
-	height: 0;
-}
-.tuij-bot{
-	width: 100%;
-}
-.tuij-bot .mui-row{
+
+
+.mui-table-view li:not(:first-child) .mui-row{
 	width: 100%;
 	background-color: white;
 	margin-top: 10px;
 	padding: 10px 0;
 }
-.tuij-bot .mui-row .mui-col-sm-4{
+.mui-table-view li:not(:first-child) .mui-row .mui-col-sm-4{
+	height: 60px;
+	overflow: hidden;
 	text-align: center;
 }
-.tuij-bot .mui-row .mui-col-sm-4 img{
+.mui-table-view li:not(:first-child) .mui-row .mui-col-sm-4 img{
 	width: 80%;
 }
-.tuij-bot .mui-row .mui-col-sm-8 .mui-ellipsis{
+.mui-table-view li:not(:first-child) .mui-row .mui-col-sm-8 .mui-ellipsis{
 	margin-bottom: 10px;
+}
+.mui-table-view-cell{
+	padding: 0;
+}
+.mui-table-view-chevron .mui-table-view-cell{
+	padding-right: 0;
 }

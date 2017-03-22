@@ -58,9 +58,12 @@ jQuery(function() {
 		if(jQuery(".push-btn").hasClass("on")) {
 			var id = this.getAttribute('data-id');
 			var groups = jQuery(".img-group ul").html();
-			var publisher = localStorage.getItem("nickname");
-			if(publisher == '') {
+			var publisher='';
+			var nick = localStorage.getItem("nickname");
+			if(nick == '' || nick=='null' || nick=='undefined') {
 				publisher = localStorage.getItem("userName");
+			}else{
+				publisher = nick;
 			}
 			var icon = localStorage.getItem('icon');
 			var title = jQuery(".title-input input").val();

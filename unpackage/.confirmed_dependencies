@@ -41,7 +41,12 @@
       "css/mycss/bottomNav.css",
       "encyclopedia.html",
       "course.html",
-      "personalCenter.html"
+      "personalCenter.html",
+      "js/myjs/angular1.3.1.js",
+      "images/myimages/active_img.png",
+      "images/myimages/userDefault.png",
+      "index.html",
+      "encyclopedia-bbs.html"
     ],
     "refer": [
       "extensive.html",
@@ -62,7 +67,15 @@
       "encyclopedia.html",
       "course.html",
       "personalCenter.html",
-      "index.html"
+      "index.html",
+      "login.html",
+      "moreSettings.html",
+      "encyclopedia-main.html",
+      "pullrefresh_main.html",
+      "guide.html",
+      "template.html",
+      "index-sub.html",
+      "pullrefresh_sub.html"
     ]
   },
   "extensive.html": {
@@ -83,10 +96,13 @@
       "js/myjs/public.js",
       "js/mui.min.js",
       "css/mui.min.css",
-      "css/mycss/public.css"
+      "css/mycss/public.css",
+      "js/myjs/angular1.3.1.js",
+      "images/myimages/ExerciseToday15@2x.png"
     ],
     "refer": [
-      "index.html"
+      "index.html",
+      "extensive.html"
     ]
   },
   "grammar-practice.html": {
@@ -99,10 +115,15 @@
       "js/mui.min.js",
       "fonts/mui.ttf",
       "css/mui.min.css",
-      "css/mycss/public.css"
+      "css/mycss/public.css",
+      "images/myimages/ExerciseToday15@2x.png",
+      "js/myjs/angular1.3.1.js",
+      "index.html"
     ],
     "refer": [
-      "grammar.html"
+      "grammar.html",
+      "index.html",
+      "grammar-practice.html"
     ]
   },
   "grammar.html": {
@@ -118,7 +139,9 @@
       "js/mui.min.js",
       "css/mui.min.css",
       "css/mycss/public.css",
-      "extensive.html"
+      "extensive.html",
+      "js/myjs/angular1.3.1.js",
+      "images/myimages/yufa_img.jpg"
     ],
     "refer": [
       "grammar-practice.html",
@@ -126,7 +149,8 @@
       "listensArticles.html",
       "encyclopedia-bbs.html",
       "encyclopedia.html",
-      "extensive.html"
+      "extensive.html",
+      "moreSettings.html"
     ]
   },
   "vocabulary.html": {
@@ -141,11 +165,15 @@
       "js/myjs/public.js",
       "js/mui.min.js",
       "css/mui.min.css",
-      "css/mycss/public.css"
+      "css/mycss/public.css",
+      "js/myjs/vocabulary.js",
+      "images/myimages/ExerciseToday15@2x.png",
+      "js/myjs/angular1.3.1.js"
     ],
     "refer": [
       "index.html",
-      "vocab-word.html"
+      "vocab-word.html",
+      "vocabulary.html"
     ]
   },
   "listensArticles.html": {
@@ -175,7 +203,9 @@
       "js/mui.min.js",
       "css/mui.min.css",
       "css/mycss/listensArticles.css",
-      "audio.mp3"
+      "audio.mp3",
+      "js/myjs/listensArticles.js",
+      "js/myjs/angular1.3.1.js"
     ],
     "refer": [
       "index.html",
@@ -249,11 +279,15 @@
       "fonts/mui.ttf",
       "css/mui.min.css",
       "js/myjs/jquery.jplayer.min.js",
-      "css/mycss/public.css"
+      "css/mycss/public.css",
+      "js/myjs/listensA-practice.js",
+      "index.html",
+      "js/myjs/angular1.3.1.js"
     ],
     "refer": [
       "listensArticles.html",
-      "index.html"
+      "index.html",
+      "listensA-practice.html"
     ]
   },
   "vocab-word.html": {
@@ -267,10 +301,14 @@
       "js/myjs/jquery-1.11.1.min.js",
       "js/myjs/public.js",
       "fonts/mui.ttf",
-      "js/myjs/jquery.jplayer.min.js"
+      "js/myjs/jquery.jplayer.min.js",
+      "js/myjs/vocab-word.js",
+      "js/myjs/angular1.3.1.js",
+      "images/myimages/ExerciseToday15@2x.png"
     ],
     "refer": [
-      "vocabulary.html"
+      "vocabulary.html",
+      "index.html"
     ]
   },
   "hearing-way.html": {
@@ -283,7 +321,8 @@
       "css/mycss/public.css",
       "js/mui.min.js",
       "js/myjs/jquery-1.11.1.min.js",
-      "js/myjs/public.js"
+      "js/myjs/public.js",
+      "fonts/mui.ttf"
     ],
     "refer": [
       "hearing-practice.html",
@@ -302,11 +341,14 @@
       "css/mui.min.css",
       "css/mycss/public.css",
       "images/myimages/Exercise7@2x.png",
-      "hearing.html"
+      "hearing.html",
+      "js/myjs/hearing-list.js",
+      "js/myjs/angular1.3.1.js"
     ],
     "refer": [
       "hearing-way.html",
-      "hearing.html"
+      "hearing.html",
+      "login.html"
     ]
   },
   "hearing.html": {
@@ -328,7 +370,8 @@
       "css/mycss/public.css",
       "js/mui.min.js",
       "js/myjs/jquery-1.11.1.min.js",
-      "js/myjs/public.js"
+      "js/myjs/public.js",
+      "js/myjs/angular1.3.1.js"
     ],
     "refer": [
       "hearing-list.html",
@@ -355,7 +398,10 @@
       "css/mycss/circle.player.css",
       "images/myimages/buffer.png",
       "images/myimages/controls_01.png",
-      "js/myjs/jquery.jplayer.min.js"
+      "js/myjs/jquery.jplayer.min.js",
+      "audio.mp3",
+      "js/myjs/hearing-practice.js",
+      "js/myjs/angular1.3.1.js"
     ],
     "refer": [
       "hearing-way.html",
@@ -382,10 +428,12 @@
       "hearing-way.html",
       "images/myimages/listenQ_reloadP.png",
       "images/myimages/listenQ_seeAnswer01.png",
-      "images/myimages/listenQ_seeAnswer02.png"
+      "images/myimages/listenQ_seeAnswer02.png",
+      "images/myimages/listenQ_pause.png"
     ],
     "refer": [
-      "hearing-way.html"
+      "hearing-way.html",
+      "login.html"
     ]
   },
   "reading.html": {
@@ -419,12 +467,15 @@
       "css/mycss/public.css",
       "js/mui.min.js",
       "js/myjs/jquery-1.11.1.min.js",
-      "js/myjs/public.js"
+      "js/myjs/public.js",
+      "js/myjs/angular1.3.1.js",
+      "fonts/mui.ttf"
     ],
     "refer": [
       "reading.html",
       "test.html",
-      "reading-practice.html"
+      "reading-practice.html",
+      "reading-tpoList.html"
     ]
   },
   "reading-practice.html": {
@@ -436,13 +487,22 @@
       "fonts/mui.ttf",
       "css/mui.min.css",
       "css/mycss/public.css",
-      "reading.html"
+      "reading.html",
+      "images/myimages/read_specialIcon.png",
+      "js/myjs/reading-practice.js",
+      "js/myjs/highlight.js",
+      "images/myimages/highlight.png",
+      "js/myjs/angular1.3.1.js"
     ],
     "refer": [
       "reading-answerJX.html",
       "reading-article.html",
       "reading-result.html",
-      "reading.html"
+      "reading.html",
+      "login.html",
+      "reading-practice.html",
+      "reading-ogList.html",
+      "reading-tpoList.html"
     ]
   },
   "reading-answerJX.html": {
@@ -485,10 +545,13 @@
       "js/mui.min.js",
       "fonts/mui.ttf",
       "css/mui.min.css",
-      "css/mycss/public.css"
+      "css/mycss/public.css",
+      "js/myjs/angular1.3.1.js",
+      "js/myjs/reading-result.js"
     ],
     "refer": [
-      "reading-result-details.html"
+      "reading-result-details.html",
+      "reading-practice.html"
     ]
   },
   "reading-result-details.html": {
@@ -499,7 +562,9 @@
       "css/mycss/public.css",
       "js/mui.min.js",
       "js/myjs/jquery-1.11.1.min.js",
-      "js/myjs/public.js"
+      "js/myjs/public.js",
+      "js/myjs/reading-result-details.js",
+      "js/myjs/angular1.3.1.js"
     ],
     "refer": [
       "reading-article.html"
@@ -514,7 +579,10 @@
       "js/mui.min.js",
       "reading.html",
       "css/mui.min.css",
-      "css/mycss/public.css"
+      "css/mycss/public.css",
+      "js/myjs/reading-ogList.js",
+      "fonts/mui.ttf",
+      "js/myjs/angular1.3.1.js"
     ],
     "refer": [
       "reading-practice.html",
@@ -531,10 +599,17 @@
       "js/myjs/jquery-1.11.1.min.js",
       "js/myjs/jquery.jplayer.min.js",
       "js/myjs/public.js",
-      "js/myjs/hearing-answerKeys.js"
+      "js/myjs/hearing-answerKeys.js",
+      "audio.mp3",
+      "images/myimages/spoken7@2x.png",
+      "images/myimages/spoken7@22x.png",
+      "fonts/mui.ttf",
+      "js/myjs/angular1.3.1.js"
     ],
     "refer": [
-      "hearing.html"
+      "hearing.html",
+      "hearing-quietly.html",
+      "hearing-practice.html"
     ],
     "priority": 0
   },
@@ -547,10 +622,17 @@
       "js/mui.min.js",
       "js/myjs/jquery-1.11.1.min.js",
       "js/myjs/public.js",
-      "js/myjs/hearing-pra-test.js"
+      "js/myjs/hearing-pra-test.js",
+      "js/myjs/jquery.jplayer.min.js",
+      "js/myjs/jquery.gridly.js",
+      "js/myjs/angular1.3.1.js",
+      "images/myimages/ExerciseToday14@2x.png",
+      "fonts/mui.ttf"
     ],
     "refer": [
-      "hearing-answerKeys.html"
+      "hearing-answerKeys.html",
+      "hearing-pra-test.html",
+      "login.html"
     ],
     "priority": 0
   },
@@ -650,7 +732,8 @@
       "js/myjs/jquery-1.11.1.min.js",
       "js/myjs/public.js",
       "js/mui.min.js",
-      "css/mui.min.css"
+      "css/mui.min.css",
+      "audio.mp3"
     ],
     "refer": []
   },
@@ -679,7 +762,9 @@
       "css/mycss/reading.css",
       "js/mui.min.js",
       "js/myjs/jquery-1.11.1.min.js",
-      "js/myjs/public.js"
+      "js/myjs/public.js",
+      "fonts/mui.ttf",
+      "writing-tpoList.html"
     ],
     "refer": [
       "writing-independent.html",
@@ -689,7 +774,9 @@
   },
   "writing-independent.html": {
     "refer": [
-      "writing-practice.html"
+      "writing-practice.html",
+      "writing.html",
+      "writing-independent.html"
     ],
     "resources": [
       "css/mui.min.css",
@@ -699,7 +786,10 @@
       "js/myjs/jquery-1.11.1.min.js",
       "js/myjs/TouchSlide.1.1.js",
       "js/myjs/public.js",
-      "images/myimages/Exercise7@2x.png"
+      "images/myimages/Exercise7@2x.png",
+      "js/myjs/angular1.3.1.js",
+      "js/myjs/writing-independent.js",
+      "writing.html"
     ]
   },
   "writing-test.html": {
@@ -711,7 +801,9 @@
       "css/mycss/public.css",
       "js/mui.min.js",
       "js/myjs/jquery-1.11.1.min.js",
-      "js/myjs/public.js"
+      "js/myjs/public.js",
+      "js/myjs/writing-test.js",
+      "js/myjs/angular1.3.1.js"
     ]
   },
   "writing-practice.html": {
@@ -723,11 +815,15 @@
       "js/mui.min.js",
       "js/myjs/jquery-1.11.1.min.js",
       "js/myjs/jquery.jplayer.min.js",
-      "js/myjs/public.js"
+      "js/myjs/public.js",
+      "js/myjs/writing-practice.js",
+      "images/myimages/spoken7@22x.png",
+      "js/myjs/angular1.3.1.js"
     ],
     "refer": [
       "writing-test.html",
-      "writing-article.html"
+      "writing-article.html",
+      "login.html"
     ]
   },
   "writing-result.html": {
@@ -739,10 +835,14 @@
       "js/mui.min.js",
       "fonts/mui.ttf",
       "css/mui.min.css",
-      "css/mycss/public.css"
+      "css/mycss/public.css",
+      "js/myjs/writing-result.js",
+      "js/myjs/angular1.3.1.js"
     ],
     "refer": [
-      "writing-result-details.html"
+      "writing-result-details.html",
+      "writing-practice.html",
+      "writing-test.html"
     ]
   },
   "encyclopedia-bbs.html": {
@@ -766,14 +866,25 @@
       "css/mycss/public.css",
       "js/mui.min.js",
       "js/myjs/jquery-1.11.1.min.js",
-      "js/myjs/public.js"
+      "js/myjs/public.js",
+      "css/mycss/emojione.min.css",
+      "js/myjs/emojione.js",
+      "index.html",
+      "personalCenter.html",
+      "images/cbd.jpg",
+      "js/myjs/angular1.3.1.js",
+      "images/myimages/icon3-1@2x.png",
+      "images/myimages/icon4@2x.png"
     ],
     "refer": [
       "encyclopedia-postings.html",
       "course.html",
       "encyclopedia-bbs-details.html",
       "encyclopedia.html",
-      "index.html"
+      "index.html",
+      "personalCenter.html",
+      "encyclopedia-main.html",
+      "login.html"
     ]
   },
   "encyclopedia.html": {
@@ -795,7 +906,17 @@
       "js/myjs/jquery-1.11.1.min.js",
       "js/myjs/public.js",
       "images/myimages/icon4-1@2x.png",
-      "images/myimages/icon2-1@2x.png"
+      "images/myimages/icon2-1@2x.png",
+      "js/myjs/encyclopedia.js",
+      "images/myimages/icon2@2x.png",
+      "js/myjs/angular1.3.1.js",
+      "index.html",
+      "images/myimages/place.jpg",
+      "fonts/mui.ttf",
+      "images/myimages/icon1@2x.png",
+      "images/myimages/icon3-1@2x.png",
+      "js/myjs/zepto.min.js",
+      "js/myjs/dropload.min.js"
     ],
     "refer": [
       "encyclopedia-bbs.html",
@@ -817,10 +938,12 @@
       "js/mui.min.js",
       "fonts/mui.ttf",
       "css/mui.min.css",
-      "css/mycss/public.css"
+      "css/mycss/public.css",
+      "js/myjs/angular1.3.1.js"
     ],
     "refer": [
-      "encyclopedia-bbs.html"
+      "encyclopedia-bbs.html",
+      "login.html"
     ]
   },
   "course.html": {
@@ -850,7 +973,11 @@
       "index.html",
       "images/myimages/icon1@2x.png",
       "images/myimages/icon2-1@2x.png",
-      "encyclopedia.html"
+      "encyclopedia.html",
+      "course-public.html",
+      "personalCenter.html",
+      "images/myimages/icon4@2x.png",
+      "images/myimages/icon3@2x.png"
     ],
     "refer": [
       "course-listen.html",
@@ -858,7 +985,10 @@
       "course-class.html",
       "index.html",
       "encyclopedia.html",
-      "personalCenter.html"
+      "personalCenter.html",
+      "course-public.html",
+      "encyclopedia-main.html",
+      "course.html"
     ]
   },
   "course-listen.html": {
@@ -894,7 +1024,9 @@
       "css/mycss/public.css",
       "js/mui.min.js",
       "js/myjs/jquery-1.11.1.min.js",
-      "js/myjs/public.js"
+      "js/myjs/public.js",
+      "js/myjs/course-live.js",
+      "js/myjs/angular1.3.1.js"
     ],
     "refer": [
       "course-live-detail.html",
@@ -909,9 +1041,15 @@
       "css/mycss/public.css",
       "js/mui.min.js",
       "js/myjs/jquery-1.11.1.min.js",
-      "js/myjs/public.js"
+      "js/myjs/public.js",
+      "js/myjs/course-live-detail.js",
+      "js/myjs/angular1.3.1.js"
     ],
-    "refer": []
+    "refer": [
+      "sureOrder.html",
+      "login.html",
+      "course-live-detail.html"
+    ]
   },
   "course-class-detail.html": {
     "resources": [
@@ -923,7 +1061,9 @@
       "js/mui.min.js",
       "js/myjs/jquery-1.11.1.min.js",
       "js/myjs/public.js",
-      "images/60x60.gif"
+      "images/60x60.gif",
+      "js/myjs/course-class-detail.js",
+      "js/myjs/angular1.3.1.js"
     ],
     "refer": []
   },
@@ -936,7 +1076,11 @@
       "css/mycss/public.css",
       "js/mui.min.js",
       "js/myjs/jquery-1.11.1.min.js",
-      "js/myjs/public.js"
+      "js/myjs/public.js",
+      "images/myimages/Course37@2x.png",
+      "js/myjs/course-class.js",
+      "fonts/mui.ttf",
+      "js/myjs/angular1.3.1.js"
     ],
     "refer": [
       "course-class-detail.html",
@@ -957,9 +1101,16 @@
       "images/myimages/Community4@2x.png",
       "js/mui.min.js",
       "images/60x60.gif",
-      "css/mui.min.css"
+      "css/mui.min.css",
+      "images/cbd.jpg",
+      "css/mycss/emojione.min.css",
+      "js/myjs/angular1.3.1.js",
+      "images/myimages/Community3@2x.png",
+      "js/myjs/emojione.js"
     ],
-    "refer": []
+    "refer": [
+      "login.html"
+    ]
   },
   "personalCenter.html": {
     "resources": [
@@ -980,7 +1131,17 @@
       "css/mycss/public.css",
       "js/mui.min.js",
       "js/myjs/jquery-1.11.1.min.js",
-      "js/myjs/public.js"
+      "js/myjs/public.js",
+      "images/myimages/icon1-1@2x.png",
+      "images/myimages/icon4@2x.png",
+      "js/myjs/personalCenter.js",
+      "images/myimages/icon2@2x.png",
+      "course.html",
+      "images/myimages/icon3-1@2x.png",
+      "js/myjs/angular1.3.1.js",
+      "images/myimages/icon2-1@2x.png",
+      "images/myimages/icon3@2x.png",
+      "images/myimages/icon4-1@2x.png"
     ],
     "refer": [
       "index.html",
@@ -994,7 +1155,9 @@
       "myCourse.html",
       "speakRecord.html",
       "course.html",
-      "personalCenter.html"
+      "personalCenter.html",
+      "encyclopedia-main.html",
+      "login.html"
     ]
   },
   "listenRecord.html": {
@@ -1005,9 +1168,15 @@
       "css/mycss/public.css",
       "js/mui.min.js",
       "js/myjs/jquery-1.11.1.min.js",
-      "js/myjs/public.js"
+      "js/myjs/public.js",
+      "js/myjs/listenRecord.js",
+      "fonts/mui.ttf",
+      "js/myjs/angular1.3.1.js"
     ],
-    "refer": []
+    "refer": [
+      "hearing-quietly.html",
+      "hearing-practice.html"
+    ]
   },
   "moreSettings.html": {
     "resources": [
@@ -1020,14 +1189,19 @@
       "css/mycss/moreSettings.css",
       "css/mycss/public.css",
       "feedback.html",
-      "update-password.html"
+      "update-password.html",
+      "index.html",
+      "js/myjs/moreSettings.js",
+      "js/myjs/angular1.3.1.js",
+      "update-nickname.html"
     ],
     "refer": [
       "feedback.html",
       "update-password.html",
       "update-nickname.html",
       "update-phone.html",
-      "update-email.html"
+      "update-email.html",
+      "index.html"
     ]
   },
   "feedback.html": {
@@ -1053,9 +1227,14 @@
       "fonts/mui.ttf",
       "css/mui.min.css",
       "css/mycss/public.css",
-      "images/myimages/userCenter15@2x.png"
+      "images/myimages/userCenter15@2x.png",
+      "js/myjs/writeRecord.js",
+      "js/myjs/angular1.3.1.js"
     ],
-    "refer": []
+    "refer": [
+      "writing-result.html",
+      "writeRecord.html"
+    ]
   },
   "message.html": {
     "resources": [
@@ -1065,9 +1244,12 @@
       "fonts/mui.ttf",
       "css/mui.min.css",
       "css/mycss/message.css",
-      "css/mycss/public.css"
+      "css/mycss/public.css",
+      "js/myjs/angular1.3.1.js"
     ],
-    "refer": []
+    "refer": [
+      "message.html"
+    ]
   },
   "readRecord.html": {
     "resources": [
@@ -1078,9 +1260,15 @@
       "fonts/mui.ttf",
       "css/mui.min.css",
       "css/mycss/public.css",
-      "images/myimages/userCenter15@2x.png"
+      "images/myimages/userCenter15@2x.png",
+      "js/myjs/angular1.3.1.js",
+      "js/myjs/readRecord.js"
     ],
-    "refer": []
+    "refer": [
+      "reading-result.html",
+      "readRecord.html",
+      "reading-practice.html"
+    ]
   },
   "update-password.html": {
     "resources": [
@@ -1093,7 +1281,8 @@
       "js/myjs/public.js"
     ],
     "refer": [
-      "moreSettings.html"
+      "moreSettings.html",
+      "login.html"
     ]
   },
   "encyclopedia-details.html": {
@@ -1105,7 +1294,9 @@
       "js/mui.min.js",
       "js/myjs/jquery-1.11.1.min.js",
       "js/myjs/public.js",
-      "images/myimages/Toeflxiaoxi@2x.png"
+      "images/myimages/Toeflxiaoxi@2x.png",
+      "fonts/mui.ttf",
+      "js/myjs/angular1.3.1.js"
     ],
     "refer": [],
     "priority": 0
@@ -1118,7 +1309,8 @@
       "css/mycss/notebook.css",
       "js/mui.min.js",
       "js/myjs/jquery-1.11.1.min.js",
-      "js/myjs/public.js"
+      "js/myjs/public.js",
+      "js/myjs/angular1.3.1.js"
     ],
     "refer": [],
     "priority": 0
@@ -1133,7 +1325,9 @@
       "js/myjs/jquery-1.11.1.min.js",
       "js/myjs/public.js",
       "images/myimages/userCenter23@2x.png",
-      "images/myimages/3@2x.png"
+      "images/myimages/3@2x.png",
+      "fonts/mui.ttf",
+      "js/myjs/angular1.3.1.js"
     ],
     "refer": [
       "notebook-details.html"
@@ -1152,9 +1346,14 @@
       "images/cbd.jpg",
       "images/myimages/19@2x.png",
       "images/myimages/20@2x.png",
-      "images/myimages/21@2x.png"
+      "images/myimages/21@2x.png",
+      "js/myjs/myCourse-details.js",
+      "js/myjs/angular1.3.1.js"
     ],
-    "refer": [],
+    "refer": [
+      "myCourse.html",
+      "sureOrder.html"
+    ],
     "priority": 0
   },
   "myCourse.html": {
@@ -1166,10 +1365,14 @@
       "js/mui.min.js",
       "js/myjs/jquery-1.11.1.min.js",
       "js/myjs/public.js",
-      "images/cbd.jpg"
+      "images/cbd.jpg",
+      "js/myjs/myCourse.js",
+      "fonts/mui.ttf",
+      "js/myjs/angular1.3.1.js"
     ],
     "refer": [
-      "myCourse-details.html"
+      "myCourse-details.html",
+      "myCourse.html"
     ],
     "priority": 0
   },
@@ -1196,9 +1399,13 @@
       "css/mycss/update.css",
       "js/mui.min.js",
       "js/myjs/jquery-1.11.1.min.js",
-      "js/myjs/public.js"
+      "js/myjs/public.js",
+      "css/mycss/validform.css",
+      "js/myjs/Validform_v5.3.2_min.js"
     ],
-    "refer": [],
+    "refer": [
+      "moreSettings.html"
+    ],
     "priority": 0
   },
   "update-email.html": {
@@ -1209,7 +1416,9 @@
       "css/mycss/update.css",
       "js/mui.min.js",
       "js/myjs/jquery-1.11.1.min.js",
-      "js/myjs/public.js"
+      "js/myjs/public.js",
+      "css/mycss/validform.css",
+      "js/myjs/Validform_v5.3.2_min.js"
     ],
     "refer": [],
     "priority": 0
@@ -1223,9 +1432,17 @@
       "js/mui.min.js",
       "js/myjs/jquery-1.11.1.min.js",
       "js/myjs/jquery.jplayer.min.js",
-      "js/myjs/public.js"
+      "js/myjs/public.js",
+      "audio.mp3",
+      "fonts/mui.ttf",
+      "js/myjs/speakRecord.js",
+      "js/myjs/angular1.3.1.js",
+      "images/myimages/userCenter3@2x.png",
+      "images/myimages/userCenter31@2x.png"
     ],
-    "refer": [],
+    "refer": [
+      "speakRecord.html"
+    ],
     "priority": 0
   },
   "course-lis-detail.html": {
@@ -1235,7 +1452,8 @@
       "css/mycss/public.css",
       "js/mui.min.js",
       "js/myjs/jquery-1.11.1.min.js",
-      "js/myjs/public.js"
+      "js/myjs/public.js",
+      "fonts/mui.ttf"
     ],
     "refer": [],
     "priority": 0
@@ -1247,7 +1465,8 @@
       "css/mycss/public.css",
       "js/mui.min.js",
       "js/myjs/jquery-1.11.1.min.js",
-      "js/myjs/public.js"
+      "js/myjs/public.js",
+      "js/myjs/writing-result-details.js"
     ],
     "refer": [],
     "priority": 0
@@ -1276,10 +1495,282 @@
       "js/myjs/jquery-1.11.1.min.js",
       "js/myjs/TouchSlide.1.1.js",
       "js/myjs/public.js",
-      "images/myimages/Exercise7@2x.png"
+      "images/myimages/Exercise7@2x.png",
+      "js/myjs/angular1.3.1.js",
+      "js/myjs/writing-tpoList.js",
+      "writing.html"
     ],
     "refer": [
-      "writing-practice.html"
+      "writing-practice.html",
+      "writing.html",
+      "writing-tpoList.html"
+    ],
+    "priority": 0
+  },
+  "login.html": {
+    "resources": [
+      "css/mycss/validform.css",
+      "images/myimages/Minepassword@2x.png",
+      "images/myimages/Mineaccount@2x.png",
+      "images/myimages/MineLoginInBack.jpg",
+      "images/myimages/Exercise30@2x.png",
+      "css/mycss/login.css",
+      "js/myjs/login.js",
+      "js/myjs/Validform_v5.3.2_min.js",
+      "images/myimages/right.png",
+      "register.html",
+      "images/myimages/error.png",
+      "css/mui.min.css",
+      "css/mycss/public.css",
+      "js/mui.min.js",
+      "js/myjs/jquery-1.11.1.min.js",
+      "js/myjs/public.js"
+    ],
+    "refer": [
+      "index.html",
+      "register.html",
+      "foundPassword.html"
+    ]
+  },
+  "register.html": {
+    "resources": [
+      "js/myjs/register.js",
+      "css/mycss/register.css",
+      "login.html",
+      "css/mui.min.css",
+      "css/mycss/validform.css",
+      "css/mycss/public.css",
+      "js/mui.min.js",
+      "js/myjs/jquery-1.11.1.min.js",
+      "js/myjs/Validform_v5.3.2_min.js",
+      "js/myjs/public.js"
+    ],
+    "refer": [
+      "login.html"
+    ]
+  },
+  "foundPassword.html": {
+    "href": "foundPassword.html",
+    "resources": [
+      "css/mui.min.css",
+      "css/mycss/validform.css",
+      "css/mycss/public.css",
+      "css/mycss/register.css",
+      "js/mui.min.js",
+      "js/myjs/jquery-1.11.1.min.js",
+      "js/myjs/Validform_v5.3.2_min.js",
+      "js/myjs/public.js"
+    ],
+    "refer": [
+      "login.html"
+    ],
+    "priority": 0
+  },
+  "course-public.html": {
+    "resources": [
+      "images/myimages/3@2x.png",
+      "images/myimages/CourseCalender@2x.png",
+      "course.html",
+      "css/mycss/course-public.css",
+      "js/myjs/course-public.js",
+      "js/myjs/jquery-1.11.1.min.js",
+      "js/myjs/public.js",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "js/myjs/angular1.3.1.js",
+      "css/mycss/public.css",
+      "fonts/mui.ttf"
+    ],
+    "refer": [
+      "course.html",
+      "course-public-detail.html"
+    ]
+  },
+  "course-public-detail.html": {
+    "resources": [
+      "images/myimages/Course35@2x.png",
+      "css/mycss/course-live-detail.css",
+      "js/myjs/course-public-detail.js",
+      "js/myjs/jquery-1.11.1.min.js",
+      "js/myjs/public.js",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "js/myjs/angular1.3.1.js",
+      "css/mycss/public.css"
+    ],
+    "refer": []
+  },
+  "sureOrder.html": {
+    "resources": [
+      "images/myimages/3@2x.png",
+      "css/mycss/sureOrder.css",
+      "js/myjs/sureOrder.js",
+      "css/mui.min.css",
+      "css/mycss/public.css",
+      "js/mui.min.js",
+      "js/myjs/jquery-1.11.1.min.js",
+      "js/myjs/public.js",
+      "js/myjs/angular1.3.1.js"
+    ],
+    "refer": [
+      "sureAddress.html",
+      "login.html"
+    ]
+  },
+  "sureAddress.html": {
+    "resources": [
+      "js/myjs/sureAddress.js",
+      "js/myjs/jquery-1.11.1.min.js",
+      "js/myjs/public.js",
+      "js/mui.min.js",
+      "css/mycss/sureOrder.css",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "js/myjs/angular1.3.1.js",
+      "css/mycss/public.css",
+      "images/myimages/sureOrder_default.png",
+      "images/myimages/sureOrder_icon02.png",
+      "images/myimages/sureOrder_icon03.png",
+      "images/myimages/sureOrder_icon01.png",
+      "images/myimages/sureOrder_default02.png"
+    ],
+    "refer": [
+      "saveAddress.html",
+      "login.html",
+      "sureOrder.html"
+    ]
+  },
+  "saveAddress.html": {
+    "resources": [
+      "js/myjs/jquery-1.11.1.min.js",
+      "js/myjs/public.js",
+      "js/mui.min.js",
+      "js/myjs/PCASClass.js",
+      "css/mycss/sureOrder.css",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "js/myjs/saveAddress.js",
+      "js/myjs/angular1.3.1.js",
+      "css/mycss/public.css"
+    ],
+    "refer": [
+      "sureAddress.html",
+      "login.html"
+    ]
+  },
+  "encyclopedia-main.html": {
+    "resources": [
+      "images/myimages/icon2@2x.png",
+      "css/mycss/encyclopedia.css",
+      "css/mycss/bottomNav.css",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "encyclopedia.html",
+      "css/mycss/public.css",
+      "js/myjs/jquery-1.11.1.min.js",
+      "js/myjs/public.js",
+      "pullrefresh_sub.html"
+    ],
+    "refer": [
+      "encyclopedia.html",
+      "encyclopedia-bbs.html",
+      "pullrefresh_sub.html"
+    ]
+  },
+  "pullrefresh_main.html": {
+    "resources": [
+      "pullrefresh_sub.html",
+      "css/mycss/encyclopedia.css",
+      "css/mycss/bottomNav.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "css/mycss/public.css"
+    ],
+    "refer": [
+      "pullrefresh_sub.html"
+    ]
+  },
+  "pullrefresh_sub.html": {
+    "resources": [
+      "images/myimages/place.jpg",
+      "images/muwu.jpg",
+      "js/myjs/jquery-1.11.1.min.js",
+      "js/myjs/public.js",
+      "css/mycss/encyclopedia.css",
+      "css/mycss/bottomNav.css",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "css/mycss/public.css",
+      "images/myimages/Toeflxiaoxi@2x.png",
+      "images/myimages/icon4-1@2x.png",
+      "images/myimages/icon1-1@2x.png",
+      "images/myimages/icon3@2x.png",
+      "images/myimages/icon2-1@2x.png",
+      "js/myjs/encyclopedia.js"
+    ],
+    "refer": [
+      "encyclopedia-details.html"
+    ]
+  },
+  "guide.html": {
+    "resources": [
+      "images/myimages/active_img.png",
+      "css/mui.min.css",
+      "js/mui.min.js",
+      "js/myjs/jquery-1.11.1.min.js",
+      "js/myjs/public.js"
+    ],
+    "refer": [
+      "index.html"
+    ]
+  },
+  "template.html": {
+    "href": "template.html",
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "css/mycss/public.css"
+    ],
+    "refer": [],
+    "priority": 0
+  },
+  "index-sub.html": {
+    "href": "index-sub.html",
+    "resources": [
+      "css/mui.min.css",
+      "css/mycss/bottomNav.css",
+      "css/mycss/public.css",
+      "css/mycss/index.css",
+      "js/mui.min.js",
+      "js/myjs/jquery-1.11.1.min.js",
+      "js/myjs/public.js",
+      "js/myjs/index.js",
+      "images/myimages/ExerciseToday5@2x.png",
+      "images/myimages/touxiang@2x.png",
+      "images/myimages/userDefault.png",
+      "js/myjs/angular1.3.1.js",
+      "images/myimages/ExerciseToday4@2x.png",
+      "images/myimages/ExerciseToday6@2x.png",
+      "images/myimages/ExerciseToday7@2x.png",
+      "images/myimages/ExerciseToday9@2x.png"
+    ],
+    "refer": [
+      "encyclopedia-bbs.html",
+      "vocabulary.html",
+      "writing.html",
+      "listensArticles.html",
+      "extensive.html",
+      "grammar.html",
+      "template.html",
+      "moreSettings.html",
+      "login.html",
+      "encyclopedia-main.html",
+      "reading.html",
+      "hearing.html",
+      "encyclopedia.html",
+      "guide.html"
     ],
     "priority": 0
   }

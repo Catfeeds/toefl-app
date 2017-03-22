@@ -74,7 +74,7 @@ jQuery(function() {
 		return function(img) {
 			var str = '';
 			if(!img || img == 'undefined' || img == null) {
-				str = 'http://www.toeflonline.cn/cn/images/details_defaultImg.png';
+				str = '/cn/images/details_defaultImg.png';
 			} else {
 				str = img;
 			}
@@ -107,7 +107,7 @@ function loginOut() {
 				//							delCookie('s_userId');
 				//							delCookie('userName');
 				localStorage.clear();
-				//				closeme();
+
 				$("#scriptBox").html(str);
 				setTimeout(function() {
 					mui.plusReady(function() {

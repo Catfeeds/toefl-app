@@ -1,8 +1,8 @@
 jQuery(function() {
-//	jQuery(".mui-media-object").css({
-//		"height": jQuery(".mui-media-object").width(),
-//		"lineHeight": jQuery(".mui-media-object").width() + "px"
-//	});
+	//	jQuery(".mui-media-object").css({
+	//		"height": jQuery(".mui-media-object").width(),
+	//		"lineHeight": jQuery(".mui-media-object").width() + "px"
+	//	});
 
 	//声明模块
 	var myApp = angular.module("myApp", []);
@@ -42,20 +42,29 @@ jQuery(function() {
 			}
 		}).success(function(data) {
 			$scope.questionOg = data.OG[0].question;
-
+			(function(mui) {
+				//重写返回键
+				mui.back = function(event) {						
+					mui.openWindow({
+						id: "reading.html",
+						url: "reading.html"
+					})						
+				}
+			})(mui)
 			//添加列表项的点击事件
 			mui('.mui-table-view').on('tap', '.mui-table-view-cell', function(e) {
 				var id = this.getAttribute('id');
 				var nameTitle = this.getAttribute('data-title');
 				var num = this.getAttribute('data-num');
-//				closeme();
+
 				mui.openWindow({
 					id: "reading-practice" + id,
 					url: 'reading-practice.html',
 					extras: {
 						ids: id,
 						name: nameTitle,
-						title: num
+						title: num,
+						readName: "og"
 					}
 				});
 

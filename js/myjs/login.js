@@ -105,7 +105,7 @@ function subLogin(name, pass) {
 					});
 
 					setTimeout(function() {
-//						closeme();
+
 						mui.openWindow({
 							id: "index.html",
 							url: "index.html",

@@ -10,6 +10,13 @@
 		<link href="css/mycss/extensive.css" rel="stylesheet" />
 	</head>
 	<body>
+			<!--任务通过，题目做完之后显示下面弹窗-->
+				<div class="mui-backdrop">
+					<div class="in-div">
+						<img src="images/myimages/ExerciseToday15@2x.png" alt="img" />
+						<button type="button" class="mui-btn mui-btn-success" id="sure-index">确定</button>
+					</div>
+				</div>
 		<!-- 主界面菜单同时移动 -->
     <!-- 侧滑导航根容器 -->
     <div class="mui-off-canvas-wrap mui-draggable" ng-controller="PriceCtrl">
@@ -26,7 +33,7 @@
             </aside>-->
             <!-- 主页面标题 -->
          <header id="header" class="mui-bar mui-bar-transparent" style="background-color: rgba(247, 247, 247, 0);">
-			<a href="index.html" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: white;"></a>
+			<a class="mui-icon mui-icon-left-nav mui-pull-left" style="color: white;"></a>
 			<h1 class="mui-title">泛听文章({{num}}/3)</h1>
 			<button class="mui-btn mui-btn-blue mui-btn-link mui-pull-right" style="color: white;" id="next">下一篇</button>
 			  <div class="wc-btn"><img src="images/myimages/chinese_icon.png" alt="切换中文图标"/></div>

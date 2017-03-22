@@ -50,7 +50,6 @@ jQuery(function() {
 						var catN = jQuery(this).attr("data-catName");
 						var title = jQuery(this).attr("data-title");
 						var articleId = jQuery(this).attr("data-articleId");
-//						closeme();
 						mui.openWindow({
 							url: "hearing-way.html",
 							extras: {
@@ -66,7 +65,7 @@ jQuery(function() {
 
 				});
 			} else {
-				closeme();
+	
 				mui.openWindow({
 					id: "login",
 					url: "login.html",

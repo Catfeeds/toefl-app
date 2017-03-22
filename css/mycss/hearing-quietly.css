@@ -2,11 +2,25 @@ html,body{
    background-color: white;
 }
 nav.mui-bar{
-	height: 94px;
+	height: 103px;
 }
 .mui-content{
 	background-color: white;
-	padding-bottom: 94px!important;
+	padding-bottom: 103px!important;
+}
+.poaPos{
+    position: relative;
+}
+.nextImg{
+    width: 67px;
+    height: 31px;
+    position: absolute;
+    top:-40px;
+    left: 50%;
+    display: none;
+}
+.nextImg img{
+    width: 100%!important;
 }
 .title_common{
     border-bottom: 1px #bebebe solid;
@@ -21,7 +35,9 @@ nav.mui-bar{
 .simpleSentence ul li{
     display: none;
 }
-
+.simpleSentence ul li.on{
+	/*display: block;*/
+}
 .simpleSentence h4{
     font-size: 1em;
     color: #fe6b02;
@@ -81,14 +97,15 @@ nav.mui-bar{
     margin: 0 auto;
    background: url("../../images/myimages/listenQ_play.png") no-repeat center;
     background-size: 100% auto;
-    margin-top: -13px;
+   position:relative;
+   top:-13px;
 }
 #jp_container_1.jp-state-playing .img_play{
     background: url("../../images/myimages/listenQ_pause.png") no-repeat center;
     background-size: 100% auto;
 }
 .bottom_controls{
-    margin-top: 10px;
+    /*margin-top: 10px;*/
 }
 .bottom_controls .col-xs-1{
     color: white;

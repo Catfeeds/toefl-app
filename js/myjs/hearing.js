@@ -7,11 +7,6 @@
 
 jQuery(function() {
 
-	$(".mui-card-content ul li").css({
-		"height": $(".mui-card-content ul li").width(),
-		"lineHeight": $(".mui-card-content ul li").width() + "px"
-	});
-
 	$(".mui-content").css("height", $(document).height());
 
 	//声明模块
@@ -37,7 +32,7 @@ jQuery(function() {
 		};
 		$scope.$watch('toggle.now', function() {
 			if($scope.toggle.now) { //界面的angularjs循环的元素加载完毕
-				jQuery(".mui-content").css("height", jQuery(document).height());
+				jQuery(".mui-content").css("height", jQuery(document).height());			
 
 				//			==========tpo点击=================
 				mui(".mui-card-content").on("tap", "li", function() {

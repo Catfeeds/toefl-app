@@ -117,12 +117,13 @@ img.emojione{
 	margin: 0 auto;
 }
 /*详情页*/
-.l-i-user{
-	/*text-align: center;*/
-}
-.l-i-user img{
+.l-i-user-in{
 	width: 80%;
 	border-radius: 50%;
+	overflow: hidden;
+}
+.l-i-user-in img{
+    width: 100%;
 }
 .line-grey{
 	width: 100%;
